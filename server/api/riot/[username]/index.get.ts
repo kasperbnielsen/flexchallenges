@@ -44,6 +44,6 @@ export default defineCachedEventHandler(async (event) => {
   const tempName = decodeURI(event.context.params.username);
   let id = await getId(tempName, APIKEY);
   console.log("ID =                                   " + id);
-  let mastery = getMastery(id.puuid, APIKEY);
+  let mastery = await getMastery(id.puuid, APIKEY);
   return mastery;
 });
