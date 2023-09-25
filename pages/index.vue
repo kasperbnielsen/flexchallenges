@@ -45,27 +45,6 @@ let settings = ref<Setting>({
 
 let players = ref<Mastery[]>([]);
 
-async function getMastery(puuid: number, apiKey: string) {
-  const url =
-    "https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-puuid/" +
-    puuid +
-    "?api_key=" +
-    apiKey;
-  return await axios.get(url).then((response: AxiosResponse<Mastery>) => {
-    return response.data;
-  });
-}
-
-async function getId(username: string, apiKey: string) {
-  const url =
-    "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" +
-    username +
-    "?api_key=" +
-    apiKey;
-  return await axios.get(url).then((response) => {
-    return response.data;
-  });
-}
 
 async function submitForm() {
   let assignedChampions = [0, 0, 0, 0, 0];
@@ -78,7 +57,20 @@ async function submitForm() {
     temp.player5,
   ];
   namesList.forEach(async (player, i) => {
-    players.value.push(
+    const fetchedData = await fetch( '/api/riot/' + player, {
+      method: 'get',
+    }).then((res) => {
+      return res;
+    })
+
+    players.value.push(await fetchedData.json());
+    
+    
+    
+    
+    
+    
+    /*players.value.push(
       await axios
         .get("/api/riot/" + player)
         .then((res) => {
@@ -88,7 +80,7 @@ async function submitForm() {
           console.log(err);
         })
     );
-
+*/
     /*
     let id = await getId(player, APIKEY);
     players.value.push(await getMastery(id.puuid, APIKEY));*/
