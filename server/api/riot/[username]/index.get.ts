@@ -21,9 +21,11 @@ async function getMastery(puuid: number, apiKey: string) {
     puuid +
     "?api_key=" +
     apiKey;
-  return await axios.get(url).then((response: AxiosResponse<Mastery>) => {
-    return response.data;
+  let res = await fetch(url, {method: 'GET'}).then((response) => {
+    return response;
   });
+
+  return await res.json();
 }
 
 async function getId(username: string, apiKey: string) {
@@ -32,9 +34,10 @@ async function getId(username: string, apiKey: string) {
     username +
     "?api_key=" +
     apiKey;
-  return await axios.get(url).then((response: AxiosResponse) => {
-    return response.data;
-  });
+  let resp = await fetch(url, {method: 'GET'}).then((response) => {
+    return response;
+  })
+  return await resp.json();
 }
 
 export default defineCachedEventHandler(async (event) => {
