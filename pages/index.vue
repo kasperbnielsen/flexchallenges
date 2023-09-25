@@ -45,6 +45,28 @@ let settings = ref<Setting>({
 
 let players = ref<Mastery[]>([]);
 
+async function getMastery(puuid: number, apiKey: string) {
+  const url =
+    "https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-puuid/" +
+    puuid +
+    "?api_key=" +
+    apiKey;
+  return await axios.get(url).then((response: AxiosResponse<Mastery>) => {
+    return response.data;
+  });
+}
+
+async function getId(username: string, apiKey: string) {
+  const url =
+    "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" +
+    username +
+    "?api_key=" +
+    apiKey;
+  return await axios.get(url).then((response) => {
+    return response.data;
+  });
+}
+
 async function submitForm() {
   let assignedChampions = [0, 0, 0, 0, 0];
   let temp = settings.value.players;
@@ -55,17 +77,21 @@ async function submitForm() {
     temp.player4,
     temp.player5,
   ];
-  namesList.forEach(async (player) => {
-    let dataresult = await axios
-      .get("/api/riot/" + player)
-      .then((res) => {
-        return res.data;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  namesList.forEach(async (player, i) => {
+    players.value.push(
+      await axios
+        .get("/api/riot/" + player)
+        .then((res) => {
+          return res.data;
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+    );
 
-    players.value.push(await dataresult.puuid);
+    /*
+    let id = await getId(player, APIKEY);
+    players.value.push(await getMastery(id.puuid, APIKEY));*/
   });
 
   let random = Math.random() * champions.regions.length;
@@ -76,6 +102,8 @@ async function submitForm() {
     championList.push(region[tempVal]);
     region.splice(tempVal, 1);
   });
+
+  console.log(championList);
 
   let keys: string[] = [];
 
@@ -91,7 +119,7 @@ async function submitForm() {
     let championPoints = [0, 0, 0, 0, 0];
     for (let i = 0; i < keys.length; i++) {
       for (let j = 0; j < players.value[x]?.length; j++) {
-        if (players.value[x][j].championId.toString() == keys[i]) {
+        if (players.value[x][j].championId == +keys[i]) {
           championPoints[i] = players.value[x][j].championPoints;
           break;
         }
@@ -118,6 +146,7 @@ async function submitForm() {
 
   let resultdiv = document.querySelector(".result");
   console.log(resultdiv?.hasChildNodes());
+  console.log(keys);
   if (
     resultdiv?.childElementCount != null &&
     resultdiv.childElementCount <= 1
@@ -126,12 +155,20 @@ async function submitForm() {
       let div = document.createElement("div");
       let name = document.createElement("p");
       let champ = document.createElement("p");
+      let image = document.createElement("img");
+      image.setAttribute(
+        "src",
+        "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/" +
+          keys[assignedChampions[i]] +
+          ".png"
+      );
       name.innerHTML = element;
       champ.innerHTML = championList[assignedChampions[i]];
       div.setAttribute("style", "margin-left: 2rem");
       div.setAttribute("class", "result__div");
       div.appendChild(name);
       div.appendChild(champ);
+      div.appendChild(image);
       resultdiv?.appendChild(div);
     });
   } else {
@@ -143,12 +180,20 @@ async function submitForm() {
       let div = document.createElement("div");
       let name = document.createElement("p");
       let champ = document.createElement("p");
+      let image = document.createElement("img");
+      image.setAttribute(
+        "src",
+        "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/" +
+          keys[assignedChampions[i]] +
+          ".png"
+      );
       name.innerHTML = element;
       champ.innerHTML = championList[assignedChampions[i]];
       div.setAttribute("style", "margin-left: 2rem");
       div.setAttribute("class", "result__div");
       div.appendChild(name);
       div.appendChild(champ);
+      div.appendChild(image);
       resultdiv?.appendChild(div);
     });
   }
@@ -171,16 +216,26 @@ function getHighest(points: number[][]) {
   let index = 0;
   points.forEach((element, i) => {
     let temp = getMax(element);
+    console.log("max =" + temp);
+    console.log("points :  " + points[i]);
     if (maximum < temp) {
       maximum = temp;
       index = i;
     }
   });
+  console.log("hieghest = " + maximum);
   return index;
 }
 </script>
 
 <template>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
   <main class="main">
     <div>
       <div class="options">

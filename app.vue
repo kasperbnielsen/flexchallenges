@@ -11,6 +11,7 @@
   box-sizing: border-box;
   transition: 0.4s;
   line-height: 1.6;
+  font-family: montserrat;
 
   &::before,
   &::after {

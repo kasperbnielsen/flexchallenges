@@ -13,7 +13,7 @@ type Mastery = Array<{
   tokensEarned: number;
 }>;
 
-const APIKEY = "RGAPI-54626aca-0aeb-49c0-b1da-546de87200df";
+const APIKEY = "RGAPI-559a75b2-6333-4572-b1ae-874b853e433d";
 
 async function getMastery(puuid: number, apiKey: string) {
   const url =
@@ -43,6 +43,7 @@ export default defineEventHandler(async (event) => {
   }
   const tempName = decodeURI(event.context.params.username);
   let id = await getId(tempName, APIKEY);
+  console.log("ID =                                   " + id);
   let mastery = getMastery(id.puuid, APIKEY);
   return mastery;
 });
