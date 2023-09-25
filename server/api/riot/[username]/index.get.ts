@@ -37,7 +37,7 @@ async function getId(username: string, apiKey: string) {
   });
 }
 
-export default defineEventHandler(async (event) => {
+export default defineCachedEventHandler(async (event) => {
   if (!event?.context?.params?.username) {
     return;
   }
