@@ -43,6 +43,8 @@ let settings = ref<Setting>({
   },
 });
 
+let userPoint: { [name: string]: number[] } = {};
+
 let points = ref<Array<Array<number>>>([]);
 let players = ref<Mastery[]>([]);
 
@@ -114,7 +116,9 @@ function submitForm() {
       }
     }
     points.value[x] = championPoints;
+    userPoint[namesList[x]] = championPoints;
   }
+  console.log("userpoints =     " + JSON.stringify(userPoint));
 
   for (let i = 0; i < 5; i++) {
     let index = getHighest(points.value);
