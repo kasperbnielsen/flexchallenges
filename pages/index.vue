@@ -45,7 +45,6 @@ let settings = ref<Setting>({
 
 let players = ref<Mastery[]>([]);
 
-
 async function submitForm() {
   let assignedChampions = [0, 0, 0, 0, 0];
   let temp = settings.value.players;
@@ -57,33 +56,13 @@ async function submitForm() {
     temp.player5,
   ];
   namesList.forEach(async (player, i) => {
-    const fetchedData = await fetch( '/api/riot/' + player, {
-      method: 'get',
+    const fetchedData = await fetch("/api/riot/" + player, {
+      method: "get",
     }).then((res) => {
       return res;
-    })
-
-    players.value.push(await fetchedData.json());
-    
-    
-    
-    
-    
-    
-    /*players.value.push(
-      await axios
-        .get("/api/riot/" + player)
-        .then((res) => {
-          return res.data;
-        })
-        .catch((err) => {
-          console.log(err);
-        })
-    );
-*/
-    /*
-    let id = await getId(player, APIKEY);
-    players.value.push(await getMastery(id.puuid, APIKEY));*/
+    });
+    let pointData = await fetchedData.json();
+    players.value.push(await pointData);
   });
 
   let random = Math.random() * champions.regions.length;
@@ -94,8 +73,6 @@ async function submitForm() {
     championList.push(region[tempVal]);
     region.splice(tempVal, 1);
   });
-
-  console.log(championList);
 
   let keys: string[] = [];
 
@@ -137,8 +114,7 @@ async function submitForm() {
   });
 
   let resultdiv = document.querySelector(".result");
-  console.log(resultdiv?.hasChildNodes());
-  console.log(keys);
+
   if (
     resultdiv?.childElementCount != null &&
     resultdiv.childElementCount <= 1
