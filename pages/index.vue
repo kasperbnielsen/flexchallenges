@@ -16,6 +16,32 @@ type Mastery = Array<{
   tokensEarned: number;
 }>;
 
+type PlayerType = {
+  player1: { name: string[]; assignedChamp: string[]; key: string[] };
+  player2: { name: string[]; assignedChamp: string[]; key: string[] };
+  player3: { name: string[]; assignedChamp: string[]; key: string[] };
+  player4: { name: string[]; assignedChamp: string[]; key: string[] };
+  player5: { name: string[]; assignedChamp: string[]; key: string[] };
+};
+
+type ResponseBody = {
+  player1: number;
+  player2: number;
+  player3: number;
+  player4: number;
+  player5: number;
+};
+
+type RequestBody = {
+  namesList: {
+    player1: string;
+    player2: string;
+    player3: string;
+    player4: string;
+    player5: string;
+  };
+};
+
 type Setting = {
   option1: boolean;
   option2: boolean;
@@ -36,188 +62,51 @@ let settings = ref<Setting>({
   option3: false,
   players: {
     player1: "Huez",
-    player2: "Bøgvad",
+    player2: "IL0V3TH1SGAM3",
     player3: "Duke Camel",
     player4: "Knifedog",
     player5: "Jazyjewbag112",
   },
 });
 
-let tagList = [];
+function encodeData(list: string[]) {
+  let stringified = JSON.stringify(list);
 
-let userPoint: { [name: string]: number[] } = {};
+  const base64Filter = btoa(stringified);
 
-let points = ref<Array<Array<number>>>([]);
-let players = ref<Mastery[]>([]);
+  if (base64Filter.endsWith("=")) return base64Filter.replace(/=/g, "");
 
-async function fetchData(namesList: string[]) {
-  for (let i = 0; i < namesList.length; i++) {
-    const fetchedData = await fetch("/api/riot/" + namesList[i], {
-      method: "get",
-    }).then((res) => {
-      return res;
-    });
-    let pointData: Mastery = await fetchedData.json();
-    players.value.push(pointData);
-  }
+  return base64Filter;
 }
 
-function submitForm() {
-  let assignedChampions = [0, 0, 0, 0, 0];
-  let temp = settings.value.players;
-  let namesList = [
-    temp.player1,
-    temp.player2,
-    temp.player3,
-    temp.player4,
-    temp.player5,
-  ];
+let championList = ref<string[]>([]);
+let assignedChampions = ref<string[]>([]);
+let keys = ref<string[]>([]);
+let myObject2 = ref<PlayerType>();
 
-  fetchData(namesList);
-  /*
-  namesList.forEach(async (player, i) => {
-    const fetchedData = await fetch("/api/riot/" + player, {
-      method: "get",
-    }).then((res) => {
-      return res;
-    });
-    let pointData: Mastery = await fetchedData.json();
-    players.value.push(pointData);
-  });
-*/
-  let random = Math.random() * champions.regions.length;
-  let region = champions.regions[Math.floor(random)].slice(0);
-  let championList: string[] = [];
-  namesList.forEach((element) => {
-    let tempVal = Math.floor(Math.random() * region.length);
-    championList.push(region[tempVal]);
-    region.splice(tempVal, 1);
+async function fetchData2(list: string[]) {
+  let req: RequestBody = {
+    namesList: {
+      player1: list[0],
+      player2: list[1],
+      player3: list[2],
+      player4: list[3],
+      player5: list[4],
+    },
+  };
+  const data = await fetch("/api/riot/" + encodeData(list), {
+    method: "get",
+  }).then((res) => {
+    return res.json();
   });
 
-  console.log("names= " + namesList);
-  console.log("champions" + championList);
+  myObject2.value = data;
 
-  let keys: string[] = [];
-
-  championList.forEach((element) => {
-    keys.push(
-      champions.champions.data[element as keyof typeof champions.champions.data]
-        .key
-    );
-  });
-
-  //let points: Array<Array<number>> = [];
-  for (let x = 0; x < 5; x++) {
-    let championPoints = [0, 0, 0, 0, 0];
-    for (let i = 0; i < keys.length; i++) {
-      for (let j = 0; j < players.value[x]?.length; j++) {
-        if (players.value[x][j].championId == +keys[i]) {
-          championPoints[i] = players.value[x][j].championPoints;
-          break;
-        }
-      }
-    }
-    points.value[x] = championPoints;
-    userPoint[namesList[x]] = championPoints;
-  }
-  console.log("userpoints =     " + JSON.stringify(userPoint));
-
-  for (let i = 0; i < 5; i++) {
-    let index = getHighest(points.value);
-    assignedChampions[index] = points.value[index].findIndex(
-      (element) => element == getMax(points.value[index])
-    );
-    console.log(assignedChampions[index]);
-    points.value[index] = [0, 0, 0, 0, 0];
-    points.value.forEach((e) => {
-      e[assignedChampions[index]] = 0;
-    });
-  }
-
-  namesList.forEach((element, i) => {
-    console.log(element, championList[assignedChampions[i]]);
-  });
-
-  let resultdiv = document.querySelector(".result");
-
-  if (
-    resultdiv?.childElementCount != null &&
-    resultdiv.childElementCount <= 1
-  ) {
-    namesList.forEach((element, i) => {
-      let div = document.createElement("div");
-      let name = document.createElement("p");
-      let champ = document.createElement("p");
-      let image = document.createElement("img");
-      image.setAttribute(
-        "src",
-        "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/" +
-          keys[assignedChampions[i]] +
-          ".png"
-      );
-      name.innerHTML = element;
-      champ.innerHTML = championList[assignedChampions[i]];
-      div.setAttribute("style", "margin-left: 2rem");
-      div.setAttribute("class", "result__div");
-      div.appendChild(name);
-      div.appendChild(champ);
-      div.appendChild(image);
-      resultdiv?.appendChild(div);
-    });
-  } else {
-    let divs = document.querySelectorAll(".result__div");
-    divs.forEach((element) => {
-      element.remove();
-    });
-    namesList.forEach((element, i) => {
-      let div = document.createElement("div");
-      let name = document.createElement("p");
-      let champ = document.createElement("p");
-      let image = document.createElement("img");
-      image.setAttribute(
-        "src",
-        "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/" +
-          keys[assignedChampions[i]] +
-          ".png"
-      );
-      name.innerHTML = element;
-      champ.innerHTML = championList[assignedChampions[i]];
-      div.setAttribute("style", "margin-left: 2rem");
-      div.setAttribute("class", "result__div");
-      div.appendChild(name);
-      div.appendChild(champ);
-      div.appendChild(image);
-      resultdiv?.appendChild(div);
-    });
-  }
-}
-
-function getMax(arr: number[]) {
-  let tempMax = 0;
-  let index = 0;
-  console.log(arr);
-  arr.forEach((element, i) => {
-    if (element > tempMax) {
-      index = i;
-      tempMax = element;
-    }
-  });
-  return tempMax;
-}
-
-function getHighest(points: number[][]) {
-  let maximum = 0;
-  let index = 0;
-  points.forEach((element, i) => {
-    let temp = getMax(element);
-    console.log("max =" + temp);
-    if (maximum < temp) {
-      maximum = temp;
-      index = i;
-    }
-  });
-  console.log("hieghest = " + maximum);
-  return index;
+  /*assignedChampions.value = data.assignedChamps;
+  keys.value = data.keys;
+  championList.value = data.champs;*/
+  console.log(JSON.stringify(data));
+  return data;
 }
 </script>
 
@@ -248,7 +137,15 @@ function getHighest(points: number[][]) {
             'options__button--selected': settings.option2,
           }"
           type="button"
-          @click="settings.option2 = !settings.option2"
+          @click="
+            fetchData2([
+              'huez',
+              'duke camel',
+              'bonylysho',
+              'knifedog',
+              'jazyjewbag112',
+            ])
+          "
         >
           Option 2
         </button>
@@ -264,7 +161,18 @@ function getHighest(points: number[][]) {
           <span v-else>Random</span>
         </button>
       </div>
-      <form class="form" @submit.prevent="submitForm()">
+      <form
+        class="form"
+        @submit.prevent="
+          fetchData2([
+            settings.players.player1,
+            settings.players.player2,
+            settings.players.player3,
+            settings.players.player4,
+            settings.players.player5,
+          ])
+        "
+      >
         <label class="form__label" for="player1">Player 1</label>
         <input
           v-model.lazy="settings.players.player1"
@@ -303,7 +211,23 @@ function getHighest(points: number[][]) {
         <button type="submit" class="form__button">Submit</button>
       </form>
     </div>
-    <div class="result"></div>
+    <div class="result">
+      <div
+        v-for="(player, playerIndex) of myObject2"
+        :key="playerIndex"
+        :class="'result__div'"
+      >
+        <p>{{ player.name }}</p>
+        <p>{{ player.key ?? "not found" }}</p>
+        <img
+          :src="
+            'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/' +
+            player.assignedChamp +
+            '.png'
+          "
+        />
+      </div>
+    </div>
   </main>
 </template>
 <style scoped lang="scss">
