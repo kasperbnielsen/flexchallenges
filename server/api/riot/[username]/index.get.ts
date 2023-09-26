@@ -13,7 +13,7 @@ type Mastery = Array<{
   tokensEarned: number;
 }>;
 
-const APIKEY = "RGAPI-559a75b2-6333-4572-b1ae-874b853e433d";
+const APIKEY = "RGAPI-066f5cbe-d050-4e2b-b64a-841ed7d4626f";
 
 async function getMastery(puuid: number, apiKey: string) {
   const url =
@@ -21,11 +21,18 @@ async function getMastery(puuid: number, apiKey: string) {
     puuid +
     "?api_key=" +
     apiKey;
-  let res = await fetch(url, { method: "GET" }).then((response) => {
-    return response;
-  });
+  let res = await fetch(url, { method: "GET" })
+    .then((response) => {
+      if (response.ok) {
+        return response;
+      }
+      throw new Error("rate limit hit");
+    })
+    .catch((err) => {
+      console.log("error : " + err.status);
+    });
 
-  return await res.json();
+  return await res?.json();
 }
 
 async function getId(username: string, apiKey: string) {

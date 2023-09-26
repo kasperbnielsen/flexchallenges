@@ -43,6 +43,8 @@ let settings = ref<Setting>({
   },
 });
 
+let tagList = [];
+
 let userPoint: { [name: string]: number[] } = {};
 
 let points = ref<Array<Array<number>>>([]);
