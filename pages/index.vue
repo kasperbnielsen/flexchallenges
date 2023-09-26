@@ -94,7 +94,7 @@ function submitForm() {
         }
       }
     }
-    points.push(championPoints);
+    points[x] = championPoints;
   }
 
   for (let i = 0; i < 5; i++) {
