@@ -43,6 +43,7 @@ let settings = ref<Setting>({
   },
 });
 
+let points = ref<Array<Array<number>>>([]);
 let players = ref<Mastery[]>([]);
 
 function submitForm() {
@@ -74,6 +75,9 @@ function submitForm() {
     region.splice(tempVal, 1);
   });
 
+  console.log("names= " + namesList);
+  console.log("champions" + championList);
+
   let keys: string[] = [];
 
   championList.forEach((element) => {
@@ -83,7 +87,7 @@ function submitForm() {
     );
   });
 
-  let points: Array<Array<number>> = [];
+  //let points: Array<Array<number>> = [];
   for (let x = 0; x < 5; x++) {
     let championPoints = [0, 0, 0, 0, 0];
     for (let i = 0; i < keys.length; i++) {
@@ -94,17 +98,17 @@ function submitForm() {
         }
       }
     }
-    points[x] = championPoints;
+    points.value[x] = championPoints;
   }
 
   for (let i = 0; i < 5; i++) {
-    let index = getHighest(points);
-    assignedChampions[index] = points[index].findIndex(
-      (element) => element == getMax(points[index])
+    let index = getHighest(points.value);
+    assignedChampions[index] = points.value[index].findIndex(
+      (element) => element == getMax(points.value[index])
     );
     console.log(assignedChampions[index]);
-    points[index] = [0, 0, 0, 0, 0];
-    points.forEach((e) => {
+    points.value[index] = [0, 0, 0, 0, 0];
+    points.value.forEach((e) => {
       e[assignedChampions[index]] = 0;
     });
   }
