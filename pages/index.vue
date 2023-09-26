@@ -46,6 +46,18 @@ let settings = ref<Setting>({
 let points = ref<Array<Array<number>>>([]);
 let players = ref<Mastery[]>([]);
 
+async function fetchData(namesList: string[]) {
+  for (let i = 0; i < namesList.length; i++) {
+    const fetchedData = await fetch("/api/riot/" + namesList[i], {
+      method: "get",
+    }).then((res) => {
+      return res;
+    });
+    let pointData: Mastery = await fetchedData.json();
+    players.value.push(pointData);
+  }
+}
+
 function submitForm() {
   let assignedChampions = [0, 0, 0, 0, 0];
   let temp = settings.value.players;
@@ -56,6 +68,9 @@ function submitForm() {
     temp.player4,
     temp.player5,
   ];
+
+  fetchData(namesList);
+  /*
   namesList.forEach(async (player, i) => {
     const fetchedData = await fetch("/api/riot/" + player, {
       method: "get",
@@ -65,7 +80,7 @@ function submitForm() {
     let pointData: Mastery = await fetchedData.json();
     players.value.push(pointData);
   });
-
+*/
   let random = Math.random() * champions.regions.length;
   let region = champions.regions[Math.floor(random)].slice(0);
   let championList: string[] = [];
