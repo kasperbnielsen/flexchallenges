@@ -45,7 +45,7 @@ let settings = ref<Setting>({
 
 let players = ref<Mastery[]>([]);
 
-async function submitForm() {
+function submitForm() {
   let assignedChampions = [0, 0, 0, 0, 0];
   let temp = settings.value.players;
   let namesList = [
