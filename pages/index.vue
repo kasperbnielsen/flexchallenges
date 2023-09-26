@@ -61,8 +61,8 @@ async function submitForm() {
     }).then((res) => {
       return res;
     });
-    let pointData = await fetchedData.json();
-    players.value.push(await pointData);
+    let pointData: Mastery = await fetchedData.json();
+    players.value.push(pointData);
   });
 
   let random = Math.random() * champions.regions.length;
@@ -170,6 +170,7 @@ async function submitForm() {
 function getMax(arr: number[]) {
   let tempMax = 0;
   let index = 0;
+  console.log(arr);
   arr.forEach((element, i) => {
     if (element > tempMax) {
       index = i;
@@ -185,7 +186,6 @@ function getHighest(points: number[][]) {
   points.forEach((element, i) => {
     let temp = getMax(element);
     console.log("max =" + temp);
-    console.log("points :  " + points[i]);
     if (maximum < temp) {
       maximum = temp;
       index = i;
