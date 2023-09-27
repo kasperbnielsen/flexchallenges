@@ -1,24 +1,12 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
-import champions from "../assets/champions";
-import axios, { Axios, all, type AxiosResponse } from "axios";
+import { ref } from "vue";
 import Multiselect from "@vueform/multiselect";
+import champions from "../assets/champions";
 
-type Mastery = Array<{
-  championId: number;
-  championLevel: number;
-  championPoints: number;
-  championPointsSinceLastLevel: number;
-  championPointsUntilNextLevel: number;
-  chestGranted: boolean;
-  lastPlayTime: number;
-  puuid: string;
-  summonerId: string;
-  tokensEarned: number;
-}>;
-
-let value = ref<string[]>([]);
-let optionsList: string[] = ["option1", "option2", "option3"];
+const value = ref<string[]>([]);
+const value2 = ref<string[]>([]);
+const optionsList = Object.keys(champions.regions);
+const optionsList2 = Object.keys(champions.teamComps);
 
 type PlayerType = {
   player1: { name: string[]; assignedChamp: string[]; key: string[] };
@@ -26,24 +14,6 @@ type PlayerType = {
   player3: { name: string[]; assignedChamp: string[]; key: string[] };
   player4: { name: string[]; assignedChamp: string[]; key: string[] };
   player5: { name: string[]; assignedChamp: string[]; key: string[] };
-};
-
-type ResponseBody = {
-  player1: number;
-  player2: number;
-  player3: number;
-  player4: number;
-  player5: number;
-};
-
-type RequestBody = {
-  namesList: {
-    player1: string;
-    player2: string;
-    player3: string;
-    player4: string;
-    player5: string;
-  };
 };
 
 type Setting = {
@@ -60,7 +30,7 @@ type Setting = {
   };
 };
 
-let settings = ref<Setting>({
+const settings = ref<Setting>({
   option1: false,
   option2: false,
   option3: false,
@@ -73,8 +43,8 @@ let settings = ref<Setting>({
   },
 });
 
-function encodeData(list: string[]) {
-  let stringified = JSON.stringify(list);
+function encodeData(list: {}) {
+  const stringified = JSON.stringify(list);
 
   const base64Filter = btoa(stringified);
 
@@ -83,17 +53,25 @@ function encodeData(list: string[]) {
   return base64Filter;
 }
 
-let championList = ref<string[]>([]);
-let assignedChampions = ref<string[]>([]);
-let keys = ref<string[]>([]);
-let myObject2 = ref<PlayerType>();
+const myObject2 = ref<PlayerType>();
 
-async function fetchData2(list: string[]) {
-  const data = await fetch("/api/riot/" + encodeData(list), {
-    method: "get",
-  }).then((res) => {
-    return res.json();
-  });
+async function fetchData2() {
+  const list = Object.values(settings.value.players);
+  let isRegions = true;
+  let options;
+  if (settings.value.option2) {
+    options = value2.value;
+    isRegions = false;
+  } else {
+    isRegions = true;
+    options = value.value;
+  }
+  const data = await fetch(
+    `/api/riot/${encodeData({ list, options, isRegions })}`,
+    {
+      method: "get",
+    }
+  ).then((res) => res.json());
 
   myObject2.value = data;
 
@@ -106,10 +84,10 @@ async function fetchData2(list: string[]) {
     <div>
       <div class="options">
         <button
+          class="options__button"
           :class="{
             'options__button--selected': settings.option1,
           }"
-          class="options__button"
           type="button"
           @click="settings.option1 = !settings.option1"
         >
@@ -117,40 +95,32 @@ async function fetchData2(list: string[]) {
         </button>
         <button
           class="options__button"
-          :class="{
-            'options__button--selected': settings.option2,
-          }"
           type="button"
           @click="settings.option2 = !settings.option2"
         >
           <span v-if="settings.option2">Comps</span>
           <span v-else>Regions</span>
         </button>
-        <button
-          class="options__button"
-          :class="{
-            'options__button--selected': settings.option3,
-          }"
-          type="button"
-          @click="settings.option3 = !settings.option3"
-        >
-          <span v-if="settings.option3">Specific</span>
-          <span v-else>Random</span>
-        </button>
-        <Multiselect v-model="value" :options="optionsList" mode="tags" />
+        <Multiselect
+          v-if="!settings.option2"
+          v-model="value"
+          aria-label="sup"
+          class="options__select"
+          mode="tags"
+          :options="optionsList"
+          placeholder="Include regions"
+        />
+        <Multiselect
+          v-else
+          v-model="value2"
+          aria-label="sup"
+          class="options__select"
+          mode="tags"
+          :options="optionsList2"
+          placeholder="Include comps"
+        />
       </div>
-      <form
-        class="form"
-        @submit.prevent="
-          fetchData2([
-            settings.players.player1,
-            settings.players.player2,
-            settings.players.player3,
-            settings.players.player4,
-            settings.players.player5,
-          ])
-        "
-      >
+      <form class="form" @submit.prevent="fetchData2()">
         <label class="form__label" for="player1">Player 1</label>
         <input
           v-model.lazy="settings.players.player1"
@@ -186,24 +156,24 @@ async function fetchData2(list: string[]) {
           name="player5"
         />
 
-        <button type="submit" class="form__button">Submit</button>
+        <button class="form__button" type="submit">Submit</button>
       </form>
     </div>
     <div class="result">
       <div
         v-for="(player, playerIndex) of myObject2"
         :key="playerIndex"
-        :class="'result__div'"
+        class="result__div"
       >
         <p>{{ player.name }}</p>
         <p>{{ player.key ?? "not found" }}</p>
         <img
+          class="result__div--image"
           :src="
             'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/' +
             player.assignedChamp +
             '.png'
           "
-          :class="'result__div--image'"
         />
       </div>
     </div>
@@ -233,30 +203,43 @@ async function fetchData2(list: string[]) {
   &__name {
     color: green !important;
   }
+
   &__div {
     text-align: center;
     margin-left: 4rem;
-    &--image {
-    }
   }
 }
 
 .options {
+  display: flex;
   margin-bottom: 2rem;
   justify-content: center;
+
+  &__select {
+    height: 5rem;
+    width: 20rem;
+    padding: 0.5rem 1.5rem;
+    margin: 0 1rem;
+    border: 3px solid black;
+  }
+
   &__button {
     padding: 0.5rem 1.5rem;
     margin: 0 1rem;
     border: 3px solid black;
+    width: 10rem;
+
     &--selected {
       background-color: grey;
     }
   }
 }
+
 .form {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   &__label {
     font-weight: 600;
   }
@@ -281,6 +264,7 @@ async function fetchData2(list: string[]) {
     padding: 1rem 2rem;
     border: 2px solid grey;
     border-radius: 5px;
+
     &--error {
     }
 

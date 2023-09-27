@@ -1,0 +1,70 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "@nuxtjs/eslint-config-typescript",
+    "plugin:tailwindcss/recommended",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "parser": "@typescript-eslint/parser",
+    "sourceType": "module"
+  },
+  "plugins": ["vue", "@typescript-eslint", "tailwindcss"],
+  "rules": {
+    "vue/multi-word-component-names": "off",
+    "tailwindcss/no-custom-classname": "off",
+    "tailwindcss/no-contradicting-classname": "warn", // TODO: turn this on again
+    "no-useless-concat": "error",
+    "prefer-template": "error", // Warn if using options api
+    "vue/component-api-style": ["warn", ["script-setup", "composition"]],
+    "vue/attributes-order": [
+      "warn",
+      {
+        "order": [
+          "DEFINITION",
+          "LIST_RENDERING",
+          "CONDITIONALS",
+          "RENDER_MODIFIERS",
+          "GLOBAL",
+          ["UNIQUE", "SLOT"],
+          "TWO_WAY_BINDING",
+          "OTHER_DIRECTIVES",
+          "OTHER_ATTR",
+          "EVENTS",
+          "CONTENT"
+        ],
+        "alphabetical": true
+      }
+    ], // Only allow TS
+    "vue/block-lang": ["error", { "script": { "lang": "ts" } }],
+    "vue/component-name-in-template-casing": [
+      "error",
+      "PascalCase",
+      { "registeredComponentsOnly": true, "ignores": [] }
+    ],
+    "vue/define-emits-declaration": ["error", "type-based"],
+    "vue/define-macros-order": [
+      "error",
+      { "order": ["defineProps", "defineEmits"] }
+    ],
+    "vue/no-empty-component-block": "warn",
+    "vue/no-multiple-objects-in-class": "error",
+    "vue/no-potential-component-option-typo": [
+      "error",
+      { "presets": ["vue"], "threshold": 5 }
+    ],
+    "vue/no-static-inline-styles": ["warn", { "allowBinding": false }],
+    "vue/no-unused-properties": "warn",
+    "vue/prefer-prop-type-boolean-first": "warn",
+    "vue/prefer-separate-static-class": "warn",
+    "arrow-body-style": ["error", "as-needed"]
+  }
+}

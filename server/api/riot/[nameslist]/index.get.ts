@@ -1,5 +1,6 @@
-const APIKEY = "RGAPI-066f5cbe-d050-4e2b-b64a-841ed7d4626f";
-import champions from "../../../../assets/champions";
+import champions from "~/assets/champions";
+
+const APIKEY = "RGAPI-7aa9f16d-2c4c-4387-a769-5fa6c11c3630";
 
 type Mastery = Array<{
   championId: number;
@@ -15,17 +16,17 @@ type Mastery = Array<{
 }>;
 
 function getChampions(region: string[]) {
-  let champList = new Set<string>();
+  const champList = new Set<string>();
 
   while (champList.size < 5) {
-    let n = Math.floor(Math.random() * region.length);
+    const n = Math.floor(Math.random() * region.length);
     champList.add(region[n]);
   }
   return Array.from(champList);
 }
 
 function getPlayerMastery(champs: Mastery, champList: string[]) {
-  let playerMasteries: number[] = [1, 1, 1, 1, 1];
+  const playerMasteries: number[] = [1, 1, 1, 1, 1];
   console.log(champList);
   for (let i = 0; i < champList.length; i++) {
     for (let j = 0; j < champs.length; j++) {
@@ -38,13 +39,13 @@ function getPlayerMastery(champs: Mastery, champList: string[]) {
 }
 
 function getRegion() {
-  return champions.regions[
-    Math.floor(Math.random() * champions.regions.length)
-  ];
+  const reg = champions.regionsList;
+  Object.keys(champions.regions);
+  return reg[Math.floor(Math.random() * reg.length)];
 }
 
 function getKeys(championList: string[]) {
-  let keyList: string[] = [];
+  const keyList: string[] = [];
   championList.forEach((element) => {
     if (champions.champions.hasOwnProperty(element)) {
       keyList.push(
@@ -64,11 +65,9 @@ function decode(input: string) {
 
 function getMax(arr: number[]) {
   let tempMax = 0;
-  let index = 0;
   console.log(arr);
-  arr.forEach((element, i) => {
+  arr.forEach((element) => {
     if (element > tempMax) {
-      index = i;
       tempMax = element;
     }
   });
@@ -80,37 +79,25 @@ function getHighest(points: number[][]) {
   let maximum = 0;
   let index = 0;
   points.forEach((element, i) => {
-    let temp = getMax(element);
-    console.log("max =" + temp);
+    const temp = getMax(element);
+    console.log(`max =${temp}`);
     if (maximum < temp) {
       maximum = temp;
       index = i;
     }
   });
-  console.log("hieghest = " + maximum);
+  console.log(`hieghest = ${maximum}`);
   return index;
 }
 
 async function getMastery(puuid: number, apiKey: string) {
-  const url =
-    "https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-puuid/" +
-    puuid +
-    "?api_key=" +
-    apiKey;
-  return await fetch(url, { method: "GET" }).then((res) => {
-    return res.json();
-  });
+  const url = `https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-puuid/${puuid}?api_key=${apiKey}`;
+  return await fetch(url, { method: "GET" }).then((res) => res.json());
 }
 
 async function getId(username: string, apiKey: string) {
-  const url =
-    "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" +
-    username +
-    "?api_key=" +
-    apiKey;
-  let resp = await fetch(url, { method: "GET" }).then((response) => {
-    return response;
-  });
+  const url = `https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${username}?api_key=${apiKey}`;
+  const resp = await fetch(url, { method: "GET" }).then((response) => response);
   return await resp.json();
 }
 
@@ -118,30 +105,55 @@ export default defineEventHandler(async (event) => {
   if (!event?.context?.params?.nameslist) {
     return;
   }
-  let names: string[] = decode(event?.context?.params?.nameslist);
 
-  let champs = getChampions(getRegion());
+  const names: { list: string[]; options: string[]; isRegions: boolean } =
+    decode(event?.context?.params?.nameslist);
+  console.log(names);
+  let champs;
 
-  let keys = getKeys(champs);
+  if (names.options.length === 0) {
+    champs = names.isRegions
+      ? getChampions(getRegion())
+      : getChampions(
+          champions.teamCompsList[
+            Math.floor(Math.random() * champions.teamCompsList.length)
+          ]
+        );
+  } else {
+    champs = names.isRegions
+      ? getChampions(
+          // @ts-expect-error Shitty type
+          champions.regions[
+            names.options[Math.floor(Math.random() * names.options.length)]
+          ]
+        )
+      : getChampions(
+          // @ts-expect-error Shitty type
+          champions.teamComps[
+            names.options[Math.floor(Math.random() * names.options.length)]
+          ]
+        );
+  }
+  const keys = getKeys(champs);
 
-  let masteryPoints: Array<Array<number>> = [];
+  const masteryPoints: Array<Array<number>> = [];
 
-  for (const name of names) {
-    let id = await getId(name, APIKEY);
-    let mastery = await getMastery(id.puuid, APIKEY);
-    let playerMastery = getPlayerMastery(mastery, keys);
+  for (const name of names.list) {
+    const id = await getId(name, APIKEY);
+    const mastery = await getMastery(id.puuid, APIKEY);
+    const playerMastery = getPlayerMastery(mastery, keys);
     masteryPoints.push(playerMastery);
   }
 
   console.log(masteryPoints);
-  let newChampList = [];
+  const newChampList = [];
 
-  let assignedChamps = [];
+  const assignedChamps = [];
 
   for (let i = 0; i < 5; i++) {
-    let indexOfPlayer = getHighest(masteryPoints);
-    let indexOfChampion = masteryPoints[indexOfPlayer].findIndex(
-      (element) => element == getMax(masteryPoints[indexOfPlayer])
+    const indexOfPlayer = getHighest(masteryPoints);
+    const indexOfChampion = masteryPoints[indexOfPlayer].findIndex(
+      (element) => element === getMax(masteryPoints[indexOfPlayer])
     );
 
     assignedChamps[indexOfPlayer] = keys[indexOfChampion];
@@ -154,41 +166,35 @@ export default defineEventHandler(async (event) => {
     }
   }
 
-  let myObject2 = {
+  const myObject2 = {
     player1: {
-      name: names[0],
+      name: names.list[0],
       assignedChamp: assignedChamps[0],
       key: newChampList[0],
     },
     player2: {
-      name: names[1],
+      name: names.list[1],
       assignedChamp: assignedChamps[1],
       key: newChampList[1],
     },
     player3: {
-      name: names[2],
+      name: names.list[2],
       assignedChamp: assignedChamps[2],
       key: newChampList[2],
     },
     player4: {
-      name: names[3],
+      name: names.list[3],
       assignedChamp: assignedChamps[3],
       key: newChampList[3],
     },
     player5: {
-      name: names[4],
+      name: names.list[4],
       assignedChamp: assignedChamps[4],
       key: newChampList[4],
     },
   };
 
-  let myObject = {
-    names: assignedChamps,
-    keys: keys,
-    champs: champs,
-  };
-
-  console.log(assignedChamps);
+  console.log(myObject2);
 
   return myObject2;
 });
