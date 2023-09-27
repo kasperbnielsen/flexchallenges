@@ -2,6 +2,7 @@
 import { ref, watch } from "vue";
 import champions from "../assets/champions";
 import axios, { Axios, all, type AxiosResponse } from "axios";
+import Multiselect from "@vueform/multiselect";
 
 type Mastery = Array<{
   championId: number;
@@ -15,6 +16,9 @@ type Mastery = Array<{
   summonerId: string;
   tokensEarned: number;
 }>;
+
+let value = ref<string[]>([]);
+let optionsList: string[] = ["option1", "option2", "option3"];
 
 type PlayerType = {
   player1: { name: string[]; assignedChamp: string[]; key: string[] };
@@ -85,15 +89,6 @@ let keys = ref<string[]>([]);
 let myObject2 = ref<PlayerType>();
 
 async function fetchData2(list: string[]) {
-  let req: RequestBody = {
-    namesList: {
-      player1: list[0],
-      player2: list[1],
-      player3: list[2],
-      player4: list[3],
-      player5: list[4],
-    },
-  };
   const data = await fetch("/api/riot/" + encodeData(list), {
     method: "get",
   }).then((res) => {
@@ -102,22 +97,11 @@ async function fetchData2(list: string[]) {
 
   myObject2.value = data;
 
-  /*assignedChampions.value = data.assignedChamps;
-  keys.value = data.keys;
-  championList.value = data.champs;*/
-  console.log(JSON.stringify(data));
   return data;
 }
 </script>
 
 <template>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
-
   <main class="main">
     <div>
       <div class="options">
@@ -129,7 +113,7 @@ async function fetchData2(list: string[]) {
           type="button"
           @click="settings.option1 = !settings.option1"
         >
-          Option 1
+          Reaccuring
         </button>
         <button
           class="options__button"
@@ -137,17 +121,10 @@ async function fetchData2(list: string[]) {
             'options__button--selected': settings.option2,
           }"
           type="button"
-          @click="
-            fetchData2([
-              'huez',
-              'duke camel',
-              'bonylysho',
-              'knifedog',
-              'jazyjewbag112',
-            ])
-          "
+          @click="settings.option2 = !settings.option2"
         >
-          Option 2
+          <span v-if="settings.option2">Comps</span>
+          <span v-else>Regions</span>
         </button>
         <button
           class="options__button"
@@ -160,6 +137,7 @@ async function fetchData2(list: string[]) {
           <span v-if="settings.option3">Specific</span>
           <span v-else>Random</span>
         </button>
+        <Multiselect v-model="value" :options="optionsList" mode="tags" />
       </div>
       <form
         class="form"
@@ -225,6 +203,7 @@ async function fetchData2(list: string[]) {
             player.assignedChamp +
             '.png'
           "
+          :class="'result__div--image'"
         />
       </div>
     </div>
@@ -234,16 +213,31 @@ async function fetchData2(list: string[]) {
 .main {
   padding: 4rem 8rem;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1.5fr 2.5fr;
   width: 100%;
   height: 100%;
   justify-content: center;
 }
 
 .result {
+  &__button {
+    &--image {
+    }
+  }
+}
+
+.result {
   display: flex;
+  justify-content: center;
+
   &__name {
     color: green !important;
+  }
+  &__div {
+    text-align: center;
+    margin-left: 4rem;
+    &--image {
+    }
   }
 }
 
@@ -295,3 +289,4 @@ async function fetchData2(list: string[]) {
   }
 }
 </style>
+<style src="@vueform/multiselect/themes/default.css"></style>
