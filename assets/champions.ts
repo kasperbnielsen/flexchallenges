@@ -352,7 +352,23 @@ const Void = [
   "RekSai",
   "Velkoz",
 ];
-const regions = [
+const regions = {
+  Bilgewater,
+  Demacia,
+  Freljord,
+  Ionia,
+  Noxus,
+  Piltover,
+  Zaun,
+  ShadowIsles,
+  Shurima,
+  Targon,
+  BandleCity,
+  Ixtal,
+  Void,
+};
+
+const regionsList = [
   Bilgewater,
   Demacia,
   Freljord,
@@ -775,4 +791,4 @@ const teamComps = [
   terrainComp,
 ];
 
-export default { champions, regions, teamComps };
+export default { champions, regions, teamComps, regionsList };

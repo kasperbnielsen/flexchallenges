@@ -1,5 +1,7 @@
-const APIKEY = "RGAPI-066f5cbe-d050-4e2b-b64a-841ed7d4626f";
-import champions from "../../../../assets/champions";
+import champions from "~/assets/champions";
+
+const APIKEY = "RGAPI-7aa9f16d-2c4c-4387-a769-5fa6c11c3630";
+
 
 type Mastery = Array<{
   championId: number;
@@ -14,18 +16,18 @@ type Mastery = Array<{
   tokensEarned: number;
 }>;
 
-function getChampions(region: string[]) {
-  let champList = new Set<string>();
+function getChampions(region: string) {
+  const champList = new Set<string>();
 
   while (champList.size < 5) {
-    let n = Math.floor(Math.random() * region.length);
+    const n = Math.floor(Math.random() * region.length);
     champList.add(region[n]);
   }
-  return Array.from(champList);
+  return Array.from(champList)  ;
 }
 
 function getPlayerMastery(champs: Mastery, champList: string[]) {
-  let playerMasteries: number[] = [1, 1, 1, 1, 1];
+  const playerMasteries: number[] = [1, 1, 1, 1, 1];
   console.log(champList);
   for (let i = 0; i < champList.length; i++) {
     for (let j = 0; j < champs.length; j++) {
@@ -38,13 +40,14 @@ function getPlayerMastery(champs: Mastery, champList: string[]) {
 }
 
 function getRegion() {
-  return champions.regions[
-    Math.floor(Math.random() * champions.regions.length)
+  const reg = Object.keys(champions.regionsList);
+  return reg[
+    Math.floor(Math.random() * reg.length)
   ];
 }
 
 function getKeys(championList: string[]) {
-  let keyList: string[] = [];
+  const keyList: string[] = [];
   championList.forEach((element) => {
     if (champions.champions.hasOwnProperty(element)) {
       keyList.push(
@@ -64,11 +67,9 @@ function decode(input: string) {
 
 function getMax(arr: number[]) {
   let tempMax = 0;
-  let index = 0;
   console.log(arr);
-  arr.forEach((element, i) => {
+  arr.forEach((element) => {
     if (element > tempMax) {
-      index = i;
       tempMax = element;
     }
   });
@@ -80,7 +81,7 @@ function getHighest(points: number[][]) {
   let maximum = 0;
   let index = 0;
   points.forEach((element, i) => {
-    let temp = getMax(element);
+    const temp = getMax(element);
     console.log("max =" + temp);
     if (maximum < temp) {
       maximum = temp;
@@ -108,7 +109,7 @@ async function getId(username: string, apiKey: string) {
     username +
     "?api_key=" +
     apiKey;
-  let resp = await fetch(url, { method: "GET" }).then((response) => {
+  const resp = await fetch(url, { method: "GET" }).then((response) => {
     return response;
   });
   return await resp.json();
@@ -118,30 +119,31 @@ export default defineEventHandler(async (event) => {
   if (!event?.context?.params?.nameslist) {
     return;
   }
-  let names: string[] = decode(event?.context?.params?.nameslist);
+  const names: {list: string[], regions: string[]} = decode(event?.context?.params?.nameslist);
+  console.log("decoded; " + names.regions)
+ 
 
-  let champs = getChampions(getRegion());
+  const champs = getChampions(getRegion())
+  const keys = getKeys(champs);
 
-  let keys = getKeys(champs);
+  const masteryPoints: Array<Array<number>> = [];
 
-  let masteryPoints: Array<Array<number>> = [];
-
-  for (const name of names) {
-    let id = await getId(name, APIKEY);
-    let mastery = await getMastery(id.puuid, APIKEY);
-    let playerMastery = getPlayerMastery(mastery, keys);
+  for (const name of names.list) {
+    const id = await getId(name, APIKEY);
+    const mastery = await getMastery(id.puuid, APIKEY);
+    const playerMastery = getPlayerMastery(mastery, keys);
     masteryPoints.push(playerMastery);
   }
 
   console.log(masteryPoints);
-  let newChampList = [];
+  const newChampList = [];
 
-  let assignedChamps = [];
+  const assignedChamps = [];
 
   for (let i = 0; i < 5; i++) {
-    let indexOfPlayer = getHighest(masteryPoints);
-    let indexOfChampion = masteryPoints[indexOfPlayer].findIndex(
-      (element) => element == getMax(masteryPoints[indexOfPlayer])
+    const indexOfPlayer = getHighest(masteryPoints);
+    const indexOfChampion = masteryPoints[indexOfPlayer].findIndex(
+      (element) => element === getMax(masteryPoints[indexOfPlayer])
     );
 
     assignedChamps[indexOfPlayer] = keys[indexOfChampion];
@@ -154,41 +156,35 @@ export default defineEventHandler(async (event) => {
     }
   }
 
-  let myObject2 = {
+  const myObject2 = {
     player1: {
-      name: names[0],
+      name: names.list[0],
       assignedChamp: assignedChamps[0],
       key: newChampList[0],
     },
     player2: {
-      name: names[1],
+      name: names.list[1],
       assignedChamp: assignedChamps[1],
       key: newChampList[1],
     },
     player3: {
-      name: names[2],
+      name: names.list[2],
       assignedChamp: assignedChamps[2],
       key: newChampList[2],
     },
     player4: {
-      name: names[3],
+      name: names.list[3],
       assignedChamp: assignedChamps[3],
       key: newChampList[3],
     },
     player5: {
-      name: names[4],
+      name: names.list[4],
       assignedChamp: assignedChamps[4],
       key: newChampList[4],
     },
   };
 
-  let myObject = {
-    names: assignedChamps,
-    keys: keys,
-    champs: champs,
-  };
-
-  console.log(assignedChamps);
+  console.log(myObject2);
 
   return myObject2;
 });

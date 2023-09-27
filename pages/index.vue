@@ -18,7 +18,8 @@ type Mastery = Array<{
 }>;
 
 let value = ref<string[]>([]);
-let optionsList: string[] = ["option1", "option2", "option3"];
+let optionsList = Object.keys(champions.regions);
+
 
 type PlayerType = {
   player1: { name: string[]; assignedChamp: string[]; key: string[] };
@@ -73,7 +74,7 @@ let settings = ref<Setting>({
   },
 });
 
-function encodeData(list: string[]) {
+function encodeData(list: {}) {
   let stringified = JSON.stringify(list);
 
   const base64Filter = btoa(stringified);
@@ -88,8 +89,9 @@ let assignedChampions = ref<string[]>([]);
 let keys = ref<string[]>([]);
 let myObject2 = ref<PlayerType>();
 
-async function fetchData2(list: string[]) {
-  const data = await fetch("/api/riot/" + encodeData(list), {
+async function fetchData2(list: string[], regions: string[]) {
+  console.log(encodeData({ list: list, regions: regions }))
+  const data = await fetch("/api/riot/" + encodeData({ list: list, regions: regions }), {
     method: "get",
   }).then((res) => {
     return res.json();
@@ -105,106 +107,55 @@ async function fetchData2(list: string[]) {
   <main class="main">
     <div>
       <div class="options">
-        <button
-          :class="{
-            'options__button--selected': settings.option1,
-          }"
-          class="options__button"
-          type="button"
-          @click="settings.option1 = !settings.option1"
-        >
+        <button :class="{
+          'options__button--selected': settings.option1,
+        }" class="options__button" type="button" @click="settings.option1 = !settings.option1">
           Reaccuring
         </button>
-        <button
-          class="options__button"
-          :class="{
-            'options__button--selected': settings.option2,
-          }"
-          type="button"
-          @click="settings.option2 = !settings.option2"
-        >
+        <button class="options__button" :class="{
+          'options__button--selected': settings.option2,
+        }" type="button" @click="settings.option2 = !settings.option2">
           <span v-if="settings.option2">Comps</span>
           <span v-else>Regions</span>
         </button>
-        <button
-          class="options__button"
-          :class="{
-            'options__button--selected': settings.option3,
-          }"
-          type="button"
-          @click="settings.option3 = !settings.option3"
-        >
-          <span v-if="settings.option3">Specific</span>
-          <span v-else>Random</span>
-        </button>
-        <Multiselect v-model="value" :options="optionsList" mode="tags" />
+        <Multiselect class="options__select" v-model="value" :options="optionsList" mode="tags" aria-label="sup"
+          placeholder="Include regions" />
       </div>
-      <form
-        class="form"
-        @submit.prevent="
-          fetchData2([
-            settings.players.player1,
-            settings.players.player2,
-            settings.players.player3,
-            settings.players.player4,
-            settings.players.player5,
-          ])
-        "
-      >
+      <form class="form" @submit.prevent="
+        fetchData2([
+          settings.players.player1,
+          settings.players.player2,
+          settings.players.player3,
+          settings.players.player4,
+          settings.players.player5,
+        ], value)
+        ">
         <label class="form__label" for="player1">Player 1</label>
-        <input
-          v-model.lazy="settings.players.player1"
-          class="form__input"
-          name="player1"
-        />
+        <input v-model.lazy="settings.players.player1" class="form__input" name="player1" />
 
         <label class="form__label" for="player2">Player 2</label>
-        <input
-          v-model.lazy="settings.players.player2"
-          class="form__input"
-          name="player2"
-        />
+        <input v-model.lazy="settings.players.player2" class="form__input" name="player2" />
 
         <label class="form__label" for="player3">Player 3</label>
-        <input
-          v-model.lazy="settings.players.player3"
-          class="form__input"
-          name="player3"
-        />
+        <input v-model.lazy="settings.players.player3" class="form__input" name="player3" />
 
         <label class="form__label" for="player4">Player 4</label>
-        <input
-          v-model.lazy="settings.players.player4"
-          class="form__input"
-          name="player4"
-        />
+        <input v-model.lazy="settings.players.player4" class="form__input" name="player4" />
 
         <label class="form__label" for="player5">Player 5</label>
-        <input
-          v-model.lazy="settings.players.player5"
-          class="form__input"
-          name="player5"
-        />
+        <input v-model.lazy="settings.players.player5" class="form__input" name="player5" />
 
         <button type="submit" class="form__button">Submit</button>
       </form>
     </div>
     <div class="result">
-      <div
-        v-for="(player, playerIndex) of myObject2"
-        :key="playerIndex"
-        :class="'result__div'"
-      >
+      <div v-for="(player, playerIndex) of myObject2" :key="playerIndex" :class="'result__div'">
         <p>{{ player.name }}</p>
         <p>{{ player.key ?? "not found" }}</p>
-        <img
-          :src="
-            'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/' +
-            player.assignedChamp +
-            '.png'
-          "
-          :class="'result__div--image'"
-        />
+        <img :src="'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/' +
+          player.assignedChamp +
+          '.png'
+          " :class="'result__div--image'" />
       </div>
     </div>
   </main>
@@ -221,8 +172,7 @@ async function fetchData2(list: string[]) {
 
 .result {
   &__button {
-    &--image {
-    }
+    &--image {}
   }
 }
 
@@ -233,30 +183,40 @@ async function fetchData2(list: string[]) {
   &__name {
     color: green !important;
   }
+
   &__div {
     text-align: center;
     margin-left: 4rem;
-    &--image {
-    }
+
+    &--image {}
   }
 }
 
 .options {
   margin-bottom: 2rem;
   justify-content: center;
+
+  &__select {
+    height: 5rem;
+    width: 20rem;
+  }
+
   &__button {
     padding: 0.5rem 1.5rem;
     margin: 0 1rem;
     border: 3px solid black;
+
     &--selected {
       background-color: grey;
     }
   }
 }
+
 .form {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   &__label {
     font-weight: 600;
   }
@@ -281,11 +241,10 @@ async function fetchData2(list: string[]) {
     padding: 1rem 2rem;
     border: 2px solid grey;
     border-radius: 5px;
-    &--error {
-    }
 
-    &:focus {
-    }
+    &--error {}
+
+    &:focus {}
   }
 }
 </style>
