@@ -2,7 +2,6 @@ import champions from "~/assets/champions";
 
 const APIKEY = "RGAPI-7aa9f16d-2c4c-4387-a769-5fa6c11c3630";
 
-
 type Mastery = Array<{
   championId: number;
   championLevel: number;
@@ -16,14 +15,14 @@ type Mastery = Array<{
   tokensEarned: number;
 }>;
 
-function getChampions(region: string) {
+function getChampions(region: string[]) {
   const champList = new Set<string>();
 
   while (champList.size < 5) {
     const n = Math.floor(Math.random() * region.length);
     champList.add(region[n]);
   }
-  return Array.from(champList)  ;
+  return Array.from(champList);
 }
 
 function getPlayerMastery(champs: Mastery, champList: string[]) {
@@ -40,10 +39,9 @@ function getPlayerMastery(champs: Mastery, champList: string[]) {
 }
 
 function getRegion() {
-  const reg = Object.keys(champions.regionsList);
-  return reg[
-    Math.floor(Math.random() * reg.length)
-  ];
+  const reg = champions.regionsList;
+  Object.keys(champions.regions);
+  return reg[Math.floor(Math.random() * reg.length)];
 }
 
 function getKeys(championList: string[]) {
@@ -82,36 +80,24 @@ function getHighest(points: number[][]) {
   let index = 0;
   points.forEach((element, i) => {
     const temp = getMax(element);
-    console.log("max =" + temp);
+    console.log(`max =${temp}`);
     if (maximum < temp) {
       maximum = temp;
       index = i;
     }
   });
-  console.log("hieghest = " + maximum);
+  console.log(`hieghest = ${maximum}`);
   return index;
 }
 
 async function getMastery(puuid: number, apiKey: string) {
-  const url =
-    "https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-puuid/" +
-    puuid +
-    "?api_key=" +
-    apiKey;
-  return await fetch(url, { method: "GET" }).then((res) => {
-    return res.json();
-  });
+  const url = `https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-puuid/${puuid}?api_key=${apiKey}`;
+  return await fetch(url, { method: "GET" }).then((res) => res.json());
 }
 
 async function getId(username: string, apiKey: string) {
-  const url =
-    "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" +
-    username +
-    "?api_key=" +
-    apiKey;
-  const resp = await fetch(url, { method: "GET" }).then((response) => {
-    return response;
-  });
+  const url = `https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${username}?api_key=${apiKey}`;
+  const resp = await fetch(url, { method: "GET" }).then((response) => response);
   return await resp.json();
 }
 
@@ -119,11 +105,35 @@ export default defineEventHandler(async (event) => {
   if (!event?.context?.params?.nameslist) {
     return;
   }
-  const names: {list: string[], regions: string[]} = decode(event?.context?.params?.nameslist);
-  console.log("decoded; " + names.regions)
- 
 
-  const champs = getChampions(getRegion())
+  const names: { list: string[]; options: string[]; isRegions: boolean } =
+    decode(event?.context?.params?.nameslist);
+  console.log(names);
+  let champs;
+
+  if (names.options.length === 0) {
+    champs = names.isRegions
+      ? getChampions(getRegion())
+      : getChampions(
+          champions.teamCompsList[
+            Math.floor(Math.random() * champions.teamCompsList.length)
+          ]
+        );
+  } else {
+    champs = names.isRegions
+      ? getChampions(
+          // @ts-expect-error Shitty type
+          champions.regions[
+            names.options[Math.floor(Math.random() * names.options.length)]
+          ]
+        )
+      : getChampions(
+          // @ts-expect-error Shitty type
+          champions.teamComps[
+            names.options[Math.floor(Math.random() * names.options.length)]
+          ]
+        );
+  }
   const keys = getKeys(champs);
 
   const masteryPoints: Array<Array<number>> = [];
