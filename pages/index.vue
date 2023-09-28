@@ -87,6 +87,7 @@ async function fetchData2() {
           class="options__button"
           :class="{
             'options__button--selected': settings.option1,
+            'options__button--notselected': !settings.option1,
           }"
           type="button"
           @click="settings.option1 = !settings.option1"
@@ -94,7 +95,7 @@ async function fetchData2() {
           Reaccuring
         </button>
         <button
-          class="options__button"
+          class="options__button options__button--nomargright"
           type="button"
           @click="settings.option2 = !settings.option2"
         >
@@ -181,6 +182,7 @@ async function fetchData2() {
 </template>
 <style scoped lang="scss">
 .main {
+  background-color: #999;
   padding: 4rem 8rem;
   display: grid;
   grid-template-columns: 1.5fr 2.5fr;
@@ -229,8 +231,15 @@ async function fetchData2() {
     border: 3px solid black;
     width: 10rem;
 
+    &--nomargright {
+      margin-right: -1.125rem;
+    }
+
+    &--notselected {
+      background-color: green;
+    }
     &--selected {
-      background-color: grey;
+      background-color: red;
     }
   }
 }

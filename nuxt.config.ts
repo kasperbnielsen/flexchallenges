@@ -1,6 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  runtimeConfig: {
+    public: {
+      API_KEY: process.env.NUXT_API_KEY,
+    },
+  },
   app: {
     head: {
       link: [
@@ -17,4 +22,5 @@ export default defineNuxtConfig({
       ],
     },
   },
+  css: ["@fortawesome/fontawesome-svg-core/styles.css"],
 });

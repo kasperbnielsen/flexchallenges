@@ -1,6 +1,7 @@
 import champions from "~/assets/champions";
+const runtimeConfig = useRuntimeConfig();
 
-const APIKEY = "RGAPI-7aa9f16d-2c4c-4387-a769-5fa6c11c3630";
+const APIKEY = runtimeConfig.public.API_KEY;
 
 type Mastery = Array<{
   championId: number;

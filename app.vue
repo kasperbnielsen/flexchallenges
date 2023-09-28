@@ -1,8 +1,16 @@
 <template>
+  <HeaderComp />
   <div>
     <NuxtPage />
   </div>
-  <footer>This product isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</footer>
+  <footer>
+    <div>
+      FlexChallenges isn't endorsed by Riot Games and doesn't reflect the views
+      or opinions of Riot Games or anyone officially involved in producing or
+      managing Riot Games properties. Riot Games, and all associated properties
+      are trademarks or registered trademarks of Riot Games, Inc.
+    </div>
+  </footer>
 </template>
 <style>
 * {
@@ -27,6 +35,8 @@ footer {
   font-size: x-small;
   font-weight: 300;
   text-align: center;
+  padding: 3rem 0;
+  background-color: #818181;
 }
 body,
 html {
