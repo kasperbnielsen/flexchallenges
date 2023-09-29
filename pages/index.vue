@@ -2,7 +2,6 @@
 import { ref } from "vue";
 import Multiselect from "@vueform/multiselect";
 import champions from "../assets/champions";
-import { faPersonMilitaryToPerson } from "@fortawesome/free-solid-svg-icons";
 
 const value = ref<string[]>([]);
 const value2 = ref<string[]>([]);
@@ -11,13 +10,13 @@ const optionsList2 = Object.keys(champions.teamComps);
 
 type PlayerType = {
   players: {
-    player1: { name: string[]; assignedChamp: string[]; key: string[] };
-    player2: { name: string[]; assignedChamp: string[]; key: string[] };
-    player3: { name: string[]; assignedChamp: string[]; key: string[] };
-    player4: { name: string[]; assignedChamp: string[]; key: string[] };
-    player5: { name: string[]; assignedChamp: string[]; key: string[] };
+    player1: { name: string; assignedChamp: string; key: string };
+    player2: { name: string; assignedChamp: string; key: string };
+    player3: { name: string; assignedChamp: string; key: string };
+    player4: { name: string; assignedChamp: string; key: string };
+    player5: { name: string; assignedChamp: string; key: string };
   };
-  region: string[];
+  region: string;
 };
 
 type Setting = {
@@ -60,30 +59,31 @@ function encodeData(list: {}) {
 const myObject2 = ref<PlayerType>();
 
 function refreshChampion(index: string) {
-  let player;
+  const player = myObject2.value?.players;
+  console.log("index ", index);
   if (myObject2.value !== undefined) {
-    /*switch (index) {
-      case 1:
-        player = myObject2.value.players.player1;
-        break;
-      case 2:
-        player = myObject2.value.players.player2;
-        break;
-      case 3:
-        player = myObject2.value.players.player3;
-        break;
-      case 4:
-        player = myObject2.value.players.player4;
-        break;
-      case 5:
-        player = myObject2.value.players.player5;
-        break;
-    }*/
+    const newChampion = myObject2.value.region;
+    const tempArr: (typeof champions.champions.Aatrox)[] = [];
+    const championArr =
+      champions.regions[newChampion[0] as keyof typeof champions.regions];
+    championArr.forEach((element) => {
+      if (
+        element.toString() !== player?.player1.key.toString() &&
+        element.toString() !== player?.player2.key.toString() &&
+        element.toString() !== player?.player3.key.toString() &&
+        element.toString() !== player?.player4.key.toString() &&
+        element.toString() !== player?.player5.key.toString()
+      ) {
+        tempArr.push(element);
+      }
+    });
+    const i: number = parseInt(index.slice(-1));
+    const random = Math.floor(Math.random() * tempArr.length);
+    myObject2.value.players[`player${i}`].key = tempArr[random];
+    myObject2.value.players[`player${i}`].assignedChamp =
+      champions.champions[tempArr[random] as keyof typeof champions.champions];
 
-    const newChampion =
-      champions.regions[
-        myObject2.value.region[0] as keyof typeof champions.regions
-      ];
+    /*
     const newChamp: string[] = newChampion.filter(
       (element) =>
         element !== myObject2.value?.players.player1.key.toString() ||
@@ -92,7 +92,20 @@ function refreshChampion(index: string) {
         myObject2.value?.players.player4.key.toString() ||
         myObject2.value?.players.player5.key.toString()
     );
-    console.log(newChamp);
+
+    for (const element in myObject2.value.players) {
+      newChampion.splice(
+        newChampion.indexOf(
+          myObject2.value.players[element]
+        ),
+        1
+      );
+      console.log(element);
+      newChampion.splice(myObject2.value.players[element as keyof typeof myObject2.value.players]);
+      myObject2.value.players.player1.key.forEach((element) => {
+      newChampion.indexOf(element);
+    });
+    console.log(newChamp); */
   }
 }
 
