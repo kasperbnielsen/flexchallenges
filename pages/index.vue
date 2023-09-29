@@ -167,7 +167,6 @@ async function fetchData2() {
         class="result__div"
       >
         <p>{{ player.name }}</p>
-        <p>{{ player.key ?? "not found" }}</p>
         <img
           class="result__div--image"
           :src="
@@ -182,7 +181,6 @@ async function fetchData2() {
 </template>
 <style scoped lang="scss">
 .main {
-  background-color: #999;
   padding: 4rem 8rem;
   display: grid;
   grid-template-columns: 1.5fr 2.5fr;
@@ -199,8 +197,7 @@ async function fetchData2() {
 }
 
 .result {
-  display: flex;
-  justify-content: center;
+  display: block;
 
   &__name {
     color: green !important;

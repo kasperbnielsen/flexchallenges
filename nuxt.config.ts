@@ -20,6 +20,12 @@ export default defineNuxtConfig({
           rel: "stylesheet",
         },
       ],
+      script: [
+        {
+          src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7345411778745982",
+          crossorigin: "anonymous",
+        },
+      ],
     },
   },
   css: ["@fortawesome/fontawesome-svg-core/styles.css"],
