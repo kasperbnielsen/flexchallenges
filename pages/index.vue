@@ -38,11 +38,11 @@ const settings = ref<Setting>({
   option2: false,
   option3: false,
   players: {
-    player1: "Huez",
-    player2: "IL0V3TH1SGAM3",
-    player3: "Duke Camel",
-    player4: "Knifedog",
-    player5: "Jazyjewbag112",
+    player1: "",
+    player2: "",
+    player3: "",
+    player4: "",
+    player5: "",
   },
 });
 
@@ -64,7 +64,7 @@ function refreshChampion(index: string) {
   if (myObject2.value !== undefined) {
     const newChampion = myObject2.value.region;
     const tempArr: (typeof champions.champions.Aatrox)[] = [];
-    const championArr =
+    const championArr = settings.value.option2 ? champions.teamComps[newChampion[0] as keyof typeof champions.teamComps] :
       champions.regions[newChampion[0] as keyof typeof champions.regions];
     championArr.forEach((element) => {
       if (
