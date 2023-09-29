@@ -39,10 +39,13 @@ function getPlayerMastery(champs: Mastery, champList: string[]) {
   return playerMasteries;
 }
 
+let random: number;
+
 function getRegion() {
   const reg = champions.regionsList;
   Object.keys(champions.regions);
-  return reg[Math.floor(Math.random() * reg.length)];
+  random = Math.floor(Math.random() * reg.length);
+  return reg[random];
 }
 
 function getKeys(championList: string[]) {
@@ -110,31 +113,35 @@ export default defineEventHandler(async (event) => {
   const names: { list: string[]; options: string[]; isRegions: boolean } =
     decode(event?.context?.params?.nameslist);
   console.log(names);
-  let champs;
+  let region: string[];
 
   if (names.options.length === 0) {
-    champs = names.isRegions
-      ? getChampions(getRegion())
-      : getChampions(
-          champions.teamCompsList[
-            Math.floor(Math.random() * champions.teamCompsList.length)
-          ]
-        );
+    region = names.isRegions
+      ? getRegion()
+      : champions.teamCompsList[
+          Math.floor(Math.random() * champions.teamCompsList.length)
+        ];
   } else {
-    champs = names.isRegions
-      ? getChampions(
-          // @ts-expect-error Shitty type
-          champions.regions[
-            names.options[Math.floor(Math.random() * names.options.length)]
-          ]
-        )
-      : getChampions(
-          // @ts-expect-error Shitty type
-          champions.teamComps[
-            names.options[Math.floor(Math.random() * names.options.length)]
-          ]
-        );
+    region = names.isRegions
+      ? // @ts-expect-error Shitty type
+        champions.regions[
+          names.options[Math.floor(Math.random() * names.options.length)]
+        ]
+      : // @ts-expect-error Shitty type
+        champions.teamComps[
+          names.options[Math.floor(Math.random() * names.options.length)]
+        ];
   }
+
+  const champs = getChampions(region);
+
+  console.log(
+    "region asdasdasd",
+    Object.keys(champions.regions).filter(
+      (element) => element === Object.keys(champions.regions)[random]
+    )
+  );
+
   const keys = getKeys(champs);
 
   const masteryPoints: Array<Array<number>> = [];
@@ -168,31 +175,36 @@ export default defineEventHandler(async (event) => {
   }
 
   const myObject2 = {
-    player1: {
-      name: names.list[0],
-      assignedChamp: assignedChamps[0],
-      key: newChampList[0],
+    players: {
+      player1: {
+        name: names.list[0],
+        assignedChamp: assignedChamps[0],
+        key: newChampList[0],
+      },
+      player2: {
+        name: names.list[1],
+        assignedChamp: assignedChamps[1],
+        key: newChampList[1],
+      },
+      player3: {
+        name: names.list[2],
+        assignedChamp: assignedChamps[2],
+        key: newChampList[2],
+      },
+      player4: {
+        name: names.list[3],
+        assignedChamp: assignedChamps[3],
+        key: newChampList[3],
+      },
+      player5: {
+        name: names.list[4],
+        assignedChamp: assignedChamps[4],
+        key: newChampList[4],
+      },
     },
-    player2: {
-      name: names.list[1],
-      assignedChamp: assignedChamps[1],
-      key: newChampList[1],
-    },
-    player3: {
-      name: names.list[2],
-      assignedChamp: assignedChamps[2],
-      key: newChampList[2],
-    },
-    player4: {
-      name: names.list[3],
-      assignedChamp: assignedChamps[3],
-      key: newChampList[3],
-    },
-    player5: {
-      name: names.list[4],
-      assignedChamp: assignedChamps[4],
-      key: newChampList[4],
-    },
+    region: Object.keys(champions.regions).filter(
+      (element) => element === Object.keys(champions.regions)[random]
+    ),
   };
 
   console.log(myObject2);

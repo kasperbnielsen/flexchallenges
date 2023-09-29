@@ -24,7 +24,6 @@
   transition: 0.4s;
   line-height: 1.6;
   font-family: montserrat;
-  color: white;
 
   &::before,
   &::after {
@@ -51,6 +50,7 @@ footer {
   text-align: center;
   padding: 3rem 0;
   background-color: #2f2fa2;
+  color: white;
 }
 body,
 html {
@@ -63,5 +63,9 @@ html {
 }
 button {
   cursor: pointer;
+}
+
+input {
+  color: black;
 }
 </style>

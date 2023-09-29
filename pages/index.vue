@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import Multiselect from "@vueform/multiselect";
 import champions from "../assets/champions";
+import { faPersonMilitaryToPerson } from "@fortawesome/free-solid-svg-icons";
 
 const value = ref<string[]>([]);
 const value2 = ref<string[]>([]);
@@ -9,11 +10,14 @@ const optionsList = Object.keys(champions.regions);
 const optionsList2 = Object.keys(champions.teamComps);
 
 type PlayerType = {
-  player1: { name: string[]; assignedChamp: string[]; key: string[] };
-  player2: { name: string[]; assignedChamp: string[]; key: string[] };
-  player3: { name: string[]; assignedChamp: string[]; key: string[] };
-  player4: { name: string[]; assignedChamp: string[]; key: string[] };
-  player5: { name: string[]; assignedChamp: string[]; key: string[] };
+  players: {
+    player1: { name: string[]; assignedChamp: string[]; key: string[] };
+    player2: { name: string[]; assignedChamp: string[]; key: string[] };
+    player3: { name: string[]; assignedChamp: string[]; key: string[] };
+    player4: { name: string[]; assignedChamp: string[]; key: string[] };
+    player5: { name: string[]; assignedChamp: string[]; key: string[] };
+  };
+  region: string[];
 };
 
 type Setting = {
@@ -54,6 +58,43 @@ function encodeData(list: {}) {
 }
 
 const myObject2 = ref<PlayerType>();
+
+function refreshChampion(index: string) {
+  let player;
+  if (myObject2.value !== undefined) {
+    /*switch (index) {
+      case 1:
+        player = myObject2.value.players.player1;
+        break;
+      case 2:
+        player = myObject2.value.players.player2;
+        break;
+      case 3:
+        player = myObject2.value.players.player3;
+        break;
+      case 4:
+        player = myObject2.value.players.player4;
+        break;
+      case 5:
+        player = myObject2.value.players.player5;
+        break;
+    }*/
+
+    const newChampion =
+      champions.regions[
+        myObject2.value.region[0] as keyof typeof champions.regions
+      ];
+    const newChamp: string[] = newChampion.filter(
+      (element) =>
+        element !== myObject2.value?.players.player1.key.toString() ||
+        myObject2.value?.players.player2.key.toString() ||
+        myObject2.value?.players.player3.key.toString() ||
+        myObject2.value?.players.player4.key.toString() ||
+        myObject2.value?.players.player5.key.toString()
+    );
+    console.log(newChamp);
+  }
+}
 
 async function fetchData2() {
   const list = Object.values(settings.value.players);
@@ -162,19 +203,31 @@ async function fetchData2() {
     </div>
     <div class="result">
       <div
-        v-for="(player, playerIndex) of myObject2"
+        v-for="(player, playerIndex) of myObject2?.players"
         :key="playerIndex"
         class="result__div"
       >
-        <p>{{ player.name }}</p>
-        <img
-          class="result__div--image"
-          :src="
-            'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/' +
-            player.assignedChamp +
-            '.png'
-          "
-        />
+        <div class="result__div__div">
+          <img
+            :id="player.key.toString()"
+            class="result__div__div__image"
+            :src="
+              'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/' +
+              player.assignedChamp +
+              '.png'
+            "
+          />
+          <button
+            :id="player.key.toString() + 'button'"
+            class="result__div__div__button"
+            @click="refreshChampion(playerIndex)"
+          >
+            <font-awesome-icon
+              class="result__div__div__button__refresh"
+              :icon="['fas', 'rotate-right']"
+            />
+          </button>
+        </div>
       </div>
     </div>
   </main>
@@ -188,24 +241,40 @@ async function fetchData2() {
   height: 100%;
   justify-content: center;
 }
-
 .result {
-  &__button {
-    &--image {
-    }
-  }
-}
-
-.result {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  margin-top: 7.875rem;
 
   &__name {
     color: green !important;
   }
 
   &__div {
-    text-align: center;
     margin-left: 4rem;
+
+    &__div {
+      margin-left: -4rem;
+      display: flex;
+      margin-bottom: 2.125rem;
+
+      &__image {
+        margin-left: 1.25rem;
+        width: 5rem;
+      }
+
+      &__button {
+        border: none;
+        background: none;
+
+        &__refresh {
+          color: white;
+          width: 1rem;
+          height: auto;
+          margin-left: 0.5rem;
+        }
+      }
+    }
   }
 }
 
@@ -220,9 +289,11 @@ async function fetchData2() {
     padding: 0.5rem 1.5rem;
     margin: 0 1rem;
     border: 3px solid black;
+    color: black;
   }
 
   &__button {
+    color: black;
     padding: 0.5rem 1.5rem;
     margin: 0 1rem;
     border: 3px solid black;
@@ -241,6 +312,9 @@ async function fetchData2() {
   }
 }
 
+span {
+  color: black;
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -248,6 +322,7 @@ async function fetchData2() {
 
   &__label {
     font-weight: 600;
+    color: white;
   }
 
   &__button {
@@ -258,6 +333,7 @@ async function fetchData2() {
     font-weight: 500;
     border: 2px solid black;
     border-radius: 5px;
+    color: white;
 
     &:hover {
       background: black;

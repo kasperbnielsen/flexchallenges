@@ -31,6 +31,9 @@ const menu = ref(false);
   </div>
 </template>
 <style scoped lang="scss">
+* {
+  color: white;
+}
 .header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
