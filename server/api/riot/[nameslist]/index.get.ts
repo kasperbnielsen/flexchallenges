@@ -28,7 +28,6 @@ function getChampions(region: string[]) {
 
 function getPlayerMastery(champs: Mastery, champList: string[]) {
   const playerMasteries: number[] = [1, 1, 1, 1, 1];
-  console.log(champList);
   for (let i = 0; i < champList.length; i++) {
     for (let j = 0; j < champs.length; j++) {
       if (champs[j].championId.toString() === champList[i]) {
@@ -69,7 +68,6 @@ function decode(input: string) {
 
 function getMax(arr: number[]) {
   let tempMax = 0;
-  console.log(arr);
   arr.forEach((element) => {
     if (element > tempMax) {
       tempMax = element;
@@ -84,13 +82,11 @@ function getHighest(points: number[][]) {
   let index = 0;
   points.forEach((element, i) => {
     const temp = getMax(element);
-    console.log(`max =${temp}`);
     if (maximum < temp) {
       maximum = temp;
       index = i;
     }
   });
-  console.log(`hieghest = ${maximum}`);
   return index;
 }
 
@@ -115,32 +111,23 @@ export default defineEventHandler(async (event) => {
   console.log(names);
   let region: string[];
 
+  const randomRegion = names.isRegions
+    ? Math.floor(Math.random() * champions.teamCompsList.length)
+    : Math.floor(Math.random() * names.options.length);
+
   if (names.options.length === 0) {
     region = names.isRegions
       ? getRegion()
-      : champions.teamCompsList[
-          Math.floor(Math.random() * champions.teamCompsList.length)
-        ];
+      : champions.teamCompsList[randomRegion];
   } else {
     region = names.isRegions
       ? // @ts-expect-error Shitty type
-        champions.regions[
-          names.options[Math.floor(Math.random() * names.options.length)]
-        ]
+        champions.regions[names.options[randomRegion]]
       : // @ts-expect-error Shitty type
-        champions.teamComps[
-          names.options[Math.floor(Math.random() * names.options.length)]
-        ];
+        champions.teamComps[names.options[randomRegion]];
   }
 
   const champs = getChampions(region);
-
-  console.log(
-    "region asdasdasd",
-    Object.keys(champions.regions).filter(
-      (element) => element === Object.keys(champions.regions)[random]
-    )
-  );
 
   const keys = getKeys(champs);
 
@@ -153,7 +140,6 @@ export default defineEventHandler(async (event) => {
     masteryPoints.push(playerMastery);
   }
 
-  console.log(masteryPoints);
   const newChampList = [];
 
   const assignedChamps = [];
@@ -202,16 +188,8 @@ export default defineEventHandler(async (event) => {
         key: newChampList[4],
       },
     },
-    region: names.isRegions
-      ? Object.keys(champions.regions).filter(
-          (element) => element === Object.keys(champions.regions)[random]
-        )
-      : Object.keys(champions.teamComps).filter(
-          (element) => element === Object.keys(champions.teamComps)[random]
-        ),
+    region: names.options[randomRegion],
   };
-
-  console.log(myObject2);
 
   return myObject2;
 });

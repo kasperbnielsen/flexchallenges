@@ -1,22 +1,42 @@
 <template>
   <div class="body">
-    <HeaderComp />
-    <a class="banner1" href="https://metafy.gg?ref=ntrlnzn&campaign_name=tapfiliate&utm_source=website&utm_channel=affiliate&utm_medium=cpa&utm_campaign=paid_membership&utm_content=banner&market=mixed_markets&utm_campaign_id=968F9FB9&tap_a=130657-a837f7" target="_BLANK" rel="nofollow"><img src="https://static.tapfiliate.com/645b689229659773822257.jpeg?a=130657-a837f7&s=4157539-b2c397" border="0"></a>    
-    <a class="banner1 right" href="https://metafy.gg?ref=ntrlnzn&campaign_name=tapfiliate&utm_source=website&utm_channel=affiliate&utm_medium=cpa&utm_campaign=paid_membership&utm_content=banner&market=mixed_markets&utm_campaign_id=968F9FB9&tap_a=130657-a837f7" target="_BLANK" rel="nofollow"><img src="https://static.tapfiliate.com/645b689229659773822257.jpeg?a=130657-a837f7&s=4157539-b2c397" border="0"></a> 
+    <a v-if="false"
+      class="banner1"
+      href="https://metafy.gg?ref=ntrlnzn&campaign_name=tapfiliate&utm_source=website&utm_channel=affiliate&utm_medium=cpa&utm_campaign=paid_membership&utm_content=banner&market=mixed_markets&utm_campaign_id=968F9FB9&tap_a=130657-a837f7"
+      rel="nofollow"
+      target="_BLANK"
+      ><img
+        border="0"
+        src="/metafy.jpeg"
+    /></a>
+    <a v-if="false"
+      class="banner1 right"
+      href="https://metafy.gg?ref=ntrlnzn&campaign_name=tapfiliate&utm_source=website&utm_channel=affiliate&utm_medium=cpa&utm_campaign=paid_membership&utm_content=banner&market=mixed_markets&utm_campaign_id=968F9FB9&tap_a=130657-a837f7"
+      rel="nofollow"
+      target="_BLANK"
+      ><img
+        border="0"
+        src=/metafy.jpeg
+    /></a>
 
-    <div class="innerbody"> 
-      <NuxtPage />
-    </div>
-    <footer>
+    <div class="innerbody">
+      <HeaderComp />
       <div>
-        FlexChallenges isn't endorsed by Riot Games and doesn't reflect the
-        views or opinions of Riot Games or anyone officially involved in
-        producing or managing Riot Games properties. Riot Games, and all
-        associated properties are trademarks or registered trademarks of Riot
-        Games, Inc.
-        <p class="contact">For bussiness enquiries contact: Kasperboegvad@gmail.com</p>
+        <NuxtPage />
       </div>
-    </footer>
+      <footer>
+        <div class="footerdiv">
+          FlexChallenges isn't endorsed by Riot Games and doesn't reflect the
+          views or opinions of Riot Games or anyone officially involved in
+          producing or managing Riot Games properties. Riot Games, and all
+          associated properties are trademarks or registered trademarks of Riot
+          Games, Inc.
+          <p class="contact">
+            For bussiness enquiries contact: Kasperboegvad@gmail.com
+          </p>
+        </div>
+      </footer>
+    </div>
   </div>
 </template>
 <style>
@@ -71,6 +91,11 @@ footer {
   background-color: #2f2fa2;
   color: white;
 }
+
+.footerdiv {
+  margin: 0 5rem;
+}
+
 body,
 html {
   scroll-behavior: smooth;

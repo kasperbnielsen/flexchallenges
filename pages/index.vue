@@ -1,12 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import Multiselect from "@vueform/multiselect";
 import champions from "../assets/champions";
 
-const value = ref<string[]>([]);
-const value2 = ref<string[]>([]);
-const optionsList = Object.keys(champions.regions);
-const optionsList2 = Object.keys(champions.teamComps);
 const dropdown = ref(false);
 
 type PlayerType = {
@@ -19,6 +14,9 @@ type PlayerType = {
   };
   region: string;
 };
+
+const currentRegion = ref();
+const dropdownList = ref<string[]>([]);
 
 const item = ref<boolean[]>([
   false,
@@ -63,6 +61,12 @@ const settings = ref<Setting>({
   },
 });
 
+function resetOptions() {
+  for (let i = 0; i < item.value.length; i++) {
+    item.value[i] = false;
+  }
+}
+
 function encodeData(list: {}) {
   const stringified = JSON.stringify(list);
 
@@ -75,15 +79,36 @@ function encodeData(list: {}) {
 
 const myObject2 = ref<PlayerType>();
 
+function updateDropdown() {
+  dropdownList.value = [];
+  const region = myObject2.value?.region;
+  if (!settings.value.option2) {
+    const tempList = Object.keys(champions.regions);
+    for (let i = 0; i < champions.regionsList.length; i++) {
+      if (tempList[i].toString() !== region)
+        dropdownList.value.push(tempList[i].toString());
+    }
+  } else {
+    const tempList = Object.keys(champions.teamComps);
+    for (let i = 0; i < champions.teamCompsList.length; i++) {
+      if (tempList[i].toString() !== region) {
+        dropdownList.value.push(tempList[i].toString());
+      }
+    }
+  }
+}
+
+computed(() => {});
+
 function refreshChampion(index: string) {
   const player = myObject2.value?.players;
-  console.log("index ", index);
   if (myObject2.value !== undefined) {
     const newChampion = myObject2.value.region;
+    currentRegion.value = newChampion;
     const tempArr: (typeof champions.champions.Aatrox)[] = [];
     const championArr = settings.value.option2
-      ? champions.teamComps[newChampion[0] as keyof typeof champions.teamComps]
-      : champions.regions[newChampion[0] as keyof typeof champions.regions];
+      ? champions.teamComps[newChampion as keyof typeof champions.teamComps]
+      : champions.regions[newChampion as keyof typeof champions.regions];
     championArr.forEach((element) => {
       if (
         element.toString() !== player?.player1.key.toString() &&
@@ -135,6 +160,8 @@ async function fetchData2() {
 
   myObject2.value = data;
 
+  updateDropdown();
+
   return data;
 }
 </script>
@@ -157,7 +184,11 @@ async function fetchData2() {
         <button
           class="options__button options__button--nomargright btn btn-secondary"
           type="button"
-          @click="settings.option2 = !settings.option2"
+          @click="
+            settings.option2 = !settings.option2;
+            resetOptions();
+            updateDropdown();
+          "
         >
           <span v-if="settings.option2">Comps</span>
           <span v-else>Regions</span>
@@ -182,11 +213,12 @@ async function fetchData2() {
               v-for="(element, elementindex) of Object.keys(champions.regions)"
               :key="elementindex"
             >
-              <li v-if="item[elementindex]" @click="item[elementindex] = false">
-                <span class="dropdown-item">{{ element }}</span>
-              </li>
-              <li v-else @click="item[elementindex] = true">
-                <span class="active dropdown-item">{{ element }}</span>
+              <li @click="item[elementindex] = !item[elementindex]">
+                <span
+                  :class="{ active: !item[elementindex] }"
+                  class="dropdown-item"
+                  >{{ element }}</span
+                >
               </li>
             </div>
           </ul>
@@ -208,16 +240,15 @@ async function fetchData2() {
             class="dropdown-menu dropdown__menu"
           >
             <div
-              v-for="(element, elementindex) of Object.keys(
-                champions.teamComps
-              )"
+              v-for="(element, elementindex) of dropdownList"
               :key="elementindex"
             >
-              <li v-if="item[elementindex]" @click="item[elementindex] = false">
-                <span class="dropdown-item">{{ element }}</span>
-              </li>
-              <li v-else @click="item[elementindex] = true">
-                <span class="active dropdown-item">{{ element }}</span>
+              <li @click="item[elementindex] = !item[elementindex]">
+                <span
+                  :class="{ active: !item[elementindex] }"
+                  class="dropdown-item"
+                  >{{ element }}</span
+                >
               </li>
             </div>
           </ul>

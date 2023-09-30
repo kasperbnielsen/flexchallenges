@@ -5,28 +5,7 @@ const menu = ref(false);
 <template>
   <div>
     <div class="header">
-      <button @click="menu = !menu" class="header__button">
-        <font-awesome-icon :icon="['fas', 'bars']" class="header__icon" />
-      </button>
       <h1 class="header__h1">FlexChallenges</h1>
-      <div v-if="menu" class="menu">
-        <div class="menu__div">
-          <select class="menu__div__select">
-            <option>EUW</option>
-            <option>EUNE</option>
-            <option>NA</option>
-            <option>OCE</option>
-          </select>
-          <a href="#" class="menu__item--close" @click="menu = !menu"
-            ><font-awesome-icon :icon="['fas', 'xmark']"
-          /></a>
-        </div>
-
-        <a href="/" class="menu__item">Home</a>
-        <a href="#" class="menu__item">Tools</a>
-        <a href="#" class="menu__item">Contact</a>
-        <a href="/about" class="menu__item">About</a>
-      </div>
     </div>
   </div>
 </template>
@@ -36,7 +15,7 @@ const menu = ref(false);
 }
 .header {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   text-align: center;
   padding-bottom: 1rem;
   background-color: #2f2fa2;
