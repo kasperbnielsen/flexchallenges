@@ -202,10 +202,13 @@ export default defineEventHandler(async (event) => {
         key: newChampList[4],
       },
     },
-    region: names.isRegions ? Object.keys(champions.regions).filter(
-      (element) => element === Object.keys(champions.regions)[random]) : Object.keys(champions.teamComps).filter(
-        (element) => element === Object.keys(champions.teamComps)[random]
-    ),
+    region: names.isRegions
+      ? Object.keys(champions.regions).filter(
+          (element) => element === Object.keys(champions.regions)[random]
+        )
+      : Object.keys(champions.teamComps).filter(
+          (element) => element === Object.keys(champions.teamComps)[random]
+        ),
   };
 
   console.log(myObject2);

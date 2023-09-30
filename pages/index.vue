@@ -2,7 +2,6 @@
 import { ref } from "vue";
 import Multiselect from "@vueform/multiselect";
 import champions from "../assets/champions";
-import { VCardItem } from "vuetify/lib/components/index.mjs";
 
 const value = ref<string[]>([]);
 const value2 = ref<string[]>([]);
@@ -21,9 +20,21 @@ type PlayerType = {
   region: string;
 };
 
-let item = [];
-
-item.push(true)
+const item = ref<boolean[]>([
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+]);
 
 type Setting = {
   option1: boolean;
@@ -70,8 +81,9 @@ function refreshChampion(index: string) {
   if (myObject2.value !== undefined) {
     const newChampion = myObject2.value.region;
     const tempArr: (typeof champions.champions.Aatrox)[] = [];
-    const championArr = settings.value.option2 ? champions.teamComps[newChampion[0] as keyof typeof champions.teamComps] :
-      champions.regions[newChampion[0] as keyof typeof champions.regions];
+    const championArr = settings.value.option2
+      ? champions.teamComps[newChampion[0] as keyof typeof champions.teamComps]
+      : champions.regions[newChampion[0] as keyof typeof champions.regions];
     championArr.forEach((element) => {
       if (
         element.toString() !== player?.player1.key.toString() &&
@@ -88,43 +100,31 @@ function refreshChampion(index: string) {
     myObject2.value.players[`player${i}`].key = tempArr[random];
     myObject2.value.players[`player${i}`].assignedChamp =
       champions.champions[tempArr[random] as keyof typeof champions.champions];
-
-    /*
-    const newChamp: string[] = newChampion.filter(
-      (element) =>
-        element !== myObject2.value?.players.player1.key.toString() ||
-        myObject2.value?.players.player2.key.toString() ||
-        myObject2.value?.players.player3.key.toString() ||
-        myObject2.value?.players.player4.key.toString() ||
-        myObject2.value?.players.player5.key.toString()
-    );
-
-    for (const element in myObject2.value.players) {
-      newChampion.splice(
-        newChampion.indexOf(
-          myObject2.value.players[element]
-        ),
-        1
-      );
-      console.log(element);
-      newChampion.splice(myObject2.value.players[element as keyof typeof myObject2.value.players]);
-      myObject2.value.players.player1.key.forEach((element) => {
-      newChampion.indexOf(element);
-    });
-    console.log(newChamp); */
   }
 }
 
 async function fetchData2() {
   const list = Object.values(settings.value.players);
+  const newList: string[] = [];
+  const newList2: string[] = [];
   let isRegions = true;
+  const count = !settings.value.option2 ? 13 : 11;
+  for (let i = 0; i < count; i++) {
+    if (!item.value[i]) {
+      if (!settings.value.option2) {
+        newList.push(Object.keys(champions.regions)[i]);
+      } else {
+        newList2.push(Object.keys(champions.teamComps)[i]);
+      }
+    }
+  }
   let options;
   if (settings.value.option2) {
-    options = value2.value;
+    options = newList2;
     isRegions = false;
   } else {
     isRegions = true;
-    options = value.value;
+    options = newList;
   }
   const data = await fetch(
     `/api/riot/${encodeData({ list, options, isRegions })}`,
@@ -141,67 +141,152 @@ async function fetchData2() {
 
 <template>
   <main class="main">
-    <div class="dropdown">
-
-    <button  @click="dropdown = !dropdown" data-bs-auto-close="outside"  class="dropdown-toggle btn btn-secondary  selectdiv__button" type="button" id="dropdownMenuClickableInside" data-bs-toggle="dropdown" aria-expanded="false">Include regions</button>
-      <ul  class="dropdown-menu dropdown__menu" aria-labelledby="dropdownMenuClickableInside">
-        <li v-if="item[0]" @click="item[0] = false"><span class="dropdown-item-text">hello</span></li>
-        <li v-else @click="item[0] = true"><span class="active dropdown-item-text">hello2</span></li>
-      <li v-if="true"><button class="dropdown-item" type="button">asdf</button></li>
-      <li v-else><button class="dropdown-item" type="button">Open thisasd select menu</button></li>
-      <li v-if="item[0]" @click="item[0] = false" aria-current="true"><button class="dropdown-item" type="button">One</button></li>
-      <li v-else class="active" @click="item[0] = false" ><button class="dropdown-item" type="button">two</button></li>
-    </ul>
-    
-
-  </div>
     <div>
       <div class="options">
-        <button class="options__button" :class="{
-          'options__button--selected': settings.option1,
-          'options__button--notselected': !settings.option1,
-        }" type="button" @click="settings.option1 = !settings.option1">
+        <button
+          class="options__button"
+          :class="{
+            'options__button--selected': settings.option1,
+            'options__button--notselected': !settings.option1,
+          }"
+          type="button"
+          @click="settings.option1 = !settings.option1"
+        >
           Reaccuring
         </button>
-        <button class="options__button options__button--nomargright" type="button"
-          @click="settings.option2 = !settings.option2">
+        <button
+          class="options__button options__button--nomargright btn btn-secondary"
+          type="button"
+          @click="settings.option2 = !settings.option2"
+        >
           <span v-if="settings.option2">Comps</span>
           <span v-else>Regions</span>
         </button>
-        <Multiselect v-if="!settings.option2" v-model="value" aria-label="sup" class="options__select" mode="tags"
-          :options="optionsList" placeholder="Include regions" />
-        <Multiselect v-else v-model="value2" aria-label="sup" class="options__select" mode="tags" :options="optionsList2"
-          placeholder="Include comps" />
+        <div v-if="!settings.option2" class="dropdown">
+          <button
+            id="dropdownMenuClickableInside"
+            aria-expanded="false"
+            class="dropdown-toggle btn btn-secondary selectdiv__button"
+            data-bs-auto-close="outside"
+            data-bs-toggle="dropdown"
+            type="button"
+            @click="dropdown = !dropdown"
+          >
+            Include regions
+          </button>
+          <ul
+            aria-labelledby="dropdownMenuClickableInside"
+            class="dropdown-menu dropdown__menu"
+          >
+            <div
+              v-for="(element, elementindex) of Object.keys(champions.regions)"
+              :key="elementindex"
+            >
+              <li v-if="item[elementindex]" @click="item[elementindex] = false">
+                <span class="dropdown-item">{{ element }}</span>
+              </li>
+              <li v-else @click="item[elementindex] = true">
+                <span class="active dropdown-item">{{ element }}</span>
+              </li>
+            </div>
+          </ul>
+        </div>
+        <div v-else class="dropdown">
+          <button
+            id="dropdownMenuClickableInside"
+            aria-expanded="false"
+            class="dropdown-toggle btn btn-secondary selectdiv__button"
+            data-bs-auto-close="outside"
+            data-bs-toggle="dropdown"
+            type="button"
+            @click="dropdown = !dropdown"
+          >
+            Include comps
+          </button>
+          <ul
+            aria-labelledby="dropdownMenuClickableInside"
+            class="dropdown-menu dropdown__menu"
+          >
+            <div
+              v-for="(element, elementindex) of Object.keys(
+                champions.teamComps
+              )"
+              :key="elementindex"
+            >
+              <li v-if="item[elementindex]" @click="item[elementindex] = false">
+                <span class="dropdown-item">{{ element }}</span>
+              </li>
+              <li v-else @click="item[elementindex] = true">
+                <span class="active dropdown-item">{{ element }}</span>
+              </li>
+            </div>
+          </ul>
+        </div>
       </div>
       <form class="form" @submit.prevent="fetchData2()">
         <label class="form__label" for="player1">Player 1</label>
-        <input v-model.lazy="settings.players.player1" class="form__input" name="player1" />
+        <input
+          v-model.lazy="settings.players.player1"
+          class="form__input"
+          name="player1"
+        />
 
         <label class="form__label" for="player2">Player 2</label>
-        <input v-model.lazy="settings.players.player2" class="form__input" name="player2" />
+        <input
+          v-model.lazy="settings.players.player2"
+          class="form__input"
+          name="player2"
+        />
 
         <label class="form__label" for="player3">Player 3</label>
-        <input v-model.lazy="settings.players.player3" class="form__input" name="player3" />
+        <input
+          v-model.lazy="settings.players.player3"
+          class="form__input"
+          name="player3"
+        />
 
         <label class="form__label" for="player4">Player 4</label>
-        <input v-model.lazy="settings.players.player4" class="form__input" name="player4" />
+        <input
+          v-model.lazy="settings.players.player4"
+          class="form__input"
+          name="player4"
+        />
 
         <label class="form__label" for="player5">Player 5</label>
-        <input v-model.lazy="settings.players.player5" class="form__input" name="player5" />
+        <input
+          v-model.lazy="settings.players.player5"
+          class="form__input"
+          name="player5"
+        />
 
         <button class="form__button" type="submit">Submit</button>
       </form>
     </div>
     <div class="result">
-      <div v-for="(player, playerIndex) of myObject2?.players" :key="playerIndex" class="result__div">
+      <div
+        v-for="(player, playerIndex) of myObject2?.players"
+        :key="playerIndex"
+        class="result__div"
+      >
         <div class="result__div__div">
-          <img :id="player.key.toString()" class="result__div__div__image" :src="'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/' +
-            player.assignedChamp +
-            '.png'
-            " />
-          <button :id="player.key.toString() + 'button'" class="result__div__div__button"
-            @click="refreshChampion(playerIndex)">
-            <font-awesome-icon class="result__div__div__button__refresh" :icon="['fas', 'rotate-right']" />
+          <img
+            :id="player.key.toString()"
+            class="result__div__div__image"
+            :src="
+              'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/' +
+              player.assignedChamp +
+              '.png'
+            "
+          />
+          <button
+            :id="player.key.toString() + 'button'"
+            class="result__div__div__button"
+            @click="refreshChampion(playerIndex)"
+          >
+            <font-awesome-icon
+              class="result__div__div__button__refresh"
+              :icon="['fas', 'rotate-right']"
+            />
           </button>
         </div>
       </div>
@@ -223,10 +308,12 @@ async function fetchData2() {
   &__button {
     width: 15rem;
     height: 5rem;
+    margin-left: 1rem;
+    border-left: 1px solid black;
   }
   &__select {
     position: absolute;
-    width: 15rem
+    width: 15rem;
   }
 }
 
@@ -239,7 +326,7 @@ async function fetchData2() {
 .result {
   display: flex;
   flex-direction: column;
-  margin-top: 7.875rem;
+  margin-top: 8.125rem;
 
   &__name {
     color: green !important;
@@ -251,7 +338,7 @@ async function fetchData2() {
     &__div {
       margin-left: -4rem;
       display: flex;
-      margin-bottom: 2.125rem;
+      margin-bottom: 2.375rem;
 
       &__image {
         margin-left: 1.25rem;
@@ -291,7 +378,6 @@ async function fetchData2() {
     color: black;
     padding: 0.5rem 1.5rem;
     margin: 0 1rem;
-    border: 3px solid black;
     width: 10rem;
 
     &--nomargright {
@@ -344,9 +430,11 @@ span {
     border: 2px solid grey;
     border-radius: 5px;
 
-    &--error {}
+    &--error {
+    }
 
-    &:focus {}
+    &:focus {
+    }
   }
 }
 </style>
