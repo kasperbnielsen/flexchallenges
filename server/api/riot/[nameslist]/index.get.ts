@@ -91,13 +91,30 @@ function getHighest(points: number[][]) {
 
 async function getMastery(puuid: number, apiKey: string) {
   const url = `https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-puuid/${puuid}?api_key=${apiKey}`;
-  return await fetch(url, { method: "GET" }).then((res) => res.json());
+  return await fetch(url, { method: "GET" })
+    .then((res) => res.json())
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
 async function getId(username: string, apiKey: string) {
   const url = `https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${username}?api_key=${apiKey}`;
-  const resp = await fetch(url, { method: "GET" }).then((response) => response);
-  return await resp.json();
+  let data;
+  try {
+    data = await fetch(url, { method: "GET" }).then((response) =>
+      response.json()
+    );
+  } catch (err) {
+    console.log("err", err);
+  }
+  if (data.status === undefined) {
+    return data;
+  } else if (data.status.status_code === 429) {
+    return "err";
+  } else {
+    console.log("something not caught");
+  }
 }
 
 export default defineEventHandler(async (event) => {
@@ -131,6 +148,9 @@ export default defineEventHandler(async (event) => {
 
   for (const name of names.list) {
     const id = await getId(name, APIKEY);
+    if (id === "err") {
+      setResponseStatus(event, 429);
+    }
     const mastery = await getMastery(id.puuid, APIKEY);
     const playerMastery = getPlayerMastery(mastery, keys);
     masteryPoints.push(playerMastery);

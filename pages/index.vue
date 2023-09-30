@@ -161,7 +161,18 @@ function refreshChampion(index: string) {
   }
 }
 
+const rateLimit = ref(false);
+
+watch(rateLimit, () => {
+  if (rateLimit.value) {
+    setTimeout(() => {
+      rateLimit.value = false;
+    }, 120000);
+  }
+});
+
 async function fetchData2() {
+  console.log(rateLimit.value);
   const list = Object.values(settings.value.players);
   const newList: string[] = [];
   const newList2: string[] = [];
@@ -187,15 +198,30 @@ async function fetchData2() {
     {
       method: "get",
     }
-  ).then((res) => res.json());
+  ).then((res) => {
+    rateLimit.value = res.status === 429;
+    if (res.status === 429) console.log(res.status);
+    else return res.json();
+  });
 
   myObject2.value = data;
-
-  return data;
 }
 </script>
 
 <template>
+  <div
+    v-if="rateLimit"
+    class="alert alert-warning alert alert-dismissible"
+    role="alert"
+  >
+    <strong>Ratelimit hit!</strong> Please wait 2 minutes before trying again.
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
   <main class="main">
     <div>
       <div class="options">
@@ -304,6 +330,7 @@ async function fetchData2() {
           v-model.lazy="settings.players.player1"
           class="form__input"
           name="player1"
+          required
         />
 
         <label class="form__label" for="player2">Player 2</label>
@@ -311,6 +338,7 @@ async function fetchData2() {
           v-model.lazy="settings.players.player2"
           class="form__input"
           name="player2"
+          required
         />
 
         <label class="form__label" for="player3">Player 3</label>
@@ -318,6 +346,7 @@ async function fetchData2() {
           v-model.lazy="settings.players.player3"
           class="form__input"
           name="player3"
+          required
         />
 
         <label class="form__label" for="player4">Player 4</label>
@@ -325,6 +354,7 @@ async function fetchData2() {
           v-model.lazy="settings.players.player4"
           class="form__input"
           name="player4"
+          required
         />
 
         <label class="form__label" for="player5">Player 5</label>
@@ -332,9 +362,21 @@ async function fetchData2() {
           v-model.lazy="settings.players.player5"
           class="form__input"
           name="player5"
+          required
         />
 
-        <button class="form__button" type="submit">Submit</button>
+        <button
+          v-if="!rateLimit"
+          class="form__button btn btn-primary"
+          type="submit"
+        >
+          Submit
+        </button>
+        <button v-else class="form__button btn" disabled>
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </button>
       </form>
     </div>
     <div class="result">
@@ -369,6 +411,13 @@ async function fetchData2() {
   </main>
 </template>
 <style scoped lang="scss">
+.alert {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+}
 .main {
   padding: 4rem 8rem;
   display: grid;
@@ -484,19 +533,10 @@ span {
   }
 
   &__button {
-    border: none;
-    background: none;
     padding: 1rem 2rem;
     font-size: 1.125rem;
     font-weight: 500;
-    border: 2px solid black;
-    border-radius: 5px;
     color: white;
-
-    &:hover {
-      background: black;
-      color: white;
-    }
   }
 
   &__input {
