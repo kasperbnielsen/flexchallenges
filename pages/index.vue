@@ -15,8 +15,13 @@ type PlayerType = {
   region: string;
 };
 
+type List = {
+  name: string[];
+  disabled: boolean[];
+  selected: boolean[];
+};
+
 const currentRegion = ref();
-const dropdownList = ref<string[]>([]);
 
 const item = ref<boolean[]>([
   false,
@@ -78,27 +83,55 @@ function encodeData(list: {}) {
 }
 
 const myObject2 = ref<PlayerType>();
+const dropdownListRegions = ref<List>({
+  name: Object.keys(champions.regions),
+  disabled: Array(13).fill(false),
+  selected: Array(13).fill(false),
+});
+const dropdownListTeamComps = ref<List>({
+  name: Object.keys(champions.teamComps),
+  disabled: Array(11).fill(false),
+  selected: Array(11).fill(false),
+});
 
-function updateDropdown() {
-  dropdownList.value = [];
-  const region = myObject2.value?.region;
-  if (!settings.value.option2) {
-    const tempList = Object.keys(champions.regions);
-    for (let i = 0; i < champions.regionsList.length; i++) {
-      if (tempList[i].toString() !== region)
-        dropdownList.value.push(tempList[i].toString());
-    }
-  } else {
-    const tempList = Object.keys(champions.teamComps);
-    for (let i = 0; i < champions.teamCompsList.length; i++) {
-      if (tempList[i].toString() !== region) {
-        dropdownList.value.push(tempList[i].toString());
+computed(() =>
+  settings.value.option2
+    ? dropdownListTeamComps.value
+    : dropdownListRegions.value
+);
+
+watch(myObject2, () => {
+  if (myObject2.value) {
+    if (!settings.value.option2) {
+      const index = dropdownListRegions.value.name.indexOf(
+        myObject2.value.region
+      );
+      if (settings.value.option1) {
+        dropdownListRegions.value.disabled[index] = true;
+        dropdownListRegions.value.selected[index] = true;
+      }
+    } else {
+      const index = dropdownListTeamComps.value.name.indexOf(
+        myObject2.value.region
+      );
+      if (settings.value.option1) {
+        dropdownListTeamComps.value.disabled[index] = true;
+        dropdownListTeamComps.value.selected[index] = true;
       }
     }
   }
-}
+});
 
-computed(() => {});
+watch(settings.value, () => {
+  if (!settings.value.option1) {
+    for (let i = 0; i < 13; i++) {
+      dropdownListRegions.value.disabled[i] = false;
+      dropdownListTeamComps.value.disabled[i] = false;
+      dropdownListRegions.value.selected[i] = false;
+      dropdownListTeamComps.value.selected[i] = false;
+    }
+  }
+});
 
 function refreshChampion(index: string) {
   const player = myObject2.value?.players;
@@ -135,13 +168,11 @@ async function fetchData2() {
   let isRegions = true;
   const count = !settings.value.option2 ? 13 : 11;
   for (let i = 0; i < count; i++) {
-    if (!item.value[i]) {
-      if (!settings.value.option2) {
+    if (!settings.value.option2) {
+      if (!dropdownListRegions.value.selected[i])
         newList.push(Object.keys(champions.regions)[i]);
-      } else {
-        newList2.push(Object.keys(champions.teamComps)[i]);
-      }
-    }
+    } else if (!dropdownListTeamComps.value.selected[i])
+      newList2.push(Object.keys(champions.teamComps)[i]);
   }
   let options;
   if (settings.value.option2) {
@@ -159,8 +190,6 @@ async function fetchData2() {
   ).then((res) => res.json());
 
   myObject2.value = data;
-
-  updateDropdown();
 
   return data;
 }
@@ -187,7 +216,6 @@ async function fetchData2() {
           @click="
             settings.option2 = !settings.option2;
             resetOptions();
-            updateDropdown();
           "
         >
           <span v-if="settings.option2">Comps</span>
@@ -210,14 +238,22 @@ async function fetchData2() {
             class="dropdown-menu dropdown__menu"
           >
             <div
-              v-for="(element, elementindex) of Object.keys(champions.regions)"
+              v-for="(element, elementindex) of dropdownListRegions.selected"
               :key="elementindex"
             >
-              <li @click="item[elementindex] = !item[elementindex]">
+              <li
+                @click="
+                  dropdownListRegions.selected[elementindex] =
+                    !dropdownListRegions.selected[elementindex]
+                "
+              >
                 <span
-                  :class="{ active: !item[elementindex] }"
+                  :class="{
+                    active: !dropdownListRegions.selected[elementindex],
+                    disabled: dropdownListRegions.disabled[elementindex],
+                  }"
                   class="dropdown-item"
-                  >{{ element }}</span
+                  >{{ dropdownListRegions.name[elementindex] }}</span
                 >
               </li>
             </div>
@@ -240,14 +276,22 @@ async function fetchData2() {
             class="dropdown-menu dropdown__menu"
           >
             <div
-              v-for="(element, elementindex) of dropdownList"
+              v-for="(element, elementindex) of dropdownListTeamComps.selected"
               :key="elementindex"
             >
-              <li @click="item[elementindex] = !item[elementindex]">
+              <li
+                @click="
+                  dropdownListTeamComps.selected[elementindex] =
+                    !dropdownListTeamComps.selected[elementindex]
+                "
+              >
                 <span
-                  :class="{ active: !item[elementindex] }"
+                  :class="{
+                    active: !dropdownListTeamComps.selected[elementindex],
+                    disabled: dropdownListTeamComps.disabled[elementindex],
+                  }"
                   class="dropdown-item"
-                  >{{ element }}</span
+                  >{{ dropdownListTeamComps.name[elementindex] }}</span
                 >
               </li>
             </div>

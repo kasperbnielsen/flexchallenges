@@ -40,8 +40,7 @@ function getPlayerMastery(champs: Mastery, champList: string[]) {
 
 let random: number;
 
-function getRegion() {
-  const reg = champions.regionsList;
+function getRegion(reg: string[][]) {
   Object.keys(champions.regions);
   random = Math.floor(Math.random() * reg.length);
   return reg[random];
@@ -108,16 +107,13 @@ export default defineEventHandler(async (event) => {
 
   const names: { list: string[]; options: string[]; isRegions: boolean } =
     decode(event?.context?.params?.nameslist);
-  console.log(names);
   let region: string[];
 
-  const randomRegion = names.isRegions
-    ? Math.floor(Math.random() * champions.teamCompsList.length)
-    : Math.floor(Math.random() * names.options.length);
+  const randomRegion = Math.floor(Math.random() * names.options.length);
 
   if (names.options.length === 0) {
     region = names.isRegions
-      ? getRegion()
+      ? champions.regionsList[randomRegion]
       : champions.teamCompsList[randomRegion];
   } else {
     region = names.isRegions

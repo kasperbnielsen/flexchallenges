@@ -561,7 +561,7 @@ const pokeComp = [
 const globalComp = [
   "Akshan",
   "Ashe",
-  "Aurelionsol",
+  "AurelionSol",
   "Bard",
   "Caitlyn",
   "Draven",
