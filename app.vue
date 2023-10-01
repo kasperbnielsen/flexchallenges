@@ -21,8 +21,9 @@
 
     <div class="innerbody">
       <HeaderComp />
-      <div>
-        <NuxtPage />
+      
+      <div class="innerbody__page">
+            <NuxtPage />
       </div>
       <footer>
         <div class="footerdiv">
@@ -39,7 +40,7 @@
     </div>
   </div>
 </template>
-<style>
+<style lang="scss">
 * {
   margin: 0;
   padding: 0;
@@ -58,6 +59,7 @@
     line-height: 1.6;
   }
 }
+
 
 .body {
   background-color: black;
@@ -80,15 +82,19 @@
 
 .innerbody {
   margin: 0 15rem;
-  background-color: #242582;
+  background-color: #091428;
+  &__page {
+    z-index: 2;
+  }
 }
 
 footer {
+  border-top: 2px solid #C8AA6E;
   font-size: x-small;
   font-weight: 300;
   text-align: center;
   padding: 3rem 0 2.5rem 0;
-  background-color: #2f2fa2;
+  background-color: #091428;
   color: white;
 }
 

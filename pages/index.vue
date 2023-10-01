@@ -223,10 +223,10 @@ async function fetchData2() {
     ></button>
   </div>
   <main class="main">
-    <div>
+    <div class="main__div">
       <div class="options">
         <button
-          class="options__button"
+          class="options__button options__button--nohover"
           :class="{
             'options__button--selected': settings.option1,
             'options__button--notselected': !settings.option1,
@@ -244,15 +244,16 @@ async function fetchData2() {
             resetOptions();
           "
         >
-          <span v-if="settings.option2">Comps</span>
-          <span v-else>Regions</span>
+          <span v-if="settings.option2" class="color">Comps</span>
+          <span v-else class="color">Regions</span>
         </button>
         <div v-if="!settings.option2" class="dropdown">
           <button
             id="dropdownMenuClickableInside"
             aria-expanded="false"
-            class="dropdown-toggle btn btn-secondary selectdiv__button"
+            class="dropdown-toggle btn btn-secondary selectdiv__button dropdown__button"
             data-bs-auto-close="outside"
+            data-bs-display="static"
             data-bs-toggle="dropdown"
             type="button"
             @click="dropdown = !dropdown"
@@ -268,6 +269,7 @@ async function fetchData2() {
               :key="elementindex"
             >
               <li
+                class="infront"
                 @click="
                   dropdownListRegions.selected[elementindex] =
                     !dropdownListRegions.selected[elementindex]
@@ -278,7 +280,7 @@ async function fetchData2() {
                     active: !dropdownListRegions.selected[elementindex],
                     disabled: dropdownListRegions.disabled[elementindex],
                   }"
-                  class="dropdown-item"
+                  class="dropdown-item dropdown-link-color"
                   >{{ dropdownListRegions.name[elementindex] }}</span
                 >
               </li>
@@ -289,8 +291,9 @@ async function fetchData2() {
           <button
             id="dropdownMenuClickableInside"
             aria-expanded="false"
-            class="dropdown-toggle btn btn-secondary selectdiv__button"
+            class="dropdown-toggle btn btn-secondary selectdiv__button dropdown__button"
             data-bs-auto-close="outside"
+            data-bs-display="static"
             data-bs-toggle="dropdown"
             type="button"
             @click="dropdown = !dropdown"
@@ -306,6 +309,7 @@ async function fetchData2() {
               :key="elementindex"
             >
               <li
+                class="infront"
                 @click="
                   dropdownListTeamComps.selected[elementindex] =
                     !dropdownListTeamComps.selected[elementindex]
@@ -425,6 +429,9 @@ async function fetchData2() {
   width: 100%;
   height: 100%;
   justify-content: center;
+  &__div {
+    z-index: 1;
+  }
 }
 
 .selectdiv {
@@ -441,10 +448,43 @@ async function fetchData2() {
   }
 }
 
+button {
+  color: #c8aa6e;
+  font-size: 700;
+  &:hover {
+    color: white;
+  }
+}
 .dropdown {
   &__menu {
     width: 15rem;
   }
+
+  &__button {
+    width: 15rem;
+    background-color: #0a323c;
+    border: 2px solid #005a82;
+    border-left-color: black;
+    &:focus {
+      background-color: #0a323c;
+      outline: none;
+    }
+    &:hover {
+      background-color: #0a323e;
+    }
+  }
+}
+
+.active {
+  background-color: #0a323c;
+}
+
+button[type="submit"] {
+  background-color: #0a323c;
+  border: 2px solid #005a82;
+}
+
+button[type="submit"]:hover {
 }
 
 .result {
@@ -467,6 +507,7 @@ async function fetchData2() {
       &__image {
         margin-left: 1.25rem;
         width: 5rem;
+        border: 1px solid #c8aa6e;
       }
 
       &__button {
@@ -474,7 +515,7 @@ async function fetchData2() {
         background: none;
 
         &__refresh {
-          color: white;
+          color: #c8aa6e;
           width: 1rem;
           height: auto;
           margin-left: 0.5rem;
@@ -495,14 +536,24 @@ async function fetchData2() {
     padding: 0.5rem 1.5rem;
     margin: 0 1rem;
     border: 3px solid black;
-    color: black;
   }
 
   &__button {
-    color: black;
+    background-color: #0a323c;
+    border: 2px solid #005a82;
+    font-weight: 400;
     padding: 0.5rem 1.5rem;
     margin: 0 1rem;
     width: 10rem;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #0a323c;
+      color: white;
+    }
+
+    &--nohover {
+    }
 
     &--nomargright {
       margin-right: -1.125rem;
@@ -510,18 +561,35 @@ async function fetchData2() {
 
     &--notselected {
       background-color: green;
+      &:hover {
+        background-color: green;
+      }
     }
 
     &--selected {
       background-color: red;
+      &:hover {
+        background-color: red;
+      }
     }
   }
 }
 
-span {
-  color: black;
+.color {
+  color: #c8aa6e;
+  font-weight: 400;
+  &:hover {
+    color: white;
+  }
 }
 
+.dropdown-item {
+  z-index: 0;
+}
+
+.dropdown-menu {
+  margin-left: 1rem;
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -529,21 +597,23 @@ span {
 
   &__label {
     font-weight: 600;
-    color: white;
+    color: #c8aa6e;
   }
 
   &__button {
     padding: 1rem 2rem;
     font-size: 1.125rem;
     font-weight: 500;
-    color: white;
   }
 
   &__input {
     margin-bottom: 2rem;
     padding: 1rem 2rem;
-    border: 2px solid grey;
+    border: 2px solid #005a82;
     border-radius: 5px;
+    font-weight: 700;
+    color: #0a323c;
+    text-transform: capitalize;
 
     &--error {
     }
@@ -553,4 +623,3 @@ span {
   }
 }
 </style>
-<style src="@vueform/multiselect/themes/default.css"></style>
