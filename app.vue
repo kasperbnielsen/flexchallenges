@@ -40,14 +40,6 @@
     </div>
   </div>
 </template>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EDXB2M8TJ2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EDXB2M8TJ2');
-</script>
 <style lang="scss">
 * {
   margin: 0;
