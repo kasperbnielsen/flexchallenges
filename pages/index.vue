@@ -409,12 +409,27 @@ async function fetchData2() {
               :icon="['fas', 'rotate-right']"
             />
           </button>
+          <div class="result__div__div__player">
+            <p>{{ player.name }}</p>
+            <p>{{ player.key }}</p>
+          </div>
+          <div class="result__div__div__kda">
+            <p></p>
+          </div>
         </div>
       </div>
     </div>
   </main>
 </template>
 <style scoped lang="scss">
+.accordion {
+  position: absolute;
+  right: 0;
+  width: 25rem;
+  margin-right: 20rem;
+  top: 0;
+  margin-top: 18rem;
+}
 .alert {
   top: 0;
   left: 0;
@@ -490,7 +505,9 @@ button[type="submit"]:hover {
 .result {
   display: flex;
   flex-direction: column;
-  margin-top: 8.125rem;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  text-align: center;
 
   &__name {
     color: green !important;
@@ -498,16 +515,32 @@ button[type="submit"]:hover {
 
   &__div {
     margin-left: 4rem;
-
     &__div {
       margin-left: -4rem;
-      display: flex;
-      margin-bottom: 2.375rem;
+      padding-top: 1.1875rem;
+      padding-bottom: 1.1875rem;
+      margin-bottom: 1.1875rem;
+      padding-right: 10rem;
+      background-color: #0a323c;
+      border: 5px solid #c89b3c;
+
+      display: grid;
+      grid-template-columns: 2fr 1fr 5fr 1fr;
+
+      &__kda {
+      }
 
       &__image {
         margin-left: 1.25rem;
         width: 5rem;
         border: 1px solid #c8aa6e;
+      }
+
+      &__player {
+        margin-left: 2rem;
+        font-weight: 700;
+        text-transform: capitalize;
+        color: #c8aa6e;
       }
 
       &__button {
