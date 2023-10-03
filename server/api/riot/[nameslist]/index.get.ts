@@ -1,7 +1,16 @@
+import { Redis } from "ioredis";
+import { MongoClient } from "mongodb";
 import champions from "~/assets/champions";
+
 const runtimeConfig = useRuntimeConfig();
 
-const APIKEY = runtimeConfig.public.API_KEY;
+const APIKEY = runtimeConfig.API_KEY;
+const REDISHOST = runtimeConfig.REDIS_HOST;
+const MONGODBHOST = runtimeConfig.MONGODB_HOST;
+
+const databaseClient = new MongoClient(MONGODBHOST);
+const client = new Redis(REDISHOST);
+const connection = databaseClient.connect().then((c) => c.db("flexchallenges"));
 
 type Mastery = Array<{
   championId: number;
@@ -26,6 +35,32 @@ function getChampions(region: string[]) {
   return Array.from(champList);
 }
 
+function getEasyChampions(region: string[]) {
+  const champList = new Set<string>();
+  const roles = [
+    champions.bot,
+    champions.support,
+    champions.jungler,
+    champions.mid,
+    champions.top,
+  ];
+  for (let j = 0; j < 5; j++) {
+    const shuffledArray = Object.keys(region).sort(() => 0.5 - Math.random());
+    for (let k = 0; k < region.length; k++) {
+      if (roles[j].includes(region[+shuffledArray[k]])) {
+        champList.add(region[+shuffledArray[k]]);
+        break;
+      }
+    }
+  }
+  while (champList.size < 5) {
+    champList.add(region[Math.floor(Math.random() * region[0].length)]);
+  }
+
+  console.log(champList);
+  return Array.from(champList);
+}
+
 function getPlayerMastery(champs: Mastery, champList: string[]) {
   const playerMasteries: number[] = [1, 1, 1, 1, 1];
   for (let i = 0; i < champList.length; i++) {
@@ -39,12 +74,6 @@ function getPlayerMastery(champs: Mastery, champList: string[]) {
 }
 
 let random: number;
-
-function getRegion(reg: string[][]) {
-  Object.keys(champions.regions);
-  random = Math.floor(Math.random() * reg.length);
-  return reg[random];
-}
 
 function getKeys(championList: string[]) {
   const keyList: string[] = [];
@@ -89,32 +118,47 @@ function getHighest(points: number[][]) {
   return index;
 }
 
-async function getMastery(puuid: number, apiKey: string) {
+async function getMastery(puuid: string, apiKey: string) {
   const url = `https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-puuid/${puuid}?api_key=${apiKey}`;
   return await fetch(url, { method: "GET" })
-    .then((res) => res.json())
+    .then((res) => {
+      console.log("fetch mastery");
+      return res.json();
+    })
     .catch((err) => {
       console.log(err);
     });
 }
 
-async function getId(username: string, apiKey: string) {
+async function getId(username: string, apiKey: string, region: string) {
   const url = `https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${username}?api_key=${apiKey}`;
-  let data;
-  try {
-    data = await fetch(url, { method: "GET" }).then((response) =>
-      response.json()
-    );
-  } catch (err) {
-    console.log("err", err);
+  const collection = (await connection).collection<{
+    username: string;
+    puuid: string;
+    region: string;
+  }>("puuid");
+  const user = await collection.findOne({ username, region });
+  if (user) {
+    return user;
   }
-  if (data.status === undefined) {
-    return data;
-  } else if (data.status.status_code === 429) {
-    return "err";
-  } else {
-    console.log("something not caught");
+  const data = await fetch(url, { method: "GET" }).then((response) => {
+    console.log("fetch id");
+    return response.json();
+  });
+  if (data?.status?.status_code === 429) {
+    throw new Error("Ratelimit reached");
   }
+  return collection.findOneAndUpdate(
+    { username, region },
+    {
+      $set: {
+        ...data,
+        username,
+        region,
+      },
+    },
+    { upsert: true, returnDocument: "after" }
+  );
 }
 
 export default defineEventHandler(async (event) => {
@@ -122,10 +166,20 @@ export default defineEventHandler(async (event) => {
     return;
   }
 
-  const names: { list: string[]; options: string[]; isRegions: boolean } =
-    decode(event?.context?.params?.nameslist);
+  const names: {
+    list: string[];
+    options: string[];
+    isRegions: boolean;
+    easyMode: boolean;
+    serverRegion: string;
+  } = decode(event?.context?.params?.nameslist);
   let region: string[];
 
+  names.list = names.list.map((e) => e.toLowerCase().trim());
+
+  await client.set("mode", names.easyMode.toString(), "EX", 3600);
+
+  console.log(names.easyMode ? "true" : "false");
   const randomRegion = Math.floor(Math.random() * names.options.length);
 
   if (names.options.length === 0) {
@@ -140,24 +194,27 @@ export default defineEventHandler(async (event) => {
         champions.teamComps[names.options[randomRegion]];
   }
 
-  const champs = getChampions(region);
+  const champs = names.easyMode
+    ? getEasyChampions(region)
+    : getChampions(region);
 
   const keys = getKeys(champs);
 
   const masteryPoints: Array<Array<number>> = [];
 
   for (const name of names.list) {
-    const id = await getId(name, APIKEY);
-    if (id === "err") {
+    const id = await getId(name, APIKEY, names.serverRegion);
+    if (id === "") {
       setResponseStatus(event, 429);
     }
-    const mastery = await getMastery(id.puuid, APIKEY);
+    const mastery = await getMastery(id?.puuid, APIKEY);
     const playerMastery = getPlayerMastery(mastery, keys);
     masteryPoints.push(playerMastery);
   }
+  console.log(masteryPoints);
 
   const newChampList = [];
-
+  const orderList = [];
   const assignedChamps = [];
 
   for (let i = 0; i < 5; i++) {
@@ -168,6 +225,7 @@ export default defineEventHandler(async (event) => {
 
     assignedChamps[indexOfPlayer] = keys[indexOfChampion];
     newChampList[indexOfPlayer] = champs[indexOfChampion];
+    orderList[indexOfPlayer] = indexOfChampion;
 
     masteryPoints[indexOfPlayer] = [0, 0, 0, 0, 0];
 
@@ -205,6 +263,7 @@ export default defineEventHandler(async (event) => {
       },
     },
     region: names.options[randomRegion],
+    order: orderList,
   };
 
   return myObject2;

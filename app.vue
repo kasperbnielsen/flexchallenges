@@ -33,7 +33,7 @@
           associated properties are trademarks or registered trademarks of Riot
           Games, Inc.
           <p class="contact">
-            For bussiness enquiries contact: Kasperboegvad@gmail.com
+            For business enquiries contact: Kasperboegvad@gmail.com
           </p>
         </div>
       </footer>

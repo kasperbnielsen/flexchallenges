@@ -1,10 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  modules: ["@pinia/nuxt"],
   devtools: { enabled: true },
   runtimeConfig: {
-    public: {
-      API_KEY: process.env.NUXT_API_KEY,
-    },
+    API_KEY: process.env.NUXT_API_KEY,
+    REDIS_HOST: process.env.NUXT_REDIS_HOST,
+    MONGODB_HOST: process.env.NUXT_MONGODB_HOST,
   },
   app: {
     head: {

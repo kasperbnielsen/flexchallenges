@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { storeToRefs } from "pinia";
 import champions from "../assets/champions";
+import { useModeStore } from "@/stores/mode";
+const { mode, server } = storeToRefs(useModeStore());
 
 const dropdown = ref(false);
 
@@ -13,7 +16,16 @@ type PlayerType = {
     player5: { name: string; assignedChamp: string; key: string };
   };
   region: string;
+  order: number[];
 };
+
+const role: string[] = [
+  "bot_challenger.png",
+  "support_challenger.png",
+  "jungle_challenger.png",
+  "middle_challenger.png",
+  "top_challenger.png",
+];
 
 type List = {
   name: string[];
@@ -162,6 +174,7 @@ function refreshChampion(index: string) {
 }
 
 const rateLimit = ref(false);
+let order: string[] = [];
 
 watch(rateLimit, () => {
   if (rateLimit.value) {
@@ -172,7 +185,6 @@ watch(rateLimit, () => {
 });
 
 async function fetchData2() {
-  console.log(rateLimit.value);
   const list = Object.values(settings.value.players);
   const newList: string[] = [];
   const newList2: string[] = [];
@@ -193,8 +205,74 @@ async function fetchData2() {
     isRegions = true;
     options = newList;
   }
+
+  const easyMode = mode.value;
+  console.log(server.value);
+
+  let serverRegion = "";
+
+  switch (server.value) {
+    case "EUW":
+      serverRegion = "EUW1";
+      break;
+    case "JP":
+      serverRegion = "JP1";
+      break;
+    case "NA":
+      serverRegion = "NA1";
+      break;
+    case "EUNE":
+      serverRegion = "EUN1";
+      break;
+    case "KR":
+      serverRegion = "KR";
+      break;
+    case "LA1":
+      serverRegion = "LA1";
+      break;
+    case "LA2":
+      serverRegion = "LA2";
+      break;
+    case "BR":
+      serverRegion = "BR1";
+      break;
+    case "OCE":
+      serverRegion = "OC1";
+      break;
+    case "PH":
+      serverRegion = "PH2";
+      break;
+    case "RU":
+      serverRegion = "RU";
+      break;
+    case "SG":
+      serverRegion = "SG2";
+      break;
+    case "TH":
+      serverRegion = "TH2";
+      break;
+    case "TR":
+      serverRegion = "TR1";
+      break;
+    case "TW":
+      serverRegion = "TW2";
+      break;
+    case "VN":
+      serverRegion = "VN2";
+      break;
+    default:
+      serverRegion = "EUW";
+      break;
+  }
+
   const data = await fetch(
-    `/api/riot/${encodeData({ list, options, isRegions })}`,
+    `/api/riot/${encodeData({
+      list,
+      options,
+      isRegions,
+      easyMode,
+      serverRegion,
+    })}`,
     {
       method: "get",
     }
@@ -205,6 +283,13 @@ async function fetchData2() {
   });
 
   myObject2.value = data;
+  if (myObject2.value) {
+    for (let i = 0; i < role.length; i++) {
+      order[i] = role[myObject2.value?.order[i]];
+    }
+  }
+
+  console.log(order);
 }
 </script>
 
@@ -344,7 +429,6 @@ async function fetchData2() {
           name="player2"
           required
         />
-
         <label class="form__label" for="player3">Player 3</label>
         <input
           v-model.lazy="settings.players.player3"
@@ -352,7 +436,6 @@ async function fetchData2() {
           name="player3"
           required
         />
-
         <label class="form__label" for="player4">Player 4</label>
         <input
           v-model.lazy="settings.players.player4"
@@ -385,7 +468,7 @@ async function fetchData2() {
     </div>
     <div class="result">
       <div
-        v-for="(player, playerIndex) of myObject2?.players"
+        v-for="(player, playerIndex, index) of myObject2?.players"
         :key="playerIndex"
         class="result__div"
       >
@@ -413,8 +496,12 @@ async function fetchData2() {
             <p>{{ player.name }}</p>
             <p>{{ player.key }}</p>
           </div>
-          <div class="result__div__div__kda">
-            <p></p>
+          <div>
+            <img
+              v-if="mode"
+              class="result__div__div__role"
+              :src="role[myObject2?.order[index]]"
+            />
           </div>
         </div>
       </div>
@@ -422,6 +509,10 @@ async function fetchData2() {
   </main>
 </template>
 <style scoped lang="scss">
+button:focus {
+  box-shadow: none;
+  outline: none;
+}
 .accordion {
   position: absolute;
   right: 0;
@@ -525,9 +616,11 @@ button[type="submit"]:hover {
       border: 5px solid #c89b3c;
 
       display: grid;
-      grid-template-columns: 2fr 1fr 5fr 1fr;
+      grid-template-columns: 1fr 1fr 5fr 1fr;
 
-      &__kda {
+      &__role {
+        width: 2rem;
+        margin-right: -18rem;
       }
 
       &__image {
