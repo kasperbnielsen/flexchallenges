@@ -6,7 +6,7 @@ import { useModeStore } from "@/stores/mode";
 const { mode, server } = storeToRefs(useModeStore());
 const config = useRuntimeConfig();
 
-const host = config.SERVER_HOST;
+const host = config.public.SERVER_HOST;
 
 const dropdown = ref(false);
 

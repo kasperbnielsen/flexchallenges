@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     API_KEY: process.env.NUXT_API_KEY,
     REDIS_HOST: process.env.NUXT_REDIS_HOST,
     MONGODB_HOST: process.env.NUXT_MONGODB_HOST,
-    SERVER_HOST: process.env.NUXT_SERVER_HOST,
+    public: { SERVER_HOST: process.env.NUXT_SERVER_HOST },
   },
   app: {
     head: {
