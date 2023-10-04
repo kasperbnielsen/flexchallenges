@@ -177,8 +177,6 @@ export default defineEventHandler(async (event) => {
 
   names.list = names.list.map((e) => e.toLowerCase().trim());
 
-  await client.set("mode", names.easyMode.toString(), "EX", 3600);
-
   console.log(names.easyMode ? "true" : "false");
   const randomRegion = Math.floor(Math.random() * names.options.length);
 
@@ -202,12 +200,19 @@ export default defineEventHandler(async (event) => {
 
   const masteryPoints: Array<Array<number>> = [];
 
+  const hash = new Map<string, string>();
+
   for (const name of names.list) {
     const id = await getId(name, APIKEY, names.serverRegion);
     if (id === "") {
       setResponseStatus(event, 429);
     }
     const mastery = await getMastery(id?.puuid, APIKEY);
+
+    for (let i = 0; i < mastery.length; i++) {
+      hash.set(mastery[i].championId, mastery[i].championPoints.toString());
+    }
+    await client.set(name, hash);
     const playerMastery = getPlayerMastery(mastery, keys);
     masteryPoints.push(playerMastery);
   }
