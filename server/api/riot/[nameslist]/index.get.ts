@@ -6,11 +6,11 @@ const runtimeConfig = useRuntimeConfig();
 
 const APIKEY = runtimeConfig.API_KEY;
 const REDISHOST = runtimeConfig.REDIS_HOST;
-const MONGODBHOST = runtimeConfig.MONGODB_HOST;
+//const MONGODBHOST = runtimeConfig.MONGODB_HOST;
 
-const databaseClient = new MongoClient(MONGODBHOST);
+//const databaseClient = new MongoClient(MONGODBHOST);
 const client = new Redis(REDISHOST);
-const connection = databaseClient.connect().then((c) => c.db("flexchallenges"));
+//const connection = databaseClient.connect().then((c) => c.db("flexchallenges"));
 
 type Mastery = Array<{
   championId: number;
@@ -132,7 +132,7 @@ async function getMastery(puuid: string, apiKey: string) {
 
 async function getId(username: string, apiKey: string, region: string) {
   const url = `https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${username}?api_key=${apiKey}`;
-  const collection = (await connection).collection<{
+  /* const collection = (await connection).collection<{
     username: string;
     puuid: string;
     region: string;
@@ -140,7 +140,7 @@ async function getId(username: string, apiKey: string, region: string) {
   const user = await collection.findOne({ username, region });
   if (user) {
     return user;
-  }
+  } */
   const data = await fetch(url, { method: "GET" }).then((response) => {
     console.log("fetch id");
     return response.json();
@@ -148,7 +148,8 @@ async function getId(username: string, apiKey: string, region: string) {
   if (data?.status?.status_code === 429) {
     throw new Error("Ratelimit reached");
   }
-  return collection.findOneAndUpdate(
+
+  /* return collection.findOneAndUpdate(
     { username, region },
     {
       $set: {
@@ -158,7 +159,8 @@ async function getId(username: string, apiKey: string, region: string) {
       },
     },
     { upsert: true, returnDocument: "after" }
-  );
+  ); */
+  return data;
 }
 
 export default defineEventHandler(async (event) => {
