@@ -4,6 +4,9 @@ import { storeToRefs } from "pinia";
 import champions from "../assets/champions";
 import { useModeStore } from "@/stores/mode";
 const { mode, server } = storeToRefs(useModeStore());
+const config = useRuntimeConfig();
+
+const host = config.SERVER_HOST;
 
 const dropdown = ref(false);
 
@@ -266,7 +269,7 @@ async function fetchData2() {
   }
 
   const data = await fetch(
-    `/api/riot/${encodeData({
+    `${host}/riot/${encodeData({
       list,
       options,
       isRegions,

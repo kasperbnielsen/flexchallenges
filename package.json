@@ -23,7 +23,8 @@
     "eslint-plugin-vue": "^9.17.0",
     "eslint-plugin-vuejs-accessibility": "^2.2.0",
     "nuxt": "^3.7.3",
-    "sass": "^1.68.0"
+    "sass": "^1.68.0",
+    "wrangler": "^3.10.1"
   },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
