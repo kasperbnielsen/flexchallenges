@@ -6,9 +6,10 @@ import { useModeStore } from "@/stores/mode";
 const { mode, server } = storeToRefs(useModeStore());
 const config = useRuntimeConfig();
 
-const host = config.public.SERVER_HOST;
+const SERVER_HOST = config.public.SERVER_HOST;
 
 const dropdown = ref(false);
+const showRoles = ref(false);
 
 type PlayerType = {
   players: {
@@ -177,7 +178,7 @@ function refreshChampion(index: string) {
 }
 
 const rateLimit = ref(false);
-let order: string[] = [];
+const order: string[] = [];
 
 watch(rateLimit, () => {
   if (rateLimit.value) {
@@ -269,7 +270,7 @@ async function fetchData2() {
   }
 
   const data = await fetch(
-    `${host}/riot/${encodeData({
+    `${SERVER_HOST}/riot/${encodeData({
       list,
       options,
       isRegions,
@@ -285,14 +286,14 @@ async function fetchData2() {
     else return res.json();
   });
 
+  if (easyMode) showRoles.value = true;
+
   myObject2.value = data;
   if (myObject2.value) {
     for (let i = 0; i < role.length; i++) {
       order[i] = role[myObject2.value?.order[i]];
     }
   }
-
-  console.log(order);
 }
 </script>
 
@@ -501,7 +502,7 @@ async function fetchData2() {
           </div>
           <div>
             <img
-              v-if="mode"
+              v-if="mode && showRoles"
               class="result__div__div__role"
               :src="role[myObject2?.order[index]]"
             />

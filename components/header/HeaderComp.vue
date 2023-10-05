@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { ref } from "vue";
 import { storeToRefs } from "pinia";
 import { useModeStore } from "@/stores/mode";
 const { mode } = storeToRefs(useModeStore());
@@ -11,12 +10,9 @@ const { server } = storeToRefs(useModeStore());
       <div class="header__section">
         <select
           v-model="server"
-          aria-label="Default select example"
           class="form-select header__select form-select-lg mb-3"
         >
-          <option class="header__select__option" selected value="EUW">
-            EUW
-          </option>
+          <option class="header__select__option" value="EUW">EUW</option>
           <option class="header__select__option" value="EUNE">EUNE</option>
           <option class="header__select__option" value="NA">NA</option>
           <option class="header__select__option" value="OCE">OCE</option>
