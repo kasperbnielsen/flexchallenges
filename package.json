@@ -31,7 +31,6 @@
     "@fortawesome/vue-fontawesome": "^3.0.3",
     "@gtm-support/vue-gtm": "^2.2.0",
     "@pinia/nuxt": "^0.4.11",
-    "ioredis": "^5.3.2",
     "pinia": "^2.1.6"
   }
 }
