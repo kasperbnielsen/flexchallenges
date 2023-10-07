@@ -21,6 +21,8 @@ type PlayerType = {
   };
   region: string;
   order: number[];
+  pointsList: number[];
+  levelList: number[];
 };
 
 const role: string[] = [
@@ -498,7 +500,13 @@ async function fetchData2() {
           </button>
           <div class="result__div__div__player">
             <p>{{ player.name }}</p>
-            <p>{{ player.key }}</p>
+          </div>
+          <div class="result__div__div__mastery">
+            <img
+              class="result__div__div__mastery__img"
+              :src="`mastery${myObject2?.levelList[index] ?? 0}.png`"
+            />
+            <p>{{ myObject2?.pointsList[index] }}</p>
           </div>
           <div>
             <img
@@ -620,11 +628,11 @@ button[type="submit"]:hover {
       border: 5px solid #c89b3c;
 
       display: grid;
-      grid-template-columns: 1fr 1fr 5fr 1fr;
+      grid-template-columns: 1fr 1fr 5fr 1fr 1fr;
 
       &__role {
         width: 2rem;
-        margin-right: -18rem;
+        margin-right: -22rem;
       }
 
       &__image {
@@ -633,8 +641,21 @@ button[type="submit"]:hover {
         border: 1px solid #c8aa6e;
       }
 
+      &__mastery {
+        position: absolute;
+        margin-left: 20rem;
+        margin-top: -1rem;
+        color: #c8aa6e;
+        font-weight: 700;
+        &__img {
+          width: 5rem;
+          height: 5rem;
+        }
+      }
+
       &__player {
         margin-left: 2rem;
+        margin-top: 1.5rem;
         font-weight: 700;
         text-transform: capitalize;
         color: #c8aa6e;
