@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { Buffer as BufferPolyfill } from "buffer";
 import { useRoute } from "vue-router";
+import items from "~/assets/items.json";
 declare let Buffer: typeof BufferPolyfill;
 globalThis.Buffer = BufferPolyfill;
 const config = useRuntimeConfig();
@@ -28,9 +29,7 @@ function decode(input: string) {
   return JSON.parse(json);
 }
 
-const myData: { name: string; puuid: string } = decode(
-  Object.keys(route.query)[0]
-);
+const myData: { name: string; puuid: string } = decode(Object.keys(route.query)[0]);
 
 watch(matchList, () => {
   console.log("updated matchlist");
@@ -46,12 +45,9 @@ const profileData = ref<{
 const winArr = ref<Array<boolean>>([]);
 
 async function fetchData() {
-  const fetchedData = await fetch(
-    `${SERVER_HOST}/riot/player/${encodeData({ data: myData.puuid })}`,
-    {
-      method: "get",
-    }
-  )
+  const fetchedData = await fetch(`${SERVER_HOST}/riot/player/${encodeData({ data: myData.puuid })}`, {
+    method: "get",
+  })
     .then((res) => res.json())
     .catch((err) => console.error(err));
 
@@ -79,7 +75,7 @@ async function fetchData() {
     `${SERVER_HOST}/riot/profile/${encodeData({
       id: profileData.value?.summonerId,
     })}`,
-    { method: "GET" }
+    { method: "GET" },
   )
     .then((response) => response.json())
     .catch((err) => console.error(err));
@@ -99,10 +95,7 @@ await fetchData();
 
       <p class="profile__username">{{ profileData?.name }}</p>
       <div v-for="(type, typeIndex) of playerProfileData.data" :key="typeIndex">
-        <div
-          v-if="type.queueType !== 'RANKED_TFT_DOUBLE_UP'"
-          class="profile__rank__flexqueue"
-        >
+        <div v-if="type.queueType !== 'RANKED_TFT_DOUBLE_UP'" class="profile__rank__flexqueue">
           <img
             class="profile__rank__image"
             :src="`https://raw.communitydragon.org/13.19/plugins/rcp-fe-lol-shared-components/global/default/${playerProfileData.data[
@@ -111,19 +104,13 @@ await fetchData();
           />
           <div class="profile__rank__textdiv">
             <p class="profile__rank__flexqueue__title">
-              {{
-                playerProfileData.data[typeIndex].queueType === "RANKED_FLEX_SR"
-                  ? "Flex queue"
-                  : "Solo queue"
-              }}
+              {{ playerProfileData.data[typeIndex].queueType === "RANKED_FLEX_SR" ? "Flex queue" : "Solo queue" }}
             </p>
             <p class="profile__rank__text">
               {{ playerProfileData.data[typeIndex].tier }}
               {{ playerProfileData.data[typeIndex].rank }}
             </p>
-            <p class="profile__rank__undertext">
-              {{ playerProfileData.data[typeIndex].leaguePoints }} LP
-            </p>
+            <p class="profile__rank__undertext">{{ playerProfileData.data[typeIndex].leaguePoints }} LP</p>
           </div>
         </div>
       </div>
@@ -171,30 +158,9 @@ await fetchData();
           </div>
         </nav>
         <div id="nav-tabContent" class="tab-content">
-          <div
-            id="nav-home"
-            aria-labelledby="nav-home-tab"
-            class="tab-pane fade show active"
-            role="tabpanel"
-          >
-            ...
-          </div>
-          <div
-            id="nav-profile"
-            aria-labelledby="nav-profile-tab"
-            class="tab-pane fade"
-            role="tabpanel"
-          >
-            ...
-          </div>
-          <div
-            id="nav-contact"
-            aria-labelledby="nav-contact-tab"
-            class="tab-pane fade"
-            role="tabpanel"
-          >
-            ...
-          </div>
+          <div id="nav-home" aria-labelledby="nav-home-tab" class="tab-pane fade show active" role="tabpanel">...</div>
+          <div id="nav-profile" aria-labelledby="nav-profile-tab" class="tab-pane fade" role="tabpanel">...</div>
+          <div id="nav-contact" aria-labelledby="nav-contact-tab" class="tab-pane fade" role="tabpanel">...</div>
         </div>
       </div>
       <div v-if="matchList" class="result">
@@ -204,23 +170,15 @@ await fetchData();
           class="result__match"
           :style="
             winArr[matchIndex]
-              ? { 'background-color': 'green' }
-              : { 'background-color': 'red' }
+              ? { 'background-color': 'hsl(100, 62%, 40%  )' }
+              : { 'background-color': 'hsl(0, 62%, 50%)' }
           "
         >
           <div class="result__match__data">
-            <div
-              v-for="(participant, index) of matchList.data[matchIndex].info
-                .participants"
-              :key="index"
-            >
+            <div v-for="(participant, index) of matchList.data[matchIndex].info.participants" :key="index">
               <p v-if="participant.puuid === myData.puuid">
                 {{
-                  match.info.queueId === 440
-                    ? "Ranked Flex"
-                    : match.info.queueId === 420
-                    ? "Ranked Solo"
-                    : "Unranked"
+                  match.info.queueId === 440 ? "Ranked Flex" : match.info.queueId === 420 ? "Ranked Solo" : "Unranked"
                 }}
               </p>
               <p v-if="participant.puuid === myData.puuid">3 days ago</p>
@@ -229,15 +187,9 @@ await fetchData();
               </p>
               <p v-if="participant.puuid === myData.puuid">
                 {{
-                  Math.floor(
-                    (match.info.gameEndTimestamp -
-                      match.info.gameStartTimestamp) /
-                      60000
-                  ) +
+                  Math.floor((match.info.gameEndTimestamp - match.info.gameStartTimestamp) / 60000) +
                   "m " +
-                  ((match.info.gameEndTimestamp -
-                    match.info.gameStartTimestamp) %
-                    60) +
+                  ((match.info.gameEndTimestamp - match.info.gameStartTimestamp) % 60) +
                   "s"
                 }}
               </p>
@@ -246,8 +198,7 @@ await fetchData();
 
           <div>
             <div
-              v-for="(participant, index) of matchList.data[matchIndex].info
-                .participants"
+              v-for="(participant, index) of matchList.data[matchIndex].info.participants"
               :key="index"
               class="result__match__champion"
             >
@@ -276,19 +227,38 @@ await fetchData();
               </div>
             </div>
           </div>
+          <div class="result_match__stats">
+            <div v-for="(participant, index) of matchList.data[matchIndex].info.participants" :key="index">
+              <p v-if="participant.puuid === myData.puuid" class="result__match__stats__kda">
+                <span>{{ participant.kills }}</span>
+                <span style="color: darkgrey">/</span>
+                <span style="color: darkred">{{ participant.deaths }}</span>
+                <span style="color: darkgrey">/</span>
+                <span>{{ participant.assists }}</span>
+              </p>
+
+              <p v-if="participant.puuid === myData.puuid" class="result__match__stats__computedkda">
+                {{ ((participant.kills + participant.assists) / participant.deaths).toPrecision(3) }} KDA
+              </p>
+              <div v-if="participant.puuid === myData.puuid">
+                <img
+                  class="result__match__stats__items"
+                  :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/${items[0].iconPath
+                    .substr(43, items[0].iconPath.length - 1)
+                    .toLowerCase()}`"
+                />
+              </div>
+            </div>
+          </div>
 
           <div class="result__match__team1">
             <div
-              v-for="(player, playerIndex) of matchList.data[matchIndex].info
-                .participants"
+              v-for="(player, playerIndex) of matchList.data[matchIndex].info.participants"
               :key="playerIndex"
               class="div1"
             >
               <div
-                v-if="
-                  matchList.data[matchIndex].info.gameVersion.substr(0, 2) ===
-                    '13' && playerIndex < 5
-                "
+                v-if="matchList.data[matchIndex].info.gameVersion.substr(0, 2) === '13' && playerIndex < 5"
                 class="result__match__players1"
               >
                 <div class="result__match__players__player">
@@ -296,7 +266,10 @@ await fetchData();
                     class="result__match__players__player__image"
                     :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${player.championId}.png`"
                   />
-                  <p>
+                  <p v-if="player.puuid === myData.puuid" class="bold">
+                    {{ player.summonerName }}
+                  </p>
+                  <p v-else>
                     {{ player.summonerName }}
                   </p>
                 </div>
@@ -305,16 +278,12 @@ await fetchData();
           </div>
           <div class="result__match__team2">
             <div
-              v-for="(player, playerIndex) of matchList.data[matchIndex].info
-                .participants"
+              v-for="(player, playerIndex) of matchList.data[matchIndex].info.participants"
               :key="playerIndex"
               class="div2"
             >
               <div
-                v-if="
-                  matchList.data[matchIndex].info.gameVersion.substr(0, 2) ===
-                    '13' && playerIndex > 4
-                "
+                v-if="matchList.data[matchIndex].info.gameVersion.substr(0, 2) === '13' && playerIndex > 4"
                 class="result__match__players2"
               >
                 <div class="result__match__players__player">
@@ -322,7 +291,10 @@ await fetchData();
                     class="result__match__players__player__image"
                     :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${player.championId}.png`"
                   />
-                  <p>
+                  <p v-if="player.puuid === myData.puuid" class="bold">
+                    {{ player.summonerName }}
+                  </p>
+                  <p v-else>
                     {{ player.summonerName }}
                   </p>
                 </div>
@@ -342,6 +314,10 @@ await fetchData();
 
 .outerbody {
   margin: 3rem;
+}
+
+.bold {
+  font-weight: 700;
 }
 
 .body {
@@ -416,9 +392,6 @@ await fetchData();
   border-radius: 5px;
 }
 
-* {
-  --new-var: red;
-}
 .result {
   border: 1px solid black;
   background-color: #25353b;
@@ -430,17 +403,31 @@ await fetchData();
   flex-direction: column;
 
   &__match {
-    padding: 1rem;
-    background-color: var(--new-var);
+    padding: 0.5rem;
     border-radius: 5px;
-    margin-top: 2rem;
+    margin-top: 1rem;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 0.75fr 0.5fr 1fr 1fr 1fr;
     width: max-content;
     &__data {
       &:nth-child(n) p {
         margin-bottom: 0rem;
         padding: 0;
+        font-size: 12px;
+      }
+    }
+
+    &__stats {
+      &__kda {
+        font-weight: 700;
+      }
+      &__computedkda {
+        font-size: 11px;
+        margin-top: -1rem;
+      }
+      &__items {
+        width: 1.25rem;
+        height: 1.25rem;
       }
     }
 
@@ -448,12 +435,12 @@ await fetchData();
       display: flex;
       flex-direction: column;
       &__img {
-        width: 5rem;
-        height: 5rem;
+        width: 3rem;
+        height: 3rem;
       }
       &__summonerSpells {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
       }
     }
 
@@ -468,7 +455,7 @@ await fetchData();
         display: flex;
         width: max-content;
         min-width: 10rem;
-        margin-bottom: -0.5rem;
+        margin-bottom: -1rem;
         font-size: x-small;
 
         &__image {
