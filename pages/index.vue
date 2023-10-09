@@ -10,14 +10,40 @@ const SERVER_HOST = config.public.SERVER_HOST;
 
 const dropdown = ref(false);
 const showRoles = ref(false);
+const encodedData = ref("");
 
 type PlayerType = {
   players: {
-    player1: { name: string; assignedChamp: string; key: string };
-    player2: { name: string; assignedChamp: string; key: string };
-    player3: { name: string; assignedChamp: string; key: string };
-    player4: { name: string; assignedChamp: string; key: string };
-    player5: { name: string; assignedChamp: string; key: string };
+    player1: {
+      name: string;
+      assignedChamp: string;
+      key: string;
+      puuid: string;
+    };
+    player2: {
+      name: string;
+      assignedChamp: string;
+      key: string;
+      puuid: string;
+    };
+    player3: {
+      name: string;
+      assignedChamp: string;
+      key: string;
+      puuid: string;
+    };
+    player4: {
+      name: string;
+      assignedChamp: string;
+      key: string;
+      puuid: string;
+    };
+    player5: {
+      name: string;
+      assignedChamp: string;
+      key: string;
+      puuid: string;
+    };
   };
   region: string;
   order: number[];
@@ -213,7 +239,6 @@ async function fetchData2() {
   }
 
   const easyMode = mode.value;
-  console.log(server.value);
 
   let serverRegion = "";
 
@@ -270,20 +295,18 @@ async function fetchData2() {
       serverRegion = "EUW";
       break;
   }
-
-  const data = await fetch(
-    `${SERVER_HOST}/riot/${encodeData({
-      list,
-      options,
-      isRegions,
-      easyMode,
-      serverRegion,
-    })}`,
-    {
-      method: "get",
-    }
-  ).then((res) => {
+  encodedData.value = encodeData({
+    list,
+    options,
+    isRegions,
+    easyMode,
+    serverRegion,
+  });
+  const data = await fetch(`${SERVER_HOST}/riot/${encodedData.value}`, {
+    method: "get",
+  }).then((res) => {
     rateLimit.value = res.status === 429;
+    console.log(res);
     if (res.status === 429) console.log(res.status);
     else return res.json();
   });
@@ -472,7 +495,7 @@ async function fetchData2() {
         </button>
       </form>
     </div>
-    <div class="result">
+    <div ref="resultReference" class="result">
       <div
         v-for="(player, playerIndex, index) of myObject2?.players"
         :key="playerIndex"
@@ -499,7 +522,13 @@ async function fetchData2() {
             />
           </button>
           <div class="result__div__div__player">
-            <p>{{ player.name }}</p>
+            <a
+              :href="`/player?${encodeData({
+                name: player.name,
+                puuid: player.puuid,
+              })}`"
+              ><p>{{ player.name }}</p></a
+            >
           </div>
           <div class="result__div__div__mastery">
             <img
