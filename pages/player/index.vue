@@ -32,7 +32,7 @@ function encodeData(list: {}) {
 function decode(input: string) {
   const padded = input.padEnd(input.length + (4 - (input.length % 4)), "=");
 
-  const json = Buffer.from(padded, "base64").toString();
+  const json = atob(padded);
   return JSON.parse(json);
 }
 
