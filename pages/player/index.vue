@@ -78,15 +78,14 @@ function getImagePath(id: number): string {
 
 const statsData = ref();
 
-async function getStats(puuid: string) {
-  const url = `${SERVER_HOST}/api/championstats/${puuid}`;
+async function getStats(puuid: string, refresh: boolean) {
+  const url = refresh
+    ? `${SERVER_HOST}/api/championstats/${puuid}?refresh=true`
+    : `${SERVER_HOST}/api/championstats/${puuid}`;
   const data = await fetch(url, { method: "get" }).then((res) => res.json());
   statsData.value = data;
+  return data;
 }
-
-statsData.value = getStats(
-  "lM4NzZXM_3AW-y20lvZ8MwGdgxWF80WUm3iz2JAWXWfT39WsetMT2PN4QfbbaHcYBW4PwDr4ysmbkw"
-);
 
 watch(statsData, () => {
   console.log("hello stats");
@@ -146,6 +145,7 @@ async function fetchData() {
 
 if (process.server) {
   await fetchData();
+  statsData.value = await getStats(myData.puuid, false);
 }
 </script>
 <template>
@@ -157,7 +157,12 @@ if (process.server) {
       />
       <div>
         <p class="profile__username">{{ profileData?.name }}</p>
-        <button class="btn btn-primary profile__button">Refresh</button>
+        <button
+          class="btn btn-primary profile__button"
+          @click="getStats(myData.puuid, true)"
+        >
+          Refresh
+        </button>
       </div>
       <div v-for="(type, typeIndex) of playerProfileData.data" :key="typeIndex">
         <div
