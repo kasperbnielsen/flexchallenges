@@ -1,5 +1,5 @@
-const items = {
-  "1001": {
+const items = [
+  {
     id: 1001,
     name: "Boots",
     description:
@@ -21,7 +21,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1001_Class_T1_BootsofSpeed.png",
   },
-  "1004": {
+  {
     id: 1004,
     name: "Faerie Charm",
     description:
@@ -43,7 +43,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1004_Class_T1_FaerieCharm.png",
   },
-  "1006": {
+  {
     id: 1006,
     name: "Rejuvenation Bead",
     description:
@@ -65,7 +65,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1006_Tank_T1_RejuvenationBead.png",
   },
-  "1011": {
+  {
     id: 1011,
     name: "Giant's Belt",
     description:
@@ -87,7 +87,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1011_Class_T2_GiantsBelt.png",
   },
-  "1018": {
+  {
     id: 1018,
     name: "Cloak of Agility",
     description:
@@ -112,7 +112,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1018_Base_T1_CloakAgility.png",
   },
-  "1026": {
+  {
     id: 1026,
     name: "Blasting Wand",
     description:
@@ -134,7 +134,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1026_Mage_T1_BlastingWand.png",
   },
-  "1027": {
+  {
     id: 1027,
     name: "Sapphire Crystal",
     description:
@@ -156,7 +156,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1027_Base_T1_SaphireCrystal.png",
   },
-  "1028": {
+  {
     id: 1028,
     name: "Ruby Crystal",
     description:
@@ -181,7 +181,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1028_Base_T1_RubyCrystal.png",
   },
-  "1029": {
+  {
     id: 1029,
     name: "Cloth Armor",
     description:
@@ -203,7 +203,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1029_Base_T1_ClothArmor.png",
   },
-  "1031": {
+  {
     id: 1031,
     name: "Chain Vest",
     description:
@@ -225,7 +225,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1031_Base_T2_ChainVest.png",
   },
-  "1033": {
+  {
     id: 1033,
     name: "Null-Magic Mantle",
     description:
@@ -247,7 +247,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1033_Base_T1_MagicMantle.png",
   },
-  "1035": {
+  {
     id: 1035,
     name: "Emberknife",
     description:
@@ -269,7 +269,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1035_Alll_T1_EmberKnife.png",
   },
-  "1036": {
+  {
     id: 1036,
     name: "Long Sword",
     description:
@@ -294,7 +294,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1036_Class_T1_LongSword.png",
   },
-  "1037": {
+  {
     id: 1037,
     name: "Pickaxe",
     description:
@@ -319,7 +319,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1037_Class_T1_Pickaxe.png",
   },
-  "1038": {
+  {
     id: 1038,
     name: "B. F. Sword",
     description:
@@ -341,7 +341,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1038_Marksman_T1_BFSword.png",
   },
-  "1039": {
+  {
     id: 1039,
     name: "Hailblade",
     description:
@@ -363,7 +363,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1039_All_T1_HailBlade.png",
   },
-  "1040": {
+  {
     id: 1040,
     name: "Obsidian Edge",
     description:
@@ -385,7 +385,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1040_ObsidianEdge.png",
   },
-  "1042": {
+  {
     id: 1042,
     name: "Dagger",
     description:
@@ -407,7 +407,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1042_Base_T1_Dagger.png",
   },
-  "1043": {
+  {
     id: 1043,
     name: "Recurve Bow",
     description:
@@ -429,7 +429,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1043_Base_T2_RecurveBow.png",
   },
-  "1052": {
+  {
     id: 1052,
     name: "Amplifying Tome",
     description:
@@ -454,7 +454,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1052_Mage_T2_AmpTome.png",
   },
-  "1053": {
+  {
     id: 1053,
     name: "Vampiric Scepter",
     description:
@@ -476,7 +476,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1053_Fighter_T2_VampiricScepter.png",
   },
-  "1054": {
+  {
     id: 1054,
     name: "Doran's Shield",
     description:
@@ -498,7 +498,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1054_Tank_T1_DoransShield.png",
   },
-  "1055": {
+  {
     id: 1055,
     name: "Doran's Blade",
     description:
@@ -520,7 +520,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1055_Marksman_T1_DoransBlade.png",
   },
-  "1056": {
+  {
     id: 1056,
     name: "Doran's Ring",
     description:
@@ -542,7 +542,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1056_Mage_T1_DoransRing.png",
   },
-  "1057": {
+  {
     id: 1057,
     name: "Negatron Cloak",
     description:
@@ -564,7 +564,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1057_Tank_T2_NegatronCloak.png",
   },
-  "1058": {
+  {
     id: 1058,
     name: "Needlessly Large Rod",
     description:
@@ -586,7 +586,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1058_Mage_T1_LargeRod.png",
   },
-  "1082": {
+  {
     id: 1082,
     name: "Dark Seal",
     description:
@@ -608,7 +608,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1082_Mage_T1_DarkSeal.png",
   },
-  "1083": {
+  {
     id: 1083,
     name: "Cull",
     description:
@@ -630,7 +630,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1083_Marksman_T1_Cull.png",
   },
-  "1101": {
+  {
     id: 1101,
     name: "Scorchclaw Pup",
     description:
@@ -652,7 +652,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1101_Jungle_T1_ScorchclawPup.png",
   },
-  "1102": {
+  {
     id: 1102,
     name: "Gustwalker Hatchling",
     description:
@@ -674,7 +674,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1102_Jungle_T1_GustwalkerHatchling.png",
   },
-  "1103": {
+  {
     id: 1103,
     name: "Mosstomper Seedling",
     description:
@@ -696,7 +696,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1103_Jungle_T1_MosstomperSeedling.png",
   },
-  "1104": {
+  {
     id: 1104,
     name: "Eye of the Herald",
     description:
@@ -717,7 +717,7 @@ const items = {
     priceTotal: 0,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1103_TestItem2.png",
   },
-  "1500": {
+  {
     id: 1500,
     name: "Penetrating Bullets",
     description: "GeneratedTip_Item_1500_ExternalDescription",
@@ -737,7 +737,7 @@ const items = {
     priceTotal: 0,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3056_Ohmwrecker.png",
   },
-  "1501": {
+  {
     id: 1501,
     name: "Fortification",
     description: "GeneratedTip_Item_1501_ExternalDescription",
@@ -757,7 +757,7 @@ const items = {
     priceTotal: 0,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/34.png",
   },
-  "1502": {
+  {
     id: 1502,
     name: "Reinforced Armor",
     description:
@@ -779,7 +779,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3042_Netherrift_Armor.png",
   },
-  "1503": {
+  {
     id: 1503,
     name: "Warden's Eye",
     description: "GeneratedTip_Item_1503_ExternalDescription",
@@ -800,7 +800,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/096_Eye_of_the_Observer.png",
   },
-  "1504": {
+  {
     id: 1504,
     name: "Vanguard",
     description: "GeneratedTip_Item_1504_ExternalDescription",
@@ -821,7 +821,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1504_TurretShielder.png",
   },
-  "1506": {
+  {
     id: 1506,
     name: "Reinforced Armor",
     description:
@@ -843,7 +843,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3042_Netherrift_Armor.png",
   },
-  "1507": {
+  {
     id: 1507,
     name: "Overcharged",
     description: "GeneratedTip_Item_1507_ExternalDescription",
@@ -864,7 +864,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1507_Tournament_SuddenDeath.png",
   },
-  "1508": {
+  {
     id: 1508,
     name: "Anti-tower Socks",
     description: "GeneratedTip_Item_1508_ExternalDescription",
@@ -885,7 +885,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1508_AntitowerSocks.png",
   },
-  "1509": {
+  {
     id: 1509,
     name: "Gusto",
     description: "GeneratedTip_Item_1509_ExternalDescription",
@@ -905,7 +905,7 @@ const items = {
     priceTotal: 0,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1509_Gusto.png",
   },
-  "1510": {
+  {
     id: 1510,
     name: "Phreakish Gusto",
     description: "GeneratedTip_Item_1510_ExternalDescription",
@@ -926,7 +926,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1510_PhreakishGusto.png",
   },
-  "1511": {
+  {
     id: 1511,
     name: "Super Mech Armor",
     description: "GeneratedTip_Item_1511_ExternalDescription",
@@ -947,7 +947,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1511_SuperMechArmor.png",
   },
-  "1512": {
+  {
     id: 1512,
     name: "Super Mech Power Field",
     description: "GeneratedTip_Item_1512_ExternalDescription",
@@ -968,7 +968,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1512_SuperMechPowerField.png",
   },
-  "1515": {
+  {
     id: 1515,
     name: "Turret Plating",
     description: "GeneratedTip_Item_1515_ExternalDescription",
@@ -989,7 +989,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1504_TurretShielder.png",
   },
-  "1516": {
+  {
     id: 1516,
     name: "Structure Bounty",
     description: "GeneratedTip_Item_1516_ExternalDescription",
@@ -1009,7 +1009,7 @@ const items = {
     priceTotal: 0,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2319_SackOfGold.png",
   },
-  "1517": {
+  {
     id: 1517,
     name: "Structure Bounty",
     description: "GeneratedTip_Item_1516_ExternalDescription",
@@ -1029,7 +1029,7 @@ const items = {
     priceTotal: 0,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2319_SackOfGold.png",
   },
-  "1518": {
+  {
     id: 1518,
     name: "Structure Bounty",
     description: "GeneratedTip_Item_1516_ExternalDescription",
@@ -1049,7 +1049,7 @@ const items = {
     priceTotal: 0,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2319_SackOfGold.png",
   },
-  "1519": {
+  {
     id: 1519,
     name: "Structure Bounty",
     description: "GeneratedTip_Item_1516_ExternalDescription",
@@ -1069,7 +1069,7 @@ const items = {
     priceTotal: 0,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2319_SackOfGold.png",
   },
-  "1520": {
+  {
     id: 1520,
     name: "OvererchargedHA",
     description: "GeneratedTip_Item_1520_ExternalDescription",
@@ -1090,7 +1090,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1507_Tournament_SuddenDeath.png",
   },
-  "1521": {
+  {
     id: 1521,
     name: "Fortification",
     description: "GeneratedTip_Item_1521_ExternalDescription",
@@ -1110,7 +1110,7 @@ const items = {
     priceTotal: 0,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/34.png",
   },
-  "1522": {
+  {
     id: 1522,
     name: "Tower Power-Up",
     description: "GeneratedTip_Item_1522_ExternalDescription",
@@ -1131,7 +1131,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/1504_TurretShielder.png",
   },
-  "2001": {
+  {
     id: 2001,
     name: "Recall",
     description: "GeneratedTip_Item_2001_ExternalDescription",
@@ -1151,7 +1151,7 @@ const items = {
     priceTotal: 60,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/TeleportHome.png",
   },
-  "2003": {
+  {
     id: 2003,
     name: "Health Potion",
     description:
@@ -1173,7 +1173,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2003_Class_T1_HealthPotion.png",
   },
-  "2007": {
+  {
     id: 2007,
     name: "",
     description: "GeneratedTip_Item_2007_ExternalDescription",
@@ -1194,7 +1194,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/TeleportHomeDisabled.png",
   },
-  "2008": {
+  {
     id: 2008,
     name: "",
     description: "GeneratedTip_Item_2008_ExternalDescription",
@@ -1214,7 +1214,7 @@ const items = {
     priceTotal: 60,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/TeleportHome.png",
   },
-  "2010": {
+  {
     id: 2010,
     name: "Total Biscuit of Everlasting Will",
     description:
@@ -1236,7 +1236,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2010_Class_T1_TotalBiscuitofEverlastingWill.png",
   },
-  "2015": {
+  {
     id: 2015,
     name: "Kircheis Shard",
     description:
@@ -1258,7 +1258,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2015_Marksman_T2_KirkcheisShard.png",
   },
-  "2019": {
+  {
     id: 2019,
     name: "Steel Sigil",
     description:
@@ -1279,7 +1279,7 @@ const items = {
     priceTotal: 1100,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2019_Steel_Sigil.png",
   },
-  "2031": {
+  {
     id: 2031,
     name: "Refillable Potion",
     description:
@@ -1301,7 +1301,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2031_Class_T1_RefillablePotion.png",
   },
-  "2033": {
+  {
     id: 2033,
     name: "Corrupting Potion",
     description:
@@ -1323,7 +1323,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2033_Class_T1_CorruptingPotion.png",
   },
-  "2049": {
+  {
     id: 2049,
     name: "Guardian's Amulet",
     description:
@@ -1351,7 +1351,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6688_Enchanter_T3_Norras.png",
   },
-  "2050": {
+  {
     id: 2050,
     name: "Guardian's Shroud",
     description:
@@ -1379,7 +1379,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3194_Battlemage_Blocker.png",
   },
-  "2051": {
+  {
     id: 2051,
     name: "Guardian's Horn",
     description:
@@ -1401,7 +1401,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2051_ARAM_T1_GuardiansHorn.png",
   },
-  "2052": {
+  {
     id: 2052,
     name: "Poro-Snax",
     description:
@@ -1422,7 +1422,7 @@ const items = {
     priceTotal: 0,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2052_Poro_Snack.png",
   },
-  "2055": {
+  {
     id: 2055,
     name: "Control Ward",
     description:
@@ -1444,7 +1444,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2055_Class_T1_ControlWard.png",
   },
-  "2065": {
+  {
     id: 2065,
     name: "Shurelya's Battlesong",
     description:
@@ -1474,7 +1474,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2065_Tank_T4_ShurelyasBattlesong.png",
   },
-  "2138": {
+  {
     id: 2138,
     name: "Elixir of Iron",
     description:
@@ -1496,7 +1496,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2138_Class_ElixirOfIron.png",
   },
-  "2139": {
+  {
     id: 2139,
     name: "Elixir of Sorcery",
     description:
@@ -1518,7 +1518,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2139_Class_T1_ElixirOfSorcery.png",
   },
-  "2140": {
+  {
     id: 2140,
     name: "Elixir of Wrath",
     description:
@@ -1540,7 +1540,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2140_Class_T0_ElixirOfWrath.png",
   },
-  "2141": {
+  {
     id: 2141,
     name: "Cappa Juice",
     description:
@@ -1562,7 +1562,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/Icon_Item_SoulJuice_FunHat.png",
   },
-  "2142": {
+  {
     id: 2142,
     name: "Juice of Power",
     description:
@@ -1584,7 +1584,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/Icon_Item_SoulJuice_AbilityPowerAttackDamage.png",
   },
-  "2143": {
+  {
     id: 2143,
     name: "Juice of Vitality",
     description:
@@ -1606,7 +1606,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/Icons_SoulJuice_Green.2v2_Mode_Fighters.png",
   },
-  "2144": {
+  {
     id: 2144,
     name: "Juice of Haste",
     description:
@@ -1628,7 +1628,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/Icons_SoulJuice_Yellow.2v2_Mode_Fighters.png",
   },
-  "2403": {
+  {
     id: 2403,
     name: "Minion Dematerializer",
     description:
@@ -1650,7 +1650,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2403_Minion_Dematerializer.png",
   },
-  "2419": {
+  {
     id: 2419,
     name: "Commencing Stopwatch",
     description:
@@ -1672,7 +1672,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2419_Mage_T1_StopWatch.png",
   },
-  "2420": {
+  {
     id: 2420,
     name: "Stopwatch",
     description:
@@ -1694,7 +1694,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2419_Mage_T1_StopWatch.png",
   },
-  "2421": {
+  {
     id: 2421,
     name: "Broken Stopwatch",
     description:
@@ -1716,7 +1716,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2424_Mage_T1_BrokenStopwatch.png",
   },
-  "2422": {
+  {
     id: 2422,
     name: "Slightly Magical Footwear",
     description:
@@ -1738,7 +1738,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2422_Class_T1_SlightlyMagicalBoots.png",
   },
-  "2423": {
+  {
     id: 2423,
     name: "Perfectly Timed Stopwatch",
     description:
@@ -1760,7 +1760,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2419_Mage_T1_StopWatch.png",
   },
-  "2424": {
+  {
     id: 2424,
     name: "Broken Stopwatch",
     description:
@@ -1782,7 +1782,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2424_Mage_T1_BrokenStopwatch.png",
   },
-  "3001": {
+  {
     id: 3001,
     name: "Evenshroud",
     description:
@@ -1804,7 +1804,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3001_Support_Lunari.png",
   },
-  "3003": {
+  {
     id: 3003,
     name: "Archangel's Staff",
     description:
@@ -1826,7 +1826,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3003_Mage_T3_ArchangelStaff.png",
   },
-  "3004": {
+  {
     id: 3004,
     name: "Manamune",
     description:
@@ -1854,7 +1854,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3004_Marksman_T3_Manamune.png",
   },
-  "3006": {
+  {
     id: 3006,
     name: "Berserker's Greaves",
     description:
@@ -1876,7 +1876,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3006_Class_T2_BerserkersGreaves.png",
   },
-  "3009": {
+  {
     id: 3009,
     name: "Boots of Swiftness",
     description:
@@ -1898,7 +1898,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3009_Class_T2_BootsofSwiftness.png",
   },
-  "3011": {
+  {
     id: 3011,
     name: "Chemtech Putrifier",
     description:
@@ -1920,7 +1920,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3011_Enchanter_T3_ChemtechFumigator.png",
   },
-  "3012": {
+  {
     id: 3012,
     name: "Chalice of Blessing",
     description:
@@ -1942,7 +1942,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3012_Blessed_Chalice.png",
   },
-  "3020": {
+  {
     id: 3020,
     name: "Sorcerer's Shoes",
     description:
@@ -1964,7 +1964,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3020_Class_T2_SorcerersShoes.png",
   },
-  "3023": {
+  {
     id: 3023,
     name: "Lifewell Pendant",
     description:
@@ -1986,7 +1986,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3023_Lifewell_Pendant.png",
   },
-  "3024": {
+  {
     id: 3024,
     name: "Glacial Buckler",
     description:
@@ -2008,7 +2008,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3024_Tank_T2_GlacialShroud.png",
   },
-  "3026": {
+  {
     id: 3026,
     name: "Guardian Angel",
     description:
@@ -2030,7 +2030,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3026_Fighter_T3_GuardianAngel.png",
   },
-  "3031": {
+  {
     id: 3031,
     name: "Infinity Edge",
     description:
@@ -2052,7 +2052,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3031_Marksman_T3_InfinityEdge.png",
   },
-  "3033": {
+  {
     id: 3033,
     name: "Mortal Reminder",
     description:
@@ -2074,7 +2074,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3033_Marksman_T3_MortalReminder.png",
   },
-  "3035": {
+  {
     id: 3035,
     name: "Last Whisper",
     description:
@@ -2096,7 +2096,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3035_Marksman_T2_LastWhisper.png",
   },
-  "3036": {
+  {
     id: 3036,
     name: "Lord Dominik's Regards",
     description:
@@ -2118,7 +2118,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3036_Marksman_T3_DominikRegards.png",
   },
-  "3040": {
+  {
     id: 3040,
     name: "Seraph's Embrace",
     description:
@@ -2140,7 +2140,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3048_Mage_T3_SeraphsEmbrace.png",
   },
-  "3041": {
+  {
     id: 3041,
     name: "Mejai's Soulstealer",
     description:
@@ -2162,7 +2162,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3041_Mage_T2_MejaisSoulstealer.png",
   },
-  "3042": {
+  {
     id: 3042,
     name: "Muramana",
     description:
@@ -2190,7 +2190,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3042_Marksman_T3_Muramana.png",
   },
-  "3044": {
+  {
     id: 3044,
     name: "Phage",
     description:
@@ -2212,7 +2212,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3044_Fighter_T2_Phage.png",
   },
-  "3046": {
+  {
     id: 3046,
     name: "Phantom Dancer",
     description:
@@ -2240,7 +2240,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3046_Marksman_T3_PhantomDancer.png",
   },
-  "3047": {
+  {
     id: 3047,
     name: "Plated Steelcaps",
     description:
@@ -2262,7 +2262,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3047_Class_T2_NinjaTabi.png",
   },
-  "3050": {
+  {
     id: 3050,
     name: "Zeke's Convergence",
     description:
@@ -2291,7 +2291,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3050_Enchanter_T3_ZekesConvergence.png",
   },
-  "3051": {
+  {
     id: 3051,
     name: "Hearthbound Axe",
     description:
@@ -2313,7 +2313,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3051_Fighter_T2_AxeOfAvarosa.png",
   },
-  "3053": {
+  {
     id: 3053,
     name: "Sterak's Gage",
     description:
@@ -2335,7 +2335,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3053_Steraks_Gage.png",
   },
-  "3057": {
+  {
     id: 3057,
     name: "Sheen",
     description:
@@ -2357,7 +2357,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3057_Fighter_T2_Sheen.png",
   },
-  "3065": {
+  {
     id: 3065,
     name: "Spirit Visage",
     description:
@@ -2385,7 +2385,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3065_Tank_T3_SpiritVisage.png",
   },
-  "3066": {
+  {
     id: 3066,
     name: "Winged Moonplate",
     description:
@@ -2407,7 +2407,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3066_Tank_T3_WingedMoonplate.png",
   },
-  "3067": {
+  {
     id: 3067,
     name: "Kindlegem",
     description:
@@ -2432,7 +2432,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3067_Tank_T1_Kindlegem.png",
   },
-  "3068": {
+  {
     id: 3068,
     name: "Sunfire Aegis",
     description:
@@ -2454,7 +2454,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3068_Tank_T4_SunfireAegis.png",
   },
-  "3070": {
+  {
     id: 3070,
     name: "Tear of the Goddess",
     description:
@@ -2476,7 +2476,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3070_All_T1_TearOfTheGoddess.png",
   },
-  "3071": {
+  {
     id: 3071,
     name: "Black Cleaver",
     description:
@@ -2506,7 +2506,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3071_Fighter_T3_BlackCleaver.png",
   },
-  "3072": {
+  {
     id: 3072,
     name: "Bloodthirster",
     description:
@@ -2528,7 +2528,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3072_Fighter_T3_Bloodthirster.png",
   },
-  "3074": {
+  {
     id: 3074,
     name: "Ravenous Hydra",
     description:
@@ -2556,7 +2556,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3074_Fighter_T3_RavenousHydra.png",
   },
-  "3075": {
+  {
     id: 3075,
     name: "Thornmail",
     description:
@@ -2578,7 +2578,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3075_Tank_T3_Thornmail.png",
   },
-  "3076": {
+  {
     id: 3076,
     name: "Bramble Vest",
     description:
@@ -2600,7 +2600,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3076_Tank_T2_BrambleVest.png",
   },
-  "3077": {
+  {
     id: 3077,
     name: "Tiamat",
     description:
@@ -2622,7 +2622,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3077_Fighter_T2_Tiamat.png",
   },
-  "3078": {
+  {
     id: 3078,
     name: "Trinity Force",
     description:
@@ -2652,7 +2652,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3078_Fighter_T4_TrinityForce.png",
   },
-  "3082": {
+  {
     id: 3082,
     name: "Warden's Mail",
     description:
@@ -2674,7 +2674,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3082_Tank_T2_WardensMail.png",
   },
-  "3083": {
+  {
     id: 3083,
     name: "Warmog's Armor",
     description:
@@ -2696,7 +2696,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3083_Tank_T3_Warmogs.png",
   },
-  "3084": {
+  {
     id: 3084,
     name: "Heartsteel",
     description:
@@ -2718,7 +2718,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3084_Tank_T4_Heartsteel.png",
   },
-  "3085": {
+  {
     id: 3085,
     name: "Runaan's Hurricane",
     description:
@@ -2740,7 +2740,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3085_Marksman_T3_Runaans.png",
   },
-  "3086": {
+  {
     id: 3086,
     name: "Zeal",
     description:
@@ -2762,7 +2762,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3086_Fighter_T2_Zeal.png",
   },
-  "3087": {
+  {
     id: 3087,
     name: "Statikk Shiv",
     description:
@@ -2784,7 +2784,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3087_Statikk_Shiv.SRT13_10.png",
   },
-  "3089": {
+  {
     id: 3089,
     name: "Rabadon's Deathcap",
     description:
@@ -2806,7 +2806,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3089_Mage_T3_Deathcap.png",
   },
-  "3091": {
+  {
     id: 3091,
     name: "Wit's End",
     description:
@@ -2834,7 +2834,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3091_Fighter_T3_WitsEnd.png",
   },
-  "3094": {
+  {
     id: 3094,
     name: "Rapid Firecannon",
     description:
@@ -2856,7 +2856,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3094_Marksman_T3_RapidFireHandCannon.png",
   },
-  "3095": {
+  {
     id: 3095,
     name: "Stormrazor",
     description:
@@ -2877,7 +2877,7 @@ const items = {
     priceTotal: 3000,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3095_Windblade.png",
   },
-  "3100": {
+  {
     id: 3100,
     name: "Lich Bane",
     description:
@@ -2899,7 +2899,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3100_Mage_T3_Lichbane.png",
   },
-  "3102": {
+  {
     id: 3102,
     name: "Banshee's Veil",
     description:
@@ -2926,7 +2926,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3102_Mage_T3_BansheesVeil.png",
   },
-  "3105": {
+  {
     id: 3105,
     name: "Aegis of the Legion",
     description:
@@ -2948,7 +2948,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3105_Tank_T2_AegisOfTheLegion.png",
   },
-  "3107": {
+  {
     id: 3107,
     name: "Redemption",
     description:
@@ -2970,7 +2970,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3107_Enchanter_T3_Redemption.png",
   },
-  "3108": {
+  {
     id: 3108,
     name: "Fiendish Codex",
     description:
@@ -2992,7 +2992,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3108_Mage_T2_FiendishCodex.png",
   },
-  "3109": {
+  {
     id: 3109,
     name: "Knight's Vow",
     description:
@@ -3022,7 +3022,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3109_Tank_T3_KnightsVow.png",
   },
-  "3110": {
+  {
     id: 3110,
     name: "Frozen Heart",
     description:
@@ -3044,7 +3044,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3110_Tank_T3_FrozenHeart.png",
   },
-  "3111": {
+  {
     id: 3111,
     name: "Mercury's Treads",
     description:
@@ -3066,7 +3066,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3111_Class_T2_MercurysTreads.png",
   },
-  "3112": {
+  {
     id: 3112,
     name: "Guardian's Orb",
     description:
@@ -3088,7 +3088,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3112_ARAM_T1_GuardiansOrb.png",
   },
-  "3113": {
+  {
     id: 3113,
     name: "Aether Wisp",
     description:
@@ -3110,7 +3110,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3113_Mage_T2_AetherWisp.png",
   },
-  "3114": {
+  {
     id: 3114,
     name: "Forbidden Idol",
     description:
@@ -3132,7 +3132,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3114_Mage_T2_ForbiddenIdol.png",
   },
-  "3115": {
+  {
     id: 3115,
     name: "Nashor's Tooth",
     description:
@@ -3154,7 +3154,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3115_Mage_T3_NashorsTooth.png",
   },
-  "3116": {
+  {
     id: 3116,
     name: "Rylai's Crystal Scepter",
     description:
@@ -3176,7 +3176,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3116_Mage_T3_RylajsCrystalScepter.png",
   },
-  "3117": {
+  {
     id: 3117,
     name: "Mobility Boots",
     description:
@@ -3198,7 +3198,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3117_Class_T2_BootsofMobility.png",
   },
-  "3119": {
+  {
     id: 3119,
     name: "Winter's Approach",
     description:
@@ -3220,7 +3220,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3119_WintersApproach.png",
   },
-  "3121": {
+  {
     id: 3121,
     name: "Fimbulwinter",
     description:
@@ -3242,7 +3242,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3121_Fimbulwinter.png",
   },
-  "3123": {
+  {
     id: 3123,
     name: "Executioner's Calling",
     description:
@@ -3264,7 +3264,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3123_Fighter_T2_ExecutionersCalling.png",
   },
-  "3124": {
+  {
     id: 3124,
     name: "Guinsoo's Rageblade",
     description:
@@ -3292,7 +3292,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3124_Marksman_T3_GuinsoosRageblade.png",
   },
-  "3128": {
+  {
     id: 3128,
     name: "Deathfire Grasp",
     description:
@@ -3314,7 +3314,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3128_Deathfire_Grasp.png",
   },
-  "3133": {
+  {
     id: 3133,
     name: "Caulfield's Warhammer",
     description:
@@ -3339,7 +3339,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3133_Fighter_T2_CaulfieldsWarhammer.png",
   },
-  "3134": {
+  {
     id: 3134,
     name: "Serrated Dirk",
     description:
@@ -3361,7 +3361,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3134_Assassin_T2_SerratedDirk.png",
   },
-  "3135": {
+  {
     id: 3135,
     name: "Void Staff",
     description:
@@ -3383,7 +3383,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3135_Mage_T3_VoidStaff.png",
   },
-  "3139": {
+  {
     id: 3139,
     name: "Mercurial Scimitar",
     description:
@@ -3412,7 +3412,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3139_Marksman_T3_MercurialScimitar.png",
   },
-  "3140": {
+  {
     id: 3140,
     name: "Quicksilver Sash",
     description:
@@ -3434,7 +3434,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3140_Marksman_T2_QuicksilverSash.png",
   },
-  "3142": {
+  {
     id: 3142,
     name: "Youmuu's Ghostblade",
     description:
@@ -3462,7 +3462,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3142_Assassin_T3_YoumuusGhostblade.png",
   },
-  "3143": {
+  {
     id: 3143,
     name: "Randuin's Omen",
     description:
@@ -3484,7 +3484,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3143_Tank_T3_RanduinsOmen.PIE_C_12_23.png",
   },
-  "3145": {
+  {
     id: 3145,
     name: "Hextech Alternator",
     description:
@@ -3506,7 +3506,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3145_Mage_T2_HextechAlternator.png",
   },
-  "3152": {
+  {
     id: 3152,
     name: "Hextech Rocketbelt",
     description:
@@ -3536,7 +3536,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3152_Mage_T4_HextechRocketBelt.PIE_C_12_23.png",
   },
-  "3153": {
+  {
     id: 3153,
     name: "Blade of The Ruined King",
     description:
@@ -3565,7 +3565,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3153_Fighter_T3_BladeOfTheRuinedKing.png",
   },
-  "3155": {
+  {
     id: 3155,
     name: "Hexdrinker",
     description:
@@ -3587,7 +3587,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3155_Fighter_T2_Hexdrinker.png",
   },
-  "3156": {
+  {
     id: 3156,
     name: "Maw of Malmortius",
     description:
@@ -3609,7 +3609,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3156_Fighter_T3_MawOfMalmortius.png",
   },
-  "3157": {
+  {
     id: 3157,
     name: "Zhonya's Hourglass",
     description:
@@ -3637,7 +3637,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3157_Mage_T3_ZhonyasHourglass.PIE_C_12_23.png",
   },
-  "3158": {
+  {
     id: 3158,
     name: "Ionian Boots of Lucidity",
     description:
@@ -3659,7 +3659,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3158_Class_T2_IonianBootsofLucidity.png",
   },
-  "3161": {
+  {
     id: 3161,
     name: "Spear Of Shojin",
     description:
@@ -3681,7 +3681,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3161_Fighter_T3_SpearofShojin.png",
   },
-  "3165": {
+  {
     id: 3165,
     name: "Morellonomicon",
     description:
@@ -3703,7 +3703,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3165_Mage_T3_Morellonomicon.png",
   },
-  "3177": {
+  {
     id: 3177,
     name: "Guardian's Blade",
     description:
@@ -3725,7 +3725,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3177_ARAM_T1_GuardiansBlade.png",
   },
-  "3179": {
+  {
     id: 3179,
     name: "Umbral Glaive",
     description:
@@ -3753,7 +3753,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3179_Assassin_T3_UmbralGlaive.png",
   },
-  "3181": {
+  {
     id: 3181,
     name: "Hullbreaker",
     description:
@@ -3774,7 +3774,7 @@ const items = {
     priceTotal: 3000,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3181_Hullbreaker.png",
   },
-  "3184": {
+  {
     id: 3184,
     name: "Guardian's Hammer",
     description:
@@ -3796,7 +3796,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3177_ARAM_T1_GuardiansHammer.png",
   },
-  "3190": {
+  {
     id: 3190,
     name: "Locket of the Iron Solari",
     description:
@@ -3826,7 +3826,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3190_Enchanter_T4_LocketOfIronSolari.PIE_C_12_23.png",
   },
-  "3191": {
+  {
     id: 3191,
     name: "Seeker's Armguard",
     description:
@@ -3848,7 +3848,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3191_Battlemage_T2_SeekersArmguard.png",
   },
-  "3193": {
+  {
     id: 3193,
     name: "Gargoyle Stoneplate",
     description:
@@ -3876,7 +3876,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3193_Tank_T3_GargoyleStonePlate.png",
   },
-  "3211": {
+  {
     id: 3211,
     name: "Spectre's Cowl",
     description:
@@ -3898,7 +3898,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3211_Tank_T2_SpectresCowl.png",
   },
-  "3222": {
+  {
     id: 3222,
     name: "Mikael's Blessing",
     description:
@@ -3920,7 +3920,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3222_Enchanter_T3_MikaelsBlessing.png",
   },
-  "3330": {
+  {
     id: 3330,
     name: "Scarecrow Effigy",
     description:
@@ -3942,7 +3942,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/FiddlesticksTrinket1.png",
   },
-  "3340": {
+  {
     id: 3340,
     name: "Stealth Ward",
     description:
@@ -3964,7 +3964,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3340_Class_T1_WardingTotem.png",
   },
-  "3348": {
+  {
     id: 3348,
     name: "Arcane Sweeper",
     description:
@@ -3986,7 +3986,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3348_ArcaneSweeper.2v2_Mode_Fighters.png",
   },
-  "3349": {
+  {
     id: 3349,
     name: "Lucent Singularity",
     description: "<mainText><stats></stats>Lucent Singularity</mainText><br>",
@@ -4006,7 +4006,7 @@ const items = {
     priceTotal: 0,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/RadiantVirtue.png",
   },
-  "3363": {
+  {
     id: 3363,
     name: "Farsight Alteration",
     description:
@@ -4028,7 +4028,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3363_Class_T1_FarSightAlteration.png",
   },
-  "3364": {
+  {
     id: 3364,
     name: "Oracle Lens",
     description:
@@ -4050,7 +4050,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3364_Class_T1_OraclesLens.png",
   },
-  "3400": {
+  {
     id: 3400,
     name: "Your Cut",
     description:
@@ -4071,7 +4071,7 @@ const items = {
     priceTotal: 0,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/PykeGold.png",
   },
-  "3430": {
+  {
     id: 3430,
     name: "Rite Of Ruin",
     description:
@@ -4093,7 +4093,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3430_Rite_of_Ruin.png",
   },
-  "3504": {
+  {
     id: 3504,
     name: "Ardent Censer",
     description:
@@ -4121,7 +4121,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3504_Enchanter_T3_ArdentCenser.png",
   },
-  "3508": {
+  {
     id: 3508,
     name: "Essence Reaver",
     description:
@@ -4150,7 +4150,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3508_Marksman_T3_EssenceReaver.png",
   },
-  "3513": {
+  {
     id: 3513,
     name: "Eye of the Herald",
     description:
@@ -4171,7 +4171,7 @@ const items = {
     priceTotal: 0,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3513_VoidEye.png",
   },
-  "3599": {
+  {
     id: 3599,
     name: "Kalista's Black Spear",
     description:
@@ -4193,7 +4193,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3599_KalistaPAssiveItem.png",
   },
-  "3600": {
+  {
     id: 3600,
     name: "Kalista's Black Spear",
     description:
@@ -4215,7 +4215,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3600_Champ_T0_BlackSpear.png",
   },
-  "3742": {
+  {
     id: 3742,
     name: "Dead Man's Plate",
     description:
@@ -4237,7 +4237,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3742_Tank_T3_DeadmansPlate.png",
   },
-  "3748": {
+  {
     id: 3748,
     name: "Titanic Hydra",
     description:
@@ -4259,7 +4259,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3748_Fighter_T3_TitanicHydra.png",
   },
-  "3801": {
+  {
     id: 3801,
     name: "Crystalline Bracer",
     description:
@@ -4281,7 +4281,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3801_Tank_T2_CrystallineBracer.png",
   },
-  "3802": {
+  {
     id: 3802,
     name: "Lost Chapter",
     description:
@@ -4309,7 +4309,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3802_Mage_Tier2_LostChapter.png",
   },
-  "3803": {
+  {
     id: 3803,
     name: "Catalyst of Aeons",
     description:
@@ -4331,7 +4331,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3803_Mage_T2_CatalystOfAeons.png",
   },
-  "3814": {
+  {
     id: 3814,
     name: "Edge of Night",
     description:
@@ -4353,7 +4353,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3814_Assassin_T3_EdgeOfNight.png",
   },
-  "3850": {
+  {
     id: 3850,
     name: "Spellthief's Edge",
     description:
@@ -4382,7 +4382,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3850_Mage_T1_SpellthiefsEdge.png",
   },
-  "3851": {
+  {
     id: 3851,
     name: "Frostfang",
     description:
@@ -4404,7 +4404,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3851_Mage_T2_Frostfang.png",
   },
-  "3853": {
+  {
     id: 3853,
     name: "Shard of True Ice",
     description:
@@ -4426,7 +4426,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3853_Mage_T3_ShardofTrueIce.png",
   },
-  "3854": {
+  {
     id: 3854,
     name: "Steel Shoulderguards",
     description:
@@ -4455,7 +4455,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3854_Tank_T1_PetriciteShoulderguard.png",
   },
-  "3855": {
+  {
     id: 3855,
     name: "Runesteel Spaulders",
     description:
@@ -4477,7 +4477,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3855_Tank_T2_RunesteelSpaulders.png",
   },
-  "3857": {
+  {
     id: 3857,
     name: "Pauldrons of Whiterock",
     description:
@@ -4499,7 +4499,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3857_Tank_T3_PauldronsOfWhiterock.png",
   },
-  "3858": {
+  {
     id: 3858,
     name: "Relic Shield",
     description:
@@ -4528,7 +4528,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3858_Tank_T1_RelicShield.png",
   },
-  "3859": {
+  {
     id: 3859,
     name: "Targon's Buckler",
     description:
@@ -4550,7 +4550,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3859_Tank_T2_TargonsBucker.png",
   },
-  "3860": {
+  {
     id: 3860,
     name: "Bulwark of the Mountain",
     description:
@@ -4572,7 +4572,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3860_Tank_T3_BulwarkOfTheMountain.png",
   },
-  "3862": {
+  {
     id: 3862,
     name: "Spectral Sickle",
     description:
@@ -4594,7 +4594,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3862_Marksman_T1_SpectralSickle.png",
   },
-  "3863": {
+  {
     id: 3863,
     name: "Harrowing Crescent",
     description:
@@ -4616,7 +4616,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3863_Marksman_T2_HarrowingCrescent.png",
   },
-  "3864": {
+  {
     id: 3864,
     name: "Black Mist Scythe",
     description:
@@ -4638,7 +4638,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3864_Marksman_T3_BlackMistScythe.png",
   },
-  "3901": {
+  {
     id: 3901,
     name: "<rarityLegendary>Fire at Will</rarityLegendary><br><subtitleLeft> <silver>500 Silver Serpents</silver></subtitleLeft>",
     description: "",
@@ -4659,7 +4659,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3901_Champ_T0_FireAtWillCircle.png",
   },
-  "3902": {
+  {
     id: 3902,
     name: "<rarityLegendary>Death's Daughter</rarityLegendary><br><subtitleLeft> <silver>500 Silver Serpents</silver></subtitleLeft>",
     description:
@@ -4681,7 +4681,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3902_Champ_T0_DeathsDaughterCircle.png",
   },
-  "3903": {
+  {
     id: 3903,
     name: "<rarityLegendary>Raise Morale</rarityLegendary><br><subtitleLeft> <silver>500 Silver Serpents</silver></subtitleLeft>",
     description:
@@ -4703,7 +4703,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3903_Champ_T0_RaiseMoraleCircle.png",
   },
-  "3916": {
+  {
     id: 3916,
     name: "Oblivion Orb",
     description:
@@ -4725,7 +4725,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3916_Mage_T2_OblivionOrb.png",
   },
-  "4005": {
+  {
     id: 4005,
     name: "Imperial Mandate",
     description: "",
@@ -4751,7 +4751,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4005_Enchanter_T4_ImperialMandate.png",
   },
-  "4010": {
+  {
     id: 4010,
     name: "Bloodletter's Curse",
     description:
@@ -4773,7 +4773,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4010_Bloodletters_Veil.png",
   },
-  "4401": {
+  {
     id: 4401,
     name: "Force of Nature",
     description:
@@ -4795,7 +4795,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4401_Tank_T3_ForceOfNature.png",
   },
-  "4403": {
+  {
     id: 4403,
     name: "The Golden Spatula",
     description:
@@ -4831,7 +4831,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4403_GoldenSpatula.png",
   },
-  "4628": {
+  {
     id: 4628,
     name: "Horizon Focus",
     description:
@@ -4853,7 +4853,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4628_Mage_T3_HorizonFocus.png",
   },
-  "4629": {
+  {
     id: 4629,
     name: "Cosmic Drive",
     description:
@@ -4880,7 +4880,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4629_Mage_T3_CosmicDrive.png",
   },
-  "4630": {
+  {
     id: 4630,
     name: "Blighting Jewel",
     description:
@@ -4902,7 +4902,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4630_Mage_T2_VoidCrystal.png",
   },
-  "4632": {
+  {
     id: 4632,
     name: "Verdant Barrier",
     description:
@@ -4924,7 +4924,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4632_Tank_T2_VerdantBarrier.png",
   },
-  "4633": {
+  {
     id: 4633,
     name: "Riftmaker",
     description:
@@ -4953,7 +4953,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4633_Mage_T4_Riftmaker.png",
   },
-  "4635": {
+  {
     id: 4635,
     name: "Leeching Leer",
     description:
@@ -4975,7 +4975,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4635_Mage_T2_LeechingLeer.png",
   },
-  "4636": {
+  {
     id: 4636,
     name: "Night Harvester",
     description:
@@ -5003,7 +5003,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4636_Mage_T4_NightHarvester.png",
   },
-  "4637": {
+  {
     id: 4637,
     name: "Demonic Embrace",
     description:
@@ -5025,7 +5025,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4637_Mage_T3_DemonicEmbrace.png",
   },
-  "4638": {
+  {
     id: 4638,
     name: "Watchful Wardstone",
     description:
@@ -5056,7 +5056,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4638_Enchanter_T3_WatchfulSightstone.png",
   },
-  "4641": {
+  {
     id: 4641,
     name: "Stirring Wardstone",
     description:
@@ -5087,7 +5087,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4641_Enchanter_T2_StirringSightstone.png",
   },
-  "4642": {
+  {
     id: 4642,
     name: "Bandleglass Mirror",
     description:
@@ -5114,7 +5114,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4642_Enchanter_T2_BandleGlassMirror.png",
   },
-  "4643": {
+  {
     id: 4643,
     name: "Vigilant Wardstone",
     description:
@@ -5143,7 +5143,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4643_Enchanter_T3_VigilantSightstone.png",
   },
-  "4644": {
+  {
     id: 4644,
     name: "Crown of the Shattered Queen",
     description:
@@ -5170,7 +5170,7 @@ const items = {
     priceTotal: 2800,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4644_Crown.png",
   },
-  "4645": {
+  {
     id: 4645,
     name: "Shadowflame",
     description:
@@ -5191,7 +5191,7 @@ const items = {
     priceTotal: 3000,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4645_Shadowflame.png",
   },
-  "6029": {
+  {
     id: 6029,
     name: "Ironspike Whip",
     description:
@@ -5213,7 +5213,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6029_Fighter_T2_IronSpikeWhip.png",
   },
-  "6035": {
+  {
     id: 6035,
     name: "Silvermere Dawn",
     description:
@@ -5235,7 +5235,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6035_Fighter_T3_SilvermereDawn.png",
   },
-  "6333": {
+  {
     id: 6333,
     name: "Death's Dance",
     description:
@@ -5257,7 +5257,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6333_Fighter_T3_DeathsDance.png",
   },
-  "6609": {
+  {
     id: 6609,
     name: "Chempunk Chainsword",
     description:
@@ -5279,7 +5279,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6609_Fighter_T3_ChempunkChainsword.png",
   },
-  "6616": {
+  {
     id: 6616,
     name: "Staff of Flowing Water",
     description:
@@ -5301,7 +5301,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3744_Enchanter_T3_StaffOfFlowingWater.png",
   },
-  "6617": {
+  {
     id: 6617,
     name: "Moonstone Renewer",
     description:
@@ -5329,7 +5329,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6617_Enchanter_T4_MoonstoneRenewer.png",
   },
-  "6620": {
+  {
     id: 6620,
     name: "Echoes of Helia",
     description:
@@ -5351,7 +5351,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6620_Echoes_of_Helia.png",
   },
-  "6630": {
+  {
     id: 6630,
     name: "Goredrinker",
     description:
@@ -5381,7 +5381,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6630_Fighter_T4_GoreDrinker.PIE_C_12_23.png",
   },
-  "6631": {
+  {
     id: 6631,
     name: "Stridebreaker",
     description:
@@ -5412,7 +5412,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6631_Fighter_T4_StrideBreaker.PIE_C_12_23.png",
   },
-  "6632": {
+  {
     id: 6632,
     name: "Divine Sunderer",
     description:
@@ -5442,7 +5442,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6632_Fighter_T4_DivineDevourer.png",
   },
-  "6653": {
+  {
     id: 6653,
     name: "Liandry's Anguish",
     description:
@@ -5464,7 +5464,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6653_Mage_T4_LiandrysAnguish.png",
   },
-  "6655": {
+  {
     id: 6655,
     name: "Luden's Tempest",
     description:
@@ -5493,7 +5493,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6655_Mage_T4_LudensTempest.png",
   },
-  "6656": {
+  {
     id: 6656,
     name: "Everfrost",
     description:
@@ -5523,7 +5523,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6656_Mage_T4_Everfrost.png",
   },
-  "6657": {
+  {
     id: 6657,
     name: "Rod of Ages",
     description:
@@ -5553,7 +5553,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6657_Mage_T4_RodOfAges.png",
   },
-  "6660": {
+  {
     id: 6660,
     name: "Bami's Cinder",
     description:
@@ -5575,7 +5575,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6660_Tank_T2_BamisCinder.png",
   },
-  "6662": {
+  {
     id: 6662,
     name: "Iceborn Gauntlet",
     description:
@@ -5604,7 +5604,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6662_Tank_T3_IcebornGauntlet.png",
   },
-  "6664": {
+  {
     id: 6664,
     name: "Turbo Chemtank",
     description:
@@ -5635,7 +5635,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6664_Tank_T4_AcceleratedChemtank.png",
   },
-  "6665": {
+  {
     id: 6665,
     name: "Jak'Sho, The Protean",
     description:
@@ -5664,7 +5664,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6665_Tank_T4_JakShoTheProtean.png",
   },
-  "6667": {
+  {
     id: 6667,
     name: "Radiant Virtue",
     description:
@@ -5693,7 +5693,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6667_Tank_T4_RadiantVirtue.png",
   },
-  "6670": {
+  {
     id: 6670,
     name: "Noonquiver",
     description:
@@ -5715,7 +5715,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6670_Marksman_T2_Noonquiver.png",
   },
-  "6671": {
+  {
     id: 6671,
     name: "Galeforce",
     description:
@@ -5743,7 +5743,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6671_Marksman_T4_Galeforce.PIE_C_12_23.png",
   },
-  "6672": {
+  {
     id: 6672,
     name: "Kraken Slayer",
     description:
@@ -5765,7 +5765,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6672_Marksman_T4_BehemothSlayer.png",
   },
-  "6673": {
+  {
     id: 6673,
     name: "Immortal Shieldbow",
     description:
@@ -5793,7 +5793,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6673_Marksman_T4_CrimsonShieldbow.png",
   },
-  "6675": {
+  {
     id: 6675,
     name: "Navori Quickblades",
     description:
@@ -5821,7 +5821,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6675_Marksman_T3_NavoriQuickblades.png",
   },
-  "6676": {
+  {
     id: 6676,
     name: "The Collector",
     description:
@@ -5843,7 +5843,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6676_Marksman_T3_TheCollector.png",
   },
-  "6677": {
+  {
     id: 6677,
     name: "Rageknife",
     description:
@@ -5865,7 +5865,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6677_Marksman_T2_RageKnife.png",
   },
-  "6691": {
+  {
     id: 6691,
     name: "Duskblade of Draktharr",
     description:
@@ -5895,7 +5895,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6691_Assassin_T4_DuskbladeOfDraktharr.png",
   },
-  "6692": {
+  {
     id: 6692,
     name: "Eclipse",
     description:
@@ -5923,7 +5923,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6692_Assassin_T4_Eclipse.png",
   },
-  "6693": {
+  {
     id: 6693,
     name: "Prowler's Claw",
     description:
@@ -5951,7 +5951,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6693_Assassin_T4_ProwlersClaw.png",
   },
-  "6694": {
+  {
     id: 6694,
     name: "Serylda's Grudge",
     description:
@@ -5978,7 +5978,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6694_Assasin_T3_SeryldasGrudge.png",
   },
-  "6695": {
+  {
     id: 6695,
     name: "Serpent's Fang",
     description:
@@ -6000,7 +6000,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6695_Assassin_T3_SerpentsFang.png",
   },
-  "6696": {
+  {
     id: 6696,
     name: "Axiom Arc",
     description:
@@ -6021,7 +6021,7 @@ const items = {
     priceTotal: 3000,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6696_AxiomArc.png",
   },
-  "7000": {
+  {
     id: 7000,
     name: " Sandshrike's Claw",
     description:
@@ -6049,7 +6049,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6693_Assassin_T4_ProwlersClaw.png",
   },
-  "7001": {
+  {
     id: 7001,
     name: " Syzygy",
     description:
@@ -6077,7 +6077,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6692_Assassin_T4_Eclipse.png",
   },
-  "7002": {
+  {
     id: 7002,
     name: " Draktharr's Shadowcarver",
     description:
@@ -6107,7 +6107,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6691_Assassin_T4_DuskbladeOfDraktharr.png",
   },
-  "7005": {
+  {
     id: 7005,
     name: " Frozen Fist",
     description:
@@ -6136,7 +6136,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6662_Tank_T3_IcebornGauntlet.png",
   },
-  "7006": {
+  {
     id: 7006,
     name: " Typhoon",
     description:
@@ -6164,7 +6164,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6671_Marksman_T4_Galeforce.PIE_C_12_23.png",
   },
-  "7009": {
+  {
     id: 7009,
     name: " Icathia's Curse",
     description:
@@ -6193,7 +6193,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4633_Mage_T4_Riftmaker.png",
   },
-  "7010": {
+  {
     id: 7010,
     name: " Vespertide",
     description:
@@ -6221,7 +6221,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4636_Mage_T4_NightHarvester.png",
   },
-  "7011": {
+  {
     id: 7011,
     name: " Upgraded Aeropack",
     description:
@@ -6251,7 +6251,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3152_Mage_T4_HextechRocketBelt.PIE_C_12_23.png",
   },
-  "7012": {
+  {
     id: 7012,
     name: " Liandry's Lament",
     description:
@@ -6273,7 +6273,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6653_Mage_T4_LiandrysAnguish.png",
   },
-  "7013": {
+  {
     id: 7013,
     name: " Eye of Luden",
     description:
@@ -6302,7 +6302,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6655_Mage_T4_LudensTempest.png",
   },
-  "7014": {
+  {
     id: 7014,
     name: " Eternal Winter",
     description:
@@ -6332,7 +6332,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6656_Mage_T4_Everfrost.png",
   },
-  "7015": {
+  {
     id: 7015,
     name: " Ceaseless Hunger",
     description:
@@ -6362,7 +6362,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6630_Fighter_T4_GoreDrinker.PIE_C_12_23.png",
   },
-  "7016": {
+  {
     id: 7016,
     name: " Dreamshatter",
     description:
@@ -6393,7 +6393,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6631_Fighter_T4_StrideBreaker.PIE_C_12_23.png",
   },
-  "7017": {
+  {
     id: 7017,
     name: " Deicide",
     description:
@@ -6423,7 +6423,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6632_Fighter_T4_DivineDevourer.png",
   },
-  "7018": {
+  {
     id: 7018,
     name: " Infinity Force",
     description:
@@ -6453,7 +6453,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3078_Fighter_T4_TrinityForce.png",
   },
-  "7019": {
+  {
     id: 7019,
     name: " Reliquary of the Golden Dawn",
     description:
@@ -6482,7 +6482,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3190_Enchanter_T4_LocketOfIronSolari.PIE_C_12_23.png",
   },
-  "7020": {
+  {
     id: 7020,
     name: " Shurelya's Requiem",
     description:
@@ -6512,7 +6512,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2065_Tank_T4_ShurelyasBattlesong.png",
   },
-  "7021": {
+  {
     id: 7021,
     name: " Starcaster",
     description:
@@ -6540,7 +6540,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6617_Enchanter_T4_MoonstoneRenewer.png",
   },
-  "7023": {
+  {
     id: 7023,
     name: " Equinox",
     description:
@@ -6562,7 +6562,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3001_Support_Lunari.png",
   },
-  "7024": {
+  {
     id: 7024,
     name: " Caesura",
     description:
@@ -6589,7 +6589,7 @@ const items = {
     priceTotal: 2800,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4644_Crown.png",
   },
-  "7025": {
+  {
     id: 7025,
     name: " Leviathan",
     description:
@@ -6611,7 +6611,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3084_Tank_T4_Heartsteel.png",
   },
-  "7026": {
+  {
     id: 7026,
     name: " The Unspoken Parasite",
     description:
@@ -6640,7 +6640,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6665_Tank_T4_JakShoTheProtean.png",
   },
-  "7027": {
+  {
     id: 7027,
     name: " Primordial Dawn",
     description:
@@ -6669,7 +6669,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6667_Tank_T4_RadiantVirtue.png",
   },
-  "7028": {
+  {
     id: 7028,
     name: " Infinite Convergence",
     description:
@@ -6699,7 +6699,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6657_Mage_T4_RodOfAges.png",
   },
-  "7029": {
+  {
     id: 7029,
     name: " Youmuu's Wake",
     description:
@@ -6727,7 +6727,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3142_Assassin_T3_YoumuusGhostblade.png",
   },
-  "7030": {
+  {
     id: 7030,
     name: " Seething Sorrow",
     description:
@@ -6755,7 +6755,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3124_Marksman_T3_GuinsoosRageblade.png",
   },
-  "7031": {
+  {
     id: 7031,
     name: " Edge of Finality",
     description:
@@ -6777,7 +6777,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3031_Marksman_T3_InfinityEdge.png",
   },
-  "7032": {
+  {
     id: 7032,
     name: " Flicker",
     description:
@@ -6805,7 +6805,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6675_Marksman_T3_NavoriQuickblades.png",
   },
-  "7033": {
+  {
     id: 7033,
     name: " Cry of the Shrieking City",
     description:
@@ -6827,7 +6827,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6620_Echoes_of_Helia.png",
   },
-  "7050": {
+  {
     id: 7050,
     name: "Gangplank Placeholder",
     description: "",
@@ -6848,7 +6848,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/GP_UI_Placeholder.png",
   },
-  "8001": {
+  {
     id: 8001,
     name: "Anathema's Chains",
     description:
@@ -6870,7 +6870,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/8001_Tank_T3_AnathemasChains.png",
   },
-  "8020": {
+  {
     id: 8020,
     name: "Abyssal Mask",
     description:
@@ -6899,7 +6899,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/8020_Tank_T3_AbyssalMask.png",
   },
-  "222051": {
+  {
     id: 222051,
     name: "Guardian's Horn",
     description:
@@ -6921,7 +6921,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2051_ARAM_T1_GuardiansHorn.png",
   },
-  "222065": {
+  {
     id: 222065,
     name: "Shurelya's Battlesong",
     description:
@@ -6951,7 +6951,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2065_Tank_T4_ShurelyasBattlesong.png",
   },
-  "223001": {
+  {
     id: 223001,
     name: "Evenshroud",
     description:
@@ -6973,7 +6973,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3001_Support_Lunari.png",
   },
-  "223003": {
+  {
     id: 223003,
     name: "Archangel's Staff",
     description:
@@ -6995,7 +6995,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3003_Mage_T3_ArchangelStaff.png",
   },
-  "223004": {
+  {
     id: 223004,
     name: "Manamune",
     description:
@@ -7023,7 +7023,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3004_Marksman_T3_Manamune.png",
   },
-  "223005": {
+  {
     id: 223005,
     name: "Ghostcrawlers",
     description:
@@ -7045,7 +7045,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4001_Ghostwalkers.png",
   },
-  "223006": {
+  {
     id: 223006,
     name: "Berserker's Greaves",
     description:
@@ -7067,7 +7067,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3006_Class_T2_BerserkersGreaves.png",
   },
-  "223009": {
+  {
     id: 223009,
     name: "Boots of Swiftness",
     description:
@@ -7089,7 +7089,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3009_Class_T2_BootsofSwiftness.png",
   },
-  "223011": {
+  {
     id: 223011,
     name: "Chemtech Putrifier",
     description:
@@ -7111,7 +7111,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3011_Enchanter_T3_ChemtechFumigator.png",
   },
-  "223020": {
+  {
     id: 223020,
     name: "Sorcerer's Shoes",
     description:
@@ -7133,7 +7133,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3020_Class_T2_SorcerersShoes.png",
   },
-  "223026": {
+  {
     id: 223026,
     name: "Guardian Angel",
     description:
@@ -7155,7 +7155,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3026_Fighter_T3_GuardianAngel.png",
   },
-  "223031": {
+  {
     id: 223031,
     name: "Infinity Edge",
     description:
@@ -7177,7 +7177,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3031_Marksman_T3_InfinityEdge.png",
   },
-  "223033": {
+  {
     id: 223033,
     name: "Mortal Reminder",
     description:
@@ -7199,7 +7199,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3033_Marksman_T3_MortalReminder.png",
   },
-  "223036": {
+  {
     id: 223036,
     name: "Lord Dominik's Regards",
     description:
@@ -7221,7 +7221,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3036_Marksman_T3_DominikRegards.png",
   },
-  "223039": {
+  {
     id: 223039,
     name: "Atma's Reckoning",
     description:
@@ -7243,7 +7243,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3005_Fighter_T3_AtmasReckoning.png",
   },
-  "223040": {
+  {
     id: 223040,
     name: "Seraph's Embrace",
     description:
@@ -7265,7 +7265,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3048_Mage_T3_SeraphsEmbrace.png",
   },
-  "223042": {
+  {
     id: 223042,
     name: "Muramana",
     description:
@@ -7293,7 +7293,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3042_Marksman_T3_Muramana.png",
   },
-  "223046": {
+  {
     id: 223046,
     name: "Phantom Dancer",
     description:
@@ -7321,7 +7321,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3046_Marksman_T3_PhantomDancer.png",
   },
-  "223047": {
+  {
     id: 223047,
     name: "Plated Steelcaps",
     description:
@@ -7343,7 +7343,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3047_Class_T2_NinjaTabi.png",
   },
-  "223050": {
+  {
     id: 223050,
     name: "Zeke's Convergence",
     description:
@@ -7372,7 +7372,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3050_Enchanter_T3_ZekesConvergence.png",
   },
-  "223053": {
+  {
     id: 223053,
     name: "Sterak's Gage",
     description:
@@ -7394,7 +7394,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3053_Steraks_Gage.png",
   },
-  "223065": {
+  {
     id: 223065,
     name: "Spirit Visage",
     description:
@@ -7422,7 +7422,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3065_Tank_T3_SpiritVisage.png",
   },
-  "223068": {
+  {
     id: 223068,
     name: "Sunfire Aegis",
     description:
@@ -7444,7 +7444,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3068_Tank_T4_SunfireAegis.png",
   },
-  "223071": {
+  {
     id: 223071,
     name: "Black Cleaver",
     description:
@@ -7474,7 +7474,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3071_Fighter_T3_BlackCleaver.png",
   },
-  "223072": {
+  {
     id: 223072,
     name: "Bloodthirster",
     description:
@@ -7496,7 +7496,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3072_Fighter_T3_Bloodthirster.png",
   },
-  "223074": {
+  {
     id: 223074,
     name: "Ravenous Hydra",
     description:
@@ -7524,7 +7524,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3074_Fighter_T3_RavenousHydra.png",
   },
-  "223075": {
+  {
     id: 223075,
     name: "Thornmail",
     description:
@@ -7546,7 +7546,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3075_Tank_T3_Thornmail.png",
   },
-  "223078": {
+  {
     id: 223078,
     name: "Trinity Force",
     description:
@@ -7576,7 +7576,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3078_Fighter_T4_TrinityForce.png",
   },
-  "223084": {
+  {
     id: 223084,
     name: "Heartsteel",
     description:
@@ -7598,7 +7598,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3084_Tank_T4_Heartsteel.png",
   },
-  "223085": {
+  {
     id: 223085,
     name: "Runaan's Hurricane",
     description:
@@ -7620,7 +7620,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3085_Marksman_T3_Runaans.png",
   },
-  "223087": {
+  {
     id: 223087,
     name: "Statikk Shiv",
     description:
@@ -7642,7 +7642,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3087_Statikk_Shiv.SRT13_10.png",
   },
-  "223089": {
+  {
     id: 223089,
     name: "Rabadon's Deathcap",
     description:
@@ -7664,7 +7664,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3089_Mage_T3_Deathcap.png",
   },
-  "223091": {
+  {
     id: 223091,
     name: "Wit's End",
     description:
@@ -7692,7 +7692,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3091_Fighter_T3_WitsEnd.png",
   },
-  "223094": {
+  {
     id: 223094,
     name: "Rapid Firecannon",
     description:
@@ -7714,7 +7714,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3094_Marksman_T3_RapidFireHandCannon.png",
   },
-  "223095": {
+  {
     id: 223095,
     name: "Stormrazor",
     description:
@@ -7735,7 +7735,7 @@ const items = {
     priceTotal: 3000,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3095_Windblade.png",
   },
-  "223100": {
+  {
     id: 223100,
     name: "Lich Bane",
     description:
@@ -7757,7 +7757,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3100_Mage_T3_Lichbane.png",
   },
-  "223102": {
+  {
     id: 223102,
     name: "Banshee's Veil",
     description:
@@ -7784,7 +7784,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3102_Mage_T3_BansheesVeil.png",
   },
-  "223107": {
+  {
     id: 223107,
     name: "Redemption",
     description:
@@ -7806,7 +7806,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3107_Enchanter_T3_Redemption.png",
   },
-  "223109": {
+  {
     id: 223109,
     name: "Knight's Vow",
     description:
@@ -7836,7 +7836,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3109_Tank_T3_KnightsVow.png",
   },
-  "223110": {
+  {
     id: 223110,
     name: "Frozen Heart",
     description:
@@ -7858,7 +7858,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3110_Tank_T3_FrozenHeart.png",
   },
-  "223111": {
+  {
     id: 223111,
     name: "Mercury's Treads",
     description:
@@ -7880,7 +7880,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3111_Class_T2_MercurysTreads.png",
   },
-  "223112": {
+  {
     id: 223112,
     name: "Guardian's Orb",
     description:
@@ -7908,7 +7908,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3112_ARAM_T1_GuardiansOrb.png",
   },
-  "223115": {
+  {
     id: 223115,
     name: "Nashor's Tooth",
     description:
@@ -7930,7 +7930,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3115_Mage_T3_NashorsTooth.png",
   },
-  "223116": {
+  {
     id: 223116,
     name: "Rylai's Crystal Scepter",
     description:
@@ -7952,7 +7952,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3116_Mage_T3_RylajsCrystalScepter.png",
   },
-  "223119": {
+  {
     id: 223119,
     name: "Winter's Approach",
     description:
@@ -7974,7 +7974,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3119_WintersApproach.png",
   },
-  "223121": {
+  {
     id: 223121,
     name: "Fimbulwinter",
     description:
@@ -7996,7 +7996,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3121_Fimbulwinter.png",
   },
-  "223124": {
+  {
     id: 223124,
     name: "Guinsoo's Rageblade",
     description:
@@ -8024,7 +8024,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3124_Marksman_T3_GuinsoosRageblade.png",
   },
-  "223135": {
+  {
     id: 223135,
     name: "Void Staff",
     description:
@@ -8046,7 +8046,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3135_Mage_T3_VoidStaff.png",
   },
-  "223139": {
+  {
     id: 223139,
     name: "Mercurial Scimitar",
     description:
@@ -8075,7 +8075,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3139_Marksman_T3_MercurialScimitar.png",
   },
-  "223142": {
+  {
     id: 223142,
     name: "Youmuu's Ghostblade",
     description:
@@ -8103,7 +8103,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3142_Assassin_T3_YoumuusGhostblade.png",
   },
-  "223143": {
+  {
     id: 223143,
     name: "Randuin's Omen",
     description:
@@ -8125,7 +8125,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3143_Tank_T3_RanduinsOmen.PIE_C_12_23.png",
   },
-  "223146": {
+  {
     id: 223146,
     name: "Hextech Gunblade",
     description:
@@ -8147,7 +8147,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3146_Hextech_Gunblade.PIE_C_12_23.png",
   },
-  "223152": {
+  {
     id: 223152,
     name: "Hextech Rocketbelt",
     description:
@@ -8177,7 +8177,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3152_Mage_T4_HextechRocketBelt.PIE_C_12_23.png",
   },
-  "223153": {
+  {
     id: 223153,
     name: "Blade of The Ruined King",
     description:
@@ -8206,7 +8206,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3153_Fighter_T3_BladeOfTheRuinedKing.png",
   },
-  "223156": {
+  {
     id: 223156,
     name: "Maw of Malmortius",
     description:
@@ -8228,7 +8228,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3156_Fighter_T3_MawOfMalmortius.png",
   },
-  "223157": {
+  {
     id: 223157,
     name: "Zhonya's Hourglass",
     description:
@@ -8256,7 +8256,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3157_Mage_T3_ZhonyasHourglass.PIE_C_12_23.png",
   },
-  "223158": {
+  {
     id: 223158,
     name: "Ionian Boots of Lucidity",
     description:
@@ -8278,7 +8278,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3158_Class_T2_IonianBootsofLucidity.png",
   },
-  "223161": {
+  {
     id: 223161,
     name: "Spear Of Shojin",
     description:
@@ -8300,7 +8300,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3161_Fighter_T3_SpearofShojin.png",
   },
-  "223165": {
+  {
     id: 223165,
     name: "Morellonomicon",
     description:
@@ -8322,7 +8322,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3165_Mage_T3_Morellonomicon.png",
   },
-  "223172": {
+  {
     id: 223172,
     name: "Zephyr",
     description:
@@ -8343,7 +8343,7 @@ const items = {
     priceTotal: 3000,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3172_Zephyr.png",
   },
-  "223177": {
+  {
     id: 223177,
     name: "Guardian's Blade",
     description:
@@ -8365,7 +8365,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3177_ARAM_T1_GuardiansBlade.png",
   },
-  "223181": {
+  {
     id: 223181,
     name: "Hullbreaker",
     description:
@@ -8386,7 +8386,7 @@ const items = {
     priceTotal: 3000,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3181_Hullbreaker.png",
   },
-  "223184": {
+  {
     id: 223184,
     name: "Guardian's Hammer",
     description:
@@ -8408,7 +8408,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3177_ARAM_T1_GuardiansHammer.png",
   },
-  "223185": {
+  {
     id: 223185,
     name: "Guardian's Dirk",
     description:
@@ -8430,7 +8430,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3181_SanguineBlade.png",
   },
-  "223190": {
+  {
     id: 223190,
     name: "Locket of the Iron Solari",
     description:
@@ -8460,7 +8460,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3190_Enchanter_T4_LocketOfIronSolari.PIE_C_12_23.png",
   },
-  "223193": {
+  {
     id: 223193,
     name: "Gargoyle Stoneplate",
     description:
@@ -8488,7 +8488,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3193_Tank_T3_GargoyleStonePlate.png",
   },
-  "223222": {
+  {
     id: 223222,
     name: "Mikael's Blessing",
     description:
@@ -8510,7 +8510,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3222_Enchanter_T3_MikaelsBlessing.png",
   },
-  "223504": {
+  {
     id: 223504,
     name: "Ardent Censer",
     description:
@@ -8538,7 +8538,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3504_Enchanter_T3_ArdentCenser.png",
   },
-  "223508": {
+  {
     id: 223508,
     name: "Essence Reaver",
     description:
@@ -8567,7 +8567,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3508_Marksman_T3_EssenceReaver.png",
   },
-  "223742": {
+  {
     id: 223742,
     name: "Dead Man's Plate",
     description:
@@ -8589,7 +8589,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3742_Tank_T3_DeadmansPlate.png",
   },
-  "223748": {
+  {
     id: 223748,
     name: "Titanic Hydra",
     description:
@@ -8611,7 +8611,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3748_Fighter_T3_TitanicHydra.png",
   },
-  "223814": {
+  {
     id: 223814,
     name: "Edge of Night",
     description:
@@ -8633,7 +8633,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3814_Assassin_T3_EdgeOfNight.png",
   },
-  "224004": {
+  {
     id: 224004,
     name: "Spectral Cutlass",
     description:
@@ -8655,7 +8655,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4004_Assassin_T3_SpectralCutlass.png",
   },
-  "224005": {
+  {
     id: 224005,
     name: "Imperial Mandate",
     description:
@@ -8682,7 +8682,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4005_Enchanter_T4_ImperialMandate.png",
   },
-  "224401": {
+  {
     id: 224401,
     name: "Force of Nature",
     description:
@@ -8704,7 +8704,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4401_Tank_T3_ForceOfNature.png",
   },
-  "224403": {
+  {
     id: 224403,
     name: "The Golden Spatula",
     description:
@@ -8740,7 +8740,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4403_GoldenSpatula.png",
   },
-  "224628": {
+  {
     id: 224628,
     name: "Horizon Focus",
     description:
@@ -8762,7 +8762,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4628_Mage_T3_HorizonFocus.png",
   },
-  "224629": {
+  {
     id: 224629,
     name: "Cosmic Drive",
     description:
@@ -8789,7 +8789,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4629_Mage_T3_CosmicDrive.png",
   },
-  "224633": {
+  {
     id: 224633,
     name: "Riftmaker",
     description:
@@ -8818,7 +8818,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4633_Mage_T4_Riftmaker.png",
   },
-  "224636": {
+  {
     id: 224636,
     name: "Night Harvester",
     description:
@@ -8846,7 +8846,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4636_Mage_T4_NightHarvester.png",
   },
-  "224637": {
+  {
     id: 224637,
     name: "Demonic Embrace",
     description:
@@ -8868,7 +8868,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4637_Mage_T3_DemonicEmbrace.png",
   },
-  "224644": {
+  {
     id: 224644,
     name: "Crown of the Shattered Queen",
     description:
@@ -8895,7 +8895,7 @@ const items = {
     priceTotal: 3000,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4644_Crown.png",
   },
-  "224645": {
+  {
     id: 224645,
     name: "Shadowflame",
     description:
@@ -8916,7 +8916,7 @@ const items = {
     priceTotal: 3000,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4645_Shadowflame.png",
   },
-  "226035": {
+  {
     id: 226035,
     name: "Silvermere Dawn",
     description:
@@ -8938,7 +8938,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6035_Fighter_T3_SilvermereDawn.png",
   },
-  "226333": {
+  {
     id: 226333,
     name: "Death's Dance",
     description:
@@ -8960,7 +8960,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6333_Fighter_T3_DeathsDance.png",
   },
-  "226609": {
+  {
     id: 226609,
     name: "Chempunk Chainsword",
     description:
@@ -8982,7 +8982,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6609_Fighter_T3_ChempunkChainsword.png",
   },
-  "226616": {
+  {
     id: 226616,
     name: "Staff of Flowing Water",
     description:
@@ -9004,7 +9004,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3744_Enchanter_T3_StaffOfFlowingWater.png",
   },
-  "226617": {
+  {
     id: 226617,
     name: "Moonstone Renewer",
     description:
@@ -9032,7 +9032,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6617_Enchanter_T4_MoonstoneRenewer.png",
   },
-  "226620": {
+  {
     id: 226620,
     name: "Echoes of Helia",
     description:
@@ -9054,7 +9054,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6620_Echoes_of_Helia.png",
   },
-  "226630": {
+  {
     id: 226630,
     name: "Goredrinker",
     description:
@@ -9084,7 +9084,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6630_Fighter_T4_GoreDrinker.PIE_C_12_23.png",
   },
-  "226631": {
+  {
     id: 226631,
     name: "Stridebreaker",
     description:
@@ -9115,7 +9115,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6631_Fighter_T4_StrideBreaker.PIE_C_12_23.png",
   },
-  "226632": {
+  {
     id: 226632,
     name: "Divine Sunderer",
     description:
@@ -9145,7 +9145,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6632_Fighter_T4_DivineDevourer.png",
   },
-  "226653": {
+  {
     id: 226653,
     name: "Liandry's Anguish",
     description:
@@ -9167,7 +9167,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6653_Mage_T4_LiandrysAnguish.png",
   },
-  "226655": {
+  {
     id: 226655,
     name: "Luden's Tempest",
     description:
@@ -9196,7 +9196,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6655_Mage_T4_LudensTempest.png",
   },
-  "226656": {
+  {
     id: 226656,
     name: "Everfrost",
     description:
@@ -9226,7 +9226,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6656_Mage_T4_Everfrost.png",
   },
-  "226657": {
+  {
     id: 226657,
     name: "Rod of Ages",
     description:
@@ -9256,7 +9256,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6657_Mage_T4_RodOfAges.png",
   },
-  "226662": {
+  {
     id: 226662,
     name: "Iceborn Gauntlet",
     description:
@@ -9285,7 +9285,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6662_Tank_T3_IcebornGauntlet.png",
   },
-  "226664": {
+  {
     id: 226664,
     name: "Turbo Chemtank",
     description:
@@ -9316,7 +9316,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6664_Tank_T4_AcceleratedChemtank.png",
   },
-  "226665": {
+  {
     id: 226665,
     name: "Jak'Sho, The Protean",
     description:
@@ -9345,7 +9345,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6665_Tank_T4_JakShoTheProtean.png",
   },
-  "226667": {
+  {
     id: 226667,
     name: "Radiant Virtue",
     description:
@@ -9374,7 +9374,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6667_Tank_T4_RadiantVirtue.png",
   },
-  "226671": {
+  {
     id: 226671,
     name: "Galeforce",
     description:
@@ -9402,7 +9402,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6671_Marksman_T4_Galeforce.PIE_C_12_23.png",
   },
-  "226672": {
+  {
     id: 226672,
     name: "Kraken Slayer",
     description:
@@ -9424,7 +9424,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6672_Marksman_T4_BehemothSlayer.png",
   },
-  "226673": {
+  {
     id: 226673,
     name: "Immortal Shieldbow",
     description:
@@ -9452,7 +9452,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6673_Marksman_T4_CrimsonShieldbow.png",
   },
-  "226675": {
+  {
     id: 226675,
     name: "Navori Quickblades",
     description:
@@ -9480,7 +9480,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6675_Marksman_T3_NavoriQuickblades.png",
   },
-  "226676": {
+  {
     id: 226676,
     name: "The Collector",
     description:
@@ -9502,7 +9502,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6676_Marksman_T3_TheCollector.png",
   },
-  "226691": {
+  {
     id: 226691,
     name: "Duskblade of Draktharr",
     description:
@@ -9532,7 +9532,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6691_Assassin_T4_DuskbladeOfDraktharr.png",
   },
-  "226692": {
+  {
     id: 226692,
     name: "Eclipse",
     description:
@@ -9560,7 +9560,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6692_Assassin_T4_Eclipse.png",
   },
-  "226693": {
+  {
     id: 226693,
     name: "Prowler's Claw",
     description:
@@ -9588,7 +9588,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6693_Assassin_T4_ProwlersClaw.png",
   },
-  "226694": {
+  {
     id: 226694,
     name: "Serylda's Grudge",
     description:
@@ -9615,7 +9615,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6694_Assasin_T3_SeryldasGrudge.png",
   },
-  "226695": {
+  {
     id: 226695,
     name: "Serpent's Fang",
     description:
@@ -9637,7 +9637,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6695_Assassin_T3_SerpentsFang.png",
   },
-  "226696": {
+  {
     id: 226696,
     name: "Axiom Arc",
     description:
@@ -9658,7 +9658,7 @@ const items = {
     priceTotal: 3000,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6696_AxiomArc.png",
   },
-  "227001": {
+  {
     id: 227001,
     name: " Syzygy",
     description:
@@ -9686,7 +9686,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6692_Assassin_T4_Eclipse.png",
   },
-  "227002": {
+  {
     id: 227002,
     name: " Draktharr's Shadowcarver",
     description:
@@ -9716,7 +9716,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6691_Assassin_T4_DuskbladeOfDraktharr.png",
   },
-  "227005": {
+  {
     id: 227005,
     name: " Frozen Fist",
     description:
@@ -9745,7 +9745,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6662_Tank_T3_IcebornGauntlet.png",
   },
-  "227006": {
+  {
     id: 227006,
     name: " Typhoon",
     description:
@@ -9773,7 +9773,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6671_Marksman_T4_Galeforce.PIE_C_12_23.png",
   },
-  "227009": {
+  {
     id: 227009,
     name: " Icathia's Curse",
     description:
@@ -9802,7 +9802,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4633_Mage_T4_Riftmaker.png",
   },
-  "227010": {
+  {
     id: 227010,
     name: " Vespertide",
     description:
@@ -9830,7 +9830,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/4636_Mage_T4_NightHarvester.png",
   },
-  "227011": {
+  {
     id: 227011,
     name: " Upgraded Aeropack",
     description:
@@ -9860,7 +9860,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3152_Mage_T4_HextechRocketBelt.PIE_C_12_23.png",
   },
-  "227012": {
+  {
     id: 227012,
     name: " Liandry's Lament",
     description:
@@ -9882,7 +9882,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6653_Mage_T4_LiandrysAnguish.png",
   },
-  "227013": {
+  {
     id: 227013,
     name: " Eye of Luden",
     description:
@@ -9911,7 +9911,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6655_Mage_T4_LudensTempest.png",
   },
-  "227014": {
+  {
     id: 227014,
     name: " Eternal Winter",
     description:
@@ -9941,7 +9941,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6656_Mage_T4_Everfrost.png",
   },
-  "227015": {
+  {
     id: 227015,
     name: " Ceaseless Hunger",
     description:
@@ -9971,7 +9971,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6630_Fighter_T4_GoreDrinker.PIE_C_12_23.png",
   },
-  "227016": {
+  {
     id: 227016,
     name: " Dreamshatter",
     description:
@@ -10002,7 +10002,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6631_Fighter_T4_StrideBreaker.PIE_C_12_23.png",
   },
-  "227017": {
+  {
     id: 227017,
     name: " Deicide",
     description:
@@ -10032,7 +10032,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6632_Fighter_T4_DivineDevourer.png",
   },
-  "227018": {
+  {
     id: 227018,
     name: " Infinity Force",
     description:
@@ -10062,7 +10062,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3078_Fighter_T4_TrinityForce.png",
   },
-  "227019": {
+  {
     id: 227019,
     name: " Reliquary of the Golden Dawn",
     description:
@@ -10092,7 +10092,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3190_Enchanter_T4_LocketOfIronSolari.PIE_C_12_23.png",
   },
-  "227020": {
+  {
     id: 227020,
     name: " Shurelya's Requiem",
     description:
@@ -10122,7 +10122,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/2065_Tank_T4_ShurelyasBattlesong.png",
   },
-  "227021": {
+  {
     id: 227021,
     name: " Starcaster",
     description:
@@ -10150,7 +10150,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6617_Enchanter_T4_MoonstoneRenewer.png",
   },
-  "227023": {
+  {
     id: 227023,
     name: " Equinox",
     description:
@@ -10172,7 +10172,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3001_Support_Lunari.png",
   },
-  "227024": {
+  {
     id: 227024,
     name: " Caesura",
     description:
@@ -10199,7 +10199,7 @@ const items = {
     priceTotal: 3000,
     iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4644_Crown.png",
   },
-  "227025": {
+  {
     id: 227025,
     name: " Leviathan",
     description:
@@ -10221,7 +10221,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3084_Tank_T4_Heartsteel.png",
   },
-  "227026": {
+  {
     id: 227026,
     name: " The Unspoken Parasite",
     description:
@@ -10250,7 +10250,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6665_Tank_T4_JakShoTheProtean.png",
   },
-  "227027": {
+  {
     id: 227027,
     name: " Primordial Dawn",
     description:
@@ -10279,7 +10279,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6667_Tank_T4_RadiantVirtue.png",
   },
-  "227028": {
+  {
     id: 227028,
     name: " Infinite Convergence",
     description:
@@ -10309,7 +10309,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6657_Mage_T4_RodOfAges.png",
   },
-  "227029": {
+  {
     id: 227029,
     name: " Youmuu's Wake",
     description:
@@ -10337,7 +10337,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3142_Assassin_T3_YoumuusGhostblade.png",
   },
-  "227030": {
+  {
     id: 227030,
     name: " Seething Sorrow",
     description:
@@ -10365,7 +10365,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3124_Marksman_T3_GuinsoosRageblade.png",
   },
-  "227031": {
+  {
     id: 227031,
     name: " Edge of Finality",
     description:
@@ -10387,7 +10387,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/3031_Marksman_T3_InfinityEdge.png",
   },
-  "227032": {
+  {
     id: 227032,
     name: " Flicker",
     description:
@@ -10415,7 +10415,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6675_Marksman_T3_NavoriQuickblades.png",
   },
-  "227033": {
+  {
     id: 227033,
     name: " Cry of the Shrieking City",
     description:
@@ -10437,7 +10437,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/6620_Echoes_of_Helia.png",
   },
-  "228001": {
+  {
     id: 228001,
     name: "Anathema's Chains",
     description:
@@ -10459,7 +10459,7 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/8001_Tank_T3_AnathemasChains.png",
   },
-  "228020": {
+  {
     id: 228020,
     name: "Abyssal Mask",
     description:
@@ -10488,6 +10488,6 @@ const items = {
     iconPath:
       "/lol-game-data/assets/ASSETS/Items/Icons2D/8020_Tank_T3_AbyssalMask.png",
   },
-};
+];
 
-export default { items };
+export default items;

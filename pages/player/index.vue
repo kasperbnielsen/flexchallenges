@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useRoute } from "vue-router";
-import items from "~/assets/items.json";
-import spells from "~/assets/summonerSpells.json";
+import items from "~/assets/items";
+import spells from "~/assets/summonerSpells";
 const config = useRuntimeConfig();
 
 const playerProfileData = ref();
