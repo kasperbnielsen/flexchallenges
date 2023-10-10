@@ -1,16 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // @ts-ignore
-  modules: ["@pinia/nuxt", "nuxt-og-image"],
+  modules: ["@pinia/nuxt"],
   devtools: { enabled: true },
   runtimeConfig: {
     API_KEY: process.env.NUXT_API_KEY,
     REDIS_HOST: process.env.NUXT_REDIS_HOST,
     MONGODB_HOST: process.env.NUXT_MONGODB_HOST,
     public: { SERVER_HOST: process.env.NUXT_SERVER_HOST },
-  },
-  site: {
-    url: "http://localhost:3000/",
   },
   app: {
     head: {
