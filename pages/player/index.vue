@@ -1,10 +1,7 @@
 <script lang="ts" setup>
-import { Buffer as BufferPolyfill } from "buffer";
 import { useRoute } from "vue-router";
 import items from "~/assets/items.json";
 import spells from "~/assets/summonerSpells.json";
-declare let Buffer: typeof BufferPolyfill;
-globalThis.Buffer = BufferPolyfill;
 const config = useRuntimeConfig();
 
 const playerProfileData = ref();
@@ -143,10 +140,8 @@ async function fetchData() {
   playerProfileData.value = fetchedData2;
 }
 
-if (process.server) {
-  await fetchData();
-  statsData.value = await getStats(myData.puuid, false);
-}
+await fetchData();
+statsData.value = await getStats(myData.puuid, false);
 </script>
 <template>
   <div class="outerbody">
@@ -663,8 +658,8 @@ if (process.server) {
   border: 1px solid black;
   background-color: #25353b;
   border-radius: 5px;
-  max-height: 36.25rem;
-  height: 100%;
+  min-height: 36.25rem;
+  height: fit-content;
 
   &__div {
     margin: 1rem 0 1rem 0;
