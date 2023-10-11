@@ -138,26 +138,18 @@ const dropdownListTeamComps = ref<List>({
   selected: Array(11).fill(false),
 });
 
-computed(() =>
-  settings.value.option2
-    ? dropdownListTeamComps.value
-    : dropdownListRegions.value
-);
+computed(() => (settings.value.option2 ? dropdownListTeamComps.value : dropdownListRegions.value));
 
 watch(myObject2, () => {
   if (myObject2.value) {
     if (!settings.value.option2) {
-      const index = dropdownListRegions.value.name.indexOf(
-        myObject2.value.region
-      );
+      const index = dropdownListRegions.value.name.indexOf(myObject2.value.region);
       if (settings.value.option1) {
         dropdownListRegions.value.disabled[index] = true;
         dropdownListRegions.value.selected[index] = true;
       }
     } else {
-      const index = dropdownListTeamComps.value.name.indexOf(
-        myObject2.value.region
-      );
+      const index = dropdownListTeamComps.value.name.indexOf(myObject2.value.region);
       if (settings.value.option1) {
         dropdownListTeamComps.value.disabled[index] = true;
         dropdownListTeamComps.value.selected[index] = true;
@@ -224,10 +216,8 @@ async function fetchData2() {
   const count = !settings.value.option2 ? 13 : 11;
   for (let i = 0; i < count; i++) {
     if (!settings.value.option2) {
-      if (!dropdownListRegions.value.selected[i])
-        newList.push(Object.keys(champions.regions)[i]);
-    } else if (!dropdownListTeamComps.value.selected[i])
-      newList2.push(Object.keys(champions.teamComps)[i]);
+      if (!dropdownListRegions.value.selected[i]) newList.push(Object.keys(champions.regions)[i]);
+    } else if (!dropdownListTeamComps.value.selected[i]) newList2.push(Object.keys(champions.teamComps)[i]);
   }
   let options;
   if (settings.value.option2) {
@@ -323,18 +313,9 @@ async function fetchData2() {
 </script>
 
 <template>
-  <div
-    v-if="rateLimit"
-    class="alert alert-warning alert alert-dismissible"
-    role="alert"
-  >
+  <div v-if="rateLimit" class="alert alert-warning alert alert-dismissible" role="alert">
     <strong>Ratelimit hit!</strong> Please wait 2 minutes before trying again.
-    <button
-      type="button"
-      class="btn-close"
-      data-bs-dismiss="alert"
-      aria-label="Close"
-    ></button>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
   <main class="main">
     <div class="main__div">
@@ -374,20 +355,11 @@ async function fetchData2() {
           >
             Include regions
           </button>
-          <ul
-            aria-labelledby="dropdownMenuClickableInside"
-            class="dropdown-menu dropdown__menu"
-          >
-            <div
-              v-for="(element, elementindex) of dropdownListRegions.selected"
-              :key="elementindex"
-            >
+          <ul aria-labelledby="dropdownMenuClickableInside" class="dropdown-menu dropdown__menu">
+            <div v-for="(element, elementindex) of dropdownListRegions.selected" :key="elementindex">
               <li
                 class="infront"
-                @click="
-                  dropdownListRegions.selected[elementindex] =
-                    !dropdownListRegions.selected[elementindex]
-                "
+                @click="dropdownListRegions.selected[elementindex] = !dropdownListRegions.selected[elementindex]"
               >
                 <span
                   :class="{
@@ -414,20 +386,11 @@ async function fetchData2() {
           >
             Include comps
           </button>
-          <ul
-            aria-labelledby="dropdownMenuClickableInside"
-            class="dropdown-menu dropdown__menu"
-          >
-            <div
-              v-for="(element, elementindex) of dropdownListTeamComps.selected"
-              :key="elementindex"
-            >
+          <ul aria-labelledby="dropdownMenuClickableInside" class="dropdown-menu dropdown__menu">
+            <div v-for="(element, elementindex) of dropdownListTeamComps.selected" :key="elementindex">
               <li
                 class="infront"
-                @click="
-                  dropdownListTeamComps.selected[elementindex] =
-                    !dropdownListTeamComps.selected[elementindex]
-                "
+                @click="dropdownListTeamComps.selected[elementindex] = !dropdownListTeamComps.selected[elementindex]"
               >
                 <span
                   :class="{
@@ -444,50 +407,19 @@ async function fetchData2() {
       </div>
       <form class="form" @submit.prevent="fetchData2()">
         <label class="form__label" for="player1">Player 1</label>
-        <input
-          v-model.lazy="settings.players.player1"
-          class="form__input"
-          name="player1"
-          required
-        />
+        <input v-model.lazy="settings.players.player1" class="form__input" name="player1" required />
 
         <label class="form__label" for="player2">Player 2</label>
-        <input
-          v-model.lazy="settings.players.player2"
-          class="form__input"
-          name="player2"
-          required
-        />
+        <input v-model.lazy="settings.players.player2" class="form__input" name="player2" required />
         <label class="form__label" for="player3">Player 3</label>
-        <input
-          v-model.lazy="settings.players.player3"
-          class="form__input"
-          name="player3"
-          required
-        />
+        <input v-model.lazy="settings.players.player3" class="form__input" name="player3" required />
         <label class="form__label" for="player4">Player 4</label>
-        <input
-          v-model.lazy="settings.players.player4"
-          class="form__input"
-          name="player4"
-          required
-        />
+        <input v-model.lazy="settings.players.player4" class="form__input" name="player4" required />
 
         <label class="form__label" for="player5">Player 5</label>
-        <input
-          v-model.lazy="settings.players.player5"
-          class="form__input"
-          name="player5"
-          required
-        />
+        <input v-model.lazy="settings.players.player5" class="form__input" name="player5" required />
 
-        <button
-          v-if="!rateLimit"
-          class="form__button btn btn-primary"
-          type="submit"
-        >
-          Submit
-        </button>
+        <button v-if="!rateLimit" class="form__button btn btn-primary" type="submit">Submit</button>
         <button v-else class="form__button btn" disabled>
           <div class="spinner-border" role="status">
             <span class="visually-hidden">Loading...</span>
@@ -496,11 +428,7 @@ async function fetchData2() {
       </form>
     </div>
     <div ref="resultReference" class="result">
-      <div
-        v-for="(player, playerIndex, index) of myObject2?.players"
-        :key="playerIndex"
-        class="result__div"
-      >
+      <div v-for="(player, playerIndex, index) of myObject2?.players" :key="playerIndex" class="result__div">
         <div class="result__div__div">
           <img
             :id="player.key.toString()"
@@ -516,10 +444,7 @@ async function fetchData2() {
             class="result__div__div__button"
             @click="refreshChampion(playerIndex)"
           >
-            <font-awesome-icon
-              class="result__div__div__button__refresh"
-              :icon="['fas', 'rotate-right']"
-            />
+            <font-awesome-icon class="result__div__div__button__refresh" :icon="['fas', 'rotate-right']" />
           </button>
           <div class="result__div__div__player">
             <a
@@ -531,18 +456,11 @@ async function fetchData2() {
             >
           </div>
           <div class="result__div__div__mastery">
-            <img
-              class="result__div__div__mastery__img"
-              :src="`mastery${myObject2?.levelList[index] ?? 0}.png`"
-            />
+            <img class="result__div__div__mastery__img" :src="`mastery${myObject2?.levelList[index] ?? 0}.png`" />
             <p>{{ myObject2?.pointsList[index] }}</p>
           </div>
           <div>
-            <img
-              v-if="mode && showRoles"
-              class="result__div__div__role"
-              :src="role[myObject2?.order[index]]"
-            />
+            <img v-if="mode && showRoles" class="result__div__div__role" :src="role[myObject2?.order[index]]" />
           </div>
         </div>
       </div>
@@ -570,14 +488,19 @@ button:focus {
   width: 100%;
 }
 .main {
-  padding: 4rem 8rem;
+  padding: 3rem;
   display: grid;
   grid-template-columns: 1.5fr 2.5fr;
   width: 100%;
   height: 100%;
+  align-items: center;
+
   justify-content: center;
   &__div {
-    z-index: 1;
+    background-color: #25353b;
+    border-radius: 5px;
+    padding: 2rem;
+    width: 36rem;
   }
 }
 
@@ -635,12 +558,15 @@ button[type="submit"]:hover {
 }
 
 .result {
+  background-color: #25353b;
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
-  margin-left: 2rem;
+  position: relative;
+  margin-left: 1rem;
   text-align: center;
-
+  padding: 2rem;
+  height: 52.125rem;
+  border-radius: 5px;
   &__name {
     color: green !important;
   }
@@ -672,7 +598,7 @@ button[type="submit"]:hover {
 
       &__mastery {
         position: absolute;
-        margin-left: 20rem;
+        margin-left: 35rem;
         margin-top: -1rem;
         color: #c8aa6e;
         font-weight: 700;

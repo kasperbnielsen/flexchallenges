@@ -18,9 +18,9 @@
         border="0"
         src=/metafy.jpeg
     /></a>
+      <HeaderComp />
 
     <div class="innerbody">
-      <HeaderComp />
       
       <div class="innerbody__page">
             <NuxtPage />
@@ -62,7 +62,7 @@
 
 
 .body {
-  background-color: black;
+  background-color: #091428;
 }
 
 .right {
