@@ -45,6 +45,7 @@ const profileData = ref<{
   puuid: string;
   profileIcon: number;
   summonerId: string;
+  summonerLevel: number;
 }>();
 
 function getSummonerSpell(id: number): string {
@@ -113,6 +114,7 @@ async function fetchData() {
         puuid: profile.puuid,
         profileIcon: profile.profileIcon,
         summonerId: profile.summonerId,
+        summonerLevel: profile.summonerLevel,
       };
     }
   }
@@ -150,6 +152,7 @@ statsData.value = await getStats(myData.puuid, false);
         class="profile__image"
         :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/${profileData?.profileIcon}.jpg`"
       />
+      <p class="profile__level">{{ profileData?.summonerLevel }}</p>
       <div>
         <p class="profile__username">{{ profileData?.name }}</p>
         <button
@@ -213,7 +216,7 @@ statsData.value = await getStats(myData.puuid, false);
               id="nav-home-tab"
               aria-controls="nav-home"
               aria-selected="true"
-              class="nav-link active"
+              class="nav-link active stats__navitem"
               data-bs-target="#nav-home"
               data-bs-toggle="tab"
               role="tab"
@@ -225,7 +228,7 @@ statsData.value = await getStats(myData.puuid, false);
               id="nav-profile-tab"
               aria-controls="nav-profile"
               aria-selected="false"
-              class="nav-link"
+              class="nav-link stats__navitem"
               data-bs-target="#nav-profile"
               data-bs-toggle="tab"
               role="tab"
@@ -237,7 +240,7 @@ statsData.value = await getStats(myData.puuid, false);
               id="nav-contact-tab"
               aria-controls="nav-contact"
               aria-selected="false"
-              class="nav-link"
+              class="nav-link stats__navitem"
               data-bs-target="#nav-contact"
               data-bs-toggle="tab"
               role="tab"
@@ -268,18 +271,23 @@ statsData.value = await getStats(myData.puuid, false);
               <div class="stats__secondsdiv">
                 <p class="stats__secondsdiv__kda1">
                   {{
-                    (
+                    Math.floor(
                       (stats.totalKills + stats.totalAssists) /
-                      stats.totalDeaths
-                    ).toPrecision(3)
+                        stats.totalDeaths
+                    )
+                      ? (
+                          (stats.totalKills + stats.totalAssists) /
+                          stats.totalDeaths
+                        ).toPrecision(3)
+                      : "0.00"
                   }}
                   KDA
                 </p>
                 <p class="stats__secondsdiv__kda2">
-                  {{ (stats.totalKills / stats.totalMatches).toPrecision(2) }} /
-                  {{ (stats.totalAssists / stats.totalMatches).toPrecision(2) }}
+                  {{ (stats.totalKills / stats.totalMatches).toFixed(1) }} /
+                  {{ (stats.totalAssists / stats.totalMatches).toFixed(1) }}
                   /
-                  {{ (stats.totalDeaths / stats.totalMatches).toPrecision(2) }}
+                  {{ (stats.totalDeaths / stats.totalMatches).toFixed(1) }}
                 </p>
               </div>
               <div class="stats__thirddiv">
@@ -444,11 +452,7 @@ statsData.value = await getStats(myData.puuid, false);
                     participant.item2
                   ).toLowerCase()}`"
                 />
-              </div>
-              <div
-                v-if="participant.puuid === myData.puuid"
-                class="result__match__stats__itemsdiv2"
-              >
+
                 <img
                   class="result__match__stats__items"
                   :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/${getImagePath(
@@ -490,6 +494,16 @@ statsData.value = await getStats(myData.puuid, false);
                       participant.challenges.killParticipation * 100
                     ).toPrecision(3)
                   }}%
+                </p>
+                <p class="result__match__extrastats__gpm">
+                  {{
+                    (
+                      participant.goldEarned /
+                      ((match.info.gameEndTimestamp -
+                        match.info.gameStartTimestamp) /
+                        60000)
+                    ).toPrecision(3)
+                  }}g/m
                 </p>
               </div>
             </div>
@@ -569,6 +583,15 @@ statsData.value = await getStats(myData.puuid, false);
   color: white;
   font-family: Montserrat;
 }
+.nav {
+  border-bottom-color: black;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  background-color: #25353b;
+  border-color: black;
+}
 
 .outerbody {
   margin: 3rem;
@@ -588,6 +611,13 @@ statsData.value = await getStats(myData.puuid, false);
   padding: 1rem;
   margin-bottom: 1rem;
   flex-direction: row;
+  &__level {
+    background-color: black;
+    height: fit-content;
+    position: absolute;
+    translate: 5.25rem 5.375rem;
+    border-radius: 5px;
+  }
   &__button {
     margin-left: 3rem;
     &:focus {
@@ -661,6 +691,13 @@ statsData.value = await getStats(myData.puuid, false);
   min-height: 36.25rem;
   height: fit-content;
 
+  &__navitem {
+    border-bottom-color: black;
+    &:hover {
+      border-color: black;
+    }
+  }
+
   &__div {
     margin: 1rem 0 1rem 0;
     display: flex;
@@ -726,7 +763,7 @@ statsData.value = await getStats(myData.puuid, false);
     border-radius: 5px;
     margin-top: 1rem;
     display: grid;
-    grid-template-columns: 0.75fr 0.5fr 0.5fr 0.1fr 1fr 1fr;
+    grid-template-columns: 0.75fr 0.5fr 1fr 0.1fr 1fr 1fr;
     width: 50rem;
     &__data {
       &:nth-child(n) p {
@@ -737,17 +774,19 @@ statsData.value = await getStats(myData.puuid, false);
     }
 
     &__extrastats {
-      justify-self: center;
       width: 5rem;
       font-size: 9px;
       font-weight: 700;
       &__vs {
-        margin-top: 1rem;
+        margin-top: 0.5rem;
       }
       &__cs {
         margin-top: -0.75rem;
       }
       &__kp {
+        margin-top: -0.75rem;
+      }
+      &__gpm {
         margin-top: -0.75rem;
       }
     }
@@ -761,6 +800,7 @@ statsData.value = await getStats(myData.puuid, false);
         margin-top: -1rem;
       }
       &__items {
+        margin-top: 1rem;
         width: 1.25rem;
         height: 1.25rem;
       }
