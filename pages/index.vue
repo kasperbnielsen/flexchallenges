@@ -23,7 +23,7 @@ async function search() {
 <template>
   <div class="body bg-image">
     <video id="background-video" autoplay loop muted>
-      <source src="background-video.webm" type="video/webm" />
+      <source src="/background-video.webm" type="video/webm" />
     </video>
   </div>
   <div class="test">
