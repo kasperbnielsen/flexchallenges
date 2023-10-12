@@ -1,35 +1,66 @@
 <script lang="ts" setup>
-import { storeToRefs } from "pinia";
-import { useModeStore } from "@/stores/mode";
-const { mode } = storeToRefs(useModeStore());
-const { server } = storeToRefs(useModeStore());
+import { useRouter, useRoute } from "vue-router";
+
+const username = ref();
+
+const currentRegion = ref<string>("EUW");
+
+const regionsList = ref([
+  { name: "Europe West", region: "EUW" },
+  { name: "North America", region: "NA" },
+  { name: "Europe East", region: "EUNE" },
+  { name: "Australia", region: "OCE" },
+]);
+
+const route = useRoute();
+const router = useRouter();
+
+async function search() {
+  await router.push(
+    `/player/${currentRegion.value.toLowerCase()}1/${username.value}/`
+  );
+  router.go(0);
+}
 </script>
 <template>
   <div class="body">
     <div class="header">
       <div>
         <a class="header__logo" href="/">
-          <h1 class="header__logo"><span class="header__logo--color">Flex</span>Challenges</h1>
+          <h1 class="header__logo">
+            <span class="header__logo--color">Flex</span>Challenges
+          </h1>
         </a>
       </div>
-      <div class="header__search">
-        <div class="input-group mb-3">
+      <div v-if="route.path != '/'">
+        <div class="input-group mb-3 header__search">
           <button
-            class="btn btn-outline-secondary dropdown-toggle searchdropdown"
-            type="button"
-            data-bs-toggle="dropdown"
             aria-expanded="false"
+            class="btn btn-outline-secondary dropdown-toggle searchdropdown"
+            data-bs-toggle="dropdown"
+            type="button"
           >
-            EUW
+            {{ currentRegion }}
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">North America</a></li>
-            <li><a class="dropdown-item" href="#">Europe West</a></li>
-
-            <li><a class="dropdown-item" href="#">China</a></li>
-            <li><a class="dropdown-item" href="#">Russia</a></li>
+            <div v-for="(reg, regionIndex) of regionsList" :key="regionIndex">
+              <li>
+                <button
+                  class="dropdown-item"
+                  @click.prevent="currentRegion = reg.region"
+                >
+                  {{ reg.name }}
+                </button>
+              </li>
+            </div>
           </ul>
-          <input type="text" class="form-control" aria-label="Text input with dropdown button" />
+          <input
+            v-model="username"
+            aria-label="Text input with dropdown button"
+            class="form-control"
+            type="text"
+            @keydown.enter="search"
+          />
         </div>
       </div>
       <!---<div class="header__section">
@@ -107,16 +138,16 @@ const { server } = storeToRefs(useModeStore());
     <div class="header__nav">
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a aria-current="page" class="nav-link active" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Challenge</a>
+          <a class="nav-link" href="/challenge">Challenge</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Champions</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">League Ranks</a>
+          <a class="nav-link" href="#">Rankings</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Coaching</a>
@@ -137,6 +168,11 @@ const { server } = storeToRefs(useModeStore());
   border-bottom: 2px solid #c8aa6e;
 }
 
+.input-group {
+  margin-top: 3rem;
+  margin-left: 5rem;
+}
+
 .dropdown-item {
   color: rgba(255, 255, 255, 0.575);
   &:hover {
@@ -149,7 +185,7 @@ const { server } = storeToRefs(useModeStore());
   &:hover {
     outline: 1px solid white;
     color: white;
-    border-radius: 5px;
+    border-radius: 2px;
   }
 
   &:active {
@@ -160,6 +196,7 @@ const { server } = storeToRefs(useModeStore());
 .searchdropdown {
   background-color: rgba(255, 255, 255, 0.575);
   color: #575756;
+  width: 6rem;
   &:focus {
     color: #575756;
     background-color: rgba(255, 255, 255, 0.575);
@@ -181,11 +218,13 @@ button:focus {
   grid-template-columns: 1fr 5fr;
   text-align: center;
   padding: 0 0 0 0;
+  margin-right: 21rem;
 
   &__search {
     margin-top: 3.5rem;
     margin-left: 3rem;
-    margin-right: 18rem;
+    display: flex;
+    width: 100%;
   }
 
   &__h1 {

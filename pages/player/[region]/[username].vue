@@ -29,16 +29,17 @@ function encodeData(list: {}) {
   return base64Filter;
 }
 
-function decode(input: string) {
-  const padded = input.padEnd(input.length + (4 - (input.length % 4)), "=");
+const url = `${SERVER_HOST}/riot/id/${route.params.region}1/${route.params.username}`;
+const id = await fetch(url, { method: "GET" })
+  .then((res) => res.json())
+  .catch((err) => console.error(err));
 
-  const json = atob(padded);
-  return JSON.parse(json);
-}
+const myData: { name: string; puuid: string } = {
+  name: route.params.username.toString(),
+  puuid: id.puuid.toString(),
+};
 
-const myData: { name: string; puuid: string } = decode(
-  Object.keys(route.query)[0]
-);
+console.log(route.params.username.toString(), id.puuid);
 
 const profileData = ref<{
   name: string;
@@ -105,7 +106,7 @@ async function fetchData() {
     })
     .catch((err) => console.error(err));
 
-  matchList.value = fetchedData;
+  matchList.value = await fetchedData;
   for (let i = 0; i < matchList.value.data[0].info.participants.length; i++) {
     if (matchList.value.data[0].info.participants[i].puuid === myData.puuid) {
       const profile = matchList.value.data[0].info.participants[i];
