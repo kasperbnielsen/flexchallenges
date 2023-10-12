@@ -22,14 +22,9 @@ async function search() {
 </script>
 <template>
   <div class="body bg-image">
-    <video
-      id="background-video"
-      autoplay
-      loop
-      muted
-      src="background-video.mp4"
-      type="video/mp4"
-    ></video>
+    <video id="background-video" autoplay loop muted>
+      <source src="background-video.webm" type="video/webm" />
+    </video>
   </div>
   <div class="test">
     <button

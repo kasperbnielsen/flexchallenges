@@ -29,7 +29,7 @@ function encodeData(list: {}) {
   return base64Filter;
 }
 
-const url = `${SERVER_HOST}/riot/id/${route.params.region}1/${route.params.username}`;
+const url = `${SERVER_HOST}/riot/id/${route.params.region}/${route.params.username}`;
 const id = await fetch(url, { method: "GET" })
   .then((res) => res.json())
   .catch((err) => console.error(err));
@@ -102,29 +102,39 @@ async function fetchData() {
     .then((res) => {
       rateLimit.value = res.status === 429;
       if (res.status === 429) console.log("Ratelimit reached!");
-      else return res.json();
+      else if (res.ok) return res.json();
+      else throw new Error("no matches");
     })
     .catch((err) => console.error(err));
 
   matchList.value = await fetchedData;
-  for (let i = 0; i < matchList.value.data[0].info.participants.length; i++) {
-    if (matchList.value.data[0].info.participants[i].puuid === myData.puuid) {
-      const profile = matchList.value.data[0].info.participants[i];
-      profileData.value = {
-        name: profile.summonerName,
-        puuid: profile.puuid,
-        profileIcon: profile.profileIcon,
-        summonerId: profile.summonerId,
-        summonerLevel: profile.summonerLevel,
-      };
-    }
-  }
 
-  for (let i = 0; i < matchList.value.data.length; i++) {
-    for (let j = 0; j < matchList.value.data[i].info.participants.length; j++) {
-      if (matchList.value.data[i].info.participants[j].puuid === myData.puuid)
-        winArr.value.push(matchList.value.data[i].info.participants[j].win);
+  if (matchList.value.data.length !== 0) {
+    for (let i = 0; i < matchList.value.data[0].info.participants.length; i++) {
+      if (matchList.value.data[0].info.participants[i].puuid === myData.puuid) {
+        const profile = matchList.value.data[0].info.participants[i];
+        profileData.value = {
+          name: profile.summonerName,
+          puuid: profile.puuid,
+          profileIcon: profile.profileIcon,
+          summonerId: profile.summonerId,
+          summonerLevel: profile.summonerLevel,
+        };
+      }
     }
+
+    for (let i = 0; i < matchList.value.data.length; i++) {
+      for (
+        let j = 0;
+        j < matchList.value.data[i].info.participants.length;
+        j++
+      ) {
+        if (matchList.value.data[i].info.participants[j].puuid === myData.puuid)
+          winArr.value.push(matchList.value.data[i].info.participants[j].win);
+      }
+    }
+  } else {
+    matchList.value = [];
   }
 
   const fetchedData2 = await fetch(
@@ -136,15 +146,16 @@ async function fetchData() {
     .then((response) => {
       rateLimit.value = response.status === 429;
       if (response.status === 429) console.log("Ratelimit reached!");
-      return response.json();
+      else if (response.ok) return response.json();
     })
     .catch((err) => console.error(err));
 
   playerProfileData.value = fetchedData2;
 }
 
-await fetchData();
-statsData.value = await getStats(myData.puuid, false);
+fetchData().then(() => {
+  getStats(myData.puuid, false);
+});
 </script>
 <template>
   <div class="outerbody">
@@ -163,44 +174,48 @@ statsData.value = await getStats(myData.puuid, false);
           Refresh
         </button>
       </div>
-      <div v-for="(type, typeIndex) of playerProfileData.data" :key="typeIndex">
+      <div
+        v-for="(type, typeIndex) of playerProfileData?.data"
+        :key="typeIndex"
+      >
         <div
-          v-if="type.queueType !== 'RANKED_TFT_DOUBLE_UP'"
+          v-if="type?.queueType !== 'RANKED_TFT_DOUBLE_UP'"
           class="profile__rank__flexqueue"
         >
           <img
             class="profile__rank__image"
             :src="`https://raw.communitydragon.org/13.19/plugins/rcp-fe-lol-shared-components/global/default/${playerProfileData.data[
               typeIndex
-            ].tier.toLowerCase()}.png`"
+            ]?.tier.toLowerCase()}.png`"
           />
           <div class="profile__rank__textdiv">
             <p class="profile__rank__flexqueue__title">
               {{
-                playerProfileData.data[typeIndex].queueType === "RANKED_FLEX_SR"
+                playerProfileData?.data[typeIndex]?.queueType ===
+                "RANKED_FLEX_SR"
                   ? "Ranked Flex"
                   : "Ranked Solo"
               }}
             </p>
             <p class="profile__rank__text">
-              {{ playerProfileData.data[typeIndex].tier }}
-              {{ playerProfileData.data[typeIndex].rank }}
+              {{ playerProfileData?.data[typeIndex]?.tier }}
+              {{ playerProfileData?.data[typeIndex]?.rank }}
             </p>
             <p class="profile__rank__undertext">
-              {{ playerProfileData.data[typeIndex].leaguePoints }} LP
+              {{ playerProfileData?.data[typeIndex]?.leaguePoints }} LP
             </p>
           </div>
           <div class="profile__rank__winrate">
             <p>
-              {{ playerProfileData.data[typeIndex].wins }}W
-              {{ playerProfileData.data[typeIndex].losses }}L
+              {{ playerProfileData?.data[typeIndex]?.wins }}W
+              {{ playerProfileData?.data[typeIndex]?.losses }}L
             </p>
             <p>
               {{
                 (
-                  (playerProfileData.data[typeIndex].wins /
-                    (playerProfileData.data[typeIndex].wins +
-                      playerProfileData.data[typeIndex].losses)) *
+                  (playerProfileData?.data[typeIndex]?.wins /
+                    (playerProfileData?.data[typeIndex]?.wins +
+                      playerProfileData?.data[typeIndex]?.losses)) *
                   100
                 ).toPrecision(4)
               }}% Win Rate
@@ -325,9 +340,9 @@ statsData.value = await getStats(myData.puuid, false);
           </div>
         </div>
       </div>
-      <div v-if="matchList" class="result">
+      <div v-if="matchList?.data" class="result">
         <div
-          v-for="(match, matchIndex) of matchList.data"
+          v-for="(match, matchIndex) of matchList?.data"
           :key="matchIndex"
           class="result__match"
           :style="
@@ -338,39 +353,39 @@ statsData.value = await getStats(myData.puuid, false);
         >
           <div class="result__match__data">
             <div
-              v-for="(participant, index) of matchList.data[matchIndex].info
-                .participants"
+              v-for="(participant, index) of matchList?.data[matchIndex]?.info
+                ?.participants"
               :key="index"
             >
-              <p v-if="participant.puuid === myData.puuid">
+              <p v-if="participant?.puuid === myData.puuid">
                 {{
-                  match.info.queueId === 440
+                  match?.info?.queueId === 440
                     ? "Ranked Flex"
-                    : match.info.queueId === 420
+                    : match?.info?.queueId === 420
                     ? "Ranked Solo"
                     : "Unranked"
                 }}
               </p>
-              <p v-if="participant.puuid === myData.puuid">
+              <p v-if="participant?.puuid === myData.puuid">
                 {{
-                  new Date(match.info.gameStartTimestamp)
+                  new Date(match?.info?.gameStartTimestamp)
                     .toString()
                     .substr(3, 8)
                 }}
               </p>
-              <p v-if="participant.puuid === myData.puuid">
+              <p v-if="participant?.puuid === myData.puuid">
                 {{ winArr[matchIndex] ? "Win" : "Loss" }}
               </p>
-              <p v-if="participant.puuid === myData.puuid">
+              <p v-if="participant?.puuid === myData.puuid">
                 {{
                   Math.floor(
-                    (match.info.gameEndTimestamp -
-                      match.info.gameStartTimestamp) /
+                    (match?.info?.gameEndTimestamp -
+                      match?.info?.gameStartTimestamp) /
                       60000
                   ) +
                   "m " +
-                  ((match.info.gameEndTimestamp -
-                    match.info.gameStartTimestamp) %
+                  ((match?.info?.gameEndTimestamp -
+                    match?.info?.gameStartTimestamp) %
                     60) +
                   "s"
                 }}
@@ -380,23 +395,23 @@ statsData.value = await getStats(myData.puuid, false);
 
           <div>
             <div
-              v-for="(participant, index) of matchList.data[matchIndex].info
-                .participants"
+              v-for="(participant, index) of matchList?.data[matchIndex]?.info
+                ?.participants"
               :key="index"
               class="result__match__champion"
             >
               <img
-                v-if="participant.puuid === myData.puuid"
-                :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${participant.championId}.png`"
+                v-if="participant?.puuid === myData.puuid"
+                :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${participant?.championId}.png`"
                 class="result__match__champion__img"
               />
-              <div v-if="participant.puuid === myData.puuid">
+              <div v-if="participant?.puuid === myData.puuid">
                 <img
-                  :src="getSummonerSpell(participant.summoner1Id)"
+                  :src="getSummonerSpell(participant?.summoner1Id)"
                   class="result__match__champion__summonerSpells"
                 />
                 <img
-                  :src="getSummonerSpell(participant.summoner2Id)"
+                  :src="getSummonerSpell(participant?.summoner2Id)"
                   class="result__match__champion__summonerSpells"
                 />
               </div>
@@ -404,72 +419,72 @@ statsData.value = await getStats(myData.puuid, false);
           </div>
           <div class="result_match__stats">
             <div
-              v-for="(participant, index) of matchList.data[matchIndex].info
-                .participants"
+              v-for="(participant, index) of matchList?.data[matchIndex]?.info
+                ?.participants"
               :key="index"
             >
               <p
-                v-if="participant.puuid === myData.puuid"
+                v-if="participant?.puuid === myData.puuid"
                 class="result__match__stats__kda"
               >
-                <span>{{ participant.kills }}</span>
+                <span>{{ participant?.kills }}</span>
                 <span style="color: darkgrey">/</span>
-                <span style="color: darkred">{{ participant.deaths }}</span>
+                <span style="color: darkred">{{ participant?.deaths }}</span>
                 <span style="color: darkgrey">/</span>
-                <span>{{ participant.assists }}</span>
+                <span>{{ participant?.assists }}</span>
               </p>
 
               <p
-                v-if="participant.puuid === myData.puuid"
+                v-if="participant?.puuid === myData.puuid"
                 class="result__match__stats__computedkda"
               >
                 {{
                   (
-                    (participant.kills + participant.assists) /
-                    participant.deaths
+                    (participant?.kills + participant?.assists) /
+                    participant?.deaths
                   ).toPrecision(3)
                 }}
                 KDA
               </p>
               <div
-                v-if="participant.puuid === myData.puuid"
+                v-if="participant?.puuid === myData.puuid"
                 class="result__match__stats__itemsdiv1"
               >
                 <img
                   class="result__match__stats__items"
                   :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/${getImagePath(
-                    participant.item0
+                    participant?.item0
                   ).toLowerCase()}`"
                 />
                 <img
                   class="result__match__stats__items"
                   :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/${getImagePath(
-                    participant.item1
+                    participant?.item1
                   ).toLowerCase()}`"
                 />
                 <img
                   class="result__match__stats__items"
                   :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/${getImagePath(
-                    participant.item2
+                    participant?.item2
                   ).toLowerCase()}`"
                 />
 
                 <img
                   class="result__match__stats__items"
                   :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/${getImagePath(
-                    participant.item3
+                    participant?.item3
                   ).toLowerCase()}`"
                 />
                 <img
                   class="result__match__stats__items"
                   :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/${getImagePath(
-                    participant.item4
+                    participant?.item4
                   ).toLowerCase()}`"
                 />
                 <img
                   class="result__match__stats__items"
                   :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/${getImagePath(
-                    participant.item5
+                    participant?.item5
                   ).toLowerCase()}`"
                 />
               </div>
@@ -477,31 +492,31 @@ statsData.value = await getStats(myData.puuid, false);
           </div>
           <div class="result__match__extrastats">
             <div
-              v-for="(participant, index) of matchList.data[matchIndex].info
-                .participants"
+              v-for="(participant, index) of matchList?.data[matchIndex]?.info
+                ?.participants"
               :key="index"
             >
-              <div v-if="participant.puuid === myData.puuid">
+              <div v-if="participant?.puuid === myData.puuid">
                 <p class="result__match__extrastats__vs">
-                  VS {{ participant.visionScore }}
+                  VS {{ participant?.visionScore }}
                 </p>
                 <p class="result__match__extrastats__cs">
-                  CS {{ participant.totalMinionsKilled }}
+                  CS {{ participant?.totalMinionsKilled }}
                 </p>
                 <p class="result__match__extrastats__kp">
                   KP
                   {{
                     (
-                      participant.challenges.killParticipation * 100
+                      participant?.challenges?.killParticipation * 100
                     ).toPrecision(3)
                   }}%
                 </p>
                 <p class="result__match__extrastats__gpm">
                   {{
                     (
-                      participant.goldEarned /
-                      ((match.info.gameEndTimestamp -
-                        match.info.gameStartTimestamp) /
+                      participant?.goldEarned /
+                      ((match?.info?.gameEndTimestamp -
+                        match?.info?.gameStartTimestamp) /
                         60000)
                     ).toPrecision(3)
                   }}g/m
@@ -512,31 +527,25 @@ statsData.value = await getStats(myData.puuid, false);
 
           <div class="result__match__team1">
             <div
-              v-for="(player, playerIndex) of matchList.data[matchIndex].info
-                .participants"
+              v-for="(player, playerIndex) of matchList?.data[matchIndex]?.info
+                ?.participants"
               :key="playerIndex"
               class="div1"
             >
-              <div
-                v-if="
-                  matchList.data[matchIndex].info.gameVersion.substr(0, 2) ===
-                    '13' && playerIndex < 5
-                "
-                class="result__match__players1"
-              >
+              <div v-if="playerIndex < 5" class="result__match__players1">
                 <div class="result__match__players__player">
                   <img
                     class="result__match__players__player__image"
-                    :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${player.championId}.png`"
+                    :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${player?.championId}.png`"
                   />
                   <p
-                    v-if="player.puuid === myData.puuid"
+                    v-if="player?.puuid === myData.puuid"
                     :style="'text-shadow: 1px 1px 2px black;'"
                   >
-                    {{ player.summonerName }}
+                    {{ player?.summonerName }}
                   </p>
                   <p v-else>
-                    {{ player.summonerName }}
+                    {{ player?.summonerName }}
                   </p>
                 </div>
               </div>
@@ -544,31 +553,25 @@ statsData.value = await getStats(myData.puuid, false);
           </div>
           <div class="result__match__team2">
             <div
-              v-for="(player, playerIndex) of matchList.data[matchIndex].info
-                .participants"
+              v-for="(player, playerIndex) of matchList?.data[matchIndex]?.info
+                ?.participants"
               :key="playerIndex"
               class="div2"
             >
-              <div
-                v-if="
-                  matchList.data[matchIndex].info.gameVersion.substr(0, 2) ===
-                    '13' && playerIndex > 4
-                "
-                class="result__match__players2"
-              >
+              <div v-if="playerIndex > 4" class="result__match__players2">
                 <div class="result__match__players__player">
                   <img
                     class="result__match__players__player__image"
-                    :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${player.championId}.png`"
+                    :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${player?.championId}.png`"
                   />
                   <p
-                    v-if="player.puuid === myData.puuid"
+                    v-if="player?.puuid === myData.puuid"
                     :style="'text-shadow: 1px 1px 2px black;'"
                   >
-                    {{ player.summonerName }}
+                    {{ player?.summonerName }}
                   </p>
                   <p v-else>
-                    {{ player.summonerName }}
+                    {{ player?.summonerName }}
                   </p>
                 </div>
               </div>
