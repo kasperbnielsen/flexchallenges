@@ -336,94 +336,112 @@ async function fetchData2() {
       aria-label="Close"
     ></button>
   </div>
+  <!---<div class="options">
+    <button
+      class="options__button options__button--nohover"
+      :class="{
+        'options__button--selected': settings.option1,
+        'options__button--notselected': !settings.option1,
+      }"
+      type="button"
+      @click="settings.option1 = !settings.option1"
+    >
+      Reaccuring
+    </button>
+    <button
+      class="options__button options__button--nomargright btn btn-secondary"
+      type="button"
+      @click="
+        settings.option2 = !settings.option2;
+        resetOptions();
+      "
+    >
+      <span v-if="settings.option2" class="color">Comps</span>
+      <span v-else class="color">Regions</span>
+    </button>
+    <div v-if="!settings.option2" class="dropdown">
+      <button
+        id="dropdownMenuClickableInside"
+        aria-expanded="false"
+        class="dropdown-toggle btn btn-secondary selectdiv__button dropdown__button"
+        data-bs-auto-close="outside"
+        data-bs-display="static"
+        data-bs-toggle="dropdown"
+        type="button"
+        @click="dropdown = !dropdown"
+      >
+        Include regions
+      </button>
+      <ul
+        aria-labelledby="dropdownMenuClickableInside"
+        class="dropdown-menu dropdown__menu"
+      >
+        <div
+          v-for="(element, elementindex) of dropdownListRegions.selected"
+          :key="elementindex"
+        >
+          <li
+            class="infront"
+            @click="
+              dropdownListRegions.selected[elementindex] =
+                !dropdownListRegions.selected[elementindex]
+            "
+          >
+            <span
+              :class="{
+                active: !dropdownListRegions.selected[elementindex],
+                disabled: dropdownListRegions.disabled[elementindex],
+              }"
+              class="dropdown-item dropdown-link-color"
+              >{{ dropdownListRegions.name[elementindex] }}</span
+            >
+          </li>
+        </div>
+      </ul>
+    </div>
+    <div v-else class="dropdown">
+      <button
+        id="dropdownMenuClickableInside"
+        aria-expanded="false"
+        class="dropdown-toggle btn btn-secondary selectdiv__button dropdown__button"
+        data-bs-auto-close="outside"
+        data-bs-display="static"
+        data-bs-toggle="dropdown"
+        type="button"
+        @click="dropdown = !dropdown"
+      >
+        Include comps
+      </button>
+      <ul
+        aria-labelledby="dropdownMenuClickableInside"
+        class="dropdown-menu dropdown__menu"
+      >
+        <div
+          v-for="(element, elementindex) of dropdownListTeamComps.selected"
+          :key="elementindex"
+        >
+          <li
+            class="infront"
+            @click="
+              dropdownListTeamComps.selected[elementindex] =
+                !dropdownListTeamComps.selected[elementindex]
+            "
+          >
+            <span
+              :class="{
+                active: !dropdownListTeamComps.selected[elementindex],
+                disabled: dropdownListTeamComps.disabled[elementindex],
+              }"
+              class="dropdown-item"
+              >{{ dropdownListTeamComps.name[elementindex] }}</span
+            >
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>-->
   <main class="main">
     <div class="main__div">
-      <!---<div class="options">
-        <button
-          class="options__button options__button--nohover"
-          :class="{
-            'options__button--selected': settings.option1,
-            'options__button--notselected': !settings.option1,
-          }"
-          type="button"
-          @click="settings.option1 = !settings.option1"
-        >
-          Reaccuring
-        </button>
-        <button
-          class="options__button options__button--nomargright btn btn-secondary"
-          type="button"
-          @click="
-            settings.option2 = !settings.option2;
-            resetOptions();
-          "
-        >
-          <span v-if="settings.option2" class="color">Comps</span>
-          <span v-else class="color">Regions</span>
-        </button>
-        <div v-if="!settings.option2" class="dropdown">
-          <button
-            id="dropdownMenuClickableInside"
-            aria-expanded="false"
-            class="dropdown-toggle btn btn-secondary selectdiv__button dropdown__button"
-            data-bs-auto-close="outside"
-            data-bs-display="static"
-            data-bs-toggle="dropdown"
-            type="button"
-            @click="dropdown = !dropdown"
-          >
-            Include regions
-          </button>
-          <ul aria-labelledby="dropdownMenuClickableInside" class="dropdown-menu dropdown__menu">
-            <div v-for="(element, elementindex) of dropdownListRegions.selected" :key="elementindex">
-              <li
-                class="infront"
-                @click="dropdownListRegions.selected[elementindex] = !dropdownListRegions.selected[elementindex]"
-              >
-                <span
-                  :class="{
-                    active: !dropdownListRegions.selected[elementindex],
-                    disabled: dropdownListRegions.disabled[elementindex],
-                  }"
-                  class="dropdown-item dropdown-link-color"
-                  >{{ dropdownListRegions.name[elementindex] }}</span
-                >
-              </li>
-            </div>
-          </ul>
-        </div>
-        <div v-else class="dropdown">
-          <button
-            id="dropdownMenuClickableInside"
-            aria-expanded="false"
-            class="dropdown-toggle btn btn-secondary selectdiv__button dropdown__button"
-            data-bs-auto-close="outside"
-            data-bs-display="static"
-            data-bs-toggle="dropdown"
-            type="button"
-            @click="dropdown = !dropdown"
-          >
-            Include comps
-          </button>
-          <ul aria-labelledby="dropdownMenuClickableInside" class="dropdown-menu dropdown__menu">
-            <div v-for="(element, elementindex) of dropdownListTeamComps.selected" :key="elementindex">
-              <li
-                class="infront"
-                @click="dropdownListTeamComps.selected[elementindex] = !dropdownListTeamComps.selected[elementindex]"
-              >
-                <span
-                  :class="{
-                    active: !dropdownListTeamComps.selected[elementindex],
-                    disabled: dropdownListTeamComps.disabled[elementindex],
-                  }"
-                  class="dropdown-item"
-                  >{{ dropdownListTeamComps.name[elementindex] }}</span
-                >
-              </li>
-            </div>
-          </ul>
-        </div>
-      </div>--->
       <form class="form" @submit.prevent="fetchData2()">
         <label class="form__label" for="player1">Player 1</label>
         <input
@@ -462,19 +480,26 @@ async function fetchData2() {
           name="player5"
           required
         />
-
-        <button
-          v-if="!rateLimit"
-          class="form__button btn btn-primary"
-          type="submit"
-        >
-          Submit
-        </button>
-        <button v-else class="form__button btn" disabled>
-          <div class="spinner-border" role="status">
-            <span class="visually-hidden">Loading...</span>
-          </div>
-        </button>
+        <div class="form__submit">
+          <button
+            v-if="!rateLimit"
+            class="form__button btn btn-primary"
+            type="submit"
+          >
+            Submit
+          </button>
+          <button v-else class="form__button btn" disabled>
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </button>
+          <button class="form__settingsbtn">
+            <font-awesome-icon
+              :icon="['fas', 'gear']"
+              class="form__settingsicon"
+            />
+          </button>
+        </div>
       </form>
     </div>
     <div ref="resultReference" class="result">
@@ -583,6 +608,7 @@ button:focus {
 }
 
 button {
+  width: fit-content;
   color: #c8aa6e;
   font-size: 700;
   &:hover {
@@ -597,7 +623,6 @@ button {
   &__button {
     width: 15rem;
     background-color: #0a323c;
-    border: 2px solid #005a82;
     border-left-color: black;
     &:focus {
       background-color: #0a323c;
@@ -611,14 +636,6 @@ button {
 
 .active {
   background-color: #0a323c;
-}
-
-button[type="submit"] {
-  background-color: #0a323c;
-  border: 2px solid #005a82;
-}
-
-button[type="submit"]:hover {
 }
 
 .result {
@@ -696,7 +713,9 @@ button[type="submit"]:hover {
 }
 
 .options {
+  background-color: #3d3d3d;
   display: flex;
+  margin: 1rem 3rem;
   margin-bottom: 2rem;
   justify-content: center;
 
@@ -769,21 +788,52 @@ button[type="submit"]:hover {
   flex-direction: column;
   justify-content: center;
 
+  &__submit {
+    display: flex;
+  }
+
+  &__settingsbtn {
+    display: flex;
+    background: none;
+    border: none;
+  }
+
+  &__settingsicon {
+    width: 3rem;
+    height: auto;
+    color: #494948;
+    margin-top: 0.375rem;
+  }
+
   &__label {
     font-weight: 600;
     color: #c8aa6e;
   }
 
   &__button {
+    background-color: #494948;
+    color: black;
     padding: 1rem 2rem;
     font-size: 1.125rem;
-    font-weight: 500;
+    font-weight: 400;
+    margin-right: 3rem;
+    border: none;
+    &:active {
+      outline: none !important;
+      box-shadow: none !important;
+      background-color: #3d3d3d;
+    }
+    &:hover {
+    }
   }
 
   &__input {
+    &:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
     margin-bottom: 2rem;
     padding: 1rem 2rem;
-    border: 2px solid #005a82;
     border-radius: 5px;
     font-weight: 700;
     color: #0a323c;
