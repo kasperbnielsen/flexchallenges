@@ -2,8 +2,7 @@ const items = [
   {
     id: 1001,
     name: "Boots",
-    description:
-      "<mainText><stats><attention> 25</attention> Move Speed</stats></mainText><br>",
+    description: "<mainText><stats><attention> 25</attention> Move Speed</stats></mainText><br>",
     active: false,
     inStore: true,
     from: [],
@@ -18,14 +17,12 @@ const items = [
     isEnchantment: false,
     price: 300,
     priceTotal: 300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1001_Class_T1_BootsofSpeed.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1001_Class_T1_BootsofSpeed.png",
   },
   {
     id: 1004,
     name: "Faerie Charm",
-    description:
-      "<mainText><stats><attention> 50%</attention> Base Mana Regen</stats></mainText><br>",
+    description: "<mainText><stats><attention> 50%</attention> Base Mana Regen</stats></mainText><br>",
     active: false,
     inStore: true,
     from: [],
@@ -40,14 +37,12 @@ const items = [
     isEnchantment: false,
     price: 250,
     priceTotal: 250,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1004_Class_T1_FaerieCharm.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1004_Class_T1_FaerieCharm.png",
   },
   {
     id: 1006,
     name: "Rejuvenation Bead",
-    description:
-      "<mainText><stats><attention> 100%</attention> Base Health Regen</stats></mainText><br>",
+    description: "<mainText><stats><attention> 100%</attention> Base Health Regen</stats></mainText><br>",
     active: false,
     inStore: true,
     from: [],
@@ -62,14 +57,12 @@ const items = [
     isEnchantment: false,
     price: 300,
     priceTotal: 300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1006_Tank_T1_RejuvenationBead.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1006_Tank_T1_RejuvenationBead.png",
   },
   {
     id: 1011,
     name: "Giant's Belt",
-    description:
-      "<mainText><stats><attention> 350</attention> Health</stats></mainText><br>",
+    description: "<mainText><stats><attention> 350</attention> Health</stats></mainText><br>",
     active: false,
     inStore: true,
     from: [1028],
@@ -84,21 +77,16 @@ const items = [
     isEnchantment: false,
     price: 500,
     priceTotal: 900,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1011_Class_T2_GiantsBelt.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1011_Class_T2_GiantsBelt.png",
   },
   {
     id: 1018,
     name: "Cloak of Agility",
-    description:
-      "<mainText><stats><attention> 15%</attention> Critical Strike Chance</stats></mainText><br>",
+    description: "<mainText><stats><attention> 15%</attention> Critical Strike Chance</stats></mainText><br>",
     active: false,
     inStore: true,
     from: [],
-    to: [
-      3072, 3031, 3139, 3508, 3095, 3033, 3036, 6675, 3086, 3087, 6672, 6673,
-      6676,
-    ],
+    to: [3072, 3031, 3139, 3508, 3095, 3033, 3036, 6675, 3086, 3087, 6672, 6673, 6676],
     categories: ["CriticalStrike"],
     maxStacks: 1,
     requiredChampion: "",
@@ -109,14 +97,12 @@ const items = [
     isEnchantment: false,
     price: 600,
     priceTotal: 600,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1018_Base_T1_CloakAgility.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1018_Base_T1_CloakAgility.png",
   },
   {
     id: 1026,
     name: "Blasting Wand",
-    description:
-      "<mainText><stats><attention> 40</attention> Ability Power</stats></mainText><br>",
+    description: "<mainText><stats><attention> 40</attention> Ability Power</stats></mainText><br>",
     active: false,
     inStore: true,
     from: [],
@@ -131,14 +117,12 @@ const items = [
     isEnchantment: false,
     price: 850,
     priceTotal: 850,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1026_Mage_T1_BlastingWand.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1026_Mage_T1_BlastingWand.png",
   },
   {
     id: 1027,
     name: "Sapphire Crystal",
-    description:
-      "<mainText><stats><attention> 250</attention> Mana</stats></mainText><br>",
+    description: "<mainText><stats><attention> 250</attention> Mana</stats></mainText><br>",
     active: false,
     inStore: true,
     from: [],
@@ -153,20 +137,18 @@ const items = [
     isEnchantment: false,
     price: 350,
     priceTotal: 350,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1027_Base_T1_SaphireCrystal.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1027_Base_T1_SaphireCrystal.png",
   },
   {
     id: 1028,
     name: "Ruby Crystal",
-    description:
-      "<mainText><stats><attention> 150</attention> Health</stats></mainText><br>",
+    description: "<mainText><stats><attention> 150</attention> Health</stats></mainText><br>",
     active: false,
     inStore: true,
     from: [],
     to: [
-      6035, 1011, 6660, 3211, 6609, 6665, 3066, 4635, 3023, 3803, 3119, 3012,
-      3044, 4401, 3053, 3067, 3145, 3742, 3748, 3801, 3814, 6664,
+      6035, 1011, 6660, 3211, 6609, 6665, 3066, 4635, 3023, 3803, 3119, 3012, 3044, 4401, 3053, 3067, 3145, 3742, 3748,
+      3801, 3814, 6664,
     ],
     categories: ["Health"],
     maxStacks: 1,
@@ -178,14 +160,12 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1028_Base_T1_RubyCrystal.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1028_Base_T1_RubyCrystal.png",
   },
   {
     id: 1029,
     name: "Cloth Armor",
-    description:
-      "<mainText><stats><attention> 15</attention> Armor</stats></mainText><br>",
+    description: "<mainText><stats><attention> 15</attention> Armor</stats></mainText><br>",
     active: false,
     inStore: true,
     from: [],
@@ -200,14 +180,12 @@ const items = [
     isEnchantment: false,
     price: 300,
     priceTotal: 300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1029_Base_T1_ClothArmor.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1029_Base_T1_ClothArmor.png",
   },
   {
     id: 1031,
     name: "Chain Vest",
-    description:
-      "<mainText><stats><attention> 40</attention> Armor</stats></mainText><br>",
+    description: "<mainText><stats><attention> 40</attention> Armor</stats></mainText><br>",
     active: false,
     inStore: true,
     from: [1029],
@@ -222,14 +200,12 @@ const items = [
     isEnchantment: false,
     price: 500,
     priceTotal: 800,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1031_Base_T2_ChainVest.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1031_Base_T2_ChainVest.png",
   },
   {
     id: 1033,
     name: "Null-Magic Mantle",
-    description:
-      "<mainText><stats><attention> 25</attention> Magic Resist</stats></mainText><br>",
+    description: "<mainText><stats><attention> 25</attention> Magic Resist</stats></mainText><br>",
     active: false,
     inStore: true,
     from: [],
@@ -244,8 +220,7 @@ const items = [
     isEnchantment: false,
     price: 450,
     priceTotal: 450,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1033_Base_T1_MagicMantle.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1033_Base_T1_MagicMantle.png",
   },
   {
     id: 1035,
@@ -266,21 +241,16 @@ const items = [
     isEnchantment: false,
     price: 350,
     priceTotal: 350,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1035_Alll_T1_EmberKnife.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1035_Alll_T1_EmberKnife.png",
   },
   {
     id: 1036,
     name: "Long Sword",
-    description:
-      "<mainText><stats><attention> 10</attention> Attack Damage</stats></mainText><br>",
+    description: "<mainText><stats><attention> 10</attention> Attack Damage</stats></mainText><br>",
     active: false,
     inStore: true,
     from: [],
-    to: [
-      1053, 3156, 6671, 2015, 3179, 3051, 3071, 3004, 3035, 3044, 3094, 3123,
-      3133, 3134, 3155, 3814, 6670,
-    ],
+    to: [1053, 3156, 6671, 2015, 3179, 3051, 3071, 3004, 3035, 3044, 3094, 3123, 3133, 3134, 3155, 3814, 6670],
     categories: ["Damage", "Lane"],
     maxStacks: 1,
     requiredChampion: "",
@@ -291,21 +261,16 @@ const items = [
     isEnchantment: false,
     price: 350,
     priceTotal: 350,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1036_Class_T1_LongSword.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1036_Class_T1_LongSword.png",
   },
   {
     id: 1037,
     name: "Pickaxe",
-    description:
-      "<mainText><stats><attention> 25</attention> Attack Damage</stats></mainText><br>",
+    description: "<mainText><stats><attention> 25</attention> Attack Damage</stats></mainText><br>",
     active: false,
     inStore: true,
     from: [],
-    to: [
-      6035, 2019, 3156, 3031, 6695, 3139, 3124, 3077, 3053, 3153, 3161, 3181,
-      6029, 6333, 6673, 6676,
-    ],
+    to: [6035, 2019, 3156, 3031, 6695, 3139, 3124, 3077, 3053, 3153, 3161, 3181, 6029, 6333, 6673, 6676],
     categories: ["Damage"],
     maxStacks: 1,
     requiredChampion: "",
@@ -316,14 +281,12 @@ const items = [
     isEnchantment: false,
     price: 875,
     priceTotal: 875,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1037_Class_T1_Pickaxe.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1037_Class_T1_Pickaxe.png",
   },
   {
     id: 1038,
     name: "B. F. Sword",
-    description:
-      "<mainText><stats><attention> 40</attention> Attack Damage</stats></mainText><br>",
+    description: "<mainText><stats><attention> 40</attention> Attack Damage</stats></mainText><br>",
     active: false,
     inStore: true,
     from: [],
@@ -338,8 +301,7 @@ const items = [
     isEnchantment: false,
     price: 1300,
     priceTotal: 1300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1038_Marksman_T1_BFSword.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1038_Marksman_T1_BFSword.png",
   },
   {
     id: 1039,
@@ -360,8 +322,7 @@ const items = [
     isEnchantment: false,
     price: 350,
     priceTotal: 350,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1039_All_T1_HailBlade.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1039_All_T1_HailBlade.png",
   },
   {
     id: 1040,
@@ -382,14 +343,12 @@ const items = [
     isEnchantment: false,
     price: 350,
     priceTotal: 350,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1040_ObsidianEdge.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1040_ObsidianEdge.png",
   },
   {
     id: 1042,
     name: "Dagger",
-    description:
-      "<mainText><stats><attention> 12%</attention> Attack Speed</stats></mainText><br>",
+    description: "<mainText><stats><attention> 12%</attention> Attack Speed</stats></mainText><br>",
     active: false,
     inStore: true,
     from: [],
@@ -404,8 +363,7 @@ const items = [
     isEnchantment: false,
     price: 300,
     priceTotal: 300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1042_Base_T1_Dagger.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1042_Base_T1_Dagger.png",
   },
   {
     id: 1043,
@@ -426,20 +384,18 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 700,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1043_Base_T2_RecurveBow.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1043_Base_T2_RecurveBow.png",
   },
   {
     id: 1052,
     name: "Amplifying Tome",
-    description:
-      "<mainText><stats><attention> 20</attention> Ability Power</stats></mainText><br>",
+    description: "<mainText><stats><attention> 20</attention> Ability Power</stats></mainText><br>",
     active: false,
     inStore: true,
     from: [],
     to: [
-      3165, 6657, 3916, 4629, 3802, 4635, 3124, 3113, 3108, 3116, 3145, 3152,
-      3191, 4637, 4630, 4632, 4636, 4642, 4644, 6656,
+      3165, 6657, 3916, 4629, 3802, 4635, 3124, 3113, 3108, 3116, 3145, 3152, 3191, 4637, 4630, 4632, 4636, 4642, 4644,
+      6656,
     ],
     categories: ["SpellDamage"],
     maxStacks: 1,
@@ -451,8 +407,7 @@ const items = [
     isEnchantment: false,
     price: 435,
     priceTotal: 435,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1052_Mage_T2_AmpTome.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1052_Mage_T2_AmpTome.png",
   },
   {
     id: 1053,
@@ -473,8 +428,7 @@ const items = [
     isEnchantment: false,
     price: 550,
     priceTotal: 900,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1053_Fighter_T2_VampiricScepter.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1053_Fighter_T2_VampiricScepter.png",
   },
   {
     id: 1054,
@@ -495,8 +449,7 @@ const items = [
     isEnchantment: false,
     price: 450,
     priceTotal: 450,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1054_Tank_T1_DoransShield.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1054_Tank_T1_DoransShield.png",
   },
   {
     id: 1055,
@@ -517,8 +470,7 @@ const items = [
     isEnchantment: false,
     price: 450,
     priceTotal: 450,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1055_Marksman_T1_DoransBlade.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1055_Marksman_T1_DoransBlade.png",
   },
   {
     id: 1056,
@@ -539,14 +491,12 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1056_Mage_T1_DoransRing.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1056_Mage_T1_DoransRing.png",
   },
   {
     id: 1057,
     name: "Negatron Cloak",
-    description:
-      "<mainText><stats><attention> 50</attention> Magic Resist</stats></mainText><br>",
+    description: "<mainText><stats><attention> 50</attention> Magic Resist</stats></mainText><br>",
     active: false,
     inStore: true,
     from: [1033],
@@ -561,14 +511,12 @@ const items = [
     isEnchantment: false,
     price: 450,
     priceTotal: 900,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1057_Tank_T2_NegatronCloak.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1057_Tank_T2_NegatronCloak.png",
   },
   {
     id: 1058,
     name: "Needlessly Large Rod",
-    description:
-      "<mainText><stats><attention> 60</attention> Ability Power</stats></mainText><br>",
+    description: "<mainText><stats><attention> 60</attention> Ability Power</stats></mainText><br>",
     active: false,
     inStore: true,
     from: [],
@@ -583,8 +531,7 @@ const items = [
     isEnchantment: false,
     price: 1250,
     priceTotal: 1250,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1058_Mage_T1_LargeRod.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1058_Mage_T1_LargeRod.png",
   },
   {
     id: 1082,
@@ -605,8 +552,7 @@ const items = [
     isEnchantment: false,
     price: 350,
     priceTotal: 350,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1082_Mage_T1_DarkSeal.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1082_Mage_T1_DarkSeal.png",
   },
   {
     id: 1083,
@@ -627,8 +573,7 @@ const items = [
     isEnchantment: false,
     price: 450,
     priceTotal: 450,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1083_Marksman_T1_Cull.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1083_Marksman_T1_Cull.png",
   },
   {
     id: 1101,
@@ -649,8 +594,7 @@ const items = [
     isEnchantment: false,
     price: 450,
     priceTotal: 450,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1101_Jungle_T1_ScorchclawPup.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1101_Jungle_T1_ScorchclawPup.png",
   },
   {
     id: 1102,
@@ -671,8 +615,7 @@ const items = [
     isEnchantment: false,
     price: 450,
     priceTotal: 450,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1102_Jungle_T1_GustwalkerHatchling.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1102_Jungle_T1_GustwalkerHatchling.png",
   },
   {
     id: 1103,
@@ -693,8 +636,7 @@ const items = [
     isEnchantment: false,
     price: 450,
     priceTotal: 450,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1103_Jungle_T1_MosstomperSeedling.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1103_Jungle_T1_MosstomperSeedling.png",
   },
   {
     id: 1104,
@@ -776,8 +718,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3042_Netherrift_Armor.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3042_Netherrift_Armor.png",
   },
   {
     id: 1503,
@@ -797,8 +738,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/096_Eye_of_the_Observer.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/096_Eye_of_the_Observer.png",
   },
   {
     id: 1504,
@@ -818,8 +758,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1504_TurretShielder.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1504_TurretShielder.png",
   },
   {
     id: 1506,
@@ -840,8 +779,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3042_Netherrift_Armor.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3042_Netherrift_Armor.png",
   },
   {
     id: 1507,
@@ -861,8 +799,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1507_Tournament_SuddenDeath.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1507_Tournament_SuddenDeath.png",
   },
   {
     id: 1508,
@@ -882,8 +819,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1508_AntitowerSocks.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1508_AntitowerSocks.png",
   },
   {
     id: 1509,
@@ -923,8 +859,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1510_PhreakishGusto.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1510_PhreakishGusto.png",
   },
   {
     id: 1511,
@@ -944,8 +879,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1511_SuperMechArmor.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1511_SuperMechArmor.png",
   },
   {
     id: 1512,
@@ -965,8 +899,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1512_SuperMechPowerField.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1512_SuperMechPowerField.png",
   },
   {
     id: 1515,
@@ -986,8 +919,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1504_TurretShielder.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1504_TurretShielder.png",
   },
   {
     id: 1516,
@@ -1087,8 +1019,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1507_Tournament_SuddenDeath.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1507_Tournament_SuddenDeath.png",
   },
   {
     id: 1521,
@@ -1128,8 +1059,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/1504_TurretShielder.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/1504_TurretShielder.png",
   },
   {
     id: 2001,
@@ -1170,8 +1100,7 @@ const items = [
     isEnchantment: false,
     price: 50,
     priceTotal: 50,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2003_Class_T1_HealthPotion.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2003_Class_T1_HealthPotion.png",
   },
   {
     id: 2007,
@@ -1191,8 +1120,7 @@ const items = [
     isEnchantment: false,
     price: 60,
     priceTotal: 60,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/TeleportHomeDisabled.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/TeleportHomeDisabled.png",
   },
   {
     id: 2008,
@@ -1233,8 +1161,7 @@ const items = [
     isEnchantment: false,
     price: 50,
     priceTotal: 50,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2010_Class_T1_TotalBiscuitofEverlastingWill.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2010_Class_T1_TotalBiscuitofEverlastingWill.png",
   },
   {
     id: 2015,
@@ -1255,8 +1182,7 @@ const items = [
     isEnchantment: false,
     price: 350,
     priceTotal: 700,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2015_Marksman_T2_KirkcheisShard.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2015_Marksman_T2_KirkcheisShard.png",
   },
   {
     id: 2019,
@@ -1298,8 +1224,7 @@ const items = [
     isEnchantment: false,
     price: 150,
     priceTotal: 150,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2031_Class_T1_RefillablePotion.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2031_Class_T1_RefillablePotion.png",
   },
   {
     id: 2033,
@@ -1320,8 +1245,7 @@ const items = [
     isEnchantment: false,
     price: 350,
     priceTotal: 500,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2033_Class_T1_CorruptingPotion.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2033_Class_T1_CorruptingPotion.png",
   },
   {
     id: 2049,
@@ -1332,13 +1256,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "SpellDamage",
-      "ManaRegen",
-      "CooldownReduction",
-      "Lane",
-      "AbilityHaste",
-    ],
+    categories: ["SpellDamage", "ManaRegen", "CooldownReduction", "Lane", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -1348,8 +1266,7 @@ const items = [
     isEnchantment: false,
     price: 1000,
     priceTotal: 1000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6688_Enchanter_T3_Norras.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6688_Enchanter_T3_Norras.png",
   },
   {
     id: 2050,
@@ -1360,13 +1277,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "CooldownReduction",
-      "Lane",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellDamage", "CooldownReduction", "Lane", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -1376,8 +1287,7 @@ const items = [
     isEnchantment: false,
     price: 1000,
     priceTotal: 1000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3194_Battlemage_Blocker.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3194_Battlemage_Blocker.png",
   },
   {
     id: 2051,
@@ -1398,8 +1308,7 @@ const items = [
     isEnchantment: false,
     price: 950,
     priceTotal: 950,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2051_ARAM_T1_GuardiansHorn.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2051_ARAM_T1_GuardiansHorn.png",
   },
   {
     id: 2052,
@@ -1441,8 +1350,7 @@ const items = [
     isEnchantment: false,
     price: 75,
     priceTotal: 75,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2055_Class_T1_ControlWard.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2055_Class_T1_ControlWard.png",
   },
   {
     id: 2065,
@@ -1471,8 +1379,7 @@ const items = [
     isEnchantment: false,
     price: 550,
     priceTotal: 2300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2065_Tank_T4_ShurelyasBattlesong.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2065_Tank_T4_ShurelyasBattlesong.png",
   },
   {
     id: 2138,
@@ -1493,8 +1400,7 @@ const items = [
     isEnchantment: false,
     price: 500,
     priceTotal: 500,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2138_Class_ElixirOfIron.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2138_Class_ElixirOfIron.png",
   },
   {
     id: 2139,
@@ -1515,8 +1421,7 @@ const items = [
     isEnchantment: false,
     price: 500,
     priceTotal: 500,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2139_Class_T1_ElixirOfSorcery.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2139_Class_T1_ElixirOfSorcery.png",
   },
   {
     id: 2140,
@@ -1537,8 +1442,7 @@ const items = [
     isEnchantment: false,
     price: 500,
     priceTotal: 500,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2140_Class_T0_ElixirOfWrath.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2140_Class_T0_ElixirOfWrath.png",
   },
   {
     id: 2141,
@@ -1559,8 +1463,7 @@ const items = [
     isEnchantment: false,
     price: 700,
     priceTotal: 700,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/Icon_Item_SoulJuice_FunHat.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/Icon_Item_SoulJuice_FunHat.png",
   },
   {
     id: 2142,
@@ -1581,8 +1484,7 @@ const items = [
     isEnchantment: false,
     price: 700,
     priceTotal: 700,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/Icon_Item_SoulJuice_AbilityPowerAttackDamage.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/Icon_Item_SoulJuice_AbilityPowerAttackDamage.png",
   },
   {
     id: 2143,
@@ -1603,8 +1505,7 @@ const items = [
     isEnchantment: false,
     price: 700,
     priceTotal: 700,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/Icons_SoulJuice_Green.2v2_Mode_Fighters.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/Icons_SoulJuice_Green.2v2_Mode_Fighters.png",
   },
   {
     id: 2144,
@@ -1625,8 +1526,7 @@ const items = [
     isEnchantment: false,
     price: 700,
     priceTotal: 700,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/Icons_SoulJuice_Yellow.2v2_Mode_Fighters.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/Icons_SoulJuice_Yellow.2v2_Mode_Fighters.png",
   },
   {
     id: 2403,
@@ -1647,8 +1547,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2403_Minion_Dematerializer.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2403_Minion_Dematerializer.png",
   },
   {
     id: 2419,
@@ -1669,8 +1568,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2419_Mage_T1_StopWatch.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2419_Mage_T1_StopWatch.png",
   },
   {
     id: 2420,
@@ -1691,8 +1589,7 @@ const items = [
     isEnchantment: false,
     price: 750,
     priceTotal: 750,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2419_Mage_T1_StopWatch.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2419_Mage_T1_StopWatch.png",
   },
   {
     id: 2421,
@@ -1713,8 +1610,7 @@ const items = [
     isEnchantment: false,
     price: 750,
     priceTotal: 750,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2424_Mage_T1_BrokenStopwatch.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2424_Mage_T1_BrokenStopwatch.png",
   },
   {
     id: 2422,
@@ -1735,8 +1631,7 @@ const items = [
     isEnchantment: false,
     price: 300,
     priceTotal: 300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2422_Class_T1_SlightlyMagicalBoots.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2422_Class_T1_SlightlyMagicalBoots.png",
   },
   {
     id: 2423,
@@ -1757,8 +1652,7 @@ const items = [
     isEnchantment: false,
     price: 750,
     priceTotal: 750,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2419_Mage_T1_StopWatch.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2419_Mage_T1_StopWatch.png",
   },
   {
     id: 2424,
@@ -1779,8 +1673,7 @@ const items = [
     isEnchantment: false,
     price: 750,
     priceTotal: 750,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2424_Mage_T1_BrokenStopwatch.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2424_Mage_T1_BrokenStopwatch.png",
   },
   {
     id: 3001,
@@ -1801,8 +1694,7 @@ const items = [
     isEnchantment: false,
     price: 800,
     priceTotal: 2300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3001_Support_Lunari.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3001_Support_Lunari.png",
   },
   {
     id: 3003,
@@ -1823,8 +1715,7 @@ const items = [
     isEnchantment: false,
     price: 550,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3003_Mage_T3_ArchangelStaff.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3003_Mage_T3_ArchangelStaff.png",
   },
   {
     id: 3004,
@@ -1835,13 +1726,7 @@ const items = [
     inStore: true,
     from: [3070, 3133, 1036],
     to: [],
-    categories: [
-      "Damage",
-      "Mana",
-      "CooldownReduction",
-      "OnHit",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "Mana", "CooldownReduction", "OnHit", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -1851,8 +1736,7 @@ const items = [
     isEnchantment: false,
     price: 1050,
     priceTotal: 2900,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3004_Marksman_T3_Manamune.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3004_Marksman_T3_Manamune.png",
   },
   {
     id: 3006,
@@ -1873,8 +1757,7 @@ const items = [
     isEnchantment: false,
     price: 500,
     priceTotal: 1100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3006_Class_T2_BerserkersGreaves.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3006_Class_T2_BerserkersGreaves.png",
   },
   {
     id: 3009,
@@ -1895,8 +1778,7 @@ const items = [
     isEnchantment: false,
     price: 600,
     priceTotal: 900,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3009_Class_T2_BootsofSwiftness.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3009_Class_T2_BootsofSwiftness.png",
   },
   {
     id: 3011,
@@ -1917,8 +1799,7 @@ const items = [
     isEnchantment: false,
     price: 500,
     priceTotal: 2100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3011_Enchanter_T3_ChemtechFumigator.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3011_Enchanter_T3_ChemtechFumigator.png",
   },
   {
     id: 3012,
@@ -1939,8 +1820,7 @@ const items = [
     isEnchantment: false,
     price: 300,
     priceTotal: 950,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3012_Blessed_Chalice.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3012_Blessed_Chalice.png",
   },
   {
     id: 3020,
@@ -1961,8 +1841,7 @@ const items = [
     isEnchantment: false,
     price: 800,
     priceTotal: 1100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3020_Class_T2_SorcerersShoes.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3020_Class_T2_SorcerersShoes.png",
   },
   {
     id: 3023,
@@ -1983,8 +1862,7 @@ const items = [
     isEnchantment: false,
     price: 350,
     priceTotal: 1050,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3023_Lifewell_Pendant.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3023_Lifewell_Pendant.png",
   },
   {
     id: 3024,
@@ -2005,8 +1883,7 @@ const items = [
     isEnchantment: false,
     price: 250,
     priceTotal: 900,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3024_Tank_T2_GlacialShroud.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3024_Tank_T2_GlacialShroud.png",
   },
   {
     id: 3026,
@@ -2027,8 +1904,7 @@ const items = [
     isEnchantment: false,
     price: 150,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3026_Fighter_T3_GuardianAngel.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3026_Fighter_T3_GuardianAngel.png",
   },
   {
     id: 3031,
@@ -2049,8 +1925,7 @@ const items = [
     isEnchantment: false,
     price: 625,
     priceTotal: 3400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3031_Marksman_T3_InfinityEdge.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3031_Marksman_T3_InfinityEdge.png",
   },
   {
     id: 3033,
@@ -2071,8 +1946,7 @@ const items = [
     isEnchantment: false,
     price: 150,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3033_Marksman_T3_MortalReminder.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3033_Marksman_T3_MortalReminder.png",
   },
   {
     id: 3035,
@@ -2093,8 +1967,7 @@ const items = [
     isEnchantment: false,
     price: 750,
     priceTotal: 1450,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3035_Marksman_T2_LastWhisper.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3035_Marksman_T2_LastWhisper.png",
   },
   {
     id: 3036,
@@ -2115,8 +1988,7 @@ const items = [
     isEnchantment: false,
     price: 950,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3036_Marksman_T3_DominikRegards.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3036_Marksman_T3_DominikRegards.png",
   },
   {
     id: 3040,
@@ -2137,8 +2009,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3048_Mage_T3_SeraphsEmbrace.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3048_Mage_T3_SeraphsEmbrace.png",
   },
   {
     id: 3041,
@@ -2159,8 +2030,7 @@ const items = [
     isEnchantment: false,
     price: 1250,
     priceTotal: 1600,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3041_Mage_T2_MejaisSoulstealer.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3041_Mage_T2_MejaisSoulstealer.png",
   },
   {
     id: 3042,
@@ -2171,13 +2041,7 @@ const items = [
     inStore: false,
     from: [],
     to: [],
-    categories: [
-      "Damage",
-      "Mana",
-      "CooldownReduction",
-      "OnHit",
-      "ArmorPenetration",
-    ],
+    categories: ["Damage", "Mana", "CooldownReduction", "OnHit", "ArmorPenetration"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -2187,8 +2051,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3042_Marksman_T3_Muramana.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3042_Marksman_T3_Muramana.png",
   },
   {
     id: 3044,
@@ -2209,8 +2072,7 @@ const items = [
     isEnchantment: false,
     price: 350,
     priceTotal: 1100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3044_Fighter_T2_Phage.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3044_Fighter_T2_Phage.png",
   },
   {
     id: 3046,
@@ -2221,13 +2083,7 @@ const items = [
     inStore: true,
     from: [3051, 3086],
     to: [],
-    categories: [
-      "Damage",
-      "CriticalStrike",
-      "AttackSpeed",
-      "OnHit",
-      "NonbootsMovement",
-    ],
+    categories: ["Damage", "CriticalStrike", "AttackSpeed", "OnHit", "NonbootsMovement"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -2237,8 +2093,7 @@ const items = [
     isEnchantment: false,
     price: 600,
     priceTotal: 2800,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3046_Marksman_T3_PhantomDancer.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3046_Marksman_T3_PhantomDancer.png",
   },
   {
     id: 3047,
@@ -2259,8 +2114,7 @@ const items = [
     isEnchantment: false,
     price: 500,
     priceTotal: 1100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3047_Class_T2_NinjaTabi.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3047_Class_T2_NinjaTabi.png",
   },
   {
     id: 3050,
@@ -2271,14 +2125,7 @@ const items = [
     inStore: true,
     from: [3023, 3024],
     to: [],
-    categories: [
-      "Health",
-      "Armor",
-      "Active",
-      "CooldownReduction",
-      "OnHit",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "Armor", "Active", "CooldownReduction", "OnHit", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -2288,8 +2135,7 @@ const items = [
     isEnchantment: false,
     price: 250,
     priceTotal: 2200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3050_Enchanter_T3_ZekesConvergence.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3050_Enchanter_T3_ZekesConvergence.png",
   },
   {
     id: 3051,
@@ -2310,8 +2156,7 @@ const items = [
     isEnchantment: false,
     price: 100,
     priceTotal: 1100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3051_Fighter_T2_AxeOfAvarosa.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3051_Fighter_T2_AxeOfAvarosa.png",
   },
   {
     id: 3053,
@@ -2332,8 +2177,7 @@ const items = [
     isEnchantment: false,
     price: 625,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3053_Steraks_Gage.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3053_Steraks_Gage.png",
   },
   {
     id: 3057,
@@ -2354,8 +2198,7 @@ const items = [
     isEnchantment: false,
     price: 700,
     priceTotal: 700,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3057_Fighter_T2_Sheen.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3057_Fighter_T2_Sheen.png",
   },
   {
     id: 3065,
@@ -2366,13 +2209,7 @@ const items = [
     inStore: true,
     from: [3211, 3067],
     to: [],
-    categories: [
-      "Health",
-      "SpellBlock",
-      "HealthRegen",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellBlock", "HealthRegen", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -2382,8 +2219,7 @@ const items = [
     isEnchantment: false,
     price: 850,
     priceTotal: 2900,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3065_Tank_T3_SpiritVisage.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3065_Tank_T3_SpiritVisage.png",
   },
   {
     id: 3066,
@@ -2404,8 +2240,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 800,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3066_Tank_T3_WingedMoonplate.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3066_Tank_T3_WingedMoonplate.png",
   },
   {
     id: 3067,
@@ -2416,8 +2251,8 @@ const items = [
     inStore: true,
     from: [1028],
     to: [
-      3084, 6632, 6662, 6665, 2065, 4403, 224403, 3071, 3119, 6631, 3065, 3003,
-      3078, 3083, 6617, 3161, 4644, 6656, 6630, 6664, 8001, 8020,
+      3084, 6632, 6662, 6665, 2065, 4403, 224403, 3071, 3119, 6631, 3065, 3003, 3078, 3083, 6617, 3161, 4644, 6656,
+      6630, 6664, 8001, 8020,
     ],
     categories: ["Health", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
@@ -2429,8 +2264,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 800,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3067_Tank_T1_Kindlegem.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3067_Tank_T1_Kindlegem.png",
   },
   {
     id: 3068,
@@ -2451,8 +2285,7 @@ const items = [
     isEnchantment: false,
     price: 900,
     priceTotal: 2700,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3068_Tank_T4_SunfireAegis.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3068_Tank_T4_SunfireAegis.png",
   },
   {
     id: 3070,
@@ -2473,8 +2306,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3070_All_T1_TearOfTheGoddess.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3070_All_T1_TearOfTheGoddess.png",
   },
   {
     id: 3071,
@@ -2503,8 +2335,7 @@ const items = [
     isEnchantment: false,
     price: 850,
     priceTotal: 3100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3071_Fighter_T3_BlackCleaver.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3071_Fighter_T3_BlackCleaver.png",
   },
   {
     id: 3072,
@@ -2525,8 +2356,7 @@ const items = [
     isEnchantment: false,
     price: 600,
     priceTotal: 3400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3072_Fighter_T3_Bloodthirster.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3072_Fighter_T3_Bloodthirster.png",
   },
   {
     id: 3074,
@@ -2537,13 +2367,7 @@ const items = [
     inStore: true,
     from: [3077, 1053, 3133],
     to: [],
-    categories: [
-      "Damage",
-      "LifeSteal",
-      "CooldownReduction",
-      "OnHit",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "LifeSteal", "CooldownReduction", "OnHit", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -2553,8 +2377,7 @@ const items = [
     isEnchantment: false,
     price: 200,
     priceTotal: 3400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3074_Fighter_T3_RavenousHydra.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3074_Fighter_T3_RavenousHydra.png",
   },
   {
     id: 3075,
@@ -2575,8 +2398,7 @@ const items = [
     isEnchantment: false,
     price: 1000,
     priceTotal: 2700,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3075_Tank_T3_Thornmail.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3075_Tank_T3_Thornmail.png",
   },
   {
     id: 3076,
@@ -2597,8 +2419,7 @@ const items = [
     isEnchantment: false,
     price: 200,
     priceTotal: 800,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3076_Tank_T2_BrambleVest.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3076_Tank_T2_BrambleVest.png",
   },
   {
     id: 3077,
@@ -2619,8 +2440,7 @@ const items = [
     isEnchantment: false,
     price: 325,
     priceTotal: 1200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3077_Fighter_T2_Tiamat.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3077_Fighter_T2_Tiamat.png",
   },
   {
     id: 3078,
@@ -2631,15 +2451,7 @@ const items = [
     inStore: true,
     from: [3057, 3051, 3067],
     to: [7018],
-    categories: [
-      "Health",
-      "Damage",
-      "AttackSpeed",
-      "CooldownReduction",
-      "OnHit",
-      "NonbootsMovement",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "Damage", "AttackSpeed", "CooldownReduction", "OnHit", "NonbootsMovement", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -2649,8 +2461,7 @@ const items = [
     isEnchantment: false,
     price: 733,
     priceTotal: 3333,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3078_Fighter_T4_TrinityForce.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3078_Fighter_T4_TrinityForce.png",
   },
   {
     id: 3082,
@@ -2671,8 +2482,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 1000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3082_Tank_T2_WardensMail.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3082_Tank_T2_WardensMail.png",
   },
   {
     id: 3083,
@@ -2693,8 +2503,7 @@ const items = [
     isEnchantment: false,
     price: 500,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3083_Tank_T3_Warmogs.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3083_Tank_T3_Warmogs.png",
   },
   {
     id: 3084,
@@ -2715,8 +2524,7 @@ const items = [
     isEnchantment: false,
     price: 700,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3084_Tank_T4_Heartsteel.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3084_Tank_T4_Heartsteel.png",
   },
   {
     id: 3085,
@@ -2737,8 +2545,7 @@ const items = [
     isEnchantment: false,
     price: 1000,
     priceTotal: 2800,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3085_Marksman_T3_Runaans.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3085_Marksman_T3_Runaans.png",
   },
   {
     id: 3086,
@@ -2759,8 +2566,7 @@ const items = [
     isEnchantment: false,
     price: 200,
     priceTotal: 1100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3086_Fighter_T2_Zeal.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3086_Fighter_T2_Zeal.png",
   },
   {
     id: 3087,
@@ -2781,8 +2587,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3087_Statikk_Shiv.SRT13_10.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3087_Statikk_Shiv.SRT13_10.png",
   },
   {
     id: 3089,
@@ -2803,8 +2608,7 @@ const items = [
     isEnchantment: false,
     price: 1100,
     priceTotal: 3600,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3089_Mage_T3_Deathcap.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3089_Mage_T3_Deathcap.png",
   },
   {
     id: 3091,
@@ -2815,13 +2619,7 @@ const items = [
     inStore: true,
     from: [3051, 1033, 1043],
     to: [],
-    categories: [
-      "SpellBlock",
-      "Damage",
-      "AttackSpeed",
-      "OnHit",
-      "NonbootsMovement",
-    ],
+    categories: ["SpellBlock", "Damage", "AttackSpeed", "OnHit", "NonbootsMovement"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -2831,8 +2629,7 @@ const items = [
     isEnchantment: false,
     price: 950,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3091_Fighter_T3_WitsEnd.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3091_Fighter_T3_WitsEnd.png",
   },
   {
     id: 3094,
@@ -2853,8 +2650,7 @@ const items = [
     isEnchantment: false,
     price: 850,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3094_Marksman_T3_RapidFireHandCannon.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3094_Marksman_T3_RapidFireHandCannon.png",
   },
   {
     id: 3095,
@@ -2896,8 +2692,7 @@ const items = [
     isEnchantment: false,
     price: 550,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3100_Mage_T3_Lichbane.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3100_Mage_T3_Lichbane.png",
   },
   {
     id: 3102,
@@ -2908,12 +2703,7 @@ const items = [
     inStore: true,
     from: [3108, 4632],
     to: [],
-    categories: [
-      "SpellBlock",
-      "SpellDamage",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["SpellBlock", "SpellDamage", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -2923,8 +2713,7 @@ const items = [
     isEnchantment: false,
     price: 700,
     priceTotal: 2600,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3102_Mage_T3_BansheesVeil.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3102_Mage_T3_BansheesVeil.png",
   },
   {
     id: 3105,
@@ -2945,8 +2734,7 @@ const items = [
     isEnchantment: false,
     price: 450,
     priceTotal: 1200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3105_Tank_T2_AegisOfTheLegion.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3105_Tank_T2_AegisOfTheLegion.png",
   },
   {
     id: 3107,
@@ -2967,8 +2755,7 @@ const items = [
     isEnchantment: false,
     price: 550,
     priceTotal: 2300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3107_Enchanter_T3_Redemption.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3107_Enchanter_T3_Redemption.png",
   },
   {
     id: 3108,
@@ -2989,8 +2776,7 @@ const items = [
     isEnchantment: false,
     price: 465,
     priceTotal: 900,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3108_Mage_T2_FiendishCodex.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3108_Mage_T2_FiendishCodex.png",
   },
   {
     id: 3109,
@@ -3001,15 +2787,7 @@ const items = [
     inStore: true,
     from: [3023, 3801],
     to: [],
-    categories: [
-      "Health",
-      "HealthRegen",
-      "Armor",
-      "Aura",
-      "Active",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "HealthRegen", "Armor", "Aura", "Active", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -3019,8 +2797,7 @@ const items = [
     isEnchantment: false,
     price: 350,
     priceTotal: 2200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3109_Tank_T3_KnightsVow.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3109_Tank_T3_KnightsVow.png",
   },
   {
     id: 3110,
@@ -3041,8 +2818,7 @@ const items = [
     isEnchantment: false,
     price: 800,
     priceTotal: 2700,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3110_Tank_T3_FrozenHeart.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3110_Tank_T3_FrozenHeart.png",
   },
   {
     id: 3111,
@@ -3063,8 +2839,7 @@ const items = [
     isEnchantment: false,
     price: 350,
     priceTotal: 1100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3111_Class_T2_MercurysTreads.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3111_Class_T2_MercurysTreads.png",
   },
   {
     id: 3112,
@@ -3085,8 +2860,7 @@ const items = [
     isEnchantment: false,
     price: 950,
     priceTotal: 950,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3112_ARAM_T1_GuardiansOrb.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3112_ARAM_T1_GuardiansOrb.png",
   },
   {
     id: 3113,
@@ -3107,8 +2881,7 @@ const items = [
     isEnchantment: false,
     price: 415,
     priceTotal: 850,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3113_Mage_T2_AetherWisp.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3113_Mage_T2_AetherWisp.png",
   },
   {
     id: 3114,
@@ -3129,8 +2902,7 @@ const items = [
     isEnchantment: false,
     price: 550,
     priceTotal: 800,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3114_Mage_T2_ForbiddenIdol.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3114_Mage_T2_ForbiddenIdol.png",
   },
   {
     id: 3115,
@@ -3151,8 +2923,7 @@ const items = [
     isEnchantment: false,
     price: 750,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3115_Mage_T3_NashorsTooth.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3115_Mage_T3_NashorsTooth.png",
   },
   {
     id: 3116,
@@ -3173,8 +2944,7 @@ const items = [
     isEnchantment: false,
     price: 415,
     priceTotal: 2600,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3116_Mage_T3_RylajsCrystalScepter.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3116_Mage_T3_RylajsCrystalScepter.png",
   },
   {
     id: 3117,
@@ -3195,8 +2965,7 @@ const items = [
     isEnchantment: false,
     price: 700,
     priceTotal: 1000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3117_Class_T2_BootsofMobility.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3117_Class_T2_BootsofMobility.png",
   },
   {
     id: 3119,
@@ -3217,8 +2986,7 @@ const items = [
     isEnchantment: false,
     price: 1000,
     priceTotal: 2600,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3119_WintersApproach.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3119_WintersApproach.png",
   },
   {
     id: 3121,
@@ -3239,8 +3007,7 @@ const items = [
     isEnchantment: false,
     price: 2700,
     priceTotal: 2700,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3121_Fimbulwinter.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3121_Fimbulwinter.png",
   },
   {
     id: 3123,
@@ -3261,8 +3028,7 @@ const items = [
     isEnchantment: false,
     price: 450,
     priceTotal: 800,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3123_Fighter_T2_ExecutionersCalling.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3123_Fighter_T2_ExecutionersCalling.png",
   },
   {
     id: 3124,
@@ -3273,13 +3039,7 @@ const items = [
     inStore: true,
     from: [1052, 6677, 1037],
     to: [7030],
-    categories: [
-      "CriticalStrike",
-      "AttackSpeed",
-      "OnHit",
-      "MagicPenetration",
-      "ArmorPenetration",
-    ],
+    categories: ["CriticalStrike", "AttackSpeed", "OnHit", "MagicPenetration", "ArmorPenetration"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -3289,8 +3049,7 @@ const items = [
     isEnchantment: false,
     price: 690,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3124_Marksman_T3_GuinsoosRageblade.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3124_Marksman_T3_GuinsoosRageblade.png",
   },
   {
     id: 3128,
@@ -3311,8 +3070,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3128_Deathfire_Grasp.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3128_Deathfire_Grasp.png",
   },
   {
     id: 3133,
@@ -3322,10 +3080,7 @@ const items = [
     active: false,
     inStore: true,
     from: [1036, 1036],
-    to: [
-      6632, 6609, 3142, 3508, 3071, 3004, 6692, 6675, 3074, 3161, 6333, 6691,
-      6693, 6694, 6696,
-    ],
+    to: [6632, 6609, 3142, 3508, 3071, 3004, 6692, 6675, 3074, 3161, 6333, 6691, 6693, 6694, 6696],
     categories: ["Damage", "CooldownReduction", "AbilityHaste"],
     maxStacks: 0,
     requiredChampion: "",
@@ -3336,8 +3091,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 1100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3133_Fighter_T2_CaulfieldsWarhammer.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3133_Fighter_T2_CaulfieldsWarhammer.png",
   },
   {
     id: 3134,
@@ -3358,8 +3112,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 1100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3134_Assassin_T2_SerratedDirk.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3134_Assassin_T2_SerratedDirk.png",
   },
   {
     id: 3135,
@@ -3380,8 +3133,7 @@ const items = [
     isEnchantment: false,
     price: 700,
     priceTotal: 2800,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3135_Mage_T3_VoidStaff.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3135_Mage_T3_VoidStaff.png",
   },
   {
     id: 3139,
@@ -3392,14 +3144,7 @@ const items = [
     inStore: true,
     from: [3140, 1018, 1037],
     to: [],
-    categories: [
-      "SpellBlock",
-      "Damage",
-      "CriticalStrike",
-      "Active",
-      "NonbootsMovement",
-      "Tenacity",
-    ],
+    categories: ["SpellBlock", "Damage", "CriticalStrike", "Active", "NonbootsMovement", "Tenacity"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -3409,8 +3154,7 @@ const items = [
     isEnchantment: false,
     price: 225,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3139_Marksman_T3_MercurialScimitar.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3139_Marksman_T3_MercurialScimitar.png",
   },
   {
     id: 3140,
@@ -3431,8 +3175,7 @@ const items = [
     isEnchantment: false,
     price: 850,
     priceTotal: 1300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3140_Marksman_T2_QuicksilverSash.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3140_Marksman_T2_QuicksilverSash.png",
   },
   {
     id: 3142,
@@ -3443,13 +3186,7 @@ const items = [
     inStore: true,
     from: [3134, 3133],
     to: [7029],
-    categories: [
-      "Damage",
-      "Active",
-      "NonbootsMovement",
-      "ArmorPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "Active", "NonbootsMovement", "ArmorPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -3459,8 +3196,7 @@ const items = [
     isEnchantment: false,
     price: 900,
     priceTotal: 3100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3142_Assassin_T3_YoumuusGhostblade.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3142_Assassin_T3_YoumuusGhostblade.png",
   },
   {
     id: 3143,
@@ -3481,8 +3217,7 @@ const items = [
     isEnchantment: false,
     price: 800,
     priceTotal: 2700,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3143_Tank_T3_RanduinsOmen.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3143_Tank_T3_RanduinsOmen.png",
   },
   {
     id: 3145,
@@ -3503,8 +3238,7 @@ const items = [
     isEnchantment: false,
     price: 215,
     priceTotal: 1050,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3145_Mage_T2_HextechAlternator.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3145_Mage_T2_HextechAlternator.png",
   },
   {
     id: 3152,
@@ -3533,8 +3267,7 @@ const items = [
     isEnchantment: false,
     price: 865,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3152_Mage_T4_HextechRocketBelt.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3152_Mage_T4_HextechRocketBelt.png",
   },
   {
     id: 3153,
@@ -3545,14 +3278,7 @@ const items = [
     inStore: true,
     from: [1053, 1043, 1037],
     to: [],
-    categories: [
-      "Damage",
-      "AttackSpeed",
-      "LifeSteal",
-      "Slow",
-      "OnHit",
-      "NonbootsMovement",
-    ],
+    categories: ["Damage", "AttackSpeed", "LifeSteal", "Slow", "OnHit", "NonbootsMovement"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -3562,8 +3288,7 @@ const items = [
     isEnchantment: false,
     price: 825,
     priceTotal: 3300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3153_Fighter_T3_BladeOfTheRuinedKing.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3153_Fighter_T3_BladeOfTheRuinedKing.png",
   },
   {
     id: 3155,
@@ -3584,8 +3309,7 @@ const items = [
     isEnchantment: false,
     price: 500,
     priceTotal: 1300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3155_Fighter_T2_Hexdrinker.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3155_Fighter_T2_Hexdrinker.png",
   },
   {
     id: 3156,
@@ -3606,8 +3330,7 @@ const items = [
     isEnchantment: false,
     price: 275,
     priceTotal: 2800,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3156_Fighter_T3_MawOfMalmortius.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3156_Fighter_T3_MawOfMalmortius.png",
   },
   {
     id: 3157,
@@ -3618,13 +3341,7 @@ const items = [
     inStore: true,
     from: [3191, 3108, 2420],
     to: [],
-    categories: [
-      "Armor",
-      "SpellDamage",
-      "Active",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["Armor", "SpellDamage", "Active", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -3634,8 +3351,7 @@ const items = [
     isEnchantment: false,
     price: 350,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3157_Mage_T3_ZhonyasHourglass.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3157_Mage_T3_ZhonyasHourglass.png",
   },
   {
     id: 3158,
@@ -3656,8 +3372,7 @@ const items = [
     isEnchantment: false,
     price: 650,
     priceTotal: 950,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3158_Class_T2_IonianBootsofLucidity.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3158_Class_T2_IonianBootsofLucidity.png",
   },
   {
     id: 3161,
@@ -3678,8 +3393,7 @@ const items = [
     isEnchantment: false,
     price: 525,
     priceTotal: 3300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3161_Fighter_T3_SpearofShojin.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3161_Fighter_T3_SpearofShojin.png",
   },
   {
     id: 3165,
@@ -3700,8 +3414,7 @@ const items = [
     isEnchantment: false,
     price: 715,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3165_Mage_T3_Morellonomicon.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3165_Mage_T3_Morellonomicon.png",
   },
   {
     id: 3177,
@@ -3722,8 +3435,7 @@ const items = [
     isEnchantment: false,
     price: 950,
     priceTotal: 950,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3177_ARAM_T1_GuardiansBlade.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3177_ARAM_T1_GuardiansBlade.png",
   },
   {
     id: 3179,
@@ -3734,13 +3446,7 @@ const items = [
     inStore: true,
     from: [1036, 3134, 1036],
     to: [],
-    categories: [
-      "Damage",
-      "Vision",
-      "CooldownReduction",
-      "ArmorPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "Vision", "CooldownReduction", "ArmorPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -3750,8 +3456,7 @@ const items = [
     isEnchantment: false,
     price: 500,
     priceTotal: 2300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3179_Assassin_T3_UmbralGlaive.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3179_Assassin_T3_UmbralGlaive.png",
   },
   {
     id: 3181,
@@ -3793,8 +3498,7 @@ const items = [
     isEnchantment: false,
     price: 950,
     priceTotal: 950,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3177_ARAM_T1_GuardiansHammer.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3177_ARAM_T1_GuardiansHammer.png",
   },
   {
     id: 3190,
@@ -3805,15 +3509,7 @@ const items = [
     inStore: true,
     from: [3023, 1033],
     to: [7019],
-    categories: [
-      "Health",
-      "SpellBlock",
-      "Armor",
-      "Aura",
-      "Active",
-      "MagicResist",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellBlock", "Armor", "Aura", "Active", "MagicResist", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -3823,8 +3519,7 @@ const items = [
     isEnchantment: false,
     price: 800,
     priceTotal: 2300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3190_Enchanter_T4_LocketOfIronSolari.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3190_Enchanter_T4_LocketOfIronSolari.png",
   },
   {
     id: 3191,
@@ -3845,8 +3540,7 @@ const items = [
     isEnchantment: false,
     price: 265,
     priceTotal: 1000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3191_Battlemage_T2_SeekersArmguard.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3191_Battlemage_T2_SeekersArmguard.png",
   },
   {
     id: 3193,
@@ -3857,13 +3551,7 @@ const items = [
     inStore: true,
     from: [1029, 3105, 1033],
     to: [],
-    categories: [
-      "SpellBlock",
-      "Armor",
-      "Active",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["SpellBlock", "Armor", "Active", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -3873,8 +3561,7 @@ const items = [
     isEnchantment: false,
     price: 1250,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3193_Tank_T3_GargoyleStonePlate.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3193_Tank_T3_GargoyleStonePlate.png",
   },
   {
     id: 3211,
@@ -3895,8 +3582,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 1250,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3211_Tank_T2_SpectresCowl.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3211_Tank_T2_SpectresCowl.png",
   },
   {
     id: 3222,
@@ -3917,8 +3603,7 @@ const items = [
     isEnchantment: false,
     price: 550,
     priceTotal: 2300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3222_Enchanter_T3_MikaelsBlessing.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3222_Enchanter_T3_MikaelsBlessing.png",
   },
   {
     id: 3330,
@@ -3939,8 +3624,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/FiddlesticksTrinket1.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/FiddlesticksTrinket1.png",
   },
   {
     id: 3340,
@@ -3961,8 +3645,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3340_Class_T1_WardingTotem.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3340_Class_T1_WardingTotem.png",
   },
   {
     id: 3348,
@@ -3983,8 +3666,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3348_ArcaneSweeper.2v2_Mode_Fighters.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3348_ArcaneSweeper.2v2_Mode_Fighters.png",
   },
   {
     id: 3349,
@@ -4025,8 +3707,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3363_Class_T1_FarSightAlteration.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3363_Class_T1_FarSightAlteration.png",
   },
   {
     id: 3364,
@@ -4047,8 +3728,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3364_Class_T1_OraclesLens.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3364_Class_T1_OraclesLens.png",
   },
   {
     id: 3400,
@@ -4090,8 +3770,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3430_Rite_of_Ruin.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3430_Rite_of_Ruin.png",
   },
   {
     id: 3504,
@@ -4102,13 +3781,7 @@ const items = [
     inStore: true,
     from: [3113, 3114],
     to: [],
-    categories: [
-      "AttackSpeed",
-      "SpellDamage",
-      "ManaRegen",
-      "OnHit",
-      "NonbootsMovement",
-    ],
+    categories: ["AttackSpeed", "SpellDamage", "ManaRegen", "OnHit", "NonbootsMovement"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -4118,8 +3791,7 @@ const items = [
     isEnchantment: false,
     price: 450,
     priceTotal: 2100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3504_Enchanter_T3_ArdentCenser.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3504_Enchanter_T3_ArdentCenser.png",
   },
   {
     id: 3508,
@@ -4130,14 +3802,7 @@ const items = [
     inStore: true,
     from: [3057, 3133, 1018],
     to: [],
-    categories: [
-      "Damage",
-      "CriticalStrike",
-      "ManaRegen",
-      "CooldownReduction",
-      "OnHit",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "CriticalStrike", "ManaRegen", "CooldownReduction", "OnHit", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -4147,8 +3812,7 @@ const items = [
     isEnchantment: false,
     price: 500,
     priceTotal: 2900,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3508_Marksman_T3_EssenceReaver.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3508_Marksman_T3_EssenceReaver.png",
   },
   {
     id: 3513,
@@ -4190,8 +3854,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3599_KalistaPAssiveItem.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3599_KalistaPAssiveItem.png",
   },
   {
     id: 3600,
@@ -4212,8 +3875,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3600_Champ_T0_BlackSpear.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3600_Champ_T0_BlackSpear.png",
   },
   {
     id: 3742,
@@ -4234,8 +3896,7 @@ const items = [
     isEnchantment: false,
     price: 900,
     priceTotal: 2900,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3742_Tank_T3_DeadmansPlate.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3742_Tank_T3_DeadmansPlate.png",
   },
   {
     id: 3748,
@@ -4256,8 +3917,7 @@ const items = [
     isEnchantment: false,
     price: 800,
     priceTotal: 3300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3748_Fighter_T3_TitanicHydra.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3748_Fighter_T3_TitanicHydra.png",
   },
   {
     id: 3801,
@@ -4278,8 +3938,7 @@ const items = [
     isEnchantment: false,
     price: 100,
     priceTotal: 800,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3801_Tank_T2_CrystallineBracer.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3801_Tank_T2_CrystallineBracer.png",
   },
   {
     id: 3802,
@@ -4290,13 +3949,7 @@ const items = [
     inStore: true,
     from: [1052, 1027],
     to: [6653, 6655, 4644, 6656],
-    categories: [
-      "SpellDamage",
-      "Mana",
-      "ManaRegen",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["SpellDamage", "Mana", "ManaRegen", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -4306,8 +3959,7 @@ const items = [
     isEnchantment: false,
     price: 315,
     priceTotal: 1100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3802_Mage_Tier2_LostChapter.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3802_Mage_Tier2_LostChapter.png",
   },
   {
     id: 3803,
@@ -4328,8 +3980,7 @@ const items = [
     isEnchantment: false,
     price: 550,
     priceTotal: 1300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3803_Mage_T2_CatalystOfAeons.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3803_Mage_T2_CatalystOfAeons.png",
   },
   {
     id: 3814,
@@ -4350,8 +4001,7 @@ const items = [
     isEnchantment: false,
     price: 1050,
     priceTotal: 2900,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3814_Assassin_T3_EdgeOfNight.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3814_Assassin_T3_EdgeOfNight.png",
   },
   {
     id: 3850,
@@ -4362,14 +4012,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "ManaRegen",
-      "Vision",
-      "GoldPer",
-      "Lane",
-    ],
+    categories: ["Health", "SpellDamage", "ManaRegen", "Vision", "GoldPer", "Lane"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -4379,8 +4022,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3850_Mage_T1_SpellthiefsEdge.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3850_Mage_T1_SpellthiefsEdge.png",
   },
   {
     id: 3851,
@@ -4401,8 +4043,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3851_Mage_T2_Frostfang.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3851_Mage_T2_Frostfang.png",
   },
   {
     id: 3853,
@@ -4423,8 +4064,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3853_Mage_T3_ShardofTrueIce.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3853_Mage_T3_ShardofTrueIce.png",
   },
   {
     id: 3854,
@@ -4435,14 +4075,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "Health",
-      "HealthRegen",
-      "Damage",
-      "Vision",
-      "GoldPer",
-      "Lane",
-    ],
+    categories: ["Health", "HealthRegen", "Damage", "Vision", "GoldPer", "Lane"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -4452,8 +4085,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3854_Tank_T1_PetriciteShoulderguard.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3854_Tank_T1_PetriciteShoulderguard.png",
   },
   {
     id: 3855,
@@ -4474,8 +4106,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3855_Tank_T2_RunesteelSpaulders.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3855_Tank_T2_RunesteelSpaulders.png",
   },
   {
     id: 3857,
@@ -4496,8 +4127,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3857_Tank_T3_PauldronsOfWhiterock.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3857_Tank_T3_PauldronsOfWhiterock.png",
   },
   {
     id: 3858,
@@ -4508,14 +4138,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "Health",
-      "HealthRegen",
-      "SpellDamage",
-      "Vision",
-      "GoldPer",
-      "Lane",
-    ],
+    categories: ["Health", "HealthRegen", "SpellDamage", "Vision", "GoldPer", "Lane"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -4525,8 +4148,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3858_Tank_T1_RelicShield.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3858_Tank_T1_RelicShield.png",
   },
   {
     id: 3859,
@@ -4547,8 +4169,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3859_Tank_T2_TargonsBucker.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3859_Tank_T2_TargonsBucker.png",
   },
   {
     id: 3860,
@@ -4569,8 +4190,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3860_Tank_T3_BulwarkOfTheMountain.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3860_Tank_T3_BulwarkOfTheMountain.png",
   },
   {
     id: 3862,
@@ -4591,8 +4211,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3862_Marksman_T1_SpectralSickle.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3862_Marksman_T1_SpectralSickle.png",
   },
   {
     id: 3863,
@@ -4613,8 +4232,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3863_Marksman_T2_HarrowingCrescent.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3863_Marksman_T2_HarrowingCrescent.png",
   },
   {
     id: 3864,
@@ -4635,8 +4253,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3864_Marksman_T3_BlackMistScythe.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3864_Marksman_T3_BlackMistScythe.png",
   },
   {
     id: 3901,
@@ -4656,8 +4273,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3901_Champ_T0_FireAtWillCircle.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3901_Champ_T0_FireAtWillCircle.png",
   },
   {
     id: 3902,
@@ -4678,8 +4294,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3902_Champ_T0_DeathsDaughterCircle.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3902_Champ_T0_DeathsDaughterCircle.png",
   },
   {
     id: 3903,
@@ -4700,8 +4315,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3903_Champ_T0_RaiseMoraleCircle.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3903_Champ_T0_RaiseMoraleCircle.png",
   },
   {
     id: 3916,
@@ -4722,8 +4336,7 @@ const items = [
     isEnchantment: false,
     price: 365,
     priceTotal: 800,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3916_Mage_T2_OblivionOrb.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3916_Mage_T2_OblivionOrb.png",
   },
   {
     id: 4005,
@@ -4733,12 +4346,7 @@ const items = [
     inStore: true,
     from: [3108, 4642],
     to: [],
-    categories: [
-      "SpellDamage",
-      "ManaRegen",
-      "CooldownReduction",
-      "NonbootsMovement",
-    ],
+    categories: ["SpellDamage", "ManaRegen", "CooldownReduction", "NonbootsMovement"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -4748,8 +4356,7 @@ const items = [
     isEnchantment: false,
     price: 450,
     priceTotal: 2300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4005_Enchanter_T4_ImperialMandate.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4005_Enchanter_T4_ImperialMandate.png",
   },
   {
     id: 4010,
@@ -4770,8 +4377,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4010_Bloodletters_Veil.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4010_Bloodletters_Veil.png",
   },
   {
     id: 4401,
@@ -4792,8 +4398,7 @@ const items = [
     isEnchantment: false,
     price: 700,
     priceTotal: 2800,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4401_Tank_T3_ForceOfNature.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4401_Tank_T3_ForceOfNature.png",
   },
   {
     id: 4403,
@@ -4828,8 +4433,7 @@ const items = [
     isEnchantment: false,
     price: 687,
     priceTotal: 7237,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4403_GoldenSpatula.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4403_GoldenSpatula.png",
   },
   {
     id: 4628,
@@ -4850,8 +4454,7 @@ const items = [
     isEnchantment: false,
     price: 1050,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4628_Mage_T3_HorizonFocus.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4628_Mage_T3_HorizonFocus.png",
   },
   {
     id: 4629,
@@ -4862,12 +4465,7 @@ const items = [
     inStore: true,
     from: [3108, 3113, 1052],
     to: [],
-    categories: [
-      "SpellDamage",
-      "CooldownReduction",
-      "NonbootsMovement",
-      "AbilityHaste",
-    ],
+    categories: ["SpellDamage", "CooldownReduction", "NonbootsMovement", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -4877,8 +4475,7 @@ const items = [
     isEnchantment: false,
     price: 815,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4629_Mage_T3_CosmicDrive.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4629_Mage_T3_CosmicDrive.png",
   },
   {
     id: 4630,
@@ -4899,8 +4496,7 @@ const items = [
     isEnchantment: false,
     price: 815,
     priceTotal: 1250,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4630_Mage_T2_VoidCrystal.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4630_Mage_T2_VoidCrystal.png",
   },
   {
     id: 4632,
@@ -4921,8 +4517,7 @@ const items = [
     isEnchantment: false,
     price: 115,
     priceTotal: 1000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4632_Tank_T2_VerdantBarrier.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4632_Tank_T2_VerdantBarrier.png",
   },
   {
     id: 4633,
@@ -4933,14 +4528,7 @@ const items = [
     inStore: true,
     from: [4635, 1026],
     to: [7009],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "CooldownReduction",
-      "SpellVamp",
-      "MagicPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellDamage", "CooldownReduction", "SpellVamp", "MagicPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -4950,8 +4538,7 @@ const items = [
     isEnchantment: false,
     price: 1050,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4633_Mage_T4_Riftmaker.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4633_Mage_T4_Riftmaker.png",
   },
   {
     id: 4635,
@@ -4972,8 +4559,7 @@ const items = [
     isEnchantment: false,
     price: 465,
     priceTotal: 1300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4635_Mage_T2_LeechingLeer.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4635_Mage_T2_LeechingLeer.png",
   },
   {
     id: 4636,
@@ -4984,13 +4570,7 @@ const items = [
     inStore: true,
     from: [3145, 3108, 1052],
     to: [7010],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "CooldownReduction",
-      "NonbootsMovement",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellDamage", "CooldownReduction", "NonbootsMovement", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -5000,8 +4580,7 @@ const items = [
     isEnchantment: false,
     price: 815,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4636_Mage_T4_NightHarvester.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4636_Mage_T4_NightHarvester.png",
   },
   {
     id: 4637,
@@ -5022,8 +4601,7 @@ const items = [
     isEnchantment: false,
     price: 815,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4637_Mage_T3_DemonicEmbrace.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4637_Mage_T3_DemonicEmbrace.png",
   },
   {
     id: 4638,
@@ -5053,8 +4631,7 @@ const items = [
     isEnchantment: false,
     price: 1100,
     priceTotal: 1100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4638_Enchanter_T3_WatchfulSightstone.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4638_Enchanter_T3_WatchfulSightstone.png",
   },
   {
     id: 4641,
@@ -5084,8 +4661,7 @@ const items = [
     isEnchantment: false,
     price: 350,
     priceTotal: 350,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4641_Enchanter_T2_StirringSightstone.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4641_Enchanter_T2_StirringSightstone.png",
   },
   {
     id: 4642,
@@ -5096,12 +4672,7 @@ const items = [
     inStore: true,
     from: [1004, 1052],
     to: [2065, 6620, 6617, 4005],
-    categories: [
-      "SpellDamage",
-      "ManaRegen",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["SpellDamage", "ManaRegen", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -5111,8 +4682,7 @@ const items = [
     isEnchantment: false,
     price: 265,
     priceTotal: 950,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4642_Enchanter_T2_BandleGlassMirror.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4642_Enchanter_T2_BandleGlassMirror.png",
   },
   {
     id: 4643,
@@ -5123,14 +4693,7 @@ const items = [
     inStore: true,
     from: [4638],
     to: [],
-    categories: [
-      "Health",
-      "ManaRegen",
-      "Vision",
-      "Active",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "ManaRegen", "Vision", "Active", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -5140,8 +4703,7 @@ const items = [
     isEnchantment: false,
     price: 1200,
     priceTotal: 2300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4643_Enchanter_T3_VigilantSightstone.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4643_Enchanter_T3_VigilantSightstone.png",
   },
   {
     id: 4644,
@@ -5152,13 +4714,7 @@ const items = [
     inStore: true,
     from: [3067, 3802, 1052],
     to: [7024],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "Mana",
-      "NonbootsMovement",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellDamage", "Mana", "NonbootsMovement", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -5210,8 +4766,7 @@ const items = [
     isEnchantment: false,
     price: 225,
     priceTotal: 1100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6029_Fighter_T2_IronSpikeWhip.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6029_Fighter_T2_IronSpikeWhip.png",
   },
   {
     id: 6035,
@@ -5232,8 +4787,7 @@ const items = [
     isEnchantment: false,
     price: 425,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6035_Fighter_T3_SilvermereDawn.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6035_Fighter_T3_SilvermereDawn.png",
   },
   {
     id: 6333,
@@ -5254,8 +4808,7 @@ const items = [
     isEnchantment: false,
     price: 525,
     priceTotal: 3300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6333_Fighter_T3_DeathsDance.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6333_Fighter_T3_DeathsDance.png",
   },
   {
     id: 6609,
@@ -5276,8 +4829,7 @@ const items = [
     isEnchantment: false,
     price: 500,
     priceTotal: 2800,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6609_Fighter_T3_ChempunkChainsword.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6609_Fighter_T3_ChempunkChainsword.png",
   },
   {
     id: 6616,
@@ -5298,8 +4850,7 @@ const items = [
     isEnchantment: false,
     price: 450,
     priceTotal: 2100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3744_Enchanter_T3_StaffOfFlowingWater.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3744_Enchanter_T3_StaffOfFlowingWater.png",
   },
   {
     id: 6617,
@@ -5310,13 +4861,7 @@ const items = [
     inStore: true,
     from: [3067, 4642],
     to: [7021],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "ManaRegen",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellDamage", "ManaRegen", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -5326,8 +4871,7 @@ const items = [
     isEnchantment: false,
     price: 550,
     priceTotal: 2300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6617_Enchanter_T4_MoonstoneRenewer.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6617_Enchanter_T4_MoonstoneRenewer.png",
   },
   {
     id: 6620,
@@ -5348,8 +4892,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 2300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6620_Echoes_of_Helia.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6620_Echoes_of_Helia.png",
   },
   {
     id: 6630,
@@ -5360,15 +4903,7 @@ const items = [
     inStore: true,
     from: [6029, 3044, 3067],
     to: [7015],
-    categories: [
-      "Health",
-      "Damage",
-      "LifeSteal",
-      "Active",
-      "CooldownReduction",
-      "SpellVamp",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "Damage", "LifeSteal", "Active", "CooldownReduction", "SpellVamp", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -5378,8 +4913,7 @@ const items = [
     isEnchantment: false,
     price: 200,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6630_Fighter_T4_GoreDrinker.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6630_Fighter_T4_GoreDrinker.png",
   },
   {
     id: 6631,
@@ -5409,8 +4943,7 @@ const items = [
     isEnchantment: false,
     price: 300,
     priceTotal: 3300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6631_Fighter_T4_StrideBreaker.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6631_Fighter_T4_StrideBreaker.png",
   },
   {
     id: 6632,
@@ -5439,8 +4972,7 @@ const items = [
     isEnchantment: false,
     price: 700,
     priceTotal: 3300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6632_Fighter_T4_DivineDevourer.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6632_Fighter_T4_DivineDevourer.png",
   },
   {
     id: 6653,
@@ -5461,8 +4993,7 @@ const items = [
     isEnchantment: false,
     price: 1200,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6653_Mage_T4_LiandrysAnguish.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6653_Mage_T4_LiandrysAnguish.png",
   },
   {
     id: 6655,
@@ -5473,14 +5004,7 @@ const items = [
     inStore: true,
     from: [3802, 1026],
     to: [7013],
-    categories: [
-      "SpellDamage",
-      "Mana",
-      "CooldownReduction",
-      "NonbootsMovement",
-      "MagicPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["SpellDamage", "Mana", "CooldownReduction", "NonbootsMovement", "MagicPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -5490,8 +5014,7 @@ const items = [
     isEnchantment: false,
     price: 1250,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6655_Mage_T4_LudensTempest.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6655_Mage_T4_LudensTempest.png",
   },
   {
     id: 6656,
@@ -5502,15 +5025,7 @@ const items = [
     inStore: true,
     from: [3067, 3802, 1052],
     to: [7014],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "Mana",
-      "Active",
-      "CooldownReduction",
-      "Slow",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellDamage", "Mana", "Active", "CooldownReduction", "Slow", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -5520,8 +5035,7 @@ const items = [
     isEnchantment: false,
     price: 465,
     priceTotal: 2800,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6656_Mage_T4_Everfrost.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6656_Mage_T4_Everfrost.png",
   },
   {
     id: 6657,
@@ -5532,15 +5046,7 @@ const items = [
     inStore: true,
     from: [1026, 3803, 1052],
     to: [7028],
-    categories: [
-      "Health",
-      "HealthRegen",
-      "SpellDamage",
-      "Mana",
-      "ManaRegen",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "HealthRegen", "SpellDamage", "Mana", "ManaRegen", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -5550,8 +5056,7 @@ const items = [
     isEnchantment: false,
     price: 215,
     priceTotal: 2800,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6657_Mage_T4_RodOfAges.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6657_Mage_T4_RodOfAges.png",
   },
   {
     id: 6660,
@@ -5572,8 +5077,7 @@ const items = [
     isEnchantment: false,
     price: 200,
     priceTotal: 1000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6660_Tank_T2_BamisCinder.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6660_Tank_T2_BamisCinder.png",
   },
   {
     id: 6662,
@@ -5584,14 +5088,7 @@ const items = [
     inStore: true,
     from: [3057, 3067, 1031],
     to: [7005],
-    categories: [
-      "Health",
-      "Armor",
-      "CooldownReduction",
-      "Slow",
-      "OnHit",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "Armor", "CooldownReduction", "Slow", "OnHit", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -5601,8 +5098,7 @@ const items = [
     isEnchantment: false,
     price: 700,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6662_Tank_T3_IcebornGauntlet.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6662_Tank_T3_IcebornGauntlet.png",
   },
   {
     id: 6664,
@@ -5632,8 +5128,7 @@ const items = [
     isEnchantment: false,
     price: 700,
     priceTotal: 2800,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6664_Tank_T4_AcceleratedChemtank.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6664_Tank_T4_AcceleratedChemtank.png",
   },
   {
     id: 6665,
@@ -5644,14 +5139,7 @@ const items = [
     inStore: true,
     from: [3105, 3067, 1028],
     to: [7026],
-    categories: [
-      "Health",
-      "SpellBlock",
-      "Armor",
-      "CooldownReduction",
-      "MagicResist",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellBlock", "Armor", "CooldownReduction", "MagicResist", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -5661,8 +5149,7 @@ const items = [
     isEnchantment: false,
     price: 800,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6665_Tank_T4_JakShoTheProtean.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6665_Tank_T4_JakShoTheProtean.png",
   },
   {
     id: 6667,
@@ -5673,14 +5160,7 @@ const items = [
     inStore: true,
     from: [3105, 1011],
     to: [7027],
-    categories: [
-      "Health",
-      "SpellBlock",
-      "Armor",
-      "Aura",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellBlock", "Armor", "Aura", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -5690,8 +5170,7 @@ const items = [
     isEnchantment: false,
     price: 600,
     priceTotal: 2700,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6667_Tank_T4_RadiantVirtue.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6667_Tank_T4_RadiantVirtue.png",
   },
   {
     id: 6670,
@@ -5712,8 +5191,7 @@ const items = [
     isEnchantment: false,
     price: 300,
     priceTotal: 1300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6670_Marksman_T2_Noonquiver.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6670_Marksman_T2_Noonquiver.png",
   },
   {
     id: 6671,
@@ -5724,13 +5202,7 @@ const items = [
     inStore: true,
     from: [1038, 3086, 1036],
     to: [7006],
-    categories: [
-      "Damage",
-      "CriticalStrike",
-      "AttackSpeed",
-      "Active",
-      "NonbootsMovement",
-    ],
+    categories: ["Damage", "CriticalStrike", "AttackSpeed", "Active", "NonbootsMovement"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -5740,8 +5212,7 @@ const items = [
     isEnchantment: false,
     price: 650,
     priceTotal: 3400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6671_Marksman_T4_Galeforce.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6671_Marksman_T4_Galeforce.png",
   },
   {
     id: 6672,
@@ -5762,8 +5233,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6672_Marksman_T4_BehemothSlayer.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6672_Marksman_T4_BehemothSlayer.png",
   },
   {
     id: 6673,
@@ -5774,13 +5244,7 @@ const items = [
     inStore: true,
     from: [1037, 1018, 1053],
     to: [],
-    categories: [
-      "Damage",
-      "CriticalStrike",
-      "AttackSpeed",
-      "LifeSteal",
-      "NonbootsMovement",
-    ],
+    categories: ["Damage", "CriticalStrike", "AttackSpeed", "LifeSteal", "NonbootsMovement"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -5790,8 +5254,7 @@ const items = [
     isEnchantment: false,
     price: 625,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6673_Marksman_T4_CrimsonShieldbow.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6673_Marksman_T4_CrimsonShieldbow.png",
   },
   {
     id: 6675,
@@ -5802,13 +5265,7 @@ const items = [
     inStore: true,
     from: [1038, 3133, 1018],
     to: [7032],
-    categories: [
-      "Damage",
-      "CriticalStrike",
-      "CooldownReduction",
-      "OnHit",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "CriticalStrike", "CooldownReduction", "OnHit", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -5818,8 +5275,7 @@ const items = [
     isEnchantment: false,
     price: 400,
     priceTotal: 3400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6675_Marksman_T3_NavoriQuickblades.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6675_Marksman_T3_NavoriQuickblades.png",
   },
   {
     id: 6676,
@@ -5840,8 +5296,7 @@ const items = [
     isEnchantment: false,
     price: 425,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6676_Marksman_T3_TheCollector.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6676_Marksman_T3_TheCollector.png",
   },
   {
     id: 6677,
@@ -5862,8 +5317,7 @@ const items = [
     isEnchantment: false,
     price: 600,
     priceTotal: 1200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6677_Marksman_T2_RageKnife.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6677_Marksman_T2_RageKnife.png",
   },
   {
     id: 6691,
@@ -5892,8 +5346,7 @@ const items = [
     isEnchantment: false,
     price: 900,
     priceTotal: 3100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6691_Assassin_T4_DuskbladeOfDraktharr.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6691_Assassin_T4_DuskbladeOfDraktharr.png",
   },
   {
     id: 6692,
@@ -5904,13 +5357,7 @@ const items = [
     inStore: true,
     from: [3134, 3133],
     to: [7001],
-    categories: [
-      "Damage",
-      "CooldownReduction",
-      "NonbootsMovement",
-      "ArmorPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "CooldownReduction", "NonbootsMovement", "ArmorPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -5920,8 +5367,7 @@ const items = [
     isEnchantment: false,
     price: 900,
     priceTotal: 3100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6692_Assassin_T4_Eclipse.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6692_Assassin_T4_Eclipse.png",
   },
   {
     id: 6693,
@@ -5932,13 +5378,7 @@ const items = [
     inStore: true,
     from: [3134, 3133],
     to: [7000],
-    categories: [
-      "Damage",
-      "Active",
-      "CooldownReduction",
-      "ArmorPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "Active", "CooldownReduction", "ArmorPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -5948,8 +5388,7 @@ const items = [
     isEnchantment: false,
     price: 800,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6693_Assassin_T4_ProwlersClaw.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6693_Assassin_T4_ProwlersClaw.png",
   },
   {
     id: 6694,
@@ -5960,12 +5399,7 @@ const items = [
     inStore: true,
     from: [3133, 3035],
     to: [],
-    categories: [
-      "Damage",
-      "CooldownReduction",
-      "ArmorPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "CooldownReduction", "ArmorPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -5975,8 +5409,7 @@ const items = [
     isEnchantment: false,
     price: 650,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6694_Assasin_T3_SeryldasGrudge.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6694_Assasin_T3_SeryldasGrudge.png",
   },
   {
     id: 6695,
@@ -5997,8 +5430,7 @@ const items = [
     isEnchantment: false,
     price: 625,
     priceTotal: 2600,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6695_Assassin_T3_SerpentsFang.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6695_Assassin_T3_SerpentsFang.png",
   },
   {
     id: 6696,
@@ -6030,13 +5462,7 @@ const items = [
     inStore: false,
     from: [6693],
     to: [],
-    categories: [
-      "Damage",
-      "Active",
-      "CooldownReduction",
-      "ArmorPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "Active", "CooldownReduction", "ArmorPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "Ornn",
@@ -6046,8 +5472,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6693_Assassin_T4_ProwlersClaw.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6693_Assassin_T4_ProwlersClaw.png",
   },
   {
     id: 7001,
@@ -6058,13 +5483,7 @@ const items = [
     inStore: false,
     from: [6692],
     to: [],
-    categories: [
-      "Damage",
-      "CooldownReduction",
-      "NonbootsMovement",
-      "ArmorPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "CooldownReduction", "NonbootsMovement", "ArmorPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "Ornn",
@@ -6074,8 +5493,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6692_Assassin_T4_Eclipse.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6692_Assassin_T4_Eclipse.png",
   },
   {
     id: 7002,
@@ -6104,8 +5522,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6691_Assassin_T4_DuskbladeOfDraktharr.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6691_Assassin_T4_DuskbladeOfDraktharr.png",
   },
   {
     id: 7005,
@@ -6116,14 +5533,7 @@ const items = [
     inStore: false,
     from: [6662],
     to: [],
-    categories: [
-      "Health",
-      "Armor",
-      "CooldownReduction",
-      "Slow",
-      "OnHit",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "Armor", "CooldownReduction", "Slow", "OnHit", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "Ornn",
@@ -6133,8 +5543,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6662_Tank_T3_IcebornGauntlet.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6662_Tank_T3_IcebornGauntlet.png",
   },
   {
     id: 7006,
@@ -6145,13 +5554,7 @@ const items = [
     inStore: false,
     from: [6671],
     to: [],
-    categories: [
-      "Damage",
-      "CriticalStrike",
-      "AttackSpeed",
-      "Active",
-      "NonbootsMovement",
-    ],
+    categories: ["Damage", "CriticalStrike", "AttackSpeed", "Active", "NonbootsMovement"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "Ornn",
@@ -6161,8 +5564,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6671_Marksman_T4_Galeforce.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6671_Marksman_T4_Galeforce.png",
   },
   {
     id: 7009,
@@ -6173,14 +5575,7 @@ const items = [
     inStore: false,
     from: [4633],
     to: [],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "CooldownReduction",
-      "SpellVamp",
-      "MagicPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellDamage", "CooldownReduction", "SpellVamp", "MagicPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "Ornn",
@@ -6190,8 +5585,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4633_Mage_T4_Riftmaker.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4633_Mage_T4_Riftmaker.png",
   },
   {
     id: 7010,
@@ -6202,13 +5596,7 @@ const items = [
     inStore: false,
     from: [4636],
     to: [],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "CooldownReduction",
-      "NonbootsMovement",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellDamage", "CooldownReduction", "NonbootsMovement", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "Ornn",
@@ -6218,8 +5606,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4636_Mage_T4_NightHarvester.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4636_Mage_T4_NightHarvester.png",
   },
   {
     id: 7011,
@@ -6248,8 +5635,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3152_Mage_T4_HextechRocketBelt.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3152_Mage_T4_HextechRocketBelt.png",
   },
   {
     id: 7012,
@@ -6270,8 +5656,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6653_Mage_T4_LiandrysAnguish.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6653_Mage_T4_LiandrysAnguish.png",
   },
   {
     id: 7013,
@@ -6282,14 +5667,7 @@ const items = [
     inStore: false,
     from: [6655],
     to: [],
-    categories: [
-      "SpellDamage",
-      "Mana",
-      "CooldownReduction",
-      "NonbootsMovement",
-      "MagicPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["SpellDamage", "Mana", "CooldownReduction", "NonbootsMovement", "MagicPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "Ornn",
@@ -6299,8 +5677,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6655_Mage_T4_LudensTempest.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6655_Mage_T4_LudensTempest.png",
   },
   {
     id: 7014,
@@ -6311,15 +5688,7 @@ const items = [
     inStore: false,
     from: [6656],
     to: [],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "Mana",
-      "Active",
-      "CooldownReduction",
-      "Slow",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellDamage", "Mana", "Active", "CooldownReduction", "Slow", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "Ornn",
@@ -6329,8 +5698,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 2800,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6656_Mage_T4_Everfrost.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6656_Mage_T4_Everfrost.png",
   },
   {
     id: 7015,
@@ -6341,15 +5709,7 @@ const items = [
     inStore: false,
     from: [6630],
     to: [],
-    categories: [
-      "Health",
-      "Damage",
-      "LifeSteal",
-      "Active",
-      "CooldownReduction",
-      "SpellVamp",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "Damage", "LifeSteal", "Active", "CooldownReduction", "SpellVamp", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "Ornn",
@@ -6359,8 +5719,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6630_Fighter_T4_GoreDrinker.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6630_Fighter_T4_GoreDrinker.png",
   },
   {
     id: 7016,
@@ -6390,8 +5749,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6631_Fighter_T4_StrideBreaker.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6631_Fighter_T4_StrideBreaker.png",
   },
   {
     id: 7017,
@@ -6420,8 +5778,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6632_Fighter_T4_DivineDevourer.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6632_Fighter_T4_DivineDevourer.png",
   },
   {
     id: 7018,
@@ -6432,15 +5789,7 @@ const items = [
     inStore: false,
     from: [3078],
     to: [],
-    categories: [
-      "Health",
-      "Damage",
-      "AttackSpeed",
-      "CooldownReduction",
-      "OnHit",
-      "NonbootsMovement",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "Damage", "AttackSpeed", "CooldownReduction", "OnHit", "NonbootsMovement", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "Ornn",
@@ -6450,8 +5799,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3333,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3078_Fighter_T4_TrinityForce.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3078_Fighter_T4_TrinityForce.png",
   },
   {
     id: 7019,
@@ -6462,14 +5810,7 @@ const items = [
     inStore: false,
     from: [3190],
     to: [],
-    categories: [
-      "Health",
-      "SpellBlock",
-      "HealthRegen",
-      "Armor",
-      "Aura",
-      "Active",
-    ],
+    categories: ["Health", "SpellBlock", "HealthRegen", "Armor", "Aura", "Active"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "Ornn",
@@ -6479,8 +5820,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 2300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3190_Enchanter_T4_LocketOfIronSolari.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3190_Enchanter_T4_LocketOfIronSolari.png",
   },
   {
     id: 7020,
@@ -6509,8 +5849,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 2300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2065_Tank_T4_ShurelyasBattlesong.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2065_Tank_T4_ShurelyasBattlesong.png",
   },
   {
     id: 7021,
@@ -6521,13 +5860,7 @@ const items = [
     inStore: false,
     from: [6617],
     to: [],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "ManaRegen",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellDamage", "ManaRegen", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "Ornn",
@@ -6537,8 +5870,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 2300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6617_Enchanter_T4_MoonstoneRenewer.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6617_Enchanter_T4_MoonstoneRenewer.png",
   },
   {
     id: 7023,
@@ -6559,8 +5891,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 2300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3001_Support_Lunari.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3001_Support_Lunari.png",
   },
   {
     id: 7024,
@@ -6571,13 +5902,7 @@ const items = [
     inStore: false,
     from: [4644],
     to: [],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "Mana",
-      "NonbootsMovement",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellDamage", "Mana", "NonbootsMovement", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "Ornn",
@@ -6608,8 +5933,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3084_Tank_T4_Heartsteel.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3084_Tank_T4_Heartsteel.png",
   },
   {
     id: 7026,
@@ -6620,14 +5944,7 @@ const items = [
     inStore: false,
     from: [6665],
     to: [],
-    categories: [
-      "Health",
-      "SpellBlock",
-      "Armor",
-      "CooldownReduction",
-      "MagicResist",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellBlock", "Armor", "CooldownReduction", "MagicResist", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "Ornn",
@@ -6637,8 +5954,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6665_Tank_T4_JakShoTheProtean.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6665_Tank_T4_JakShoTheProtean.png",
   },
   {
     id: 7027,
@@ -6649,14 +5965,7 @@ const items = [
     inStore: false,
     from: [6667],
     to: [],
-    categories: [
-      "Health",
-      "SpellBlock",
-      "Armor",
-      "Aura",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellBlock", "Armor", "Aura", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -6666,8 +5975,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 2700,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6667_Tank_T4_RadiantVirtue.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6667_Tank_T4_RadiantVirtue.png",
   },
   {
     id: 7028,
@@ -6678,15 +5986,7 @@ const items = [
     inStore: false,
     from: [6657],
     to: [],
-    categories: [
-      "Health",
-      "HealthRegen",
-      "SpellDamage",
-      "Mana",
-      "ManaRegen",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "HealthRegen", "SpellDamage", "Mana", "ManaRegen", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -6696,8 +5996,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 2800,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6657_Mage_T4_RodOfAges.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6657_Mage_T4_RodOfAges.png",
   },
   {
     id: 7029,
@@ -6708,13 +6007,7 @@ const items = [
     inStore: false,
     from: [3142],
     to: [],
-    categories: [
-      "Damage",
-      "Active",
-      "NonbootsMovement",
-      "ArmorPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "Active", "NonbootsMovement", "ArmorPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "Ornn",
@@ -6724,8 +6017,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3100,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3142_Assassin_T3_YoumuusGhostblade.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3142_Assassin_T3_YoumuusGhostblade.png",
   },
   {
     id: 7030,
@@ -6736,13 +6028,7 @@ const items = [
     inStore: false,
     from: [3124],
     to: [],
-    categories: [
-      "CriticalStrike",
-      "AttackSpeed",
-      "OnHit",
-      "MagicPenetration",
-      "ArmorPenetration",
-    ],
+    categories: ["CriticalStrike", "AttackSpeed", "OnHit", "MagicPenetration", "ArmorPenetration"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "Ornn",
@@ -6752,8 +6038,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3200,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3124_Marksman_T3_GuinsoosRageblade.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3124_Marksman_T3_GuinsoosRageblade.png",
   },
   {
     id: 7031,
@@ -6774,8 +6059,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3031_Marksman_T3_InfinityEdge.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3031_Marksman_T3_InfinityEdge.png",
   },
   {
     id: 7032,
@@ -6786,13 +6070,7 @@ const items = [
     inStore: false,
     from: [6675],
     to: [],
-    categories: [
-      "Damage",
-      "CriticalStrike",
-      "CooldownReduction",
-      "OnHit",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "CriticalStrike", "CooldownReduction", "OnHit", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "Ornn",
@@ -6802,8 +6080,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6675_Marksman_T3_NavoriQuickblades.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6675_Marksman_T3_NavoriQuickblades.png",
   },
   {
     id: 7033,
@@ -6824,8 +6101,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 2300,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6620_Echoes_of_Helia.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6620_Echoes_of_Helia.png",
   },
   {
     id: 7050,
@@ -6845,8 +6121,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 0,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/GP_UI_Placeholder.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/GP_UI_Placeholder.png",
   },
   {
     id: 8001,
@@ -6867,8 +6142,7 @@ const items = [
     isEnchantment: false,
     price: 800,
     priceTotal: 2500,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/8001_Tank_T3_AnathemasChains.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/8001_Tank_T3_AnathemasChains.png",
   },
   {
     id: 8020,
@@ -6879,14 +6153,7 @@ const items = [
     inStore: true,
     from: [3067, 1057],
     to: [],
-    categories: [
-      "Health",
-      "SpellBlock",
-      "CooldownReduction",
-      "MagicPenetration",
-      "MagicResist",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellBlock", "CooldownReduction", "MagicPenetration", "MagicResist", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -6896,8 +6163,7 @@ const items = [
     isEnchantment: false,
     price: 700,
     priceTotal: 2400,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/8020_Tank_T3_AbyssalMask.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/8020_Tank_T3_AbyssalMask.png",
   },
   {
     id: 222051,
@@ -6918,8 +6184,7 @@ const items = [
     isEnchantment: false,
     price: 1000,
     priceTotal: 1000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2051_ARAM_T1_GuardiansHorn.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2051_ARAM_T1_GuardiansHorn.png",
   },
   {
     id: 222065,
@@ -6948,8 +6213,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2065_Tank_T4_ShurelyasBattlesong.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2065_Tank_T4_ShurelyasBattlesong.png",
   },
   {
     id: 223001,
@@ -6970,8 +6234,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3001_Support_Lunari.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3001_Support_Lunari.png",
   },
   {
     id: 223003,
@@ -6992,8 +6255,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3003_Mage_T3_ArchangelStaff.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3003_Mage_T3_ArchangelStaff.png",
   },
   {
     id: 223004,
@@ -7004,13 +6266,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "Damage",
-      "Mana",
-      "CooldownReduction",
-      "OnHit",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "Mana", "CooldownReduction", "OnHit", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -7020,8 +6276,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3004_Marksman_T3_Manamune.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3004_Marksman_T3_Manamune.png",
   },
   {
     id: 223005,
@@ -7042,8 +6297,7 @@ const items = [
     isEnchantment: false,
     price: 1000,
     priceTotal: 1000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4001_Ghostwalkers.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4001_Ghostwalkers.png",
   },
   {
     id: 223006,
@@ -7064,8 +6318,7 @@ const items = [
     isEnchantment: false,
     price: 1000,
     priceTotal: 1000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3006_Class_T2_BerserkersGreaves.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3006_Class_T2_BerserkersGreaves.png",
   },
   {
     id: 223009,
@@ -7086,8 +6339,7 @@ const items = [
     isEnchantment: false,
     price: 1000,
     priceTotal: 1000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3009_Class_T2_BootsofSwiftness.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3009_Class_T2_BootsofSwiftness.png",
   },
   {
     id: 223011,
@@ -7108,8 +6360,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3011_Enchanter_T3_ChemtechFumigator.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3011_Enchanter_T3_ChemtechFumigator.png",
   },
   {
     id: 223020,
@@ -7130,8 +6381,7 @@ const items = [
     isEnchantment: false,
     price: 1000,
     priceTotal: 1000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3020_Class_T2_SorcerersShoes.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3020_Class_T2_SorcerersShoes.png",
   },
   {
     id: 223026,
@@ -7152,8 +6402,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3026_Fighter_T3_GuardianAngel.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3026_Fighter_T3_GuardianAngel.png",
   },
   {
     id: 223031,
@@ -7174,8 +6423,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3031_Marksman_T3_InfinityEdge.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3031_Marksman_T3_InfinityEdge.png",
   },
   {
     id: 223033,
@@ -7196,8 +6444,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3033_Marksman_T3_MortalReminder.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3033_Marksman_T3_MortalReminder.png",
   },
   {
     id: 223036,
@@ -7218,8 +6465,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3036_Marksman_T3_DominikRegards.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3036_Marksman_T3_DominikRegards.png",
   },
   {
     id: 223039,
@@ -7240,8 +6486,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3005_Fighter_T3_AtmasReckoning.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3005_Fighter_T3_AtmasReckoning.png",
   },
   {
     id: 223040,
@@ -7262,8 +6507,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3048_Mage_T3_SeraphsEmbrace.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3048_Mage_T3_SeraphsEmbrace.png",
   },
   {
     id: 223042,
@@ -7274,13 +6518,7 @@ const items = [
     inStore: false,
     from: [],
     to: [],
-    categories: [
-      "Damage",
-      "Mana",
-      "CooldownReduction",
-      "OnHit",
-      "ArmorPenetration",
-    ],
+    categories: ["Damage", "Mana", "CooldownReduction", "OnHit", "ArmorPenetration"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -7290,8 +6528,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3042_Marksman_T3_Muramana.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3042_Marksman_T3_Muramana.png",
   },
   {
     id: 223046,
@@ -7302,13 +6539,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "Damage",
-      "CriticalStrike",
-      "AttackSpeed",
-      "OnHit",
-      "NonbootsMovement",
-    ],
+    categories: ["Damage", "CriticalStrike", "AttackSpeed", "OnHit", "NonbootsMovement"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -7318,8 +6549,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3046_Marksman_T3_PhantomDancer.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3046_Marksman_T3_PhantomDancer.png",
   },
   {
     id: 223047,
@@ -7340,8 +6570,7 @@ const items = [
     isEnchantment: false,
     price: 1000,
     priceTotal: 1000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3047_Class_T2_NinjaTabi.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3047_Class_T2_NinjaTabi.png",
   },
   {
     id: 223050,
@@ -7352,14 +6581,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "Health",
-      "Armor",
-      "Active",
-      "CooldownReduction",
-      "OnHit",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "Armor", "Active", "CooldownReduction", "OnHit", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -7369,8 +6591,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3050_Enchanter_T3_ZekesConvergence.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3050_Enchanter_T3_ZekesConvergence.png",
   },
   {
     id: 223053,
@@ -7391,8 +6612,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3053_Steraks_Gage.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3053_Steraks_Gage.png",
   },
   {
     id: 223065,
@@ -7403,13 +6623,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "Health",
-      "SpellBlock",
-      "HealthRegen",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellBlock", "HealthRegen", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -7419,8 +6633,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3065_Tank_T3_SpiritVisage.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3065_Tank_T3_SpiritVisage.png",
   },
   {
     id: 223068,
@@ -7441,8 +6654,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3068_Tank_T4_SunfireAegis.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3068_Tank_T4_SunfireAegis.png",
   },
   {
     id: 223071,
@@ -7471,8 +6683,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3071_Fighter_T3_BlackCleaver.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3071_Fighter_T3_BlackCleaver.png",
   },
   {
     id: 223072,
@@ -7493,8 +6704,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3072_Fighter_T3_Bloodthirster.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3072_Fighter_T3_Bloodthirster.png",
   },
   {
     id: 223074,
@@ -7505,13 +6715,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "Damage",
-      "LifeSteal",
-      "CooldownReduction",
-      "OnHit",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "LifeSteal", "CooldownReduction", "OnHit", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -7521,8 +6725,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3074_Fighter_T3_RavenousHydra.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3074_Fighter_T3_RavenousHydra.png",
   },
   {
     id: 223075,
@@ -7543,8 +6746,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3075_Tank_T3_Thornmail.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3075_Tank_T3_Thornmail.png",
   },
   {
     id: 223078,
@@ -7555,15 +6757,7 @@ const items = [
     inStore: true,
     from: [],
     to: [227018],
-    categories: [
-      "Health",
-      "Damage",
-      "AttackSpeed",
-      "CooldownReduction",
-      "OnHit",
-      "NonbootsMovement",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "Damage", "AttackSpeed", "CooldownReduction", "OnHit", "NonbootsMovement", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -7573,8 +6767,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3078_Fighter_T4_TrinityForce.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3078_Fighter_T4_TrinityForce.png",
   },
   {
     id: 223084,
@@ -7595,8 +6788,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3084_Tank_T4_Heartsteel.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3084_Tank_T4_Heartsteel.png",
   },
   {
     id: 223085,
@@ -7617,8 +6809,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3085_Marksman_T3_Runaans.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3085_Marksman_T3_Runaans.png",
   },
   {
     id: 223087,
@@ -7639,8 +6830,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3087_Statikk_Shiv.SRT13_10.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3087_Statikk_Shiv.SRT13_10.png",
   },
   {
     id: 223089,
@@ -7661,8 +6851,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3089_Mage_T3_Deathcap.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3089_Mage_T3_Deathcap.png",
   },
   {
     id: 223091,
@@ -7673,13 +6862,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "SpellBlock",
-      "Damage",
-      "AttackSpeed",
-      "OnHit",
-      "NonbootsMovement",
-    ],
+    categories: ["SpellBlock", "Damage", "AttackSpeed", "OnHit", "NonbootsMovement"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -7689,8 +6872,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3091_Fighter_T3_WitsEnd.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3091_Fighter_T3_WitsEnd.png",
   },
   {
     id: 223094,
@@ -7711,8 +6893,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3094_Marksman_T3_RapidFireHandCannon.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3094_Marksman_T3_RapidFireHandCannon.png",
   },
   {
     id: 223095,
@@ -7754,8 +6935,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3100_Mage_T3_Lichbane.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3100_Mage_T3_Lichbane.png",
   },
   {
     id: 223102,
@@ -7766,12 +6946,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "SpellBlock",
-      "SpellDamage",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["SpellBlock", "SpellDamage", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -7781,8 +6956,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3102_Mage_T3_BansheesVeil.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3102_Mage_T3_BansheesVeil.png",
   },
   {
     id: 223107,
@@ -7803,8 +6977,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3107_Enchanter_T3_Redemption.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3107_Enchanter_T3_Redemption.png",
   },
   {
     id: 223109,
@@ -7815,15 +6988,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "Health",
-      "HealthRegen",
-      "Armor",
-      "Aura",
-      "Active",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "HealthRegen", "Armor", "Aura", "Active", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -7833,8 +6998,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3109_Tank_T3_KnightsVow.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3109_Tank_T3_KnightsVow.png",
   },
   {
     id: 223110,
@@ -7855,8 +7019,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3110_Tank_T3_FrozenHeart.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3110_Tank_T3_FrozenHeart.png",
   },
   {
     id: 223111,
@@ -7877,8 +7040,7 @@ const items = [
     isEnchantment: false,
     price: 1000,
     priceTotal: 1000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3111_Class_T2_MercurysTreads.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3111_Class_T2_MercurysTreads.png",
   },
   {
     id: 223112,
@@ -7889,13 +7051,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "ManaRegen",
-      "CooldownReduction",
-      "Lane",
-    ],
+    categories: ["Health", "SpellDamage", "ManaRegen", "CooldownReduction", "Lane"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -7905,8 +7061,7 @@ const items = [
     isEnchantment: false,
     price: 1000,
     priceTotal: 1000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3112_ARAM_T1_GuardiansOrb.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3112_ARAM_T1_GuardiansOrb.png",
   },
   {
     id: 223115,
@@ -7927,8 +7082,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3115_Mage_T3_NashorsTooth.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3115_Mage_T3_NashorsTooth.png",
   },
   {
     id: 223116,
@@ -7949,8 +7103,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3116_Mage_T3_RylajsCrystalScepter.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3116_Mage_T3_RylajsCrystalScepter.png",
   },
   {
     id: 223119,
@@ -7971,8 +7124,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3119_WintersApproach.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3119_WintersApproach.png",
   },
   {
     id: 223121,
@@ -7993,8 +7145,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3121_Fimbulwinter.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3121_Fimbulwinter.png",
   },
   {
     id: 223124,
@@ -8005,13 +7156,7 @@ const items = [
     inStore: true,
     from: [],
     to: [227030],
-    categories: [
-      "CriticalStrike",
-      "AttackSpeed",
-      "OnHit",
-      "MagicPenetration",
-      "ArmorPenetration",
-    ],
+    categories: ["CriticalStrike", "AttackSpeed", "OnHit", "MagicPenetration", "ArmorPenetration"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -8021,8 +7166,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3124_Marksman_T3_GuinsoosRageblade.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3124_Marksman_T3_GuinsoosRageblade.png",
   },
   {
     id: 223135,
@@ -8043,8 +7187,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3135_Mage_T3_VoidStaff.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3135_Mage_T3_VoidStaff.png",
   },
   {
     id: 223139,
@@ -8055,14 +7198,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "SpellBlock",
-      "Damage",
-      "CriticalStrike",
-      "Active",
-      "NonbootsMovement",
-      "Tenacity",
-    ],
+    categories: ["SpellBlock", "Damage", "CriticalStrike", "Active", "NonbootsMovement", "Tenacity"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -8072,8 +7208,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3139_Marksman_T3_MercurialScimitar.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3139_Marksman_T3_MercurialScimitar.png",
   },
   {
     id: 223142,
@@ -8084,13 +7219,7 @@ const items = [
     inStore: true,
     from: [],
     to: [227029],
-    categories: [
-      "Damage",
-      "Active",
-      "NonbootsMovement",
-      "ArmorPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "Active", "NonbootsMovement", "ArmorPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -8100,8 +7229,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3142_Assassin_T3_YoumuusGhostblade.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3142_Assassin_T3_YoumuusGhostblade.png",
   },
   {
     id: 223143,
@@ -8122,8 +7250,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3143_Tank_T3_RanduinsOmen.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3143_Tank_T3_RanduinsOmen.png",
   },
   {
     id: 223146,
@@ -8144,8 +7271,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3146_Hextech_Gunblade.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3146_Hextech_Gunblade.png",
   },
   {
     id: 223152,
@@ -8174,8 +7300,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3152_Mage_T4_HextechRocketBelt.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3152_Mage_T4_HextechRocketBelt.png",
   },
   {
     id: 223153,
@@ -8186,14 +7311,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "Damage",
-      "AttackSpeed",
-      "LifeSteal",
-      "Slow",
-      "OnHit",
-      "NonbootsMovement",
-    ],
+    categories: ["Damage", "AttackSpeed", "LifeSteal", "Slow", "OnHit", "NonbootsMovement"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -8203,8 +7321,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3153_Fighter_T3_BladeOfTheRuinedKing.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3153_Fighter_T3_BladeOfTheRuinedKing.png",
   },
   {
     id: 223156,
@@ -8225,8 +7342,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3156_Fighter_T3_MawOfMalmortius.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3156_Fighter_T3_MawOfMalmortius.png",
   },
   {
     id: 223157,
@@ -8237,13 +7353,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "Armor",
-      "SpellDamage",
-      "Active",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["Armor", "SpellDamage", "Active", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -8253,8 +7363,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3157_Mage_T3_ZhonyasHourglass.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3157_Mage_T3_ZhonyasHourglass.png",
   },
   {
     id: 223158,
@@ -8275,8 +7384,7 @@ const items = [
     isEnchantment: false,
     price: 1000,
     priceTotal: 1000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3158_Class_T2_IonianBootsofLucidity.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3158_Class_T2_IonianBootsofLucidity.png",
   },
   {
     id: 223161,
@@ -8297,8 +7405,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3161_Fighter_T3_SpearofShojin.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3161_Fighter_T3_SpearofShojin.png",
   },
   {
     id: 223165,
@@ -8319,8 +7426,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3165_Mage_T3_Morellonomicon.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3165_Mage_T3_Morellonomicon.png",
   },
   {
     id: 223172,
@@ -8362,8 +7468,7 @@ const items = [
     isEnchantment: false,
     price: 1000,
     priceTotal: 1000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3177_ARAM_T1_GuardiansBlade.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3177_ARAM_T1_GuardiansBlade.png",
   },
   {
     id: 223181,
@@ -8405,8 +7510,7 @@ const items = [
     isEnchantment: false,
     price: 1000,
     priceTotal: 1000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3177_ARAM_T1_GuardiansHammer.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3177_ARAM_T1_GuardiansHammer.png",
   },
   {
     id: 223185,
@@ -8427,8 +7531,7 @@ const items = [
     isEnchantment: false,
     price: 1000,
     priceTotal: 1000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3181_SanguineBlade.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3181_SanguineBlade.png",
   },
   {
     id: 223190,
@@ -8439,15 +7542,7 @@ const items = [
     inStore: true,
     from: [],
     to: [227019],
-    categories: [
-      "Health",
-      "SpellBlock",
-      "Armor",
-      "Aura",
-      "Active",
-      "MagicResist",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellBlock", "Armor", "Aura", "Active", "MagicResist", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -8457,8 +7552,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3190_Enchanter_T4_LocketOfIronSolari.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3190_Enchanter_T4_LocketOfIronSolari.png",
   },
   {
     id: 223193,
@@ -8469,13 +7563,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "SpellBlock",
-      "Armor",
-      "Active",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["SpellBlock", "Armor", "Active", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -8485,8 +7573,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3193_Tank_T3_GargoyleStonePlate.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3193_Tank_T3_GargoyleStonePlate.png",
   },
   {
     id: 223222,
@@ -8507,8 +7594,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3222_Enchanter_T3_MikaelsBlessing.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3222_Enchanter_T3_MikaelsBlessing.png",
   },
   {
     id: 223504,
@@ -8519,13 +7605,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "AttackSpeed",
-      "SpellDamage",
-      "ManaRegen",
-      "OnHit",
-      "NonbootsMovement",
-    ],
+    categories: ["AttackSpeed", "SpellDamage", "ManaRegen", "OnHit", "NonbootsMovement"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -8535,8 +7615,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3504_Enchanter_T3_ArdentCenser.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3504_Enchanter_T3_ArdentCenser.png",
   },
   {
     id: 223508,
@@ -8547,14 +7626,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "Damage",
-      "CriticalStrike",
-      "ManaRegen",
-      "CooldownReduction",
-      "OnHit",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "CriticalStrike", "ManaRegen", "CooldownReduction", "OnHit", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -8564,8 +7636,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3508_Marksman_T3_EssenceReaver.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3508_Marksman_T3_EssenceReaver.png",
   },
   {
     id: 223742,
@@ -8586,8 +7657,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3742_Tank_T3_DeadmansPlate.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3742_Tank_T3_DeadmansPlate.png",
   },
   {
     id: 223748,
@@ -8608,8 +7678,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3748_Fighter_T3_TitanicHydra.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3748_Fighter_T3_TitanicHydra.png",
   },
   {
     id: 223814,
@@ -8630,8 +7699,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3814_Assassin_T3_EdgeOfNight.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3814_Assassin_T3_EdgeOfNight.png",
   },
   {
     id: 224004,
@@ -8652,8 +7720,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4004_Assassin_T3_SpectralCutlass.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4004_Assassin_T3_SpectralCutlass.png",
   },
   {
     id: 224005,
@@ -8664,12 +7731,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "SpellDamage",
-      "ManaRegen",
-      "CooldownReduction",
-      "NonbootsMovement",
-    ],
+    categories: ["SpellDamage", "ManaRegen", "CooldownReduction", "NonbootsMovement"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -8679,8 +7741,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4005_Enchanter_T4_ImperialMandate.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4005_Enchanter_T4_ImperialMandate.png",
   },
   {
     id: 224401,
@@ -8701,8 +7762,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4401_Tank_T3_ForceOfNature.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4401_Tank_T3_ForceOfNature.png",
   },
   {
     id: 224403,
@@ -8737,8 +7797,7 @@ const items = [
     isEnchantment: false,
     price: 687,
     priceTotal: 7237,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4403_GoldenSpatula.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4403_GoldenSpatula.png",
   },
   {
     id: 224628,
@@ -8759,8 +7818,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4628_Mage_T3_HorizonFocus.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4628_Mage_T3_HorizonFocus.png",
   },
   {
     id: 224629,
@@ -8771,12 +7829,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "SpellDamage",
-      "CooldownReduction",
-      "NonbootsMovement",
-      "AbilityHaste",
-    ],
+    categories: ["SpellDamage", "CooldownReduction", "NonbootsMovement", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -8786,8 +7839,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4629_Mage_T3_CosmicDrive.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4629_Mage_T3_CosmicDrive.png",
   },
   {
     id: 224633,
@@ -8798,14 +7850,7 @@ const items = [
     inStore: true,
     from: [],
     to: [227009],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "CooldownReduction",
-      "SpellVamp",
-      "MagicPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellDamage", "CooldownReduction", "SpellVamp", "MagicPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -8815,8 +7860,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4633_Mage_T4_Riftmaker.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4633_Mage_T4_Riftmaker.png",
   },
   {
     id: 224636,
@@ -8827,13 +7871,7 @@ const items = [
     inStore: true,
     from: [],
     to: [227010],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "CooldownReduction",
-      "NonbootsMovement",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellDamage", "CooldownReduction", "NonbootsMovement", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -8843,8 +7881,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4636_Mage_T4_NightHarvester.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4636_Mage_T4_NightHarvester.png",
   },
   {
     id: 224637,
@@ -8865,8 +7902,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4637_Mage_T3_DemonicEmbrace.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4637_Mage_T3_DemonicEmbrace.png",
   },
   {
     id: 224644,
@@ -8877,13 +7913,7 @@ const items = [
     inStore: true,
     from: [],
     to: [227024],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "Mana",
-      "NonbootsMovement",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellDamage", "Mana", "NonbootsMovement", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -8935,8 +7965,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6035_Fighter_T3_SilvermereDawn.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6035_Fighter_T3_SilvermereDawn.png",
   },
   {
     id: 226333,
@@ -8957,8 +7986,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6333_Fighter_T3_DeathsDance.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6333_Fighter_T3_DeathsDance.png",
   },
   {
     id: 226609,
@@ -8979,8 +8007,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6609_Fighter_T3_ChempunkChainsword.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6609_Fighter_T3_ChempunkChainsword.png",
   },
   {
     id: 226616,
@@ -9001,8 +8028,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3744_Enchanter_T3_StaffOfFlowingWater.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3744_Enchanter_T3_StaffOfFlowingWater.png",
   },
   {
     id: 226617,
@@ -9013,13 +8039,7 @@ const items = [
     inStore: true,
     from: [],
     to: [227021],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "ManaRegen",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellDamage", "ManaRegen", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9029,8 +8049,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6617_Enchanter_T4_MoonstoneRenewer.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6617_Enchanter_T4_MoonstoneRenewer.png",
   },
   {
     id: 226620,
@@ -9051,8 +8070,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6620_Echoes_of_Helia.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6620_Echoes_of_Helia.png",
   },
   {
     id: 226630,
@@ -9063,15 +8081,7 @@ const items = [
     inStore: true,
     from: [],
     to: [227015],
-    categories: [
-      "Health",
-      "Damage",
-      "LifeSteal",
-      "Active",
-      "CooldownReduction",
-      "SpellVamp",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "Damage", "LifeSteal", "Active", "CooldownReduction", "SpellVamp", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9081,8 +8091,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6630_Fighter_T4_GoreDrinker.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6630_Fighter_T4_GoreDrinker.png",
   },
   {
     id: 226631,
@@ -9112,8 +8121,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6631_Fighter_T4_StrideBreaker.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6631_Fighter_T4_StrideBreaker.png",
   },
   {
     id: 226632,
@@ -9142,8 +8150,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6632_Fighter_T4_DivineDevourer.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6632_Fighter_T4_DivineDevourer.png",
   },
   {
     id: 226653,
@@ -9164,8 +8171,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6653_Mage_T4_LiandrysAnguish.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6653_Mage_T4_LiandrysAnguish.png",
   },
   {
     id: 226655,
@@ -9176,14 +8182,7 @@ const items = [
     inStore: true,
     from: [],
     to: [227013],
-    categories: [
-      "SpellDamage",
-      "Mana",
-      "CooldownReduction",
-      "NonbootsMovement",
-      "MagicPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["SpellDamage", "Mana", "CooldownReduction", "NonbootsMovement", "MagicPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9193,8 +8192,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6655_Mage_T4_LudensTempest.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6655_Mage_T4_LudensTempest.png",
   },
   {
     id: 226656,
@@ -9205,15 +8203,7 @@ const items = [
     inStore: true,
     from: [],
     to: [227014],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "Mana",
-      "Active",
-      "CooldownReduction",
-      "Slow",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellDamage", "Mana", "Active", "CooldownReduction", "Slow", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9223,8 +8213,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6656_Mage_T4_Everfrost.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6656_Mage_T4_Everfrost.png",
   },
   {
     id: 226657,
@@ -9235,15 +8224,7 @@ const items = [
     inStore: true,
     from: [],
     to: [227028],
-    categories: [
-      "Health",
-      "HealthRegen",
-      "SpellDamage",
-      "Mana",
-      "ManaRegen",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "HealthRegen", "SpellDamage", "Mana", "ManaRegen", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9253,8 +8234,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6657_Mage_T4_RodOfAges.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6657_Mage_T4_RodOfAges.png",
   },
   {
     id: 226662,
@@ -9265,14 +8245,7 @@ const items = [
     inStore: true,
     from: [],
     to: [227005],
-    categories: [
-      "Health",
-      "Armor",
-      "CooldownReduction",
-      "Slow",
-      "OnHit",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "Armor", "CooldownReduction", "Slow", "OnHit", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9282,8 +8255,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6662_Tank_T3_IcebornGauntlet.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6662_Tank_T3_IcebornGauntlet.png",
   },
   {
     id: 226664,
@@ -9313,8 +8285,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6664_Tank_T4_AcceleratedChemtank.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6664_Tank_T4_AcceleratedChemtank.png",
   },
   {
     id: 226665,
@@ -9325,14 +8296,7 @@ const items = [
     inStore: true,
     from: [],
     to: [227026],
-    categories: [
-      "Health",
-      "SpellBlock",
-      "Armor",
-      "CooldownReduction",
-      "MagicResist",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellBlock", "Armor", "CooldownReduction", "MagicResist", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9342,8 +8306,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6665_Tank_T4_JakShoTheProtean.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6665_Tank_T4_JakShoTheProtean.png",
   },
   {
     id: 226667,
@@ -9354,14 +8317,7 @@ const items = [
     inStore: true,
     from: [],
     to: [227027],
-    categories: [
-      "Health",
-      "SpellBlock",
-      "Armor",
-      "Aura",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellBlock", "Armor", "Aura", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9371,8 +8327,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6667_Tank_T4_RadiantVirtue.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6667_Tank_T4_RadiantVirtue.png",
   },
   {
     id: 226671,
@@ -9383,13 +8338,7 @@ const items = [
     inStore: true,
     from: [],
     to: [227006],
-    categories: [
-      "Damage",
-      "CriticalStrike",
-      "AttackSpeed",
-      "Active",
-      "NonbootsMovement",
-    ],
+    categories: ["Damage", "CriticalStrike", "AttackSpeed", "Active", "NonbootsMovement"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9399,8 +8348,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6671_Marksman_T4_Galeforce.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6671_Marksman_T4_Galeforce.png",
   },
   {
     id: 226672,
@@ -9421,8 +8369,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6672_Marksman_T4_BehemothSlayer.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6672_Marksman_T4_BehemothSlayer.png",
   },
   {
     id: 226673,
@@ -9433,13 +8380,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "Damage",
-      "CriticalStrike",
-      "AttackSpeed",
-      "LifeSteal",
-      "NonbootsMovement",
-    ],
+    categories: ["Damage", "CriticalStrike", "AttackSpeed", "LifeSteal", "NonbootsMovement"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9449,8 +8390,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6673_Marksman_T4_CrimsonShieldbow.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6673_Marksman_T4_CrimsonShieldbow.png",
   },
   {
     id: 226675,
@@ -9461,13 +8401,7 @@ const items = [
     inStore: true,
     from: [],
     to: [227032],
-    categories: [
-      "Damage",
-      "CriticalStrike",
-      "CooldownReduction",
-      "OnHit",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "CriticalStrike", "CooldownReduction", "OnHit", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9477,8 +8411,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6675_Marksman_T3_NavoriQuickblades.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6675_Marksman_T3_NavoriQuickblades.png",
   },
   {
     id: 226676,
@@ -9499,8 +8432,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6676_Marksman_T3_TheCollector.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6676_Marksman_T3_TheCollector.png",
   },
   {
     id: 226691,
@@ -9529,8 +8461,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6691_Assassin_T4_DuskbladeOfDraktharr.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6691_Assassin_T4_DuskbladeOfDraktharr.png",
   },
   {
     id: 226692,
@@ -9541,13 +8472,7 @@ const items = [
     inStore: true,
     from: [],
     to: [227001],
-    categories: [
-      "Damage",
-      "CooldownReduction",
-      "NonbootsMovement",
-      "ArmorPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "CooldownReduction", "NonbootsMovement", "ArmorPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9557,8 +8482,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6692_Assassin_T4_Eclipse.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6692_Assassin_T4_Eclipse.png",
   },
   {
     id: 226693,
@@ -9569,13 +8493,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "Damage",
-      "Active",
-      "CooldownReduction",
-      "ArmorPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "Active", "CooldownReduction", "ArmorPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9585,8 +8503,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6693_Assassin_T4_ProwlersClaw.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6693_Assassin_T4_ProwlersClaw.png",
   },
   {
     id: 226694,
@@ -9597,12 +8514,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "Damage",
-      "CooldownReduction",
-      "ArmorPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "CooldownReduction", "ArmorPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9612,8 +8524,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6694_Assasin_T3_SeryldasGrudge.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6694_Assasin_T3_SeryldasGrudge.png",
   },
   {
     id: 226695,
@@ -9634,8 +8545,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6695_Assassin_T3_SerpentsFang.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6695_Assassin_T3_SerpentsFang.png",
   },
   {
     id: 226696,
@@ -9667,13 +8577,7 @@ const items = [
     inStore: false,
     from: [226692],
     to: [],
-    categories: [
-      "Damage",
-      "CooldownReduction",
-      "NonbootsMovement",
-      "ArmorPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "CooldownReduction", "NonbootsMovement", "ArmorPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9683,8 +8587,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6692_Assassin_T4_Eclipse.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6692_Assassin_T4_Eclipse.png",
   },
   {
     id: 227002,
@@ -9713,8 +8616,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6691_Assassin_T4_DuskbladeOfDraktharr.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6691_Assassin_T4_DuskbladeOfDraktharr.png",
   },
   {
     id: 227005,
@@ -9725,14 +8627,7 @@ const items = [
     inStore: false,
     from: [226662],
     to: [],
-    categories: [
-      "Health",
-      "Armor",
-      "CooldownReduction",
-      "Slow",
-      "OnHit",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "Armor", "CooldownReduction", "Slow", "OnHit", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9742,8 +8637,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6662_Tank_T3_IcebornGauntlet.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6662_Tank_T3_IcebornGauntlet.png",
   },
   {
     id: 227006,
@@ -9754,13 +8648,7 @@ const items = [
     inStore: false,
     from: [226671],
     to: [],
-    categories: [
-      "Damage",
-      "CriticalStrike",
-      "AttackSpeed",
-      "Active",
-      "NonbootsMovement",
-    ],
+    categories: ["Damage", "CriticalStrike", "AttackSpeed", "Active", "NonbootsMovement"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9770,8 +8658,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6671_Marksman_T4_Galeforce.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6671_Marksman_T4_Galeforce.png",
   },
   {
     id: 227009,
@@ -9782,14 +8669,7 @@ const items = [
     inStore: false,
     from: [224633],
     to: [],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "CooldownReduction",
-      "SpellVamp",
-      "MagicPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellDamage", "CooldownReduction", "SpellVamp", "MagicPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9799,8 +8679,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4633_Mage_T4_Riftmaker.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4633_Mage_T4_Riftmaker.png",
   },
   {
     id: 227010,
@@ -9811,13 +8690,7 @@ const items = [
     inStore: false,
     from: [224636],
     to: [],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "CooldownReduction",
-      "NonbootsMovement",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellDamage", "CooldownReduction", "NonbootsMovement", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9827,8 +8700,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/4636_Mage_T4_NightHarvester.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/4636_Mage_T4_NightHarvester.png",
   },
   {
     id: 227011,
@@ -9857,8 +8729,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3152_Mage_T4_HextechRocketBelt.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3152_Mage_T4_HextechRocketBelt.png",
   },
   {
     id: 227012,
@@ -9879,8 +8750,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6653_Mage_T4_LiandrysAnguish.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6653_Mage_T4_LiandrysAnguish.png",
   },
   {
     id: 227013,
@@ -9891,14 +8761,7 @@ const items = [
     inStore: false,
     from: [226655],
     to: [],
-    categories: [
-      "SpellDamage",
-      "Mana",
-      "CooldownReduction",
-      "NonbootsMovement",
-      "MagicPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["SpellDamage", "Mana", "CooldownReduction", "NonbootsMovement", "MagicPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9908,8 +8771,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6655_Mage_T4_LudensTempest.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6655_Mage_T4_LudensTempest.png",
   },
   {
     id: 227014,
@@ -9920,15 +8782,7 @@ const items = [
     inStore: false,
     from: [226656],
     to: [],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "Mana",
-      "Active",
-      "CooldownReduction",
-      "Slow",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellDamage", "Mana", "Active", "CooldownReduction", "Slow", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9938,8 +8792,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6656_Mage_T4_Everfrost.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6656_Mage_T4_Everfrost.png",
   },
   {
     id: 227015,
@@ -9950,15 +8803,7 @@ const items = [
     inStore: false,
     from: [226630],
     to: [],
-    categories: [
-      "Health",
-      "Damage",
-      "LifeSteal",
-      "Active",
-      "CooldownReduction",
-      "SpellVamp",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "Damage", "LifeSteal", "Active", "CooldownReduction", "SpellVamp", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -9968,8 +8813,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6630_Fighter_T4_GoreDrinker.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6630_Fighter_T4_GoreDrinker.png",
   },
   {
     id: 227016,
@@ -9999,8 +8843,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6631_Fighter_T4_StrideBreaker.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6631_Fighter_T4_StrideBreaker.png",
   },
   {
     id: 227017,
@@ -10029,8 +8872,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6632_Fighter_T4_DivineDevourer.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6632_Fighter_T4_DivineDevourer.png",
   },
   {
     id: 227018,
@@ -10041,15 +8883,7 @@ const items = [
     inStore: false,
     from: [223078],
     to: [],
-    categories: [
-      "Health",
-      "Damage",
-      "AttackSpeed",
-      "CooldownReduction",
-      "OnHit",
-      "NonbootsMovement",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "Damage", "AttackSpeed", "CooldownReduction", "OnHit", "NonbootsMovement", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -10059,8 +8893,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3078_Fighter_T4_TrinityForce.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3078_Fighter_T4_TrinityForce.png",
   },
   {
     id: 227019,
@@ -10071,15 +8904,7 @@ const items = [
     inStore: false,
     from: [223190],
     to: [],
-    categories: [
-      "Health",
-      "SpellBlock",
-      "Armor",
-      "Aura",
-      "Active",
-      "MagicResist",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellBlock", "Armor", "Aura", "Active", "MagicResist", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -10089,8 +8914,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3190_Enchanter_T4_LocketOfIronSolari.PIE_C_12_23.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3190_Enchanter_T4_LocketOfIronSolari.png",
   },
   {
     id: 227020,
@@ -10119,8 +8943,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/2065_Tank_T4_ShurelyasBattlesong.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/2065_Tank_T4_ShurelyasBattlesong.png",
   },
   {
     id: 227021,
@@ -10131,13 +8954,7 @@ const items = [
     inStore: false,
     from: [226617],
     to: [],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "ManaRegen",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellDamage", "ManaRegen", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -10147,8 +8964,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6617_Enchanter_T4_MoonstoneRenewer.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6617_Enchanter_T4_MoonstoneRenewer.png",
   },
   {
     id: 227023,
@@ -10169,8 +8985,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3001_Support_Lunari.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3001_Support_Lunari.png",
   },
   {
     id: 227024,
@@ -10181,13 +8996,7 @@ const items = [
     inStore: false,
     from: [224644],
     to: [],
-    categories: [
-      "Health",
-      "SpellDamage",
-      "Mana",
-      "NonbootsMovement",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellDamage", "Mana", "NonbootsMovement", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -10218,8 +9027,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3084_Tank_T4_Heartsteel.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3084_Tank_T4_Heartsteel.png",
   },
   {
     id: 227026,
@@ -10230,14 +9038,7 @@ const items = [
     inStore: false,
     from: [226665],
     to: [],
-    categories: [
-      "Health",
-      "SpellBlock",
-      "Armor",
-      "CooldownReduction",
-      "MagicResist",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellBlock", "Armor", "CooldownReduction", "MagicResist", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -10247,8 +9048,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6665_Tank_T4_JakShoTheProtean.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6665_Tank_T4_JakShoTheProtean.png",
   },
   {
     id: 227027,
@@ -10259,14 +9059,7 @@ const items = [
     inStore: false,
     from: [226667],
     to: [],
-    categories: [
-      "Health",
-      "SpellBlock",
-      "Armor",
-      "Aura",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellBlock", "Armor", "Aura", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -10276,8 +9069,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6667_Tank_T4_RadiantVirtue.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6667_Tank_T4_RadiantVirtue.png",
   },
   {
     id: 227028,
@@ -10288,15 +9080,7 @@ const items = [
     inStore: false,
     from: [226657],
     to: [],
-    categories: [
-      "Health",
-      "HealthRegen",
-      "SpellDamage",
-      "Mana",
-      "ManaRegen",
-      "CooldownReduction",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "HealthRegen", "SpellDamage", "Mana", "ManaRegen", "CooldownReduction", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -10306,8 +9090,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6657_Mage_T4_RodOfAges.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6657_Mage_T4_RodOfAges.png",
   },
   {
     id: 227029,
@@ -10318,13 +9101,7 @@ const items = [
     inStore: false,
     from: [223142],
     to: [],
-    categories: [
-      "Damage",
-      "Active",
-      "NonbootsMovement",
-      "ArmorPenetration",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "Active", "NonbootsMovement", "ArmorPenetration", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "Ornn",
@@ -10334,8 +9111,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3142_Assassin_T3_YoumuusGhostblade.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3142_Assassin_T3_YoumuusGhostblade.png",
   },
   {
     id: 227030,
@@ -10346,13 +9122,7 @@ const items = [
     inStore: false,
     from: [223124],
     to: [],
-    categories: [
-      "CriticalStrike",
-      "AttackSpeed",
-      "OnHit",
-      "MagicPenetration",
-      "ArmorPenetration",
-    ],
+    categories: ["CriticalStrike", "AttackSpeed", "OnHit", "MagicPenetration", "ArmorPenetration"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "Ornn",
@@ -10362,8 +9132,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3124_Marksman_T3_GuinsoosRageblade.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3124_Marksman_T3_GuinsoosRageblade.png",
   },
   {
     id: 227031,
@@ -10384,8 +9153,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/3031_Marksman_T3_InfinityEdge.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/3031_Marksman_T3_InfinityEdge.png",
   },
   {
     id: 227032,
@@ -10396,13 +9164,7 @@ const items = [
     inStore: false,
     from: [226675],
     to: [],
-    categories: [
-      "Damage",
-      "CriticalStrike",
-      "CooldownReduction",
-      "OnHit",
-      "AbilityHaste",
-    ],
+    categories: ["Damage", "CriticalStrike", "CooldownReduction", "OnHit", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "Ornn",
@@ -10412,8 +9174,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6675_Marksman_T3_NavoriQuickblades.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6675_Marksman_T3_NavoriQuickblades.png",
   },
   {
     id: 227033,
@@ -10434,8 +9195,7 @@ const items = [
     isEnchantment: false,
     price: 0,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/6620_Echoes_of_Helia.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/6620_Echoes_of_Helia.png",
   },
   {
     id: 228001,
@@ -10456,8 +9216,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/8001_Tank_T3_AnathemasChains.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/8001_Tank_T3_AnathemasChains.png",
   },
   {
     id: 228020,
@@ -10468,14 +9227,7 @@ const items = [
     inStore: true,
     from: [],
     to: [],
-    categories: [
-      "Health",
-      "SpellBlock",
-      "CooldownReduction",
-      "MagicPenetration",
-      "MagicResist",
-      "AbilityHaste",
-    ],
+    categories: ["Health", "SpellBlock", "CooldownReduction", "MagicPenetration", "MagicResist", "AbilityHaste"],
     maxStacks: 1,
     requiredChampion: "",
     requiredAlly: "",
@@ -10485,8 +9237,7 @@ const items = [
     isEnchantment: false,
     price: 3000,
     priceTotal: 3000,
-    iconPath:
-      "/lol-game-data/assets/ASSETS/Items/Icons2D/8020_Tank_T3_AbyssalMask.png",
+    iconPath: "/lol-game-data/assets/ASSETS/Items/Icons2D/8020_Tank_T3_AbyssalMask.png",
   },
 ];
 

@@ -11,6 +11,8 @@ const SERVER_HOST = config.public.SERVER_HOST;
 const dropdown = ref(false);
 const showRoles = ref(false);
 const encodedData = ref("");
+const state = ref<boolean>(true);
+const serverRegion = ref("");
 
 type PlayerType = {
   players: {
@@ -98,7 +100,7 @@ type Setting = {
 };
 
 const settings = ref<Setting>({
-  option1: false,
+  option1: true,
   option2: false,
   option3: false,
   players: {
@@ -113,6 +115,18 @@ const settings = ref<Setting>({
 function resetOptions() {
   for (let i = 0; i < item.value.length; i++) {
     item.value[i] = false;
+  }
+}
+
+function resetSelect(isRegions: boolean) {
+  if (isRegions) {
+    dropdownListRegions.value.selected.forEach((e) => {
+      e = false;
+    });
+  } else {
+    dropdownListTeamComps.value.selected.forEach((e) => {
+      e = false;
+    });
   }
 }
 
@@ -138,26 +152,26 @@ const dropdownListTeamComps = ref<List>({
   selected: Array(11).fill(false),
 });
 
-computed(() =>
-  settings.value.option2
-    ? dropdownListTeamComps.value
-    : dropdownListRegions.value
-);
+function resetDropdown(str: string) {
+  if (str === "region") {
+    for (let i = 0; i < dropdownListRegions.value.selected.length; i++) {
+      dropdownListRegions.value.selected[i] = false;
+      dropdownListRegions.value.disabled[i] = false;
+    }
+  }
+}
+computed(() => (settings.value.option2 ? dropdownListTeamComps.value : dropdownListRegions.value));
 
 watch(myObject2, () => {
   if (myObject2.value) {
     if (!settings.value.option2) {
-      const index = dropdownListRegions.value.name.indexOf(
-        myObject2.value.region
-      );
+      const index = dropdownListRegions.value.name.indexOf(myObject2.value.region);
       if (settings.value.option1) {
         dropdownListRegions.value.disabled[index] = true;
         dropdownListRegions.value.selected[index] = true;
       }
     } else {
-      const index = dropdownListTeamComps.value.name.indexOf(
-        myObject2.value.region
-      );
+      const index = dropdownListTeamComps.value.name.indexOf(myObject2.value.region);
       if (settings.value.option1) {
         dropdownListTeamComps.value.disabled[index] = true;
         dropdownListTeamComps.value.selected[index] = true;
@@ -217,6 +231,7 @@ watch(rateLimit, () => {
 });
 
 async function fetchData2() {
+  settings.value.option2 = !!Math.round(Math.random());
   const list = Object.values(settings.value.players);
   const newList: string[] = [];
   const newList2: string[] = [];
@@ -224,10 +239,8 @@ async function fetchData2() {
   const count = !settings.value.option2 ? 13 : 11;
   for (let i = 0; i < count; i++) {
     if (!settings.value.option2) {
-      if (!dropdownListRegions.value.selected[i])
-        newList.push(Object.keys(champions.regions)[i]);
-    } else if (!dropdownListTeamComps.value.selected[i])
-      newList2.push(Object.keys(champions.teamComps)[i]);
+      if (!dropdownListRegions.value.selected[i]) newList.push(Object.keys(champions.regions)[i]);
+    } else if (!dropdownListTeamComps.value.selected[i]) newList2.push(Object.keys(champions.teamComps)[i]);
   }
   let options;
   if (settings.value.option2) {
@@ -240,59 +253,57 @@ async function fetchData2() {
 
   const easyMode = mode.value;
 
-  let serverRegion = "";
-
   switch (server.value) {
     case "EUW":
-      serverRegion = "EUW1";
+      serverRegion.value = "EUW1";
       break;
     case "JP":
-      serverRegion = "JP1";
+      serverRegion.value = "JP1";
       break;
     case "NA":
-      serverRegion = "NA1";
+      serverRegion.value = "NA1";
       break;
     case "EUNE":
-      serverRegion = "EUN1";
+      serverRegion.value = "EUN1";
       break;
     case "KR":
-      serverRegion = "KR";
+      serverRegion.value = "KR";
       break;
     case "LA1":
-      serverRegion = "LA1";
+      serverRegion.value = "LA1";
       break;
     case "LA2":
-      serverRegion = "LA2";
+      serverRegion.value = "LA2";
       break;
     case "BR":
-      serverRegion = "BR1";
+      serverRegion.value = "BR1";
       break;
     case "OCE":
-      serverRegion = "OC1";
+      serverRegion.value = "OC1";
       break;
     case "PH":
-      serverRegion = "PH2";
+      serverRegion.value = "PH2";
       break;
     case "RU":
-      serverRegion = "RU";
+      serverRegion.value = "RU";
       break;
     case "SG":
-      serverRegion = "SG2";
+      serverRegion.value = "SG2";
       break;
     case "TH":
-      serverRegion = "TH2";
+      serverRegion.value = "TH2";
       break;
     case "TR":
-      serverRegion = "TR1";
+      serverRegion.value = "TR1";
       break;
     case "TW":
-      serverRegion = "TW2";
+      serverRegion.value = "TW2";
       break;
     case "VN":
-      serverRegion = "VN2";
+      serverRegion.value = "VN2";
       break;
     default:
-      serverRegion = "EUW";
+      serverRegion.value = "EUW";
       break;
   }
   encodedData.value = encodeData({
@@ -323,191 +334,189 @@ async function fetchData2() {
 </script>
 
 <template>
-  <div
-    v-if="rateLimit"
-    class="alert alert-warning alert alert-dismissible"
-    role="alert"
-  >
+  <div v-if="rateLimit" class="alert alert-warning alert alert-dismissible" role="alert">
     <strong>Ratelimit hit!</strong> Please wait 2 minutes before trying again.
-    <button
-      type="button"
-      class="btn-close"
-      data-bs-dismiss="alert"
-      aria-label="Close"
-    ></button>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
-  <!---<div class="options">
-    <button
-      class="options__button options__button--nohover"
-      :class="{
-        'options__button--selected': settings.option1,
-        'options__button--notselected': !settings.option1,
-      }"
-      type="button"
-      @click="settings.option1 = !settings.option1"
-    >
-      Reaccuring
-    </button>
-    <button
-      class="options__button options__button--nomargright btn btn-secondary"
-      type="button"
-      @click="
-        settings.option2 = !settings.option2;
-        resetOptions();
-      "
-    >
-      <span v-if="settings.option2" class="color">Comps</span>
-      <span v-else class="color">Regions</span>
-    </button>
-    <div v-if="!settings.option2" class="dropdown">
-      <button
-        id="dropdownMenuClickableInside"
-        aria-expanded="false"
-        class="dropdown-toggle btn btn-secondary selectdiv__button dropdown__button"
-        data-bs-auto-close="outside"
-        data-bs-display="static"
-        data-bs-toggle="dropdown"
-        type="button"
-        @click="dropdown = !dropdown"
-      >
-        Include regions
-      </button>
-      <ul
-        aria-labelledby="dropdownMenuClickableInside"
-        class="dropdown-menu dropdown__menu"
-      >
-        <div
-          v-for="(element, elementindex) of dropdownListRegions.selected"
-          :key="elementindex"
-        >
-          <li
-            class="infront"
-            @click="
-              dropdownListRegions.selected[elementindex] =
-                !dropdownListRegions.selected[elementindex]
-            "
-          >
-            <span
-              :class="{
-                active: !dropdownListRegions.selected[elementindex],
-                disabled: dropdownListRegions.disabled[elementindex],
-              }"
-              class="dropdown-item dropdown-link-color"
-              >{{ dropdownListRegions.name[elementindex] }}</span
-            >
-          </li>
-        </div>
-      </ul>
-    </div>
-    <div v-else class="dropdown">
-      <button
-        id="dropdownMenuClickableInside"
-        aria-expanded="false"
-        class="dropdown-toggle btn btn-secondary selectdiv__button dropdown__button"
-        data-bs-auto-close="outside"
-        data-bs-display="static"
-        data-bs-toggle="dropdown"
-        type="button"
-        @click="dropdown = !dropdown"
-      >
-        Include comps
-      </button>
-      <ul
-        aria-labelledby="dropdownMenuClickableInside"
-        class="dropdown-menu dropdown__menu"
-      >
-        <div
-          v-for="(element, elementindex) of dropdownListTeamComps.selected"
-          :key="elementindex"
-        >
-          <li
-            class="infront"
-            @click="
-              dropdownListTeamComps.selected[elementindex] =
-                !dropdownListTeamComps.selected[elementindex]
-            "
-          >
-            <span
-              :class="{
-                active: !dropdownListTeamComps.selected[elementindex],
-                disabled: dropdownListTeamComps.disabled[elementindex],
-              }"
-              class="dropdown-item"
-              >{{ dropdownListTeamComps.name[elementindex] }}</span
-            >
-          </li>
-        </div>
-      </ul>
-    </div>
-  </div>-->
   <main class="main">
     <div class="main__div">
-      <form class="form" @submit.prevent="fetchData2()">
-        <label class="form__label" for="player1">Player 1</label>
-        <input
-          v-model.lazy="settings.players.player1"
-          class="form__input"
-          name="player1"
-          required
-        />
+      <div v-if="state">
+        <form class="form" @submit.prevent="state = false">
+          <label class="form__label" for="player1">Player 1</label>
+          <input v-model.lazy="settings.players.player1" class="form__input" name="player1" required />
 
-        <label class="form__label" for="player2">Player 2</label>
-        <input
-          v-model.lazy="settings.players.player2"
-          class="form__input"
-          name="player2"
-          required
-        />
-        <label class="form__label" for="player3">Player 3</label>
-        <input
-          v-model.lazy="settings.players.player3"
-          class="form__input"
-          name="player3"
-          required
-        />
-        <label class="form__label" for="player4">Player 4</label>
-        <input
-          v-model.lazy="settings.players.player4"
-          class="form__input"
-          name="player4"
-          required
-        />
+          <label class="form__label" for="player2">Player 2</label>
+          <input v-model.lazy="settings.players.player2" class="form__input" name="player2" required />
+          <label class="form__label" for="player3">Player 3</label>
+          <input v-model.lazy="settings.players.player3" class="form__input" name="player3" required />
+          <label class="form__label" for="player4">Player 4</label>
+          <input v-model.lazy="settings.players.player4" class="form__input" name="player4" required />
 
-        <label class="form__label" for="player5">Player 5</label>
-        <input
-          v-model.lazy="settings.players.player5"
-          class="form__input"
-          name="player5"
-          required
-        />
-        <div class="form__submit">
-          <button
-            v-if="!rateLimit"
-            class="form__button btn btn-primary"
-            type="submit"
-          >
-            Submit
-          </button>
-          <button v-else class="form__button btn" disabled>
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
+          <label class="form__label" for="player5">Player 5</label>
+          <input v-model.lazy="settings.players.player5" class="form__input" name="player5" required />
+          <div class="form__submit">
+            <button v-if="!rateLimit" class="form__button btn btn-primary" type="submit">Submit</button>
+            <button v-else class="form__button btn" disabled>
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div v-else class="leftdiv">
+        <!---<button
+          class="options__button options__button--nohover"
+          :class="{
+            'options__button--selected': settings.option1,
+            'options__button--notselected': !settings.option1,
+          }"
+          type="button"
+          @click="settings.option1 = !settings.option1"
+        >
+          Reaccuring
+        </button>
+        <button
+          class="options__button options__button--nomargright btn btn-secondary"
+          type="button"
+          @click="
+            settings.option2 = !settings.option2;
+            resetOptions();
+          "
+        >
+          <span v-if="settings.option2" class="color">Comps</span>
+          <span v-else class="color">Regions</span>
+        </button>-->
+        <button class="backbutton" @click="state = true">
+          <font-awesome-icon :icon="['fas', 'arrow-left']" class="backicon" />
+        </button>
+
+        <div class="thisdiv">
+          <div class="leftdiv__region">
+            <select v-model="server" class="form-select header__select form-select-lg mb-3">
+              <option class="header__select__option" value="EUW">EUW</option>
+              <option class="header__select__option" value="EUNE">EUNE</option>
+              <option class="header__select__option" value="NA">NA</option>
+              <option class="header__select__option" value="OCE">OCE</option>
+              <option class="header__select__option" value="KR">KR</option>
+              <option class="header__select__option" value="JP">JP</option>
+              <option class="header__select__option" value="LA1">LA1</option>
+              <option class="header__select__option" value="LA2">LA2</option>
+              <option class="header__select__option" value="PH">PH</option>
+              <option class="header__select__option" value="RU">RU</option>
+              <option class="header__select__option" value="SG">SH</option>
+              <option class="header__select__option" value="TH">TH</option>
+              <option class="header__select__option" value="TR">TR</option>
+              <option class="header__select__option" value="TW">TW</option>
+              <option class="header__select__option" value="VN">VN</option>
+            </select>
+          </div>
+          <div class="modediv">
+            <div>
+              <button
+                id="success-outlined"
+                class="btn btn-outline-success modediv__button"
+                name="options-outlined"
+                :style="{ backgroundColor: mode ? 'green' : 'transparent' }"
+                @click="mode = true"
+              >
+                Easy
+              </button>
             </div>
-          </button>
-          <button class="form__settingsbtn">
-            <font-awesome-icon
-              :icon="['fas', 'gear']"
-              class="form__settingsicon"
-            />
-          </button>
+
+            <div>
+              <button
+                id="danger-outlined"
+                class="btn btn-outline-danger modediv__button"
+                name="options-outlined"
+                :style="{ backgroundColor: mode ? 'transparent' : 'red' }"
+                @click="mode = false"
+              >
+                Hard
+              </button>
+            </div>
+          </div>
         </div>
-      </form>
+        <div class="dropdowns">
+          <div class="dropdown">
+            <button
+              id="dropdownMenuClickableInside"
+              aria-expanded="false"
+              class="dropdown-toggle btn btn-secondary selectdiv__button dropdown__button"
+              data-bs-auto-close="outside"
+              data-bs-display="static"
+              data-bs-toggle="dropdown"
+              type="button"
+              @click="dropdown = !dropdown"
+            >
+              Include regions
+            </button>
+            <ul aria-labelledby="dropdownMenuClickableInside" class="dropdown-menu dropdown-menu-dark dropdown__menu">
+              <div v-for="(element, elementindex) of dropdownListRegions.selected" :key="elementindex">
+                <li
+                  class="infront"
+                  @click="dropdownListRegions.selected[elementindex] = !dropdownListRegions.selected[elementindex]"
+                >
+                  <span
+                    :class="{
+                      active: !dropdownListRegions.selected[elementindex],
+                      disabled: dropdownListRegions.disabled[elementindex],
+                    }"
+                    class="dropdown-item dropdown-link-color"
+                    >{{ dropdownListRegions.name[elementindex] }}</span
+                  >
+                </li>
+              </div>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button
+              id="dropdownMenuClickableInside"
+              aria-expanded="false"
+              class="dropdown-toggle btn btn-secondary dropdown__button compsbutton"
+              data-bs-auto-close="outside"
+              data-bs-display="static"
+              data-bs-toggle="dropdown"
+              type="button"
+              @click="dropdown = !dropdown"
+            >
+              Include comps
+            </button>
+            <ul aria-labelledby="dropdownMenuClickableInside" class="dropdown-menu dropdown-menu-dark dropdown__menu">
+              <div v-for="(element, elementindex) of dropdownListTeamComps.selected" :key="elementindex">
+                <li
+                  class="infront"
+                  @click="dropdownListTeamComps.selected[elementindex] = !dropdownListTeamComps.selected[elementindex]"
+                >
+                  <span
+                    :class="{
+                      active: !dropdownListTeamComps.selected[elementindex],
+                      disabled: dropdownListTeamComps.disabled[elementindex],
+                    }"
+                    class="dropdown-item"
+                    >{{ dropdownListTeamComps.name[elementindex] }}</span
+                  >
+                </li>
+              </div>
+            </ul>
+          </div>
+        </div>
+
+        <div class="form__submit__second">
+          <form @submit.prevent="fetchData2()">
+            <button v-if="!rateLimit" class="form__button btn btn-primary" type="submit">Submit</button>
+            <button v-else class="form__button btn" disabled>
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
+
     <div ref="resultReference" class="result">
-      <div
-        v-for="(player, playerIndex, index) of myObject2?.players"
-        :key="playerIndex"
-        class="result__div"
-      >
+      <div v-for="(player, playerIndex, index) of myObject2?.players" :key="playerIndex" class="result__div">
         <div class="result__div__div">
           <img
             :id="player.key.toString()"
@@ -523,33 +532,19 @@ async function fetchData2() {
             class="result__div__div__button"
             @click="refreshChampion(playerIndex)"
           >
-            <font-awesome-icon
-              class="result__div__div__button__refresh"
-              :icon="['fas', 'rotate-right']"
-            />
+            <font-awesome-icon class="result__div__div__button__refresh" :icon="['fas', 'rotate-right']" />
           </button>
           <div class="result__div__div__player">
-            <a
-              :href="`/player?${encodeData({
-                name: player.name,
-                puuid: player.puuid,
-              })}`"
+            <a :href="`/player/${serverRegion}/${player.name}`"
               ><p>{{ player.name }}</p></a
             >
           </div>
           <div class="result__div__div__mastery">
-            <img
-              class="result__div__div__mastery__img"
-              :src="`mastery${myObject2?.levelList[index] ?? 0}.png`"
-            />
+            <img class="result__div__div__mastery__img" :src="`mastery${myObject2?.levelList[index] ?? 0}.png`" />
             <p>{{ myObject2?.pointsList[index] }}</p>
           </div>
           <div>
-            <img
-              v-if="mode && showRoles"
-              class="result__div__div__role"
-              :src="role[myObject2?.order[index]]"
-            />
+            <img v-if="mode && showRoles" class="result__div__div__role" :src="role[myObject2?.order[index]]" />
           </div>
         </div>
       </div>
@@ -561,13 +556,68 @@ button:focus {
   box-shadow: none;
   outline: none;
 }
-.accordion {
-  position: absolute;
-  right: 0;
-  width: 25rem;
-  margin-right: 20rem;
-  top: 0;
-  margin-top: 18rem;
+
+.backbutton {
+  border: none;
+  background: none;
+  margin-bottom: 2rem;
+}
+.backicon {
+  width: 2rem;
+  height: 2rem;
+  color: #3d3d3d;
+}
+
+.compsbutton {
+  padding: 1.75rem 0.5rem 1.75rem 0.5rem;
+  margin: 0rem 0.5rem 0 0.5rem;
+  border: none;
+}
+
+.comps {
+  display: flex;
+}
+
+.modediv {
+  display: flex;
+  margin-left: 1rem;
+
+  &__button {
+    padding: 0.5rem 2.5rem;
+  }
+}
+
+.form-select {
+  background-color: #3d3d3d;
+  border: none;
+  color: #c8aa6e;
+  &:hover {
+    color: white;
+  }
+}
+
+.thisdiv {
+  display: flex;
+}
+
+.resetbutton {
+  width: 15rem;
+  height: 5rem;
+  border: none;
+  margin: 3rem 0.5rem 0 0.5rem;
+}
+
+.resetbutton2 {
+  margin-left: 0.5rem;
+}
+
+.leftdiv {
+  &__region {
+    width: 15rem;
+    background-color: #252525;
+    margin-left: 0.5rem;
+    margin-bottom: 3rem;
+  }
 }
 .alert {
   top: 0;
@@ -575,6 +625,10 @@ button:focus {
   z-index: 1;
   position: fixed;
   width: 100%;
+}
+
+.dropdowns {
+  display: flex;
 }
 .main {
   padding: 3rem;
@@ -586,10 +640,12 @@ button:focus {
 
   justify-content: center;
   &__div {
-    background-color: #25353b;
+    background-color: #252525;
     border-radius: 5px;
     padding: 2rem;
     width: 36rem;
+    display: flex;
+    flex-direction: row;
   }
 }
 
@@ -598,8 +654,8 @@ button:focus {
   &__button {
     width: 15rem;
     height: 5rem;
-    margin-left: 1rem;
-    border-left: 1px solid black;
+    border: none;
+    margin: 0 0.5rem 0 0.5rem;
   }
   &__select {
     position: absolute;
@@ -622,24 +678,23 @@ button {
 
   &__button {
     width: 15rem;
-    background-color: #0a323c;
-    border-left-color: black;
+    background-color: #3d3d3d;
     &:focus {
-      background-color: #0a323c;
+      background-color: #3d3d3d;
       outline: none;
     }
     &:hover {
-      background-color: #0a323e;
+      background-color: #3d3d3d;
     }
   }
 }
 
 .active {
-  background-color: #0a323c;
+  background-color: #3d3d3d;
 }
 
 .result {
-  background-color: #25353b;
+  background-color: #252525;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -660,7 +715,7 @@ button {
       padding-bottom: 1.1875rem;
       margin-bottom: 1.1875rem;
       padding-right: 10rem;
-      background-color: #0a323c;
+      background-color: #3d3d3d;
       border: 5px solid #c89b3c;
 
       display: grid;
@@ -668,7 +723,7 @@ button {
 
       &__role {
         width: 2rem;
-        margin-right: -22rem;
+        margin-right: -25rem;
       }
 
       &__image {
@@ -679,7 +734,7 @@ button {
 
       &__mastery {
         position: absolute;
-        margin-left: 35rem;
+        margin-left: 27rem;
         margin-top: -1rem;
         color: #c8aa6e;
         font-weight: 700;
@@ -713,7 +768,6 @@ button {
 }
 
 .options {
-  background-color: #3d3d3d;
   display: flex;
   margin: 1rem 3rem;
   margin-bottom: 2rem;
@@ -728,8 +782,7 @@ button {
   }
 
   &__button {
-    background-color: #0a323c;
-    border: 2px solid #005a82;
+    background-color: #3d3d3d;
     font-weight: 400;
     padding: 0.5rem 1.5rem;
     margin: 0 1rem;
@@ -737,7 +790,7 @@ button {
     border-radius: 5px;
 
     &:hover {
-      background-color: #0a323c;
+      background-color: #3d3d3d;
       color: white;
     }
 
@@ -776,6 +829,10 @@ button {
   z-index: 0;
 }
 
+.active.dropdown-item {
+  background-color: green;
+}
+
 .main__div {
   height: 50rem;
 }
@@ -790,19 +847,15 @@ button {
 
   &__submit {
     display: flex;
+    &__second {
+      margin-top: 24.625rem;
+    }
   }
 
   &__settingsbtn {
     display: flex;
     background: none;
     border: none;
-  }
-
-  &__settingsicon {
-    width: 3rem;
-    height: auto;
-    color: #494948;
-    margin-top: 0.375rem;
   }
 
   &__label {
@@ -816,8 +869,8 @@ button {
     padding: 1rem 2rem;
     font-size: 1.125rem;
     font-weight: 400;
-    margin-right: 3rem;
     border: none;
+    width: 100%;
     &:active {
       outline: none !important;
       box-shadow: none !important;
@@ -833,6 +886,7 @@ button {
       box-shadow: none !important;
     }
     margin-bottom: 2rem;
+    width: 32rem;
     padding: 1rem 2rem;
     border-radius: 5px;
     font-weight: 700;

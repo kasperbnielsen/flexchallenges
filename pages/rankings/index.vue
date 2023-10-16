@@ -9,9 +9,7 @@ const indexing = ref(0);
 const count = ref(0);
 
 async function getRankings() {
-  const data = await fetch(
-    `${SERVER_HOST}/leagues/${region.value.toLowerCase()}`
-  ).then((res) => res.json());
+  const data = await fetch(`${SERVER_HOST}/leagues/${region.value.toLowerCase()}`).then((res) => res.json());
   players.value = data;
 }
 
@@ -22,15 +20,12 @@ watch(indexing, () => {
 watch(count, () => {
   if (count.value < 0) count.value = 0;
 
-  if (count.value > players.value.entries.length / 50)
-    count.value = players.value.entries.length / 50 - 1;
+  if (count.value > players.value.entries.length / 50) count.value = players.value.entries.length / 50 - 1;
 });
 
 await getRankings();
 
-players.value.entries = players.value.entries.sort(
-  (a, b) => b.leaguePoints - a.leaguePoints
-);
+players.value.entries = players.value.entries.sort((a, b) => b.leaguePoints - a.leaguePoints);
 </script>
 <template>
   <div class="body">
@@ -50,8 +45,7 @@ players.value.entries = players.value.entries.sort(
         <p>
           {{
             (
-              (players.entries[indexing + count * 50 - 1].losses /
-                players.entries[indexing + count * 50 - 1].wins) *
+              (players.entries[indexing + count * 50 - 1].losses / players.entries[indexing + count * 50 - 1].wins) *
               100
             ).toFixed(2)
           }}%
@@ -65,17 +59,17 @@ players.value.entries = players.value.entries.sort(
         </li>
         <li class="page-item">
           <button class="page-link" @click="count = count">
-            {{ count + 1 }}
+            {{ count <= 1 ? 1 : count }}
           </button>
         </li>
         <li class="page-item">
           <button class="page-link" @click="count = count + 1">
-            {{ count + 2 }}
+            {{ count <= 1 ? 2 : count + 1 }}
           </button>
         </li>
         <li class="page-item">
           <button class="page-link" @click="count = count + 2">
-            {{ count + 3 }}
+            {{ count <= 1 ? 3 : count + 2 }}
           </button>
         </li>
         <li class="page-item">

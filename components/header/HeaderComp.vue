@@ -16,9 +16,7 @@ const route = useRoute();
 const router = useRouter();
 
 async function search() {
-  await router.push(
-    `/player/${currentRegion.value.toLowerCase()}1/${username.value}/`
-  );
+  await router.push(`/player/${currentRegion.value.toLowerCase()}1/${username.value}/`);
   router.go(0);
 }
 </script>
@@ -27,9 +25,7 @@ async function search() {
     <div class="header">
       <div>
         <a class="header__logo" href="/">
-          <h1 class="header__logo">
-            <span class="header__logo--color">Flex</span>Challenges
-          </h1>
+          <h1 class="header__logo"><span class="header__logo--color">Flex</span>Challenges</h1>
         </a>
       </div>
       <div v-if="route.path != '/'">
@@ -45,10 +41,7 @@ async function search() {
           <ul class="dropdown-menu">
             <div v-for="(reg, regionIndex) of regionsList" :key="regionIndex">
               <li>
-                <button
-                  class="dropdown-item"
-                  @click.prevent="currentRegion = reg.region"
-                >
+                <button class="dropdown-item" @click.prevent="currentRegion = reg.region">
                   {{ reg.name }}
                 </button>
               </li>
@@ -109,31 +102,7 @@ async function search() {
         </div>
       </div>--->
 
-      <!---<div class="header__div">
-        <div>
-          <button
-            id="success-outlined"
-            class="btn btn-outline-success header__button"
-            name="options-outlined"
-            :style="{ backgroundColor: mode ? 'green' : 'transparent' }"
-            @click="mode = true"
-          >
-            Easy
-          </button>
-        </div>
-
-        <div>
-          <button
-            id="danger-outlined"
-            class="btn btn-outline-danger header__button"
-            name="options-outlined"
-            :style="{ backgroundColor: mode ? 'transparent' : 'red' }"
-            @click="mode = false"
-          >
-            Hard
-          </button>
-        </div>
-      </div>-->
+      <!----->
     </div>
     <div class="header__nav">
       <ul class="nav">
