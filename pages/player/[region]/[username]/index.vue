@@ -1,13 +1,19 @@
 <script lang="ts" setup>
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
+import { storeToRefs } from "pinia";
+import { ref } from "vue";
 import items from "~/assets/items";
 import spells from "~/assets/summonerSpells";
+import { useModeStore } from "@/stores/player";
 const config = useRuntimeConfig();
+
+const { playerData, profileData } = storeToRefs(useModeStore());
 
 const playerProfileData = ref();
 
 const SERVER_HOST = config.public.SERVER_HOST;
 const route = useRoute();
+const router = useRouter();
 const matchList = ref();
 const rateLimit = ref(false);
 
@@ -40,14 +46,6 @@ const myData: { name: string; puuid: string } = {
 };
 
 console.log(route.params.username.toString(), id.puuid);
-
-const profileData = ref<{
-  name: string;
-  puuid: string;
-  profileIcon: number;
-  summonerId: string;
-  summonerLevel: number;
-}>();
 
 async function showMore() {
   await fetchData(matchList.value.data.length / 10 + 1);
@@ -149,6 +147,7 @@ async function fetchData(matchLimit: number) {
     .catch((err) => console.error(err));
 
   playerProfileData.value = fetchedData2;
+  playerData.value = await fetchedData2;
 }
 
 fetchData(1).then(() => {
@@ -157,49 +156,7 @@ fetchData(1).then(() => {
 </script>
 <template>
   <div class="outerbody">
-    <div class="profile">
-      <img
-        class="profile__image"
-        :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/${profileData?.profileIcon}.jpg`"
-      />
-      <p class="profile__level">{{ profileData?.summonerLevel }}</p>
-      <div>
-        <p class="profile__username">{{ profileData?.name }}</p>
-        <button class="btn btn-primary profile__button" @click="getStats(myData.puuid, true)">Refresh</button>
-      </div>
-      <div v-for="(type, typeIndex) of playerProfileData?.data" :key="typeIndex">
-        <div v-if="type?.queueType !== 'RANKED_TFT_DOUBLE_UP'" class="profile__rank__flexqueue">
-          <img
-            class="profile__rank__image"
-            :src="`https://raw.communitydragon.org/13.19/plugins/rcp-fe-lol-shared-components/global/default/${playerProfileData.data[
-              typeIndex
-            ]?.tier.toLowerCase()}.png`"
-          />
-          <div class="profile__rank__textdiv">
-            <p class="profile__rank__flexqueue__title">
-              {{ playerProfileData?.data[typeIndex]?.queueType === "RANKED_FLEX_SR" ? "Ranked Flex" : "Ranked Solo" }}
-            </p>
-            <p class="profile__rank__text">
-              {{ playerProfileData?.data[typeIndex]?.tier }}
-              {{ playerProfileData?.data[typeIndex]?.rank }}
-            </p>
-            <p class="profile__rank__undertext">{{ playerProfileData?.data[typeIndex]?.leaguePoints }} LP</p>
-          </div>
-          <div class="profile__rank__winrate">
-            <p>{{ playerProfileData?.data[typeIndex]?.wins }}W {{ playerProfileData?.data[typeIndex]?.losses }}L</p>
-            <p>
-              {{
-                (
-                  (playerProfileData?.data[typeIndex]?.wins /
-                    (playerProfileData?.data[typeIndex]?.wins + playerProfileData?.data[typeIndex]?.losses)) *
-                  100
-                ).toPrecision(4)
-              }}% Win Rate
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <ProfileDiv />
     <div class="body">
       <div class="stats">
         <nav>
@@ -244,14 +201,18 @@ fetchData(1).then(() => {
         </nav>
         <div id="nav-tabContent" class="tab-content">
           <div id="nav-home" aria-labelledby="nav-home-tab" class="tab-pane fade show active" role="tabpanel">
-            <div v-for="(stats, statsIndex) of statsData" :key="statsIndex" class="stats__div">
-              <div class="stats__firstdiv">
+            <div
+              v-for="(stats, statsIndex) of statsData"
+              :key="statsIndex"
+              :class="statsIndex < 13 ? 'stats__div' : ''"
+            >
+              <div v-if="statsIndex < 13" class="stats__firstdiv">
                 <img
                   :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${stats._id}.png`"
                   class="stats__firstdiv__img"
                 />
               </div>
-              <div class="stats__secondsdiv">
+              <div v-if="statsIndex < 13" class="stats__secondsdiv">
                 <p class="stats__secondsdiv__kda1">
                   {{
                     Math.ceil((stats.totalKills + stats.totalAssists) / stats.totalDeaths)
@@ -269,12 +230,17 @@ fetchData(1).then(() => {
                   {{ (stats.totalAssists / stats.totalMatches).toFixed(1) }}
                 </p>
               </div>
-              <div class="stats__thirddiv">
+              <div v-if="statsIndex < 13" class="stats__thirddiv">
                 <p class="stats__thirddiv__winrate">
                   {{ stats.totalWins ? ((stats.totalWins / stats.totalMatches) * 100).toFixed(0) : 0 }}%
                 </p>
                 <p class="stats__thirddiv__totalgames">{{ stats.totalMatches }} Matches</p>
               </div>
+            </div>
+            <div class="stats__extra">
+              <button class="stats__extra__button" @click="router.push(`${route.fullPath}champions/`)">
+                Show more + extra stats
+              </button>
             </div>
           </div>
           <div id="nav-profile" aria-labelledby="nav-profile-tab" class="tab-pane fade" role="tabpanel">...</div>
@@ -403,7 +369,14 @@ fetchData(1).then(() => {
             <div v-for="(participant, index) of matchList?.data[matchIndex]?.info?.participants" :key="index">
               <div v-if="participant?.puuid === myData.puuid">
                 <p class="result__match__extrastats__vs">VS {{ participant?.visionScore }}</p>
-                <p class="result__match__extrastats__cs">CS {{ participant?.totalMinionsKilled }}</p>
+                <p class="result__match__extrastats__cs">
+                  CS
+                  {{
+                    participant?.totalMinionsKilled +
+                    participant?.challenges.enemyJungleMonsterKills +
+                    participant?.challenges.alliedJungleMonsterKills
+                  }}
+                </p>
                 <p class="result__match__extrastats__kp">
                   KP
                   {{ (participant?.challenges?.killParticipation * 100).toPrecision(3) }}%
@@ -483,8 +456,8 @@ fetchData(1).then(() => {
 
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
-  background-color: #252525;
-  border-color: black;
+  background-color: #3d3d3d;
+  border: none;
   color: black;
 }
 
@@ -587,6 +560,16 @@ fetchData(1).then(() => {
   border-radius: 5px;
   min-height: 36.25rem;
   height: fit-content;
+  &__extra {
+    margin-top: 3.375rem;
+    padding: 0.5rem 0;
+    background-color: #3d3d3d;
+    text-align: center;
+    &__button {
+      border: none;
+      background: none;
+    }
+  }
 
   &__navitem {
     padding-left: 2rem;
