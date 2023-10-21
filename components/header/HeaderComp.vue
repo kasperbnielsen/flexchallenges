@@ -113,7 +113,7 @@ async function search() {
           <a class="nav-link" href="/challenge">Challenge</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Champions</a>
+          <a class="nav-link" href="/champions">Champions</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/rankings">Rankings</a>
