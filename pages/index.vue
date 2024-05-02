@@ -1,21 +1,22 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-const currentRegion = ref<string>("EUW");
+const currentRegion = ref<string>("europe");
 const username = ref("");
 
 const router = useRouter();
 
 const regionsList = ref([
-  { name: "Europe West", region: "EUW" },
+  { name: "Europe West", region: "europe" },
   { name: "North America", region: "NA" },
-  { name: "Europe East", region: "EUNE" },
+  { name: "Europe East", region: "europe" },
   { name: "Australia", region: "OCE" },
 ]);
 
 async function search() {
+  const name = username.value.split("#");
   await router.push(
-    `/player/${currentRegion.value.toLowerCase()}1/${username.value}/`
+    `/player/${currentRegion.value.toLowerCase()}/${name[0]}/${name[1]}`
   );
   router.go(0);
 }
@@ -50,8 +51,8 @@ async function search() {
       v-model="username"
       aria-label="Text input with dropdown button"
       class="input"
-      type="text"
       placeholder="Search for username"
+      type="text"
       @keydown.enter="search"
     />
   </div>

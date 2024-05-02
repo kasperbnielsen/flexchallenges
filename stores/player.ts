@@ -5,6 +5,7 @@ export const useModeStore = defineStore("player", () => {
   const playerData = ref();
   const profileData = ref<{
     name: string;
+    tag: string;
     puuid: string;
     profileIcon: number;
     summonerId: string;

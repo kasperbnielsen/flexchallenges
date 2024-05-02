@@ -1,6 +1,7 @@
 <template>
   <div class="body">
-    <a v-if="false"
+    <a
+v-if="false"
       class="banner1"
       href="https://metafy.gg?ref=ntrlnzn&campaign_name=tapfiliate&utm_source=website&utm_channel=affiliate&utm_medium=cpa&utm_campaign=paid_membership&utm_content=banner&market=mixed_markets&utm_campaign_id=968F9FB9&tap_a=130657-a837f7"
       rel="nofollow"
@@ -9,7 +10,8 @@
         border="0"
         src="/metafy.jpeg"
     /></a>
-    <a v-if="false"
+    <a
+v-if="false"
       class="banner1 right"
       href="https://metafy.gg?ref=ntrlnzn&campaign_name=tapfiliate&utm_source=website&utm_channel=affiliate&utm_medium=cpa&utm_campaign=paid_membership&utm_content=banner&market=mixed_markets&utm_campaign_id=968F9FB9&tap_a=130657-a837f7"
       rel="nofollow"

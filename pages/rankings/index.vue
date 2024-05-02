@@ -1,15 +1,42 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import CryptoES from "crypto-es";
 const config = useRuntimeConfig();
 const SERVER_HOST = config.public.SERVER_HOST;
 
-const players = ref();
+const players = ref<{
+  entries: {
+    leaguePoints: number;
+    summonerId: string;
+    losses: number;
+    wins: number;
+  }[];
+}>({
+  entries: [],
+});
 const region = ref("EUW1");
 const indexing = ref(0);
 const count = ref(0);
 
+const decryptWithAES = (ciphertext: string) => {
+  const passphrase = config.API_KEY;
+  const bytes = CryptoES.AES.decrypt(ciphertext, passphrase);
+  const originalText = bytes.toString(CryptoES.enc.Hex);
+  return originalText;
+};
+
 async function getRankings() {
-  const data = await fetch(`${SERVER_HOST}/leagues/${region.value.toLowerCase()}`).then((res) => res.json());
+  const data: {
+    entries: {
+      leaguePoints: number;
+      summonerId: string;
+      losses: number;
+      wins: number;
+    }[];
+  } = await fetch(`${SERVER_HOST}/leagues/${region.value.toLowerCase()}`).then(
+    (res) => res.json()
+  );
+  data.entries.sort((a, b) => b.leaguePoints - a.leaguePoints);
   players.value = data;
 }
 
@@ -20,12 +47,11 @@ watch(indexing, () => {
 watch(count, () => {
   if (count.value < 0) count.value = 0;
 
-  if (count.value > players.value.entries.length / 50) count.value = players.value.entries.length / 50 - 1;
+  if (count.value > players.value.entries.length / 50)
+    count.value = players.value.entries.length / 50 - 1;
 });
 
 await getRankings();
-
-players.value.entries = players.value.entries.sort((a, b) => b.leaguePoints - a.leaguePoints);
 </script>
 <template>
   <div class="body">
@@ -39,13 +65,20 @@ players.value.entries = players.value.entries.sort((a, b) => b.leaguePoints - a.
     <div v-if="players">
       <div v-for="indexing in 50" :key="indexing" class="body__players">
         <p>{{ indexing + count * 50 }}</p>
-        <p>{{ players.entries[indexing + count * 50 - 1].summonerName }}</p>
+        <p>
+          {{
+            decryptWithAES(
+              players.entries[indexing + count * 50 - 1].summonerId
+            )
+          }}
+        </p>
         <p>{{ players.entries[indexing + count * 50 - 1].leaguePoints }}</p>
         <p>123</p>
         <p>
           {{
             (
-              (players.entries[indexing + count * 50 - 1].losses / players.entries[indexing + count * 50 - 1].wins) *
+              (players.entries[indexing + count * 50 - 1].losses /
+                players.entries[indexing + count * 50 - 1].wins) *
               100
             ).toFixed(2)
           }}%

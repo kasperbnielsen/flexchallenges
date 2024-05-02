@@ -12,8 +12,8 @@ const searchStr = ref("");
         v-for="(champ, champIndex) of Object.entries(champions.champions).filter((e) =>
           e[0].toLowerCase().includes(searchStr.toLowerCase()),
         )"
-        class="champions__icons"
         :key="champIndex"
+        class="champions__icons"
       >
         <div class="champions__icons__div">
           <img

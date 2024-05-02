@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint:fix": "eslint --fix --ignore-pattern .gitignore ."
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
@@ -31,6 +32,9 @@
     "@fortawesome/vue-fontawesome": "^3.0.3",
     "@gtm-support/vue-gtm": "^2.2.0",
     "@pinia/nuxt": "^0.4.11",
+    "@types/crypto-js": "^4.2.2",
+    "crypto-es": "^2.1.0",
+    "crypto-js": "^4.2.0",
     "pinia": "^2.1.6"
   }
 }

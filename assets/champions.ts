@@ -462,7 +462,7 @@ const AOEUlt = [
   "Ziggs",
   "Zyra",
 ];
-//Hold That Pose
+// Hold That Pose
 const ccComp = [
   "Aatrox",
   "Alistar",
@@ -557,7 +557,7 @@ const pokeComp = [
   "Ziggs",
   "Zoe",
 ];
-//Nowhere to Hide
+// Nowhere to Hide
 const globalComp = [
   "Akshan",
   "Ashe",
@@ -590,7 +590,7 @@ const globalComp = [
   "Xerath",
   "Ziggs",
 ];
-//They Just... Don't... DIE!
+// They Just... Don't... DIE!
 const reviveComp = [
   "Akshan",
   "Alistar",
@@ -632,7 +632,7 @@ const reviveComp = [
   "Zed",
   "Zilean",
 ];
-//Get Over Here
+// Get Over Here
 const displacementComp = [
   "Alistar",
   "Azir",
@@ -669,7 +669,7 @@ const displacementComp = [
   "Zac",
   "Ziggs",
 ];
-//We Protec
+// We Protec
 const healSheildComp = [
   "Alistar",
   "Annie",
@@ -705,7 +705,7 @@ const healSheildComp = [
   "Yuumi",
   "Zilean",
 ];
-//WHERE'D THEY GO?
+// WHERE'D THEY GO?
 const stealthComp = [
   "Akali",
   "Akshan",
@@ -727,7 +727,7 @@ const stealthComp = [
   "Viego",
   "Wukong",
 ];
-//IT'S A TRAP!
+// IT'S A TRAP!
 const trapComp = [
   "Caitlyn",
   "Gangplank",
@@ -740,7 +740,7 @@ const trapComp = [
   "Ziggs",
   "Zyra",
 ];
-//Variety's overrated - 5 champions with the same tag (tank, marksmen, mages... e.t.c)
+// Variety's overrated - 5 champions with the same tag (tank, marksmen, mages... e.t.c)
 
 const summonComp = [
   "Annie",

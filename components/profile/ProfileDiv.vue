@@ -11,11 +11,16 @@ const { playerData, profileData } = storeToRefs(useModeStore());
     />
     <p class="profile__level">{{ profileData?.summonerLevel }}</p>
     <div>
-      <p class="profile__username">{{ profileData?.name }}</p>
+      <p class="profile__username">
+        {{ profileData?.name + "#" + profileData?.tag }}
+      </p>
       <button class="btn btn-primary profile__button">Refresh</button>
     </div>
     <div v-for="(type, typeIndex) of playerData?.data" :key="typeIndex">
-      <div v-if="type?.queueType !== 'RANKED_TFT_DOUBLE_UP'" class="profile__rank__flexqueue">
+      <div
+        v-if="type?.queueType !== 'RANKED_TFT_DOUBLE_UP'"
+        class="profile__rank__flexqueue"
+      >
         <img
           class="profile__rank__image"
           :src="`https://raw.communitydragon.org/13.19/plugins/rcp-fe-lol-shared-components/global/default/${playerData?.data[
@@ -24,21 +29,31 @@ const { playerData, profileData } = storeToRefs(useModeStore());
         />
         <div class="profile__rank__textdiv">
           <p class="profile__rank__flexqueue__title">
-            {{ playerData?.data[typeIndex]?.queueType === "RANKED_FLEX_SR" ? "Ranked Flex" : "Ranked Solo" }}
+            {{
+              playerData?.data[typeIndex]?.queueType === "RANKED_FLEX_SR"
+                ? "Ranked Flex"
+                : "Ranked Solo"
+            }}
           </p>
           <p class="profile__rank__text">
             {{ playerData?.data[typeIndex]?.tier }}
             {{ playerData?.data[typeIndex]?.rank }}
           </p>
-          <p class="profile__rank__undertext">{{ playerData?.data[typeIndex]?.leaguePoints }} LP</p>
+          <p class="profile__rank__undertext">
+            {{ playerData?.data[typeIndex]?.leaguePoints }} LP
+          </p>
         </div>
         <div class="profile__rank__winrate">
-          <p>{{ playerData?.data[typeIndex]?.wins }}W {{ playerData?.data[typeIndex]?.losses }}L</p>
+          <p>
+            {{ playerData?.data[typeIndex]?.wins }}W
+            {{ playerData?.data[typeIndex]?.losses }}L
+          </p>
           <p>
             {{
               (
                 (playerData?.data[typeIndex]?.wins /
-                  (playerData?.data[typeIndex]?.wins + playerData?.data[typeIndex]?.losses)) *
+                  (playerData?.data[typeIndex]?.wins +
+                    playerData?.data[typeIndex]?.losses)) *
                 100
               ).toPrecision(4)
             }}% Win Rate

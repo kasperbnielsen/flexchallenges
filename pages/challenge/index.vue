@@ -336,7 +336,7 @@ async function fetchData2() {
 <template>
   <div v-if="rateLimit" class="alert alert-warning alert alert-dismissible" role="alert">
     <strong>Ratelimit hit!</strong> Please wait 2 minutes before trying again.
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <button aria-label="Close" class="btn-close" data-bs-dismiss="alert" type="button"></button>
   </div>
   <main class="main">
     <div class="main__div">
@@ -388,7 +388,7 @@ async function fetchData2() {
           <span v-else class="color">Regions</span>
         </button>-->
         <button class="backbutton" @click="state = true">
-          <font-awesome-icon :icon="['fas', 'arrow-left']" class="backicon" />
+          <font-awesome-icon class="backicon" :icon="['fas', 'arrow-left']" />
         </button>
 
         <div class="thisdiv">
@@ -458,11 +458,11 @@ async function fetchData2() {
                   @click="dropdownListRegions.selected[elementindex] = !dropdownListRegions.selected[elementindex]"
                 >
                   <span
+                    class="dropdown-item dropdown-link-color"
                     :class="{
                       active: !dropdownListRegions.selected[elementindex],
                       disabled: dropdownListRegions.disabled[elementindex],
                     }"
-                    class="dropdown-item dropdown-link-color"
                     >{{ dropdownListRegions.name[elementindex] }}</span
                   >
                 </li>
@@ -489,11 +489,11 @@ async function fetchData2() {
                   @click="dropdownListTeamComps.selected[elementindex] = !dropdownListTeamComps.selected[elementindex]"
                 >
                   <span
+                    class="dropdown-item"
                     :class="{
                       active: !dropdownListTeamComps.selected[elementindex],
                       disabled: dropdownListTeamComps.disabled[elementindex],
                     }"
-                    class="dropdown-item"
                     >{{ dropdownListTeamComps.name[elementindex] }}</span
                   >
                 </li>

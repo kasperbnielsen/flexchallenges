@@ -1,18 +1,14 @@
 <script setup lang="ts">
-import { useRoute } from "vue-router";
 import { storeToRefs } from "pinia";
 import { useModeStore } from "@/stores/player";
 import champions from "~/assets/champions";
 const config = useRuntimeConfig();
-const { playerData, profileData } = storeToRefs(useModeStore());
+const { profileData } = storeToRefs(useModeStore());
 const SERVER_HOST = config.public.SERVER_HOST;
-const router = useRoute();
 const champList = champions.champions;
 
 const url = `${SERVER_HOST}/api/championstats/${profileData.value?.puuid}`;
 const stats = await fetch(url, { method: "get" }).then((res) => res.json());
-
-const name = router.params.username;
 </script>
 <template>
   <div class="body">
@@ -29,7 +25,11 @@ const name = router.params.username;
         <p class="body__inner__descriptions__center">Damage Taken</p>
         <p class="body__inner__descriptions__center">Structure Damage</p>
       </div>
-      <div class="body__inner__item" v-for="(champion, championIndex) of stats" :key="championIndex">
+      <div
+        v-for="(champion, championIndex) of stats"
+        :key="championIndex"
+        class="body__inner__item"
+      >
         <p class="body__inner__item__number">{{ championIndex + 1 }}</p>
         <div class="body__inner__item__champion">
           <img
@@ -37,44 +37,66 @@ const name = router.params.username;
             :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${champion._id}.png`"
           />
           <p class="body__inner__item__championname">
-            {{ Object.keys(champList)[Object.values(champList).indexOf(champion._id.toString())] }}
+            {{
+              Object.keys(champList)[
+                Object.values(champList).indexOf(champion._id.toString())
+              ]
+            }}
           </p>
         </div>
         <p class="body__inner__item__winloss">
           <span class="body__inner__item__wins">{{ champion.totalWins }}W</span
-          ><span class="body__inner__item__losses">{{ champion.totalMatches - champion.totalWins }}L</span>
+          ><span class="body__inner__item__losses"
+            >{{ champion.totalMatches - champion.totalWins }}L</span
+          >
           <span class="body__inner__item__winrate"
-            >{{ ((champion.totalWins / champion.totalMatches) * 100).toFixed(0) }}%</span
+            >{{
+              ((champion.totalWins / champion.totalMatches) * 100).toFixed(0)
+            }}%</span
           >
         </p>
         <p class="body__inner__item__kda">
           {{
             (
-              ((champion.totalKills + champion.totalAssists) / champion.totalDeaths === 0 ? 1 : champion.totalDeaths) /
-              champion.totalMatches
+              ((champion.totalKills + champion.totalAssists) /
+                champion.totalDeaths ===
+              0
+                ? 1
+                : champion.totalDeaths) / champion.totalMatches
             ).toFixed(2)
           }}
         </p>
         <p class="body__inner__item__cs">
           {{ (champion.totalCreeps / champion.totalMatches).toFixed(0) }}
           <span class="body__inner__item__cs__span"
-            >({{ (champion.totalCreeps / (champion.totalTime / 60)).toFixed(2) }}/m)</span
+            >({{
+              (champion.totalCreeps / (champion.totalTime / 60)).toFixed(2)
+            }}/m)</span
           >
         </p>
-        <p class="body__inner__item__gold">{{ (champion.totalGold / champion.totalMatches).toFixed(0) }}/m</p>
+        <p class="body__inner__item__gold">
+          {{ (champion.totalGold / champion.totalMatches).toFixed(0) }}/m
+        </p>
         <p class="body__inner__item__dmgdealt">
-          {{ (champion.totalDamageDealt / champion.totalMatches).toFixed(0) }} ({{
+          {{ (champion.totalDamageDealt / champion.totalMatches).toFixed(0) }}
+          ({{
             (champion.totalDamageDealt / (champion.totalTime / 60)).toFixed(0)
           }}/m)
         </p>
         <p class="body__inner__item__dmgtaken">
-          {{ (champion.totalDamageTaken / champion.totalMatches).toFixed(0) }} ({{
+          {{ (champion.totalDamageTaken / champion.totalMatches).toFixed(0) }}
+          ({{
             (champion.totalDamageTaken / (champion.totalTime / 60)).toFixed(0)
           }}/m)
         </p>
         <p class="body__inner__item__structdmg">
-          {{ (champion.totalStructureDamage / champion.totalMatches).toFixed(0) }} ({{
-            (champion.totalStructureDamage / (champion.totalTime / 60)).toFixed(0)
+          {{
+            (champion.totalStructureDamage / champion.totalMatches).toFixed(0)
+          }}
+          ({{
+            (champion.totalStructureDamage / (champion.totalTime / 60)).toFixed(
+              0
+            )
           }}/m)
         </p>
       </div>

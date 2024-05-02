@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useRoute, useRouter } from "vue-router";
+import { useRoute } from "vue-router";
 import { storeToRefs } from "pinia";
 import { ref } from "vue";
 import MatchList from "~/components/match/MatchList.vue";
@@ -13,7 +13,6 @@ const playerProfileData = ref();
 
 const SERVER_HOST = config.public.SERVER_HOST;
 const route = useRoute();
-const router = useRouter();
 const matchList = ref();
 const rateLimit = ref(false);
 
@@ -35,10 +34,12 @@ function encodeData(list: {}) {
   return base64Filter;
 }
 
-const url = `${SERVER_HOST}/riot/id/${route.params.region}/${route.params.username}`;
+const url = `${SERVER_HOST}/riot/id/euw1/${route.params.username}/${route.params.tag}`;
 const id = await fetch(url, { method: "GET" })
   .then((res) => res.json())
   .catch((err) => console.error(err));
+
+console.log(id);
 
 const myData: { name: string; puuid: string } = {
   name: route.params.username.toString(),
@@ -94,6 +95,7 @@ async function fetchData(matchLimit: number) {
         const profile = matchList.value.data[0].info.participants[i];
         profileData.value = {
           name: profile.summonerName,
+          tag: route.params.tag.toString().toUpperCase(),
           puuid: profile.puuid,
           profileIcon: profile.profileIcon,
           summonerId: profile.summonerId,
@@ -184,67 +186,12 @@ fetchData(1).then(() => {
         </nav>
         <div id="nav-tabContent" class="tab-content">
           <div
-            id="nav-home"
-            aria-labelledby="nav-home-tab"
-            class="tab-pane fade show active"
+            id="nav-profile"
+            aria-labelledby="nav-profile-tab"
+            class="tab-pane fade"
             role="tabpanel"
           >
-            <div
-              v-for="(stats, statsIndex) of statsData"
-              :key="statsIndex"
-              :class="statsIndex < 13 ? 'stats__div' : ''"
-            >
-              <div v-if="statsIndex < 13" class="stats__firstdiv">
-                <img
-                  :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${stats._id}.png`"
-                  class="stats__firstdiv__img"
-                />
-              </div>
-              <div v-if="statsIndex < 13" class="stats__secondsdiv">
-                <p class="stats__secondsdiv__kda1">
-                  {{
-                    Math.ceil(
-                      (stats.totalKills + stats.totalAssists) /
-                        stats.totalDeaths
-                    )
-                      ? (
-                          (stats.totalKills + stats.totalAssists) /
-                          (stats.totalDeaths ? stats.totalDeaths : 1)
-                        ).toFixed(2)
-                      : "0.00"
-                  }}
-                  KDA
-                </p>
-                <p class="stats__secondsdiv__kda2">
-                  {{ (stats.totalKills / stats.totalMatches).toFixed(1) }} /
-                  {{ (stats.totalDeaths / stats.totalMatches).toFixed(1) }}
-                  /
-                  {{ (stats.totalAssists / stats.totalMatches).toFixed(1) }}
-                </p>
-              </div>
-              <div v-if="statsIndex < 13" class="stats__thirddiv">
-                <p class="stats__thirddiv__winrate">
-                  {{
-                    stats.totalWins
-                      ? ((stats.totalWins / stats.totalMatches) * 100).toFixed(
-                          0
-                        )
-                      : 0
-                  }}%
-                </p>
-                <p class="stats__thirddiv__totalgames">
-                  {{ stats.totalMatches }} Matches
-                </p>
-              </div>
-            </div>
-            <div class="stats__extra">
-              <button
-                class="stats__extra__button"
-                @click="router.push(`${route.fullPath}champions/`)"
-              >
-                Show more + extra stats
-              </button>
-            </div>
+            <MatchSide />
           </div>
           <div
             id="nav-profile"
@@ -252,7 +199,7 @@ fetchData(1).then(() => {
             class="tab-pane fade"
             role="tabpanel"
           >
-            ...
+            <MatchSide />
           </div>
           <div
             id="nav-contact"
@@ -260,16 +207,16 @@ fetchData(1).then(() => {
             class="tab-pane fade"
             role="tabpanel"
           >
-            ...
+            <MatchSide />
           </div>
         </div>
       </div>
       <div v-if="matchList?.data" class="result">
         <MatchList
-          :matchList="matchList?.data"
-          :winArr="winArr"
+          :match-list="matchList?.data"
           :region="route.params.region.toString()"
           :user="myData"
+          :win-arr="winArr"
         />
         <button class="result__showmore" @click="showMore()">
           <font-awesome-icon
