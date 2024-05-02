@@ -2,16 +2,21 @@
 import { ref } from "vue";
 import champions from "../../assets/champions";
 const searchStr = ref("");
+const asd = "";
 </script>
 <template>
   <div class="top"></div>
   <div class="innerbody">
     <div class="champions">
-      <input v-model="searchStr" class="champions__search" placeholder="Search for champion" />
+      <input
+        v-model="searchStr"
+        class="champions__search"
+        placeholder="Search for champion"
+      />
       <div
-        v-for="(champ, champIndex) of Object.entries(champions.champions).filter((e) =>
-          e[0].toLowerCase().includes(searchStr.toLowerCase()),
-        )"
+        v-for="(champ, champIndex) of Object.entries(
+          champions.champions
+        ).filter((e) => e[0].toLowerCase().includes(searchStr.toLowerCase()))"
         :key="champIndex"
         class="champions__icons"
       >
