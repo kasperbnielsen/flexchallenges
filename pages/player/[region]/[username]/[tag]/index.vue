@@ -186,12 +186,12 @@ fetchData(1).then(() => {
         </nav>
         <div id="nav-tabContent" class="tab-content">
           <div
-            id="nav-profile"
-            aria-labelledby="nav-profile-tab"
+            id="nav-home"
+            aria-labelledby="nav-home-tab"
             class="tab-pane fade"
             role="tabpanel"
           >
-            <MatchSide />
+            <MatchSide :queue="400" />
           </div>
           <div
             id="nav-profile"
@@ -199,7 +199,7 @@ fetchData(1).then(() => {
             class="tab-pane fade"
             role="tabpanel"
           >
-            <MatchSide />
+            <MatchSide :queue="420" />
           </div>
           <div
             id="nav-contact"
@@ -207,7 +207,7 @@ fetchData(1).then(() => {
             class="tab-pane fade"
             role="tabpanel"
           >
-            <MatchSide />
+            <MatchSide :queue="440" />
           </div>
         </div>
       </div>

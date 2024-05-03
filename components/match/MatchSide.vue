@@ -1,8 +1,25 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 import { useModeStore } from "~/stores/player";
-
-const statsData = ref();
+const props = defineProps<{
+  queue: number;
+}>();
+const statsData = ref<
+  {
+    _id: { championId: number };
+    totalKills: number;
+    totalDeaths: number;
+    totalAssists: number;
+    totalMatches: number;
+    totalWins: number;
+    totalCreeps: number;
+    totalGold: number;
+    totalDamageDealt: number;
+    totalDamageTaken: number;
+    totalStructureDamage: number;
+    totalTime: number;
+  }[]
+>();
 const config = useRuntimeConfig();
 const SERVER_HOST = config.public.SERVER_HOST;
 const router = useRouter();
@@ -13,16 +30,127 @@ async function getStats(refresh: boolean) {
   if (!profileData.value?.puuid.length) {
     return;
   }
+
   const url = refresh
     ? `${SERVER_HOST}/api/championstats/${profileData.value.puuid}?refresh=true`
     : `${SERVER_HOST}/api/championstats/${profileData.value.puuid}`;
-  const data = await fetch(url, { method: "get" }).then((res) => res.json());
-  statsData.value = data;
+  const data: {
+    _id: { championId: number; gameMode: number };
+    totalKills: number;
+    totalDeaths: number;
+    totalAssists: number;
+    totalMatches: number;
+    totalWins: number;
+    totalCreeps: number;
+    totalGold: number;
+    totalDamageDealt: number;
+    totalDamageTaken: number;
+    totalStructureDamage: number;
+    totalTime: number;
+  }[] = await fetch(url, { method: "get" }).then((res) => res.json());
+
+  if (props.queue === 420) {
+    statsData.value = data.filter(
+      (val: {
+        _id: { championId: number; gameMode: number };
+        totalKills: number;
+        totalDeaths: number;
+        totalAssists: number;
+        totalMatches: number;
+        totalWins: number;
+        totalCreeps: number;
+        totalGold: number;
+        totalDamageDealt: number;
+        totalDamageTaken: number;
+        totalStructureDamage: number;
+        totalTime: number;
+      }) => val._id.gameMode === 420
+    );
+  } else if (props.queue === 440) {
+    statsData.value = data.filter(
+      (val: {
+        _id: { championId: number; gameMode: number };
+        totalKills: number;
+        totalDeaths: number;
+        totalAssists: number;
+        totalMatches: number;
+        totalWins: number;
+        totalCreeps: number;
+        totalGold: number;
+        totalDamageDealt: number;
+        totalDamageTaken: number;
+        totalStructureDamage: number;
+        totalTime: number;
+      }) => val._id.gameMode === 440
+    );
+  } else if (props.queue === 400) {
+    const newArr: {
+      _id: { championId: number; gameMode: number };
+      totalKills: number;
+      totalDeaths: number;
+      totalAssists: number;
+      totalMatches: number;
+      totalWins: number;
+      totalCreeps: number;
+      totalGold: number;
+      totalDamageDealt: number;
+      totalDamageTaken: number;
+      totalStructureDamage: number;
+      totalTime: number;
+    }[] = [];
+    data
+      .filter((val) => val._id.gameMode === 420 || val._id.gameMode === 440)
+      .forEach(
+        (val: {
+          _id: { championId: number; gameMode: number };
+          totalKills: number;
+          totalDeaths: number;
+          totalAssists: number;
+          totalMatches: number;
+          totalWins: number;
+          totalCreeps: number;
+          totalGold: number;
+          totalDamageDealt: number;
+          totalDamageTaken: number;
+          totalStructureDamage: number;
+          totalTime: number;
+        }) => {
+          const ind = newArr.findIndex(
+            (element) => element._id.championId === val._id.championId
+          );
+          if (ind !== -1) {
+            newArr[ind] = {
+              _id: {
+                championId: val._id.championId,
+                gameMode: val._id.gameMode,
+              },
+              totalKills: newArr[ind].totalKills + val.totalKills,
+              totalDeaths: newArr[ind].totalDeaths + val.totalDeaths,
+              totalAssists: newArr[ind].totalAssists + val.totalAssists,
+              totalMatches: newArr[ind].totalMatches + val.totalMatches,
+              totalWins: newArr[ind].totalWins + val.totalWins,
+              totalCreeps: newArr[ind].totalCreeps + val.totalCreeps,
+              totalGold: newArr[ind].totalGold + val.totalGold,
+              totalDamageDealt:
+                newArr[ind].totalDamageDealt + val.totalDamageDealt,
+              totalDamageTaken:
+                newArr[ind].totalDamageTaken + val.totalDamageTaken,
+              totalStructureDamage:
+                newArr[ind].totalStructureDamage + val.totalStructureDamage,
+              totalTime: newArr[ind].totalTime + val.totalTime,
+            };
+          } else {
+            newArr.push(val);
+          }
+        }
+      );
+    statsData.value = newArr;
+  }
+
   return data;
 }
 
 getStats(true);
-
 watch(profileData, () => {
   getStats(true);
 });
@@ -46,8 +174,8 @@ watch(statsData, () => {
       >
         <div v-if="statsIndex < 13" class="stats__firstdiv">
           <img
-            :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${stats._id}.png`"
             class="stats__firstdiv__img"
+            :src="`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${stats._id.championId}.png`"
           />
         </div>
         <div v-if="statsIndex < 13" class="stats__secondsdiv">

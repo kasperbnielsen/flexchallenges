@@ -35,7 +35,7 @@ function getImagePath(id: number): string {
     }
   });
 
-  return fullPath.substr(43, fullPath.length - 1);
+  return fullPath.substring(43, fullPath.length - 1);
 }
 </script>
 <template>
