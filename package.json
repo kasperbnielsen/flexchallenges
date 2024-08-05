@@ -23,7 +23,7 @@
     "eslint-plugin-tailwindcss": "^3.13.0",
     "eslint-plugin-vue": "^9.17.0",
     "eslint-plugin-vuejs-accessibility": "^2.2.0",
-    "nuxt": "^3.7.3",
+    "nuxt": "^3.12.4",
     "sass": "^1.68.0",
     "wrangler": "^3.19.0"
   },
